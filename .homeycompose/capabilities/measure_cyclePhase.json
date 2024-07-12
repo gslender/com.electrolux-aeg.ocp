@@ -1,0 +1,9 @@
+{
+    "type": "string",
+    "title": {
+        "en": "Cycle Phase"
+    },
+    "getable": true,
+    "setable": false,
+    "icon": "/assets/rotate.svg"
+}

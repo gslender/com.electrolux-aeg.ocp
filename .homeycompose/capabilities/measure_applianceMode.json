@@ -1,0 +1,9 @@
+{
+    "type": "string",
+    "title": {
+        "en": "Appliance Mode"
+    },
+    "getable": true,
+    "setable": false,
+    "icon": "/assets/gear.svg"
+}

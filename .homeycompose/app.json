@@ -1,0 +1,32 @@
+{
+  "id": "com.electrolux-aeg.ocp",
+  "version": "1.0.0",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "Electrolux AEG"
+  },
+  "description": {
+    "en": "Add support for Electrolux AEG Appliances"
+  },
+  "brandColor": "#d31937",
+  "category": [
+    "appliances"
+  ],
+  "permissions": [],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "author": {
+    "name": "Grant Slender",
+    "email": "gslender@gmail.com"
+  },
+  "source": "https://github.com/gslender/com.electrolux-aeg.ocp",
+  "bugs": {
+    "url": "https://github.com/gslender/com.electrolux-aeg.ocp/issues"
+  }
+}

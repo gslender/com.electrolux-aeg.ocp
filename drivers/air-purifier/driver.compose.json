@@ -1,0 +1,45 @@
+{
+  "name": {
+    "en": "Air Purifier"
+  },
+  "class": "fan",
+  "capabilities": [
+    "measure_co2",
+    "measure_humidity",
+    "measure_pm25",
+    "measure_pm10",
+    "measure_pm1",
+    "measure_temperature",
+    "measure_voc",
+    "onoff",
+    "SMART_mode",
+    "FAN_speed",
+    "IONIZER_onoff",
+    "LOCK_onoff",
+    "LIGHT_onoff",
+    "measure_FILTER"
+  ],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "lan"
+  ],
+  "images": {
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png"
+  },
+  "pair": [
+      {
+          "id": "list_my_devices",
+          "template": "list_devices",
+          "navigation": {
+              "next": "add_my_devices"
+          }
+      },
+      {
+          "id": "add_my_devices",
+          "template": "add_devices"
+      }
+  ]
+}

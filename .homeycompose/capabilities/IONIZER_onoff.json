@@ -1,0 +1,9 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "Ionizer active"
+  },
+  "getable": true,
+  "setable": true
+}
+

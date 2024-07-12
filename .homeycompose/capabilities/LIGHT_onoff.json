@@ -1,0 +1,9 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "Indicator light"
+  },
+  "getable": true,
+  "setable": true
+}
+

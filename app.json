@@ -1,0 +1,527 @@
+{
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
+  "id": "com.electrolux-aeg.ocp",
+  "version": "1.0.0",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "Electrolux AEG"
+  },
+  "description": {
+    "en": "Add support for Electrolux AEG Appliances"
+  },
+  "brandColor": "#d31937",
+  "category": [
+    "appliances"
+  ],
+  "permissions": [],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "author": {
+    "name": "Grant Slender",
+    "email": "gslender@gmail.com"
+  },
+  "source": "https://github.com/gslender/com.electrolux-aeg.ocp",
+  "bugs": {
+    "url": "https://github.com/gslender/com.electrolux-aeg.ocp/issues"
+  },
+  "flow": {
+    "actions": [
+      {
+        "title": {
+          "en": "Disable indicator light"
+        },
+        "titleFormatted": {
+          "en": "Disable indicator light"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=electrolux-pure-a9"
+          }
+        ],
+        "id": "disable_indicator_light"
+      },
+      {
+        "title": {
+          "en": "Disable ionizer"
+        },
+        "titleFormatted": {
+          "en": "Disable ionizer"
+        },
+        "hint": {
+          "en": "Disables the ionizer"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=electrolux-pure-a9"
+          }
+        ],
+        "id": "disable_ionizer"
+      },
+      {
+        "title": {
+          "en": "Disable lock control"
+        },
+        "titleFormatted": {
+          "en": "Disable lock control"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=electrolux-pure-a9"
+          }
+        ],
+        "id": "disable_lock"
+      },
+      {
+        "title": {
+          "en": "Enable indicator light"
+        },
+        "titleFormatted": {
+          "en": "Enable indicator light"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=electrolux-pure-a9"
+          }
+        ],
+        "id": "enable_indicator_light"
+      },
+      {
+        "title": {
+          "en": "Enable ionizer"
+        },
+        "titleFormatted": {
+          "en": "Enable ionizer"
+        },
+        "hint": {
+          "en": "Enables the ionizer"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=electrolux-pure-a9"
+          }
+        ],
+        "id": "enable_ionizer"
+      },
+      {
+        "title": {
+          "en": "Enable lock control"
+        },
+        "titleFormatted": {
+          "en": "Enable lock control"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=electrolux-pure-a9"
+          }
+        ],
+        "id": "enable_lock"
+      },
+      {
+        "title": {
+          "en": "Enable manual mode"
+        },
+        "titleFormatted": {
+          "en": "Enable manual mode"
+        },
+        "hint": {
+          "en": "Start the fan in manual mode (or switch to manual mode if running)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=electrolux-pure-a9"
+          }
+        ],
+        "id": "enable_manual_mode"
+      },
+      {
+        "title": {
+          "en": "Enable smart mode"
+        },
+        "titleFormatted": {
+          "en": "Enable smart mode"
+        },
+        "hint": {
+          "en": "Start the fan in smart mode (or switch to smart mode if running)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=electrolux-pure-a9"
+          }
+        ],
+        "id": "enable_smart_mode"
+      },
+      {
+        "title": {
+          "en": "Set fan speed"
+        },
+        "titleFormatted": {
+          "en": "Set fan speed to [[fan_speed]]%"
+        },
+        "hint": {
+          "en": "This action will set a fixed fan speed (and disable smart mode)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=electrolux-pure-a9"
+          },
+          {
+            "name": "fan_speed",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "title": {
+              "en": "Fan speed"
+            }
+          }
+        ],
+        "id": "set_fan_speed"
+      }
+    ]
+  },
+  "drivers": [
+    {
+      "name": {
+        "en": "Air Purifier"
+      },
+      "class": "fan",
+      "capabilities": [
+        "measure_co2",
+        "measure_humidity",
+        "measure_pm25",
+        "measure_pm10",
+        "measure_pm1",
+        "measure_temperature",
+        "measure_voc",
+        "onoff",
+        "SMART_mode",
+        "FAN_speed",
+        "IONIZER_onoff",
+        "LOCK_onoff",
+        "LIGHT_onoff",
+        "measure_FILTER"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "images": {
+        "small": "/drivers/air-purifier/assets/images/small.png",
+        "large": "/drivers/air-purifier/assets/images/large.png"
+      },
+      "pair": [
+        {
+          "id": "list_my_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_my_devices"
+          }
+        },
+        {
+          "id": "add_my_devices",
+          "template": "add_devices"
+        }
+      ],
+      "id": "air-purifier"
+    },
+    {
+      "name": {
+        "en": "Laundry"
+      },
+      "class": "other",
+      "capabilities": [],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "images": {
+        "small": "/drivers/laundry/assets/images/small.png",
+        "large": "/drivers/laundry/assets/images/large.png"
+      },
+      "pair": [
+        {
+          "id": "list_my_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_my_devices"
+          }
+        },
+        {
+          "id": "add_my_devices",
+          "template": "add_devices"
+        }
+      ],
+      "id": "laundry"
+    },
+    {
+      "name": {
+        "en": "Unknown (log only)"
+      },
+      "class": "other",
+      "capabilities": [],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "images": {
+        "small": "/drivers/unknown/assets/images/small.png",
+        "large": "/drivers/unknown/assets/images/large.png"
+      },
+      "pair": [
+        {
+          "id": "list_my_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_my_devices"
+          }
+        },
+        {
+          "id": "add_my_devices",
+          "template": "add_devices"
+        }
+      ],
+      "id": "unknown"
+    }
+  ],
+  "capabilities": {
+    "FAN_speed": {
+      "type": "number",
+      "uiComponent": "slider",
+      "title": {
+        "en": "Fan speed"
+      },
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "getable": true,
+      "setable": true
+    },
+    "IONIZER_onoff": {
+      "type": "boolean",
+      "title": {
+        "en": "Ionizer active"
+      },
+      "getable": true,
+      "setable": true
+    },
+    "LIGHT_onoff": {
+      "type": "boolean",
+      "title": {
+        "en": "Indicator light"
+      },
+      "getable": true,
+      "setable": true
+    },
+    "LOCK_onoff": {
+      "type": "boolean",
+      "title": {
+        "en": "Lock controls"
+      },
+      "getable": true,
+      "setable": true
+    },
+    "measure_applianceMode": {
+      "type": "string",
+      "title": {
+        "en": "Appliance Mode"
+      },
+      "getable": true,
+      "setable": false,
+      "icon": "/assets/gear.svg"
+    },
+    "measure_applianceState": {
+      "type": "string",
+      "title": {
+        "en": "Appliance State"
+      },
+      "getable": true,
+      "setable": false,
+      "icon": "/assets/gear.svg"
+    },
+    "measure_cyclePhase": {
+      "type": "string",
+      "title": {
+        "en": "Cycle Phase"
+      },
+      "getable": true,
+      "setable": false,
+      "icon": "/assets/rotate.svg"
+    },
+    "measure_doorState": {
+      "type": "string",
+      "title": {
+        "en": "Door State"
+      },
+      "getable": true,
+      "setable": false,
+      "icon": "/assets/door.svg"
+    },
+    "measure_FILTER": {
+      "type": "number",
+      "title": {
+        "en": "Filter life"
+      },
+      "units": {
+        "en": "%"
+      },
+      "insights": true,
+      "min": 0,
+      "max": 100,
+      "desc": {
+        "en": "Filter life in percentage (%)"
+      },
+      "chartType": "spline",
+      "decimals": 2,
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/icons/measure_FILTER.svg"
+    },
+    "measure_pm1": {
+      "type": "number",
+      "title": {
+        "en": "PM1",
+        "nl": "PM1",
+        "de": "PM1"
+      },
+      "units": {
+        "en": "ppm"
+      },
+      "insights": true,
+      "desc": {
+        "en": "Atmospheric Particulate Matter (μg/m3)",
+        "nl": "Deeltjesvormige luchtverontreiniging (μg/m3)",
+        "de": "Atmosphärischer Feinstaub (μg/m3)"
+      },
+      "chartType": "spline",
+      "decimals": 2,
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/icons/measure_PM1.svg"
+    },
+    "measure_pm10": {
+      "type": "number",
+      "title": {
+        "en": "PM10",
+        "nl": "PM10",
+        "de": "PM10"
+      },
+      "units": {
+        "en": "ppm"
+      },
+      "insights": true,
+      "desc": {
+        "en": "Atmospheric Particulate Matter (μg/m3)",
+        "nl": "Deeltjesvormige luchtverontreiniging (μg/m3)",
+        "de": "Atmosphärischer Feinstaub (μg/m3)"
+      },
+      "chartType": "spline",
+      "decimals": 2,
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/icons/measure_PM10.svg"
+    },
+    "measure_startTime": {
+      "type": "string",
+      "title": {
+        "en": "Start Time"
+      },
+      "getable": true,
+      "setable": false,
+      "icon": "/assets/clock.svg"
+    },
+    "measure_stopTime": {
+      "type": "string",
+      "title": {
+        "en": "Stop Time"
+      },
+      "getable": true,
+      "setable": false,
+      "icon": "/assets/clock.svg"
+    },
+    "measure_timeToEnd": {
+      "type": "string",
+      "title": {
+        "en": "Time To End"
+      },
+      "getable": true,
+      "setable": false,
+      "icon": "/assets/clock.svg"
+    },
+    "measure_voc": {
+      "type": "number",
+      "title": {
+        "en": "VOC",
+        "nl": "VOC",
+        "de": "VOC"
+      },
+      "units": {
+        "en": "ppb"
+      },
+      "insights": true,
+      "desc": {
+        "en": "Volatile Organic Compound (ppb)"
+      },
+      "chartType": "spline",
+      "decimals": 2,
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/icons/measure_VOC.svg"
+    },
+    "SMART_mode": {
+      "type": "enum",
+      "uiComponent": "picker",
+      "title": {
+        "en": "Mode"
+      },
+      "values": [
+        {
+          "id": "manual",
+          "title": {
+            "en": "Manual"
+          }
+        },
+        {
+          "id": "smart",
+          "title": {
+            "en": "Smart"
+          }
+        }
+      ],
+      "getable": true,
+      "setable": true
+    }
+  }
+}

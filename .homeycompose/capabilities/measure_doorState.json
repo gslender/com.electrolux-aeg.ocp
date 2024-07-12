@@ -1,0 +1,9 @@
+{
+    "type": "string",
+    "title": {
+        "en": "Door State"
+    },
+    "getable": true,
+    "setable": false,
+    "icon": "/assets/door.svg"
+}

@@ -1,0 +1,9 @@
+{
+    "type": "string",
+    "title": {
+        "en": "Start Time"
+    },
+    "getable": true,
+    "setable": false,
+    "icon": "/assets/clock.svg"
+}

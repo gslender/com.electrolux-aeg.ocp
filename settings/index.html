@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+
+<head>
+    <script type="text/javascript" src="/homey.js" data-origin="settings"></script>
+
+</head>
+
+<body>
+
+    <header class="homey-header">
+        <h1 class="homey-title" data-i18n="settings.title">
+        </h1>
+        <p class="homey-subtitle" data-i18n="settings.subtitle">
+        </p>
+    </header>
+    <!-- <form class="homey-form"> -->
+    <fieldset class="homey-form-fieldset">
+        <legend class="homey-form-legend">Settings</legend>
+        <div class="homey-form-group">
+            <label class="homey-form-label" for="username">Username</label>
+            <input class="homey-form-input" id="username" type="text" value="" />
+        </div>
+        <div class="homey-form-group">
+            <label class="homey-form-label" for="password">Password</label>
+            <input class="homey-form-input" id="password" type="password" value="" />
+        </div>
+        <label class="homey-form-label" for="select-polling">Polling Interval</label>
+        <select class="homey-form-select" name="select-polling" id="select-polling">
+            <option value="15000">15 Seconds</option>
+            <option value="30000">30 Seconds</option>
+            <option value="60000">1 Minute</option>
+            <option value="120000">2 Minutes</option>
+            <option value="300000">5 Minutes</option>
+        </select>
+
+    </fieldset>
+
+    <p><button id="save" class="right homey-button-primary-full">Save Changes</button></p>
+    <!-- </form> -->
+    <script type="text/javascript">
+
+        var usernameElement = document.getElementById('username');
+        var passwordElement = document.getElementById('password');
+        var pollingElement = document.getElementById('select-polling');
+        var saveElement = document.getElementById('save');
+        var oldusername = '';
+        var oldpassword = '';
+        var oldpolling = '';
+
+        // a method named 'onHomeyReady' must be present in your code
+        function onHomeyReady(Homey) {
+
+            // Tell Homey we're ready to be displayed
+            Homey.ready();
+
+            Homey.get('ocp.username', function (err, username) {
+                if (err) return Homey.alert(err);
+                usernameElement.value = username;
+                oldusername = username;
+            });
+
+            Homey.get('ocp.password', function (err, password) {
+                if (err) return Homey.alert(err);
+                passwordElement.value = password;
+                oldpassword = password;
+            });
+
+            Homey.get('ocp.polling', function (err, polling) {
+                if (err) return Homey.alert(err);
+                if (polling === null || polling === undefined || polling === '') {
+                    polling = '15000';
+                }
+                pollingElement.value = polling;
+                oldpolling = polling;
+            });
+
+            Homey.on("settingsChanged", function (state) {
+                document.getElementById('save').classList.remove("is-loading");
+                oldpassword = passwordElement.value;
+                oldusername = usernameElement.value;
+                oldpolling = pollingElement.value;
+                if (state === 'loginSuccess') {
+                    return Homey.alert("Credentials Valid and Saved!!");
+                } else if (state === 'otherSuccess') {
+                    return;
+                } else {
+                    return Homey.alert("Error: " + state);
+                }
+            });
+
+            saveElement.addEventListener('click', async function (e) {
+
+                if (oldusername != usernameElement.value 
+                || oldpassword != passwordElement.value
+                || oldpolling != pollingElement.value) {
+                    document.getElementById('save').classList.add("is-loading");
+                    await Homey.set('ocp.username', usernameElement.value, function (err) {
+                        if (err) return Homey.alert(err);
+                    });
+                    await Homey.set('ocp.password', passwordElement.value, function (err) {
+                        if (err) return Homey.alert(err);
+                    });
+                    await Homey.set('ocp.polling', pollingElement.value, function (err) {
+                        if (err) return Homey.alert(err);
+                    });
+                }
+            });
+        }
+    </script>
+
+</body>
+
+</html>
