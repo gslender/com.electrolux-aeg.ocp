@@ -5,5 +5,5 @@
     },
     "getable": true,
     "setable": false,
-    "icon": "/assets/clock.svg"
+    "icon": "/assets/icons/clock.svg"
 }

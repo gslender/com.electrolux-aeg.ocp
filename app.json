@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.electrolux-aeg.ocp",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "platforms": [
@@ -43,7 +43,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=electrolux-pure-a9"
+            "filter": "driver_id=air-purifier"
           }
         ],
         "id": "disable_indicator_light"
@@ -62,7 +62,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=electrolux-pure-a9"
+            "filter": "driver_id=air-purifier"
           }
         ],
         "id": "disable_ionizer"
@@ -78,7 +78,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=electrolux-pure-a9"
+            "filter": "driver_id=air-purifier"
           }
         ],
         "id": "disable_lock"
@@ -94,7 +94,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=electrolux-pure-a9"
+            "filter": "driver_id=air-purifier"
           }
         ],
         "id": "enable_indicator_light"
@@ -113,7 +113,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=electrolux-pure-a9"
+            "filter": "driver_id=air-purifier"
           }
         ],
         "id": "enable_ionizer"
@@ -129,7 +129,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=electrolux-pure-a9"
+            "filter": "driver_id=air-purifier"
           }
         ],
         "id": "enable_lock"
@@ -148,7 +148,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=electrolux-pure-a9"
+            "filter": "driver_id=air-purifier"
           }
         ],
         "id": "enable_manual_mode"
@@ -167,7 +167,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=electrolux-pure-a9"
+            "filter": "driver_id=air-purifier"
           }
         ],
         "id": "enable_smart_mode"
@@ -186,7 +186,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=electrolux-pure-a9"
+            "filter": "driver_id=air-purifier"
           },
           {
             "name": "fan_speed",
@@ -222,7 +222,7 @@
         "IONIZER_onoff",
         "LOCK_onoff",
         "LIGHT_onoff",
-        "measure_FILTER"
+        "measure_filter"
       ],
       "platforms": [
         "local"
@@ -356,7 +356,7 @@
       },
       "getable": true,
       "setable": false,
-      "icon": "/assets/gear.svg"
+      "icon": "/assets/icons/gear.svg"
     },
     "measure_applianceState": {
       "type": "string",
@@ -365,7 +365,7 @@
       },
       "getable": true,
       "setable": false,
-      "icon": "/assets/gear.svg"
+      "icon": "/assets/icons/gear.svg"
     },
     "measure_cyclePhase": {
       "type": "string",
@@ -374,7 +374,7 @@
       },
       "getable": true,
       "setable": false,
-      "icon": "/assets/rotate.svg"
+      "icon": "/assets/icons/rotate.svg"
     },
     "measure_doorState": {
       "type": "string",
@@ -383,9 +383,9 @@
       },
       "getable": true,
       "setable": false,
-      "icon": "/assets/door.svg"
+      "icon": "/assets/icons/door.svg"
     },
-    "measure_FILTER": {
+    "measure_filter": {
       "type": "number",
       "title": {
         "en": "Filter life"
@@ -404,7 +404,7 @@
       "getable": true,
       "setable": false,
       "uiComponent": "sensor",
-      "icon": "/assets/icons/measure_FILTER.svg"
+      "icon": "/assets/icons/filter.svg"
     },
     "measure_pm1": {
       "type": "number",
@@ -427,7 +427,7 @@
       "getable": true,
       "setable": false,
       "uiComponent": "sensor",
-      "icon": "/assets/icons/measure_PM1.svg"
+      "icon": "/assets/icons/pm1.svg"
     },
     "measure_pm10": {
       "type": "number",
@@ -450,7 +450,7 @@
       "getable": true,
       "setable": false,
       "uiComponent": "sensor",
-      "icon": "/assets/icons/measure_PM10.svg"
+      "icon": "/assets/icons/pm10.svg"
     },
     "measure_startTime": {
       "type": "string",
@@ -459,7 +459,7 @@
       },
       "getable": true,
       "setable": false,
-      "icon": "/assets/clock.svg"
+      "icon": "/assets/icons/clock.svg"
     },
     "measure_stopTime": {
       "type": "string",
@@ -468,7 +468,7 @@
       },
       "getable": true,
       "setable": false,
-      "icon": "/assets/clock.svg"
+      "icon": "/assets/icons/clock.svg"
     },
     "measure_timeToEnd": {
       "type": "string",
@@ -477,7 +477,7 @@
       },
       "getable": true,
       "setable": false,
-      "icon": "/assets/clock.svg"
+      "icon": "/assets/icons/clock.svg"
     },
     "measure_voc": {
       "type": "number",
@@ -498,7 +498,7 @@
       "getable": true,
       "setable": false,
       "uiComponent": "sensor",
-      "icon": "/assets/icons/measure_VOC.svg"
+      "icon": "/assets/icons/voc.svg"
     },
     "SMART_mode": {
       "type": "enum",

@@ -124,7 +124,7 @@ class AirPurifierDevice extends Homey.Device {
       await this.setCapabilityValue("measure_pm10", props.PM10);
       await this.setCapabilityValue("measure_pm1", props.PM1);
       await this.setCapabilityValue("measure_temperature", props.Temp);
-      await this.setCapabilityValue("measure_FILTER", props.FilterLife);
+      await this.setCapabilityValue("measure_filter", props.FilterLife);
       this.log("Device data updated");
     } catch (error) {
       this.log("Error updating device state: ", error);

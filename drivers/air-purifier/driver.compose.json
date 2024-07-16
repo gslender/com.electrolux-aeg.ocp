@@ -17,7 +17,7 @@
     "IONIZER_onoff",
     "LOCK_onoff",
     "LIGHT_onoff",
-    "measure_FILTER"
+    "measure_filter"
   ],
   "platforms": [
     "local"

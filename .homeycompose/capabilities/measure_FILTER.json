@@ -17,11 +17,11 @@
   "getable": true,
   "setable": false,
   "uiComponent": "sensor",
-  "icon": "/assets/icons/measure_FILTER.svg",
+  "icon": "/assets/icons/filter.svg",
   "$flow": {
     "triggers": [
       {
-        "id": "measure_FILTER_changed",
+        "id": "measure_filter_changed",
         "title": {
           "en": "The filter life changed"
         },

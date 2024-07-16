@@ -5,5 +5,5 @@
     },
     "getable": true,
     "setable": false,
-    "icon": "/assets/door.svg"
+    "icon": "/assets/icons/door.svg"
 }
