@@ -137,7 +137,8 @@ export default class ElectroluxAEGApp extends Homey.App {
         return [];
       }
     } catch (e) {
-      throw new Error(`Get Appliances Error!? ${e}`);
+      this.error(`Get Appliances Error!? ${e}`);
+      return [];
     }
   }
 
@@ -158,7 +159,8 @@ export default class ElectroluxAEGApp extends Homey.App {
       const response = await http.get(`/appliances/${deviceId}`);
       return response.data ?? {};
     } catch (e) {
-      throw new Error(`Get Appliance State Error!? ${deviceId} : ${e}`);
+      this.error(`Get Appliance State Error!? ${deviceId} : ${e}`);
+      return {};
     }
   }
 
@@ -168,7 +170,8 @@ export default class ElectroluxAEGApp extends Homey.App {
       const response = await http.get(`/appliances/${deviceId}/capabilities`);
       return response.data ?? {};
     } catch (e) {
-      throw new Error(`Get Appliance State Error!? ${deviceId} : ${e}`);
+      this.error(`Get Appliance Capabilities Error!? ${deviceId} : ${e}`);
+      return {};
     }
   }
 
@@ -177,7 +180,7 @@ export default class ElectroluxAEGApp extends Homey.App {
       const http = await this.ocpApiFactory.createHttp();
       await http.put(`/appliances/${deviceId}/command`, command);
     } catch (e) {
-      throw new Error(`Send Command Error!? ${deviceId} : ${e}`);
+      this.error(`Send Command Error!? ${deviceId} : ${e}`);
     }
   }
 

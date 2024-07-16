@@ -10,6 +10,17 @@ class AirPurifierDevice extends Homey.Device {
   async onInit() {
     this.log("AirPurifierDevice has been initialized");
     this.app = this.homey.app as ElectroluxAEGApp
+    const deviceId = this.getData().id;
+    const state = await this.app.getApplianceState(deviceId);
+
+    this.log('********* applianceState ********');
+    this.log(stringify(state));
+    this.log('**********************************');
+
+    const capabilities = await this.app.getApplianceCapabilities(deviceId);
+    this.log(`********** capabilities **********`);
+    this.log(stringify(capabilities));
+    this.log('**********************************');
 
     // Listen to multiple capabilities simultaneously
     this.registerMultipleCapabilityListener(

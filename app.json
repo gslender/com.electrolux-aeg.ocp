@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.electrolux-aeg.ocp",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "platforms": [
@@ -11,7 +11,7 @@
     "en": "Electrolux AEG"
   },
   "description": {
-    "en": "Add support for Electrolux AEG Appliances"
+    "en": "One Connected Platform appliances and services - for an effortlessly smarter home"
   },
   "brandColor": "#d31937",
   "category": [
