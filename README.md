@@ -12,5 +12,5 @@ This Homey App will require that you have your Electrolux or AEG appliances conf
 1. You must have a password and email setup in your Electrolux or AEG mobile app (ensure you logout and login using a email and password, and not using OTP).
 2. Install the Homey App and Configure the Settings using your email and password. These credentials are persisted, but are only used to generate a JWT Claim that is reused and refreshed as needed by the app. 
 3. Add a Device using the App and choose the relevant type Laundy / Air Purifier etc.
-4. If your appliance / device isn't available, please visit https://github.com/gslender/electrolux-aeg.ocp/issues/new/choose to request support for your device.
+4. If your appliance / device isn't available, please visit https://github.com/gslender/com.electrolux-aeg.ocp/issues/new/choose to request support for your device.
 
