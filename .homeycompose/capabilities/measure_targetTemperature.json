@@ -1,0 +1,18 @@
+{
+    "type": "number",
+    "title": {
+      "en": "Target Temperature"
+    },
+    "units": {
+      "en": "°C"
+    },
+    "insights": true,
+    "desc": {
+      "en": "Target Temperature in degrees Celsius (°C)"
+    },
+    "decimals": 2,
+    "chartType": "spline",
+    "getable": true,
+    "setable": false,
+    "uiComponent": "sensor"
+  }

@@ -10,5 +10,8 @@
   },
   "1.0.3": {
     "en": "Fixed action card bug"
+  },
+  "1.0.4": {
+    "en": "Added oven support"
   }
 }
