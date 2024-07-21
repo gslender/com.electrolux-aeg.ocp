@@ -5,5 +5,23 @@
     },
     "getable": true,
     "setable": false,
-    "icon": "/assets/icons/clock.svg"
+    "icon": "/assets/icons/clock.svg",
+    "$flow": {
+        "triggers": [
+            {
+                "id": "measure_stopTime_changed",
+                "title": {
+                    "en": "The Stop Time has changed"
+                },
+                "tokens": [
+                    {
+                        "name": "$id",
+                        "title": "$title",
+                        "type": "$type",
+                        "example": 0
+                    }
+                ]
+            }
+        ]
+    }
 }

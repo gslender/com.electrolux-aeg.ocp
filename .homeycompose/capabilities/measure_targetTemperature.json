@@ -14,5 +14,23 @@
     "chartType": "spline",
     "getable": true,
     "setable": false,
-    "uiComponent": "sensor"
+    "uiComponent": "sensor",
+    "$flow": {
+        "triggers": [
+            {
+                "id": "measure_targetTemperature_changed",
+                "title": {
+                    "en": "The Target Temperature value has changed"
+                },
+                "tokens": [
+                    {
+                        "name": "$id",
+                        "title": "$title",
+                        "type": "$type",
+                        "example": 20
+                    }
+                ]
+            }
+        ]
+    }
   }
