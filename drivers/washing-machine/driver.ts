@@ -1,14 +1,12 @@
 import Homey from 'homey';
 import ElectroluxAEGApp from '../../app'
 
-class OvenDriver extends Homey.Driver {
+class WashingMachineDriver extends Homey.Driver {
   app!: ElectroluxAEGApp
 
   async onInit (): Promise<void> {
     this.app = this.homey.app as ElectroluxAEGApp
 
-    this.registerFlowCardAction("enable_cavity_light");
-    this.registerFlowCardAction("disable_cavity_light");
     this.registerFlowCardAction("execute_command");
   }
   
@@ -27,19 +25,16 @@ class OvenDriver extends Homey.Driver {
     for (let i = 0; i < appliances.length; i++) {
       const appliance = appliances[i];     
       let deviceCapabilities = [];
-      if (appliance.properties?.reported?.applianceInfo?.applianceType === 'OV') {
+      if (appliance.properties?.reported?.applianceInfo?.applianceType === 'WM') {
         deviceCapabilities.push("execute_command"); 
-        deviceCapabilities.push("LIGHT_onoff"); 
         
-        deviceCapabilities.push("measure_doorState"); //doorState 
-        deviceCapabilities.push("measure_timeToEnd"); //runningTime  
-        deviceCapabilities.push("measure_stopTime"); //timeToEnd
-        deviceCapabilities.push("measure_startTime"); //startTime
-        deviceCapabilities.push("measure_targetTemperature"); //targetTemperatureC
-        deviceCapabilities.push("measure_temperature"); //displayTemperatureC
-        deviceCapabilities.push("measure_applianceState"); //applianceState
-        deviceCapabilities.push("measure_applianceMode"); //program
-        deviceCapabilities.push("measure_cyclePhase"); //processPhase
+        deviceCapabilities.push("measure_doorState");
+        deviceCapabilities.push("measure_timeToEnd");
+        deviceCapabilities.push("measure_stopTime");
+        deviceCapabilities.push("measure_startTime");
+        deviceCapabilities.push("measure_applianceState");
+        deviceCapabilities.push("measure_applianceMode");    
+        deviceCapabilities.push("measure_cyclePhase");              
       }
       
       const device = { 
@@ -55,4 +50,4 @@ class OvenDriver extends Homey.Driver {
 
 }
 
-module.exports = OvenDriver;
+module.exports = WashingMachineDriver;

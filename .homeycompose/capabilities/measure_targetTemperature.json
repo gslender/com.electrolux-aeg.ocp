@@ -15,6 +15,7 @@
     "getable": true,
     "setable": false,
     "uiComponent": "sensor",
+    "icon": "/assets/icons/temp-up.svg",
     "$flow": {
         "triggers": [
             {

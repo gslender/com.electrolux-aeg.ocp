@@ -3,14 +3,14 @@ import ElectroluxAEGApp from '../../app'
 import stringify from 'json-stringify-safe';
 
 
-class OvenDevice extends Homey.Device {
+class WashingMachineDevice extends Homey.Device {
   app!: ElectroluxAEGApp
 
   async onInit() {
-    this.log('OvenDevice has been initialized');
+    this.log('WashingMachineDevice has been initialized');
 
     // Add missing capabilities when upgrading
-    for (const cap of ["EXECUTE_command","LIGHT_onoff"]) {
+    for (const cap of ["EXECUTE_command"]) {
       if (!this.hasCapability(cap)) {
         this.log("Migrating device from old version: Adding capability " + cap);
         await this.addCapability(cap);
@@ -33,7 +33,6 @@ class OvenDevice extends Homey.Device {
     // Listen to multiple capabilities simultaneously
     this.registerMultipleCapabilityListener(
       [
-        "LIGHT_onoff",
         "EXECUTE_command"
       ],
       (valueObj, optsObj) => this.setDeviceOpts(valueObj),
@@ -51,7 +50,8 @@ class OvenDevice extends Homey.Device {
         this.log("EXECUTE_command: " + valueObj.EXECUTE_command);
         await this.app.sendDeviceCommand(deviceId, { executeCommand: valueObj.EXECUTE_command });
       }
-
+      
+      /*
       const commandMapping: { [x: string]: string } = {
         LIGHT_onoff: "cavityLight",
       };
@@ -72,6 +72,8 @@ class OvenDevice extends Homey.Device {
 
         }
       }
+      */
+
     } catch (error) {
       this.log(`Error in setDeviceOpts: ${error}`);
     }
@@ -86,16 +88,22 @@ class OvenDevice extends Homey.Device {
     const props = state.properties.reported;
 
     try {
-      await this.setCapabilityValue("LIGHT_onoff", props.cavityLight);
+      //washer or dryer
       await this.setCapabilityValue("measure_doorState", props.doorState);
-      await this.setCapabilityValue("measure_timeToEnd", this.convertSecondsToHrMin(props.runningTime));
-      await this.setCapabilityValue("measure_stopTime", this.convertSecondsToHrMin(props.timeToEnd)); // in seconds 
+      await this.setCapabilityValue("measure_timeToEnd", this.convertSecondsToHrMin(props.timeToEnd));
+      await this.setCapabilityValue("measure_stopTime", this.convertSecondsToHrMin(props.stopTime)); // in seconds 
       await this.setCapabilityValue("measure_startTime", this.convertSecondsToHrMin(props.startTime));
-      await this.setCapabilityValue("measure_targetTemperature", props.targetTemperatureC);
-      await this.setCapabilityValue("measure_temperature", props.displayTemperatureC);
       await this.setCapabilityValue("measure_applianceState", props.applianceState);
-      await this.setCapabilityValue("measure_applianceMode", props.program);
-      await this.setCapabilityValue("measure_cyclePhase", props.processPhase);
+      await this.setCapabilityValue("measure_applianceMode", props.applianceMode);
+      await this.setCapabilityValue("measure_cyclePhase", props.cyclePhase);
+
+      if (props.applianceInfo.applianceType === 'WM') {
+        //washer 
+      }
+      if (props.applianceInfo.applianceType === 'TD') {
+        //dryer 
+      }
+
 
       this.log("Device data updated");
     } catch (error) {
@@ -123,18 +131,9 @@ class OvenDevice extends Homey.Device {
     return `${formattedHours}:${formattedMinutes}`;
   }
 
-  flow_enable_cavity_light(args: {}, state: {}) {
-    return this.setDeviceOpts({ LIGHT_onoff: true });
-  }
-
-  flow_disable_cavity_light(args: {}, state: {}) {
-    return this.setDeviceOpts({ LIGHT_onoff: false });
-  }
-
   flow_execute_command(args: {what: string}, state: {}) {
     return this.setDeviceOpts({ EXECUTE_command: args.what });
   }
-  
 }
 
-module.exports = OvenDevice;
+module.exports = WashingMachineDevice;

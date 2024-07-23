@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.electrolux-aeg.ocp",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "platforms": [
@@ -32,6 +32,22 @@
   },
   "flow": {
     "actions": [
+      {
+        "title": {
+          "en": "Disable cavity light"
+        },
+        "titleFormatted": {
+          "en": "Disable cavity light"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=oven"
+          }
+        ],
+        "id": "disable_cavity_light"
+      },
       {
         "title": {
           "en": "Disable indicator light"
@@ -82,6 +98,22 @@
           }
         ],
         "id": "disable_lock"
+      },
+      {
+        "title": {
+          "en": "Enable cavity light"
+        },
+        "titleFormatted": {
+          "en": "Enable cavity light"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=oven"
+          }
+        ],
+        "id": "enable_cavity_light"
       },
       {
         "title": {
@@ -174,6 +206,39 @@
       },
       {
         "title": {
+          "en": "Execute Command"
+        },
+        "titleFormatted": {
+          "en": "Execute [[what]] Command"
+        },
+        "args": [
+          {
+            "type": "dropdown",
+            "name": "what",
+            "title": {
+              "en": "What command will be executed"
+            },
+            "values": [
+              {
+                "id": "START",
+                "title": {
+                  "en": "Start"
+                }
+              },
+              {
+                "id": "STOPRESET",
+                "title": {
+                  "en": "Stop / Reset"
+                }
+              }
+            ],
+            "filter": "driver_id=oven|laundry"
+          }
+        ],
+        "id": "execute_command"
+      },
+      {
+        "title": {
           "en": "Set fan speed"
         },
         "titleFormatted": {
@@ -251,37 +316,6 @@
     },
     {
       "name": {
-        "en": "Laundry"
-      },
-      "class": "other",
-      "capabilities": [],
-      "platforms": [
-        "local"
-      ],
-      "connectivity": [
-        "lan"
-      ],
-      "images": {
-        "small": "/drivers/laundry/assets/images/small.png",
-        "large": "/drivers/laundry/assets/images/large.png"
-      },
-      "pair": [
-        {
-          "id": "list_my_devices",
-          "template": "list_devices",
-          "navigation": {
-            "next": "add_my_devices"
-          }
-        },
-        {
-          "id": "add_my_devices",
-          "template": "add_devices"
-        }
-      ],
-      "id": "laundry"
-    },
-    {
-      "name": {
         "en": "Oven"
       },
       "class": "other",
@@ -313,6 +347,37 @@
     },
     {
       "name": {
+        "en": "Tumble Dryer"
+      },
+      "class": "other",
+      "capabilities": [],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "images": {
+        "small": "/drivers/tumble-dryer/assets/images/small.png",
+        "large": "/drivers/tumble-dryer/assets/images/large.png"
+      },
+      "pair": [
+        {
+          "id": "list_my_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_my_devices"
+          }
+        },
+        {
+          "id": "add_my_devices",
+          "template": "add_devices"
+        }
+      ],
+      "id": "tumble-dryer"
+    },
+    {
+      "name": {
         "en": "Unknown (log only)"
       },
       "class": "other",
@@ -341,9 +406,63 @@
         }
       ],
       "id": "unknown"
+    },
+    {
+      "name": {
+        "en": "Laundry"
+      },
+      "class": "other",
+      "capabilities": [],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "images": {
+        "small": "/drivers/washing-machine/assets/images/small.png",
+        "large": "/drivers/washing-machine/assets/images/large.png"
+      },
+      "pair": [
+        {
+          "id": "list_my_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_my_devices"
+          }
+        },
+        {
+          "id": "add_my_devices",
+          "template": "add_devices"
+        }
+      ],
+      "id": "washing-machine"
     }
   ],
   "capabilities": {
+    "EXECUTE_command": {
+      "type": "enum",
+      "uiComponent": "picker",
+      "title": {
+        "en": "Execute Command"
+      },
+      "values": [
+        {
+          "id": "START",
+          "title": {
+            "en": "Start"
+          }
+        },
+        {
+          "id": "STOPRESET",
+          "title": {
+            "en": "Stop / Reset"
+          }
+        }
+      ],
+      "getable": false,
+      "setable": true
+    },
     "FAN_speed": {
       "type": "number",
       "uiComponent": "slider",
@@ -367,7 +486,7 @@
     "LIGHT_onoff": {
       "type": "boolean",
       "title": {
-        "en": "Indicator light"
+        "en": "Light"
       },
       "getable": true,
       "setable": true
@@ -517,7 +636,8 @@
       "chartType": "spline",
       "getable": true,
       "setable": false,
-      "uiComponent": "sensor"
+      "uiComponent": "sensor",
+      "icon": "/assets/icons/temp-up.svg"
     },
     "measure_timeToEnd": {
       "type": "string",

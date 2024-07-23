@@ -1,0 +1,15 @@
+{
+    "title": {
+        "en": "Disable cavity light"
+    },
+    "titleFormatted": {
+        "en": "Disable cavity light"
+    },
+    "args": [
+        {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=oven"
+        }
+    ]
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-miterlimit:10;">
+    <g id="Layer_2_1_">
+        <g id="Layer_1-2">
+            <g transform="matrix(0.915323,0,0,1,4.60765,0)">
+                <path d="M50,74.7C58.8,74.7 66.3,68.2 67.6,59.5C67.6,59.5 61.8,63.9 51.6,59.4C41.4,54.9 32.7,61.2 32.7,61.2C34.7,69.1 41.8,74.7 50,74.7Z" style="fill-rule:nonzero;stroke:black;stroke-width:2px;"/>
+            </g>
+            <path d="M65.5,14.9L63.1,14.9" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:2px;"/>
+            <path d="M70.4,14.9L68.1,14.9" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:2px;"/>
+            <path d="M65.5,18.9L63.1,18.9" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:2px;"/>
+            <path d="M70.4,18.9L68.1,18.9" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:2px;"/>
+            <path d="M75.4,14.9L73,14.9" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:2px;"/>
+            <path d="M75.4,18.9L73,18.9" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:2px;"/>
+            <path d="M78,90L22,90C19.2,90 16.9,87.7 16.9,84.9L16.9,15.1C16.9,12.3 19.2,10 22,10L78,10C80.8,10 83.1,12.3 83.1,15.1L83.1,85C83.1,87.8 80.8,90 78,90Z" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:2px;"/>
+            <path d="M83.1,23.8L16.9,23.8" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:2px;"/>
+            <circle cx="50" cy="56.9" r="24.4" style="fill:none;stroke:black;stroke-width:2px;"/>
+            <circle cx="50" cy="56.9" r="17.8" style="fill:none;stroke:black;stroke-width:2px;"/>
+            <path d="M63.1,56.9C63.1,49.7 57.2,43.8 50,43.8" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:2px;"/>
+            <path d="M25.6,14.8L25.6,17.5C25.6,18.3 26.3,19 27.1,19L41.1,19C41.9,19 42.6,18.3 42.6,17.5L42.6,14.8" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:2px;"/>
+        </g>
+    </g>
+</svg>

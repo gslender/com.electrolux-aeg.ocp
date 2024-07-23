@@ -13,5 +13,8 @@
   },
   "1.0.4": {
     "en": "Added oven support"
+  },
+  "1.0.5": {
+    "en": "Added command and light"
   }
 }
