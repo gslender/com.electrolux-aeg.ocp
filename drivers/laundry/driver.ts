@@ -1,7 +1,7 @@
 import Homey from 'homey';
 import ElectroluxAEGApp from '../../app'
 
-class TumbleDryerDriver extends Homey.Driver {
+class LaundryDriver extends Homey.Driver {
   app!: ElectroluxAEGApp
 
   async onInit (): Promise<void> {
@@ -25,9 +25,10 @@ class TumbleDryerDriver extends Homey.Driver {
     for (let i = 0; i < appliances.length; i++) {
       const appliance = appliances[i];     
       let deviceCapabilities = [];
-      if (appliance.properties?.reported?.applianceInfo?.applianceType === 'TD') {
+      if (appliance.properties?.reported?.applianceInfo?.applianceType === 'WM' ||
+        appliance.properties?.reported?.applianceInfo?.applianceType === 'TD') {
+        //washer or dryer
         deviceCapabilities.push("execute_command"); 
-        
         deviceCapabilities.push("measure_doorState");
         deviceCapabilities.push("measure_timeToEnd");
         deviceCapabilities.push("measure_stopTime");
@@ -50,4 +51,4 @@ class TumbleDryerDriver extends Homey.Driver {
 
 }
 
-module.exports = TumbleDryerDriver;
+module.exports = LaundryDriver;

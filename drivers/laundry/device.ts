@@ -3,11 +3,11 @@ import ElectroluxAEGApp from '../../app'
 import stringify from 'json-stringify-safe';
 
 
-class TumbleDryerDevice extends Homey.Device {
+class LaundryDevice extends Homey.Device {
   app!: ElectroluxAEGApp
 
   async onInit() {
-    this.log('TumbleDryerDevice has been initialized');
+    this.log('LaundryDevice has been initialized');
 
     // Add missing capabilities when upgrading
     for (const cap of ["EXECUTE_command"]) {
@@ -127,4 +127,4 @@ class TumbleDryerDevice extends Homey.Device {
   }
 }
 
-module.exports = TumbleDryerDevice;
+module.exports = LaundryDevice;

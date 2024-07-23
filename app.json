@@ -492,6 +492,37 @@
     },
     {
       "name": {
+        "en": "Laundry"
+      },
+      "class": "other",
+      "capabilities": [],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "images": {
+        "small": "/drivers/laundry/assets/images/small.png",
+        "large": "/drivers/laundry/assets/images/large.png"
+      },
+      "pair": [
+        {
+          "id": "list_my_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_my_devices"
+          }
+        },
+        {
+          "id": "add_my_devices",
+          "template": "add_devices"
+        }
+      ],
+      "id": "laundry"
+    },
+    {
+      "name": {
         "en": "Oven"
       },
       "class": "other",
@@ -523,37 +554,6 @@
     },
     {
       "name": {
-        "en": "Tumble Dryer"
-      },
-      "class": "other",
-      "capabilities": [],
-      "platforms": [
-        "local"
-      ],
-      "connectivity": [
-        "lan"
-      ],
-      "images": {
-        "small": "/drivers/tumble-dryer/assets/images/small.png",
-        "large": "/drivers/tumble-dryer/assets/images/large.png"
-      },
-      "pair": [
-        {
-          "id": "list_my_devices",
-          "template": "list_devices",
-          "navigation": {
-            "next": "add_my_devices"
-          }
-        },
-        {
-          "id": "add_my_devices",
-          "template": "add_devices"
-        }
-      ],
-      "id": "tumble-dryer"
-    },
-    {
-      "name": {
         "en": "Unknown (log only)"
       },
       "class": "other",
@@ -582,37 +582,6 @@
         }
       ],
       "id": "unknown"
-    },
-    {
-      "name": {
-        "en": "Laundry"
-      },
-      "class": "other",
-      "capabilities": [],
-      "platforms": [
-        "local"
-      ],
-      "connectivity": [
-        "lan"
-      ],
-      "images": {
-        "small": "/drivers/washing-machine/assets/images/small.png",
-        "large": "/drivers/washing-machine/assets/images/large.png"
-      },
-      "pair": [
-        {
-          "id": "list_my_devices",
-          "template": "list_devices",
-          "navigation": {
-            "next": "add_my_devices"
-          }
-        },
-        {
-          "id": "add_my_devices",
-          "template": "add_devices"
-        }
-      ],
-      "id": "washing-machine"
     }
   ],
   "capabilities": {
