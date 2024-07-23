@@ -17,25 +17,5 @@
     "getable": true,
     "setable": false,
     "uiComponent": "sensor",
-    "icon": "/assets/icons/voc.svg",
-    "$flow": {
-        "triggers": [
-            {
-                "id": "measure_voc_changed",
-                "title": {
-                    "en": "The VOC value has changed",
-                    "nl": "De VOC waarde is veranderd",
-                    "de": "Der VOC-Wert hat sich geändert"
-                },
-                "tokens": [
-                    {
-                        "name": "$id",
-                        "title": "$title",
-                        "type": "$type",
-                        "example": 2
-                    }
-                ]
-            }
-        ]
-    }
+    "icon": "/assets/icons/voc.svg"
 }

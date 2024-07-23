@@ -1,0 +1,16 @@
+{
+    "id": "measure_voc_changed",
+    "title": {
+        "en": "The VOC value has changed",
+        "nl": "De VOC waarde is veranderd",
+        "de": "Der VOC-Wert hat sich geändert"
+    },
+    "tokens": [
+        {
+            "name": "$id",
+            "title": "$title",
+            "type": "number",
+            "example": 2
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+{
+    "id": "measure_targetTemperature_changed",
+    "title": {
+        "en": "The Target Temperature value has changed"
+    },
+    "tokens": [
+        {
+            "name": "$id",
+            "title": "$title",
+            "type": "number",
+            "example": 20
+        }
+    ]
+}

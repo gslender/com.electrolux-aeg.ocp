@@ -5,23 +5,5 @@
     },
     "getable": true,
     "setable": false,
-    "icon": "/assets/icons/rotate.svg",
-    "$flow": {
-        "triggers": [
-            {
-                "id": "measure_cyclePhase_changed",
-                "title": {
-                    "en": "The Cycle Phase has changed"
-                },
-                "tokens": [
-                    {
-                        "name": "$id",
-                        "title": "$title",
-                        "type": "$type",
-                        "example": "OFF"
-                    }
-                ]
-            }
-        ]
-    }
+    "icon": "/assets/icons/rotate.svg"
 }

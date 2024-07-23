@@ -15,23 +15,5 @@
     "getable": true,
     "setable": false,
     "uiComponent": "sensor",
-    "icon": "/assets/icons/temp-up.svg",
-    "$flow": {
-        "triggers": [
-            {
-                "id": "measure_targetTemperature_changed",
-                "title": {
-                    "en": "The Target Temperature value has changed"
-                },
-                "tokens": [
-                    {
-                        "name": "$id",
-                        "title": "$title",
-                        "type": "$type",
-                        "example": 20
-                    }
-                ]
-            }
-        ]
-    }
+    "icon": "/assets/icons/temp-up.svg"
   }

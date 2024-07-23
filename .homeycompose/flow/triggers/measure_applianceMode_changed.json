@@ -1,0 +1,14 @@
+{
+    "id": "measure_applianceMode_changed",
+    "title": {
+        "en": "The Appliance Mode has changed"
+    },
+    "tokens": [
+        {
+            "name": "$id",
+            "title": "$title",
+            "type": "string",
+            "example": "RUNNING"
+        }
+    ]
+}

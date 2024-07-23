@@ -19,25 +19,5 @@
     "getable": true,
     "setable": false,
     "uiComponent": "sensor",
-    "icon": "/assets/icons/pm1.svg",
-    "$flow": {
-        "triggers": [
-            {
-                "id": "measure_pm1_changed",
-                "title": {
-                    "en": "The PM1 value has changed",
-                    "nl": "De PM1 waarde is veranderd",
-                    "de": "Der PM1-Wert hat sich geändert"
-                },
-                "tokens": [
-                    {
-                        "name": "$id",
-                        "title": "$title",
-                        "type": "$type",
-                        "example": 2
-                    }
-                ]
-            }
-        ]
-    }
+    "icon": "/assets/icons/pm1.svg"
 }

@@ -1,0 +1,14 @@
+{
+    "id": "measure_timeToEnd_changed",
+    "title": {
+        "en": "The Time To End has changed"
+    },
+    "tokens": [
+        {
+            "name": "$id",
+            "title": "$title",
+            "type": "number",
+            "example": 0
+        }
+    ]
+}

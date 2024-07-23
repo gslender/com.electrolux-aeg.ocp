@@ -17,23 +17,5 @@
   "getable": true,
   "setable": false,
   "uiComponent": "sensor",
-  "icon": "/assets/icons/filter.svg",
-  "$flow": {
-    "triggers": [
-      {
-        "id": "measure_filter_changed",
-        "title": {
-          "en": "The filter life changed"
-        },
-        "tokens": [
-          {
-            "name": "$id",
-            "title": "$title",
-            "type": "$type",
-            "example": 99
-          }
-        ]
-      }
-    ]
-  }
+  "icon": "/assets/icons/filter.svg"
 }

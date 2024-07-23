@@ -1,0 +1,16 @@
+{
+    "id": "measure_pm10_changed",
+    "title": {
+        "en": "The PM10 value has changed",
+        "nl": "De PM10 waarde is veranderd",
+        "de": "Der PM10-Wert hat sich geändert"
+    },
+    "tokens": [
+        {
+            "name": "$id",
+            "title": "$title",
+            "type": "number",
+            "example": 2
+        }
+    ]
+}

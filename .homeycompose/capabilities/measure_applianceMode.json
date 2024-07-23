@@ -5,23 +5,5 @@
     },
     "getable": true,
     "setable": false,
-    "icon": "/assets/icons/gear.svg",
-    "$flow": {
-        "triggers": [
-            {
-                "id": "measure_applianceMode_changed",
-                "title": {
-                    "en": "The Appliance Mode has changed"
-                },
-                "tokens": [
-                    {
-                        "name": "$id",
-                        "title": "$title",
-                        "type": "$type",
-                        "example": "RUNNING"
-                    }
-                ]
-            }
-        ]
-    }
+    "icon": "/assets/icons/gear.svg"
 }

@@ -1,0 +1,14 @@
+{
+    "id": "measure_doorState_changed",
+    "title": {
+        "en": "The Door State has changed"
+    },
+    "tokens": [
+        {
+            "name": "$id",
+            "title": "$title",
+            "type": "string",
+            "example": "CLOSED"
+        }
+    ]
+}
