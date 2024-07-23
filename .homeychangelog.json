@@ -16,5 +16,11 @@
   },
   "1.0.5": {
     "en": "Added command and light"
+  },
+  "1.0.6": {
+    "en": "Fixed missing triggers"
+  },
+  "1.1.0": {
+    "en": "Added conditions / changed action registrations"
   }
 }

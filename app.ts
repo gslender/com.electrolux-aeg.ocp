@@ -16,6 +16,21 @@ export default class ElectroluxAEGApp extends Homey.App {
     // this.homey.settings.unset('ocp.username');
     // this.homey.settings.unset('ocp.password');
 
+    this.registerFlowCardAction("execute_command");
+    this.registerFlowCardAction("enable_cavity_light");
+    this.registerFlowCardAction("disable_cavity_light");
+    this.registerFlowCardAction("set_fan_speed");
+    this.registerFlowCardAction("enable_smart_mode");
+    this.registerFlowCardAction("enable_manual_mode");
+    this.registerFlowCardAction("enable_ionizer");
+    this.registerFlowCardAction("disable_ionizer");
+    this.registerFlowCardAction("enable_lock");
+    this.registerFlowCardAction("disable_lock");
+    this.registerFlowCardAction("enable_indicator_light");
+    this.registerFlowCardAction("disable_indicator_light");
+
+    this.registerFlowCardCondtion("applianceState_is");
+    this.registerFlowCardCondtion("cyclePhase_is");
 
     this.ocpApiFactory.init(
       () => { return this.homey.settings.get('ocp.username'); },
@@ -64,6 +79,21 @@ export default class ElectroluxAEGApp extends Homey.App {
   }
 
 
+  registerFlowCardAction(cardName: string) {
+    const card = this.homey.flow.getActionCard(cardName);
+    card.registerRunListener((args, state) => {
+      return args.device["flow_" + cardName](args, state);
+    });
+  }
+
+  registerFlowCardCondtion(cardName: string) {
+    const card = this.homey.flow.getConditionCard(cardName);
+    card.registerRunListener(async (args, state) => {
+      return args.device["flow_" + cardName](args, state);
+    });
+  }
+
+
   async startPolling() {
     let pollingInterval = this.homey.settings.get('ocp.polling');
     if (isNaN(pollingInterval) || pollingInterval === null || pollingInterval === undefined) {
@@ -101,7 +131,7 @@ export default class ElectroluxAEGApp extends Homey.App {
   }
 
   async attemptAccessTokenCheck(): Promise<boolean> {
-    
+
     try {
       this.log(`attemptAccessTokenCheck() isAccessTokenExpired:${this.isAccessTokenExpired()}`);
       const http = await this.ocpApiFactory.createHttp();

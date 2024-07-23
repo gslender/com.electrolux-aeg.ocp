@@ -1,6 +1,6 @@
 {
   "id": "com.electrolux-aeg.ocp",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "platforms": [

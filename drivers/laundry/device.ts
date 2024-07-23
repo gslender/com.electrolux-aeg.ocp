@@ -125,6 +125,14 @@ class LaundryDevice extends Homey.Device {
   flow_execute_command(args: {what: string}, state: {}) {
     return this.setDeviceOpts({ EXECUTE_command: args.what });
   }
+
+  flow_cyclePhase_is(args: {what: string}, state: {}) { 
+    return args.what === this.getCapabilityValue("measure_cyclePhase");
+  }
+
+  flow_applianceState_is(args: {what: string}, state: {}) { 
+    return args.what === this.getCapabilityValue("measure_applianceState");
+  }
 }
 
 module.exports = LaundryDevice;

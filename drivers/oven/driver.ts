@@ -6,10 +6,6 @@ class OvenDriver extends Homey.Driver {
 
   async onInit (): Promise<void> {
     this.app = this.homey.app as ElectroluxAEGApp
-
-    this.registerFlowCardAction("enable_cavity_light");
-    this.registerFlowCardAction("disable_cavity_light");
-    this.registerFlowCardAction("execute_command");
   }
   
   registerFlowCardAction(cardName: string) {

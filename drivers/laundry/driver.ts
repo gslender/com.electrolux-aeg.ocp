@@ -6,15 +6,6 @@ class LaundryDriver extends Homey.Driver {
 
   async onInit (): Promise<void> {
     this.app = this.homey.app as ElectroluxAEGApp
-
-    this.registerFlowCardAction("execute_command");
-  }
-  
-  registerFlowCardAction(cardName: string) {
-    const card = this.homey.flow.getActionCard(cardName);
-    card.registerRunListener((args, state) => {
-      return args.device["flow_" + cardName](args, state);
-    });
   }
 
   async onPairListDevices() {

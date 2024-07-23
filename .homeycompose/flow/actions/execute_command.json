@@ -9,12 +9,12 @@
         {
             "type": "dropdown",
             "name": "what",
+            "filter": "driver_id=oven|laundry",
             "title": { "en": "What command will be executed" },
             "values": [
               { "id": "START", "title": { "en": "Start" } },
               { "id": "STOPRESET", "title": { "en": "Stop / Reset" } }
-            ],
-            "filter": "driver_id=oven|laundry"
+            ]
         }
     ]
 }

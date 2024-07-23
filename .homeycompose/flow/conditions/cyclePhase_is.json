@@ -1,0 +1,23 @@
+{
+    "title": {
+      "en": "Cycle Phase !{{is|isn't}} ..."
+    },
+    "titleFormatted": {
+      "en": "Cycle Phase !{{is|isn't}} [[value]]"
+    },
+    "hint": {
+      "en": "Checks if Cycle Phase will/will not be the given value."
+    },
+    "args": [
+      {
+        "name": "value",
+        "filter": "driver_id=laundry",
+        "type": "dropdown",
+        "values": [
+          { "id": "ANTICREASE", "label": { "en": "ANTICREASE" } },
+          { "id": "COOL", "label": { "en": "COOL" } },
+          { "id": "DRY", "label": { "en": "DRY" } }
+        ]
+      }
+    ]
+  }

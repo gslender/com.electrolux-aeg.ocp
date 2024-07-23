@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.electrolux-aeg.ocp",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "platforms": [
@@ -207,6 +207,116 @@
         ]
       }
     ],
+    "conditions": [
+      {
+        "title": {
+          "en": "Appliance State !{{is|isn't}} ..."
+        },
+        "titleFormatted": {
+          "en": "Appliance State !{{is|isn't}} [[value]]"
+        },
+        "hint": {
+          "en": "Checks if Appliance State will/will not be the given value."
+        },
+        "args": [
+          {
+            "name": "value",
+            "filter": "driver_id=laundry",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "ALARM",
+                "label": {
+                  "en": "ALARM"
+                }
+              },
+              {
+                "id": "DELAYED_START",
+                "label": {
+                  "en": "DELAYED START"
+                }
+              },
+              {
+                "id": "END_OF_CYCLE",
+                "label": {
+                  "en": "END OF CYCLE"
+                }
+              },
+              {
+                "id": "IDLE",
+                "label": {
+                  "en": "IDLE"
+                }
+              },
+              {
+                "id": "OFF",
+                "label": {
+                  "en": "OFF"
+                }
+              },
+              {
+                "id": "PAUSED",
+                "label": {
+                  "en": "PAUSED"
+                }
+              },
+              {
+                "id": "READY_TO_START",
+                "label": {
+                  "en": "READY TO START"
+                }
+              },
+              {
+                "id": "RUNNING",
+                "label": {
+                  "en": "RUNNING"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "applianceState_is"
+      },
+      {
+        "title": {
+          "en": "Cycle Phase !{{is|isn't}} ..."
+        },
+        "titleFormatted": {
+          "en": "Cycle Phase !{{is|isn't}} [[value]]"
+        },
+        "hint": {
+          "en": "Checks if Cycle Phase will/will not be the given value."
+        },
+        "args": [
+          {
+            "name": "value",
+            "filter": "driver_id=laundry",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "ANTICREASE",
+                "label": {
+                  "en": "ANTICREASE"
+                }
+              },
+              {
+                "id": "COOL",
+                "label": {
+                  "en": "COOL"
+                }
+              },
+              {
+                "id": "DRY",
+                "label": {
+                  "en": "DRY"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "cyclePhase_is"
+      }
+    ],
     "actions": [
       {
         "title": {
@@ -391,6 +501,7 @@
           {
             "type": "dropdown",
             "name": "what",
+            "filter": "driver_id=oven|laundry",
             "title": {
               "en": "What command will be executed"
             },
@@ -407,8 +518,7 @@
                   "en": "Stop / Reset"
                 }
               }
-            ],
-            "filter": "driver_id=oven|laundry"
+            ]
           }
         ],
         "id": "execute_command"

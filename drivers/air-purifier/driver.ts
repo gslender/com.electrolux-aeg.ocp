@@ -6,16 +6,6 @@ class AirPurifierDriver extends Homey.Driver {
 
   async onInit (): Promise<void> {
     this.app = this.homey.app as ElectroluxAEGApp
-
-    this.registerFlowCardAction("set_fan_speed");
-    this.registerFlowCardAction("enable_smart_mode");
-    this.registerFlowCardAction("enable_manual_mode");
-    this.registerFlowCardAction("enable_ionizer");
-    this.registerFlowCardAction("disable_ionizer");
-    this.registerFlowCardAction("enable_lock");
-    this.registerFlowCardAction("disable_lock");
-    this.registerFlowCardAction("enable_indicator_light");
-    this.registerFlowCardAction("disable_indicator_light");
   }
   
   registerFlowCardAction(cardName: string) {
