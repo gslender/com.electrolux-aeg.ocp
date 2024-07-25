@@ -3,10 +3,19 @@
     "title": {
         "en": "The Start Time has changed"
     },
+    "args": [
+        {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=oven|laundry"
+        }
+    ],
     "tokens": [
         {
-            "name": "$id",
-            "title": "$title",
+            "name": "measure_startTime",
+            "title": {
+                "en": "Start Time"
+            },
             "type": "number",
             "example": 0
         }

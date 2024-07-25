@@ -3,10 +3,19 @@
     "title": {
         "en": "The Time To End has changed"
     },
+    "args": [
+        {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=oven|laundry"
+        }
+    ],
     "tokens": [
         {
-            "name": "$id",
-            "title": "$title",
+            "name": "measure_timeToEnd",
+            "title": {
+                "en": "Time To End"
+            },
             "type": "number",
             "example": 0
         }

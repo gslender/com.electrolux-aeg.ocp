@@ -3,10 +3,17 @@
     "title": {
         "en": "The Door State has changed"
     },
+    "args": [
+        {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=air-purifier"
+        }
+    ],
     "tokens": [
         {
-            "name": "$id",
-            "title": "$title",
+            "name": "measure_doorState",
+            "title": "Door State",
             "type": "string",
             "example": "CLOSED"
         }

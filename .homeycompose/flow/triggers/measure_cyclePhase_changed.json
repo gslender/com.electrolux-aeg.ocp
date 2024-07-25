@@ -3,10 +3,17 @@
     "title": {
         "en": "The Cycle Phase has changed"
     },
+    "args": [
+        {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=oven|laundry"
+        }
+    ],
     "tokens": [
         {
-            "name": "$id",
-            "title": "$title",
+            "name": "measure_cyclePhase",
+            "title": { "en": "Cycle Phase"},
             "type": "string",
             "example": "OFF"
         }

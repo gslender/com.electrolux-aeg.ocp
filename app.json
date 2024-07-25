@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.electrolux-aeg.ocp",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "platforms": [
@@ -37,10 +37,19 @@
         "title": {
           "en": "The Appliance Mode has changed"
         },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=oven|laundry"
+          }
+        ],
         "tokens": [
           {
-            "name": "$id",
-            "title": "$title",
+            "name": "measure_applianceMode",
+            "title": {
+              "en": "Appliance Mode"
+            },
             "type": "string",
             "example": "RUNNING"
           }
@@ -51,10 +60,19 @@
         "title": {
           "en": "The Appliance State has changed"
         },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=oven|laundry"
+          }
+        ],
         "tokens": [
           {
-            "name": "$id",
-            "title": "$title",
+            "name": "measure_applianceState",
+            "title": {
+              "en": "Appliance State"
+            },
             "type": "string",
             "example": "RUNNING"
           }
@@ -65,10 +83,19 @@
         "title": {
           "en": "The Cycle Phase has changed"
         },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=oven|laundry"
+          }
+        ],
         "tokens": [
           {
-            "name": "$id",
-            "title": "$title",
+            "name": "measure_cyclePhase",
+            "title": {
+              "en": "Cycle Phase"
+            },
             "type": "string",
             "example": "OFF"
           }
@@ -79,10 +106,17 @@
         "title": {
           "en": "The Door State has changed"
         },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=air-purifier"
+          }
+        ],
         "tokens": [
           {
-            "name": "$id",
-            "title": "$title",
+            "name": "measure_doorState",
+            "title": "Door State",
             "type": "string",
             "example": "CLOSED"
           }
@@ -93,10 +127,19 @@
         "title": {
           "en": "The filter life changed"
         },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=air-purifier"
+          }
+        ],
         "tokens": [
           {
-            "name": "$id",
-            "title": "$title",
+            "name": "measure_filter",
+            "title": {
+              "en": "Filter life"
+            },
             "type": "number",
             "example": 99
           }
@@ -109,10 +152,19 @@
           "nl": "De PM1 waarde is veranderd",
           "de": "Der PM1-Wert hat sich geändert"
         },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=air-purifier"
+          }
+        ],
         "tokens": [
           {
-            "name": "$id",
-            "title": "$title",
+            "name": "measure_pm1",
+            "title": {
+              "en": "PM1"
+            },
             "type": "number",
             "example": 2
           }
@@ -125,10 +177,17 @@
           "nl": "De PM10 waarde is veranderd",
           "de": "Der PM10-Wert hat sich geändert"
         },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=air-purifier"
+          }
+        ],
         "tokens": [
           {
-            "name": "$id",
-            "title": "$title",
+            "name": "measure_pm10",
+            "title": "PM10",
             "type": "number",
             "example": 2
           }
@@ -139,10 +198,19 @@
         "title": {
           "en": "The Start Time has changed"
         },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=oven|laundry"
+          }
+        ],
         "tokens": [
           {
-            "name": "$id",
-            "title": "$title",
+            "name": "measure_startTime",
+            "title": {
+              "en": "Start Time"
+            },
             "type": "number",
             "example": 0
           }
@@ -153,10 +221,19 @@
         "title": {
           "en": "The Stop Time has changed"
         },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=oven|laundry"
+          }
+        ],
         "tokens": [
           {
-            "name": "$id",
-            "title": "$title",
+            "name": "measure_stopTime",
+            "title": {
+              "en": "Stop Time"
+            },
             "type": "number",
             "example": 0
           }
@@ -167,10 +244,19 @@
         "title": {
           "en": "The Target Temperature value has changed"
         },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=oven|laundry"
+          }
+        ],
         "tokens": [
           {
-            "name": "$id",
-            "title": "$title",
+            "name": "measure_targetTemperature",
+            "title": {
+              "en": "Target Temperature"
+            },
             "type": "number",
             "example": 20
           }
@@ -181,10 +267,19 @@
         "title": {
           "en": "The Time To End has changed"
         },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=oven|laundry"
+          }
+        ],
         "tokens": [
           {
-            "name": "$id",
-            "title": "$title",
+            "name": "measure_timeToEnd",
+            "title": {
+              "en": "Time To End"
+            },
             "type": "number",
             "example": 0
           }
@@ -197,10 +292,17 @@
           "nl": "De VOC waarde is veranderd",
           "de": "Der VOC-Wert hat sich geändert"
         },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=air-purifier"
+          }
+        ],
         "tokens": [
           {
-            "name": "$id",
-            "title": "$title",
+            "name": "measure_voc",
+            "title": "VOC",
             "type": "number",
             "example": 2
           }
@@ -219,6 +321,11 @@
           "en": "Checks if Appliance State will/will not be the given value."
         },
         "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=oven|laundry"
+          },
           {
             "name": "value",
             "filter": "driver_id=laundry",
@@ -288,6 +395,11 @@
           "en": "Checks if Cycle Phase will/will not be the given value."
         },
         "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=oven|laundry"
+          },
           {
             "name": "value",
             "filter": "driver_id=laundry",
@@ -499,9 +611,13 @@
         },
         "args": [
           {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=oven|laundry"
+          },
+          {
             "type": "dropdown",
             "name": "what",
-            "filter": "driver_id=oven|laundry",
             "title": {
               "en": "What command will be executed"
             },

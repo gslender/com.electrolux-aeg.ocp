@@ -5,10 +5,17 @@
         "nl": "De VOC waarde is veranderd",
         "de": "Der VOC-Wert hat sich geändert"
     },
+    "args": [
+        {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=air-purifier"
+        }
+    ],
     "tokens": [
         {
-            "name": "$id",
-            "title": "$title",
+            "name": "measure_voc",
+            "title": "VOC",
             "type": "number",
             "example": 2
         }

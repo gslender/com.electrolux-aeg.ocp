@@ -7,9 +7,13 @@
     },
     "args": [
         {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=oven|laundry"
+        },
+        {
             "type": "dropdown",
             "name": "what",
-            "filter": "driver_id=oven|laundry",
             "title": { "en": "What command will be executed" },
             "values": [
               { "id": "START", "title": { "en": "Start" } },

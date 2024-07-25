@@ -50,7 +50,7 @@ class LaundryDevice extends Homey.Device {
         this.log("EXECUTE_command: " + valueObj.EXECUTE_command);
         await this.app.sendDeviceCommand(deviceId, { executeCommand: valueObj.EXECUTE_command });
       }
-      
+
       /*
       const commandMapping: { [x: string]: string } = {
         LIGHT_onoff: "cavityLight",
@@ -95,12 +95,9 @@ class LaundryDevice extends Homey.Device {
       await this.setCapabilityValue("measure_applianceState", props.applianceState);
       await this.setCapabilityValue("measure_applianceMode", props.applianceMode);
       await this.setCapabilityValue("measure_cyclePhase", props.cyclePhase);
-
-      this.log("Device data updated");
     } catch (error) {
       this.log("Error updating device state: ", error);
     }
-
   }
 
   convertSecondsToHrMin(seconds: number) {
@@ -122,16 +119,20 @@ class LaundryDevice extends Homey.Device {
     return `${formattedHours}:${formattedMinutes}`;
   }
 
-  flow_execute_command(args: {what: string}, state: {}) {
+
+  flow_execute_command(args: { what: string }, state: {}) {
+    this.log(`flow_cyclePhase_is: args=${stringify( args.what)} state=${stringify(state)}`);
     return this.setDeviceOpts({ EXECUTE_command: args.what });
   }
 
-  flow_cyclePhase_is(args: {what: string}, state: {}) { 
-    return args.what === this.getCapabilityValue("measure_cyclePhase");
+  flow_cyclePhase_is(args: { value: string }, state: {}) {
+    this.log(`flow_cyclePhase_is: args=${stringify(args.value)} state=${stringify(state)}`);
+    return args.value === this.getCapabilityValue("measure_cyclePhase");
   }
 
-  flow_applianceState_is(args: {what: string}, state: {}) { 
-    return args.what === this.getCapabilityValue("measure_applianceState");
+  flow_applianceState_is(args: { value: string }, state: {}) {
+    this.log(`flow_applianceState_is: args=${stringify(args.value)} state=${stringify(state)}`);
+    return args.value === this.getCapabilityValue("measure_applianceState");
   }
 }
 

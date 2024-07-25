@@ -5,10 +5,19 @@
         "nl": "De PM1 waarde is veranderd",
         "de": "Der PM1-Wert hat sich geändert"
     },
+    "args": [
+        {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=air-purifier"
+        }
+    ],
     "tokens": [
         {
-            "name": "$id",
-            "title": "$title",
+            "name": "measure_pm1",
+            "title": {
+                "en": "PM1"
+            },
             "type": "number",
             "example": 2
         }

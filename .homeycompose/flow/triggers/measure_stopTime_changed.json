@@ -3,10 +3,19 @@
     "title": {
         "en": "The Stop Time has changed"
     },
+    "args": [
+        {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=oven|laundry"
+        }
+    ],
     "tokens": [
         {
-            "name": "$id",
-            "title": "$title",
+            "name": "measure_stopTime",
+            "title": {
+                "en": "Stop Time"
+            },
             "type": "number",
             "example": 0
         }

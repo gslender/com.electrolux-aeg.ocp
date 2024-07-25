@@ -3,10 +3,17 @@
     "title": {
         "en": "The Appliance Mode has changed"
     },
+    "args": [
+        {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=oven|laundry"
+        }
+    ],
     "tokens": [
         {
-            "name": "$id",
-            "title": "$title",
+            "name": "measure_applianceMode",
+            "title": { "en": "Appliance Mode"},
             "type": "string",
             "example": "RUNNING"
         }

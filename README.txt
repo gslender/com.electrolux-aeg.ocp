@@ -14,3 +14,6 @@ This Homey App will require that you have your Electrolux or AEG appliances conf
 3. Add a Device using the App and choose the relevant type Laundy / Air Purifier etc.
 4. If your appliance / device isn't available, please visit https://github.com/gslender/com.gslender.electrolux-aeg.ocp/issues/new/choose to request support for your device.
 
+Thanks!
+
+I wish to acknowledge the original code by https://github.com/rickardp of which elements were used to build out the Air Purifier support.

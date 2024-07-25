@@ -3,10 +3,19 @@
     "title": {
         "en": "The Target Temperature value has changed"
     },
+    "args": [
+        {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=oven|laundry"
+        }
+    ],
     "tokens": [
         {
-            "name": "$id",
-            "title": "$title",
+            "name": "measure_targetTemperature",
+            "title": {
+                "en": "Target Temperature"
+            },
             "type": "number",
             "example": 20
         }

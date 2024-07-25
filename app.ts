@@ -89,6 +89,7 @@ export default class ElectroluxAEGApp extends Homey.App {
   registerFlowCardCondtion(cardName: string) {
     const card = this.homey.flow.getConditionCard(cardName);
     card.registerRunListener(async (args, state) => {
+      this.log(`${"flow_" + cardName} args=${args} state=${state}`);
       return args.device["flow_" + cardName](args, state);
     });
   }

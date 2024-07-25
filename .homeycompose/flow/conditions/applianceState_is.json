@@ -10,6 +10,11 @@
     },
     "args": [
       {
+          "type": "device",
+          "name": "device",
+          "filter": "driver_id=oven|laundry"
+      },
+      {
         "name": "value",
         "filter": "driver_id=laundry",
         "type": "dropdown",

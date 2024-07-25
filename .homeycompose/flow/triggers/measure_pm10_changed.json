@@ -5,10 +5,17 @@
         "nl": "De PM10 waarde is veranderd",
         "de": "Der PM10-Wert hat sich geändert"
     },
+    "args": [
+        {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=air-purifier"
+        }
+    ],
     "tokens": [
         {
-            "name": "$id",
-            "title": "$title",
+            "name": "measure_pm10",
+            "title": "PM10",
             "type": "number",
             "example": 2
         }

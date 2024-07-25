@@ -3,10 +3,19 @@
     "title": {
       "en": "The filter life changed"
     },
+    "args": [
+        {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=air-purifier"
+        }
+    ],
     "tokens": [
       {
-        "name": "$id",
-        "title": "$title",
+        "name": "measure_filter",
+        "title": {
+          "en": "Filter life"
+        },
         "type": "number",
         "example": 99
       }
