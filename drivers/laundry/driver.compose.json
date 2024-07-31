@@ -2,7 +2,7 @@
   "name": {
     "en": "Laundry"
   },
-  "class": "other",
+  "class": "washer_and_dryer",
   "capabilities": [],
   "platforms": [
     "local"

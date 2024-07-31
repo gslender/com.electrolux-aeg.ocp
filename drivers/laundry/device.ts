@@ -89,9 +89,9 @@ class LaundryDevice extends Homey.Device {
 
     try {
       await this.setCapabilityValue("measure_doorState", props.doorState);
-      await this.setCapabilityValue("measure_timeToEnd", this.convertSecondsToHrMin(props.timeToEnd));
-      await this.setCapabilityValue("measure_stopTime", this.convertSecondsToHrMin(props.stopTime)); // in seconds 
-      await this.setCapabilityValue("measure_startTime", this.convertSecondsToHrMin(props.startTime));
+      await this.setCapabilityValue("measure_timeToEnd", this.convertSecondsToMinNumber(props.timeToEnd));
+      await this.setCapabilityValue("measure_stopTime", this.convertSecondsToHrMinString(props.stopTime)); // in seconds 
+      await this.setCapabilityValue("measure_startTime", this.convertSecondsToHrMinString(props.startTime));
       await this.setCapabilityValue("measure_applianceState", props.applianceState);
       await this.setCapabilityValue("measure_applianceMode", props.applianceMode);
       await this.setCapabilityValue("measure_cyclePhase", props.cyclePhase);
@@ -100,7 +100,12 @@ class LaundryDevice extends Homey.Device {
     }
   }
 
-  convertSecondsToHrMin(seconds: number) {
+  convertSecondsToMinNumber(seconds: number) : number {
+    if (seconds < 0) return 0;
+    return Math.floor(seconds / 60);
+  }
+
+  convertSecondsToHrMinString(seconds: number) : string {
     if (seconds < 0) return '';
     // Calculate hours, minutes, and seconds
     const hours = Math.floor(seconds / 3600);

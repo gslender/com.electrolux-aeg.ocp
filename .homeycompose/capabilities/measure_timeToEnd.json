@@ -1,5 +1,8 @@
 {
-    "type": "string",
+    "type": "number",
+    "units": {
+        "en": "mins"
+    },
     "title": {
         "en": "Time To End"
     },

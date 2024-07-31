@@ -28,5 +28,8 @@
   },
   "1.1.2": {
     "en": "Fixed flows"
+  },
+  "1.1.3": {
+    "en": "Fixed timeToEnd"
   }
 }

@@ -16,8 +16,8 @@
             "title": {
                 "en": "Start Time"
             },
-            "type": "number",
-            "example": 0
+            "type": "string",
+            "example": "5 minutes"
         }
     ]
 }
