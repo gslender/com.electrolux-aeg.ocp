@@ -31,5 +31,14 @@
   },
   "1.1.3": {
     "en": "Fixed timeToEnd"
+  },
+  "1.1.4": {
+    "en": "repackage"
+  },
+  "1.1.5": {
+    "en": "Fixed case sensitive capabilities"
+  },
+  "1.1.6": {
+    "en": "Removed old capabilities"
   }
 }

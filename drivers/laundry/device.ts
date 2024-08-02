@@ -9,8 +9,17 @@ class LaundryDevice extends Homey.Device {
   async onInit() {
     this.log('LaundryDevice has been initialized');
 
-    // Add missing capabilities when upgrading
+
+    // Removed old capabilities when upgrading
     for (const cap of ["EXECUTE_command"]) {
+      if (this.hasCapability(cap)) {
+        this.log("Migrating device from old version: Removing capability " + cap);
+        await this.removeCapability(cap);
+      }
+    }
+
+    // Add missing capabilities when upgrading
+    for (const cap of ["execute_command"]) {
       if (!this.hasCapability(cap)) {
         this.log("Migrating device from old version: Adding capability " + cap);
         await this.addCapability(cap);
@@ -33,7 +42,7 @@ class LaundryDevice extends Homey.Device {
     // Listen to multiple capabilities simultaneously
     this.registerMultipleCapabilityListener(
       [
-        "EXECUTE_command"
+        "execute_command"
       ],
       (valueObj, optsObj) => this.setDeviceOpts(valueObj),
       500
@@ -45,10 +54,10 @@ class LaundryDevice extends Homey.Device {
 
     try {
 
-      // Update EXECUTE_command
-      if (valueObj.EXECUTE_command !== undefined) {
-        this.log("EXECUTE_command: " + valueObj.EXECUTE_command);
-        await this.app.sendDeviceCommand(deviceId, { executeCommand: valueObj.EXECUTE_command });
+      // Update execute_command
+      if (valueObj.execute_command !== undefined) {
+        this.log("execute_command: " + valueObj.execute_command);
+        await this.app.sendDeviceCommand(deviceId, { executeCommand: valueObj.execute_command });
       }
 
       /*
@@ -127,7 +136,7 @@ class LaundryDevice extends Homey.Device {
 
   flow_execute_command(args: { what: string }, state: {}) {
     this.log(`flow_cyclePhase_is: args=${stringify( args.what)} state=${stringify(state)}`);
-    return this.setDeviceOpts({ EXECUTE_command: args.what });
+    return this.setDeviceOpts({ execute_command: args.what });
   }
 
   flow_cyclePhase_is(args: { value: string }, state: {}) {
