@@ -40,5 +40,8 @@
   },
   "1.1.6": {
     "en": "Removed old capabilities"
+  },
+  "1.2.0": {
+    "en": "Migrated to shared device/driver code. Added raw json in device Adv Settings"
   }
 }

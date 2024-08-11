@@ -1,26 +1,11 @@
-import Homey from 'homey';
-import ElectroluxAEGApp from '../../app'
+import SharedDevice from '../../lib/shared_device'
 import stringify from 'json-stringify-safe';
 
-
-class AirPurifierDevice extends Homey.Device {
-  app!: ElectroluxAEGApp
-  Workmode!: string
+class AirPurifierDevice extends SharedDevice {
+  Workmode!: string;
 
   async onInit() {
-    this.log("AirPurifierDevice has been initialized");
-    this.app = this.homey.app as ElectroluxAEGApp
-    const deviceId = this.getData().id;
-    const state = await this.app.getApplianceState(deviceId);
-
-    this.log('********* applianceState ********');
-    this.log(stringify(state));
-    this.log('**********************************');
-
-    const capabilities = await this.app.getApplianceCapabilities(deviceId);
-    this.log(`********** capabilities **********`);
-    this.log(stringify(capabilities));
-    this.log('**********************************');
+    super.onInit();
 
     // Listen to multiple capabilities simultaneously
     this.registerMultipleCapabilityListener(

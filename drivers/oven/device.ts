@@ -1,13 +1,9 @@
-import Homey from 'homey';
-import ElectroluxAEGApp from '../../app'
-import stringify from 'json-stringify-safe';
+import SharedDevice from '../../lib/shared_device'
 
-
-class OvenDevice extends Homey.Device {
-  app!: ElectroluxAEGApp
+class OvenDevice extends SharedDevice {
 
   async onInit() {
-    this.log('OvenDevice has been initialized');
+    super.onInit();
 
     // Removed old capabilities when upgrading
     for (const cap of ["EXECUTE_command"]) {
@@ -24,19 +20,6 @@ class OvenDevice extends Homey.Device {
         await this.addCapability(cap);
       }
     }
-
-    this.app = this.homey.app as ElectroluxAEGApp
-    const deviceId = this.getData().id;
-    const state = await this.app.getApplianceState(deviceId);
-
-    this.log('********* applianceState ********');
-    this.log(stringify(state));
-    this.log('**********************************');
-
-    const capabilities = await this.app.getApplianceCapabilities(deviceId);
-    this.log(`********** capabilities **********`);
-    this.log(stringify(capabilities));
-    this.log('**********************************');
 
     // Listen to multiple capabilities simultaneously
     this.registerMultipleCapabilityListener(
@@ -96,9 +79,9 @@ class OvenDevice extends Homey.Device {
     try {
       await this.setCapabilityValue("LIGHT_onoff", props.cavityLight);
       await this.setCapabilityValue("measure_doorState", props.doorState);
-      await this.setCapabilityValue("measure_timeToEnd", this.convertSecondsToHrMin(props.runningTime));
-      await this.setCapabilityValue("measure_stopTime", this.convertSecondsToHrMin(props.timeToEnd)); // in seconds 
-      await this.setCapabilityValue("measure_startTime", this.convertSecondsToHrMin(props.startTime));
+      await this.setCapabilityValue("measure_timeToEnd", this.convertSecondsToMinNumber(props.runningTime));
+      await this.setCapabilityValue("measure_stopTime", this.convertSecondsToHrMinString(props.timeToEnd)); // in seconds 
+      await this.setCapabilityValue("measure_startTime", this.convertSecondsToHrMinString(props.startTime));
       await this.setCapabilityValue("measure_targetTemperature", props.targetTemperatureC);
       await this.setCapabilityValue("measure_temperature", props.displayTemperatureC);
       await this.setCapabilityValue("measure_applianceState", props.applianceState);
@@ -110,25 +93,6 @@ class OvenDevice extends Homey.Device {
       this.log("Error updating device state: ", error);
     }
 
-  }
-
-  convertSecondsToHrMin(seconds: number) {
-    if (seconds < 0) return '';
-    // Calculate hours, minutes, and seconds
-    const hours = Math.floor(seconds / 3600);
-    const minutes = Math.floor((seconds % 3600) / 60);
-    const remainingSeconds = seconds % 60;
-
-    // Format the time into 24-hour format (HH:MM:SS)
-    const formattedHours = String(hours).padStart(2, '0');
-    const formattedMinutes = String(minutes).padStart(2, '0');
-
-    if (hours < 1) {
-      if (minutes < 2) return `${minutes} minute`;
-      return `${minutes} minutes`;
-    }
-
-    return `${formattedHours}:${formattedMinutes}`;
   }
 
   flow_enable_cavity_light(args: {}, state: {}) {

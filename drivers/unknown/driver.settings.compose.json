@@ -1,0 +1,24 @@
+[
+  {
+    "id": "applianceState",
+    "type": "label",
+    "label": {
+      "en": "Appliance State"
+    },
+    "hint": {
+      "en": "The Electrolux/AEG raw Appliance State JSON"
+    },
+    "value": ""
+  },
+  {
+    "id": "applianceCapabilities",
+    "type": "label",
+    "label": {
+      "en": "Appliance Capabilities"
+    },
+    "hint": {
+      "en": "The Electrolux/AEG raw Appliance Capabilities JSON"
+    },
+    "value": ""
+  }
+]

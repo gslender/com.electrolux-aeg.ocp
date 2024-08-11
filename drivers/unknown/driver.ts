@@ -1,12 +1,11 @@
-import Homey from 'homey';
-import ElectroluxAEGApp from '../../app'
+import SharedDriver from '../../lib/shared_driver'
 
-class UnknownDriver extends Homey.Driver {
-  app!: ElectroluxAEGApp
+class UnknownDriver extends SharedDriver {
 
   async onInit (): Promise<void> {
-    this.app = this.homey.app as ElectroluxAEGApp
+    super.onInit();
   }
+  
   async onPairListDevices() {
    
     var devices = [];
