@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.electrolux-aeg.ocp",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "compatibility": ">=12.0.0",
   "sdk": 3,
   "platforms": [
@@ -190,6 +190,29 @@
             "title": "PM10",
             "type": "number",
             "example": 2
+          }
+        ]
+      },
+      {
+        "id": "measure_runningTime_changed",
+        "title": {
+          "en": "The Running Time has changed"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=oven|laundry"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "measure_runningTime",
+            "title": {
+              "en": "Running Time"
+            },
+            "type": "number",
+            "example": 0
           }
         ]
       },
@@ -672,25 +695,12 @@
   "drivers": [
     {
       "name": {
-        "en": "Air Purifier"
+        "en": "Air Purifier",
+        "de": "Luftreiniger",
+        "nl": "Luchtzuiveraar"
       },
       "class": "fan",
-      "capabilities": [
-        "measure_co2",
-        "measure_humidity",
-        "measure_pm25",
-        "measure_pm10",
-        "measure_pm1",
-        "measure_temperature",
-        "measure_voc",
-        "onoff",
-        "SMART_mode",
-        "FAN_speed",
-        "IONIZER_onoff",
-        "LOCK_onoff",
-        "LIGHT_onoff",
-        "measure_filter"
-      ],
+      "capabilities": [],
       "platforms": [
         "local"
       ],
@@ -723,7 +733,9 @@
             "en": "Appliance State"
           },
           "hint": {
-            "en": "The Electrolux/AEG raw Appliance State JSON"
+            "en": "The Electrolux/AEG raw Appliance State JSON",
+            "de": "Die Electrolux/AEG Roh-Gerätezustand JSON",
+            "nl": "De Electrolux/AEG ruwe Apparaatstatus JSON"
           },
           "value": ""
         },
@@ -734,7 +746,9 @@
             "en": "Appliance Capabilities"
           },
           "hint": {
-            "en": "The Electrolux/AEG raw Appliance Capabilities JSON"
+            "en": "The Electrolux/AEG raw Appliance Capabilities JSON",
+            "de": "Die Electrolux/AEG Roh-Gerätefunktionen JSON",
+            "nl": "De Electrolux/AEG ruwe Apparaatmogelijkheden JSON"
           },
           "value": ""
         }
@@ -742,7 +756,9 @@
     },
     {
       "name": {
-        "en": "Laundry"
+        "en": "Laundry",
+        "de": "Wäsche",
+        "nl": "Wasserij"
       },
       "class": "washer_and_dryer",
       "capabilities": [],
@@ -778,7 +794,9 @@
             "en": "Appliance State"
           },
           "hint": {
-            "en": "The Electrolux/AEG raw Appliance State JSON"
+            "en": "The Electrolux/AEG raw Appliance State JSON",
+            "de": "Die Electrolux/AEG Roh-Gerätezustand JSON",
+            "nl": "De Electrolux/AEG ruwe Apparaatstatus JSON"
           },
           "value": ""
         },
@@ -789,7 +807,9 @@
             "en": "Appliance Capabilities"
           },
           "hint": {
-            "en": "The Electrolux/AEG raw Appliance Capabilities JSON"
+            "en": "The Electrolux/AEG raw Appliance Capabilities JSON",
+            "de": "Die Electrolux/AEG Roh-Gerätefunktionen JSON",
+            "nl": "De Electrolux/AEG ruwe Apparaatmogelijkheden JSON"
           },
           "value": ""
         }
@@ -797,7 +817,9 @@
     },
     {
       "name": {
-        "en": "Oven"
+        "en": "Oven",
+        "de": "Ofen",
+        "nl": "Oven"
       },
       "class": "other",
       "capabilities": [],
@@ -833,7 +855,9 @@
             "en": "Appliance State"
           },
           "hint": {
-            "en": "The Electrolux/AEG raw Appliance State JSON"
+            "en": "The Electrolux/AEG raw Appliance State JSON",
+            "de": "Die Electrolux/AEG Roh-Gerätezustand JSON",
+            "nl": "De Electrolux/AEG ruwe Apparaatstatus JSON"
           },
           "value": ""
         },
@@ -844,7 +868,9 @@
             "en": "Appliance Capabilities"
           },
           "hint": {
-            "en": "The Electrolux/AEG raw Appliance Capabilities JSON"
+            "en": "The Electrolux/AEG raw Appliance Capabilities JSON",
+            "de": "Die Electrolux/AEG Roh-Gerätefunktionen JSON",
+            "nl": "De Electrolux/AEG ruwe Apparaatmogelijkheden JSON"
           },
           "value": ""
         }
@@ -852,7 +878,9 @@
     },
     {
       "name": {
-        "en": "Unknown (log only)"
+        "en": "Unknown (log only)",
+        "de": "Unbekannt (nur protokolliert)",
+        "nl": "Onbekend (alleen logboek)"
       },
       "class": "other",
       "capabilities": [],
@@ -888,7 +916,9 @@
             "en": "Appliance State"
           },
           "hint": {
-            "en": "The Electrolux/AEG raw Appliance State JSON"
+            "en": "The Electrolux/AEG raw Appliance State JSON",
+            "de": "Die Electrolux/AEG Roh-Gerätezustand JSON",
+            "nl": "De Electrolux/AEG ruwe Apparaatstatus JSON"
           },
           "value": ""
         },
@@ -899,7 +929,9 @@
             "en": "Appliance Capabilities"
           },
           "hint": {
-            "en": "The Electrolux/AEG raw Appliance Capabilities JSON"
+            "en": "The Electrolux/AEG raw Appliance Capabilities JSON",
+            "de": "Die Electrolux/AEG Roh-Gerätefunktionen JSON",
+            "nl": "De Electrolux/AEG ruwe Apparaatmogelijkheden JSON"
           },
           "value": ""
         }
@@ -911,19 +943,25 @@
       "type": "enum",
       "uiComponent": "picker",
       "title": {
-        "en": "Execute Command"
+        "en": "Execute Command",
+        "de": "Befehl Ausführen",
+        "nl": "Opdracht Uitvoeren"
       },
       "values": [
         {
           "id": "START",
           "title": {
-            "en": "Start"
+            "en": "Start",
+            "de": "Start",
+            "nl": "Start"
           }
         },
         {
           "id": "STOPRESET",
           "title": {
-            "en": "Stop / Reset"
+            "en": "Stop / Reset",
+            "de": "Stopp / Zurücksetzen",
+            "nl": "Stop / Reset"
           }
         }
       ],
@@ -969,7 +1007,9 @@
     "measure_applianceMode": {
       "type": "string",
       "title": {
-        "en": "Appliance Mode"
+        "en": "Appliance Mode",
+        "de": "Gerätemodus",
+        "nl": "Apparaatmodus"
       },
       "getable": true,
       "setable": false,
@@ -978,7 +1018,9 @@
     "measure_applianceState": {
       "type": "string",
       "title": {
-        "en": "Appliance State"
+        "en": "Appliance State",
+        "de": "Gerätezustand",
+        "nl": "Apparaatstatus"
       },
       "getable": true,
       "setable": false,
@@ -987,7 +1029,9 @@
     "measure_cyclePhase": {
       "type": "string",
       "title": {
-        "en": "Cycle Phase"
+        "en": "Cycle Phase",
+        "de": "Zyklusphase",
+        "nl": "Cyclusfase"
       },
       "getable": true,
       "setable": false,
@@ -996,7 +1040,9 @@
     "measure_doorState": {
       "type": "string",
       "title": {
-        "en": "Door State"
+        "en": "Door State",
+        "de": "Türzustand",
+        "nl": "Deurtoestand"
       },
       "getable": true,
       "setable": false,
@@ -1069,10 +1115,28 @@
       "uiComponent": "sensor",
       "icon": "/assets/icons/pm10.svg"
     },
+    "measure_runningTime": {
+      "type": "number",
+      "units": {
+        "en": "mins",
+        "de": "mins",
+        "nl": "mins"
+      },
+      "title": {
+        "en": "Running Time",
+        "de": "Laufzeit",
+        "nl": "Looptijd"
+      },
+      "getable": true,
+      "setable": false,
+      "icon": "/assets/icons/clock.svg"
+    },
     "measure_startTime": {
       "type": "string",
       "title": {
-        "en": "Start Time"
+        "en": "Start Time",
+        "de": "Startzeit",
+        "nl": "Starttijd"
       },
       "getable": true,
       "setable": false,
@@ -1081,7 +1145,9 @@
     "measure_stopTime": {
       "type": "string",
       "title": {
-        "en": "Stop Time"
+        "en": "Stop Time",
+        "de": "Stoppzeit",
+        "nl": "Stoptijd"
       },
       "getable": true,
       "setable": false,
@@ -1090,14 +1156,18 @@
     "measure_targetTemperature": {
       "type": "number",
       "title": {
-        "en": "Target Temperature"
+        "en": "Target Temperature",
+        "de": "Zieltemperatur",
+        "nl": "Doeltemperatuur"
       },
       "units": {
         "en": "°C"
       },
       "insights": true,
       "desc": {
-        "en": "Target Temperature in degrees Celsius (°C)"
+        "en": "Target Temperature in degrees Celsius (°C)",
+        "de": "Zieltemperatur in Grad Celsius (°C)",
+        "nl": "Doeltemperatuur in graden Celsius (°C)"
       },
       "decimals": 2,
       "chartType": "spline",
@@ -1109,10 +1179,14 @@
     "measure_timeToEnd": {
       "type": "number",
       "units": {
-        "en": "mins"
+        "en": "mins",
+        "de": "mins",
+        "nl": "mins"
       },
       "title": {
-        "en": "Time To End"
+        "en": "Time To End",
+        "de": "Verbleibende Zeit",
+        "nl": "Tijd Tot Einde"
       },
       "getable": true,
       "setable": false,

@@ -1,25 +1,11 @@
-import SharedDevice from '../../lib/shared_device'
+import SharedDevice from '../../lib/shared_device';
+import OvenDriver from './driver';
 
 class OvenDevice extends SharedDevice {
 
   async onInit() {
+    this.deviceCapabilities = OvenDriver.DeviceCapabilities;
     super.onInit();
-
-    // Removed old capabilities when upgrading
-    for (const cap of ["EXECUTE_command"]) {
-      if (this.hasCapability(cap)) {
-        this.log("Migrating device from old version: Removing capability " + cap);
-        await this.removeCapability(cap);
-      }
-    }
-    
-    // Add missing capabilities when upgrading
-    for (const cap of ["execute_command","LIGHT_onoff"]) {
-      if (!this.hasCapability(cap)) {
-        this.log("Migrating device from old version: Adding capability " + cap);
-        await this.addCapability(cap);
-      }
-    }
 
     // Listen to multiple capabilities simultaneously
     this.registerMultipleCapabilityListener(
@@ -79,8 +65,8 @@ class OvenDevice extends SharedDevice {
     try {
       await this.setCapabilityValue("LIGHT_onoff", props.cavityLight);
       await this.setCapabilityValue("measure_doorState", props.doorState);
-      await this.setCapabilityValue("measure_timeToEnd", this.convertSecondsToMinNumber(props.runningTime));
-      await this.setCapabilityValue("measure_stopTime", this.convertSecondsToHrMinString(props.timeToEnd)); // in seconds 
+      await this.setCapabilityValue("measure_timeToEnd", this.convertSecondsToMinNumber(props.timeToEnd));
+      await this.setCapabilityValue("measure_runningTime", this.convertSecondsToHrMinString(props.runningTime));
       await this.setCapabilityValue("measure_startTime", this.convertSecondsToHrMinString(props.startTime));
       await this.setCapabilityValue("measure_targetTemperature", props.targetTemperatureC);
       await this.setCapabilityValue("measure_temperature", props.displayTemperatureC);

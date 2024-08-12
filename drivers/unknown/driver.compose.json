@@ -1,6 +1,8 @@
 {
   "name": {
-    "en": "Unknown (log only)"
+    "en": "Unknown (log only)",
+    "de": "Unbekannt (nur protokolliert)",
+    "nl": "Onbekend (alleen logboek)"
   },
   "class": "other",
   "capabilities": [

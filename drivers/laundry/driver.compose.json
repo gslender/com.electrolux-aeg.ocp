@@ -1,6 +1,8 @@
 {
   "name": {
-    "en": "Laundry"
+    "en": "Laundry",
+    "de": "Wäsche",
+    "nl": "Wasserij"
   },
   "class": "washer_and_dryer",
   "capabilities": [],

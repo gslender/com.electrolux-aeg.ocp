@@ -6,9 +6,9 @@
         "nl": "mins"
     },
     "title": {
-        "en": "Time To End",
-        "de": "Verbleibende Zeit",
-        "nl": "Tijd Tot Einde"
+        "en": "Running Time",
+        "de": "Laufzeit",
+        "nl": "Looptijd"
     },
     "getable": true,
     "setable": false,

@@ -1,6 +1,17 @@
 import SharedDriver from '../../lib/shared_driver'
 
-class LaundryDriver extends SharedDriver {
+export default class LaundryDriver extends SharedDriver {
+
+  static DeviceCapabilities = [
+    "execute_command",
+    "measure_doorState",
+    "measure_timeToEnd",
+    "measure_stopTime",
+    "measure_startTime",
+    "measure_applianceState",
+    "measure_applianceMode", 
+    "measure_cyclePhase" 
+  ];
 
   async onInit (): Promise<void> {
     super.onInit();
@@ -17,14 +28,9 @@ class LaundryDriver extends SharedDriver {
       if (appliance.properties?.reported?.applianceInfo?.applianceType === 'WM' ||
         appliance.properties?.reported?.applianceInfo?.applianceType === 'TD') {
         //washer or dryer
-        deviceCapabilities.push("execute_command");
-        deviceCapabilities.push("measure_doorState");
-        deviceCapabilities.push("measure_timeToEnd");
-        deviceCapabilities.push("measure_stopTime");
-        deviceCapabilities.push("measure_startTime");
-        deviceCapabilities.push("measure_applianceState");
-        deviceCapabilities.push("measure_applianceMode");
-        deviceCapabilities.push("measure_cyclePhase");
+        for (const cap of LaundryDriver.DeviceCapabilities) {
+          deviceCapabilities.push(cap); 
+        }
       }
 
       const device = {
@@ -39,5 +45,3 @@ class LaundryDriver extends SharedDriver {
   }
 
 }
-
-module.exports = LaundryDriver;

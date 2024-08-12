@@ -1,6 +1,8 @@
 {
   "name": {
-    "en": "Oven"
+    "en": "Oven",
+    "de": "Ofen",
+    "nl": "Oven"
   },
   "class": "other",
   "capabilities": [],

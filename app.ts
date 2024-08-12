@@ -219,5 +219,3 @@ export default class ElectroluxAEGApp extends Homey.App {
     return value === undefined || value === null || value === '';
   }
 }
-
-module.exports = ElectroluxAEGApp;

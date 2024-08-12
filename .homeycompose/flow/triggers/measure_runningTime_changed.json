@@ -1,0 +1,23 @@
+{
+    "id": "measure_runningTime_changed",
+    "title": {
+        "en": "The Running Time has changed"
+    },
+    "args": [
+        {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=oven|laundry"
+        }
+    ],
+    "tokens": [
+        {
+            "name": "measure_runningTime",
+            "title": {
+                "en": "Running Time"
+            },
+            "type": "number",
+            "example": 0
+        }
+    ]
+}

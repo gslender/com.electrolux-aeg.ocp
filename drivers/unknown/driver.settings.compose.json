@@ -6,7 +6,9 @@
       "en": "Appliance State"
     },
     "hint": {
-      "en": "The Electrolux/AEG raw Appliance State JSON"
+      "en": "The Electrolux/AEG raw Appliance State JSON",
+      "de": "Die Electrolux/AEG Roh-Gerätezustand JSON",
+      "nl": "De Electrolux/AEG ruwe Apparaatstatus JSON"
     },
     "value": ""
   },
@@ -17,7 +19,9 @@
       "en": "Appliance Capabilities"
     },
     "hint": {
-      "en": "The Electrolux/AEG raw Appliance Capabilities JSON"
+      "en": "The Electrolux/AEG raw Appliance Capabilities JSON",
+      "de": "Die Electrolux/AEG Roh-Gerätefunktionen JSON",
+      "nl": "De Electrolux/AEG ruwe Apparaatmogelijkheden JSON"
     },
     "value": ""
   }

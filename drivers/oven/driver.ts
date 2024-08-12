@@ -1,6 +1,20 @@
 import SharedDriver from '../../lib/shared_driver'
 
-class OvenDriver extends SharedDriver {
+export default class OvenDriver extends SharedDriver {
+
+  static DeviceCapabilities = [
+    "execute_command",
+    "LIGHT_onoff",
+    "measure_doorState",
+    "measure_timeToEnd",
+    "measure_runningTime",
+    "measure_startTime",
+    "measure_targetTemperature", //targetTemperatureC
+    "measure_temperature", //displayTemperatureC
+    "measure_applianceState",
+    "measure_applianceMode", //program
+    "measure_cyclePhase" //processPhase
+  ];
 
   async onInit (): Promise<void> {
     super.onInit();
@@ -15,18 +29,9 @@ class OvenDriver extends SharedDriver {
       const appliance = appliances[i];     
       let deviceCapabilities = [];
       if (appliance.properties?.reported?.applianceInfo?.applianceType === 'OV') {
-        deviceCapabilities.push("execute_command"); 
-        deviceCapabilities.push("LIGHT_onoff"); 
-        
-        deviceCapabilities.push("measure_doorState"); //doorState 
-        deviceCapabilities.push("measure_timeToEnd"); //runningTime  
-        deviceCapabilities.push("measure_stopTime"); //timeToEnd
-        deviceCapabilities.push("measure_startTime"); //startTime
-        deviceCapabilities.push("measure_targetTemperature"); //targetTemperatureC
-        deviceCapabilities.push("measure_temperature"); //displayTemperatureC
-        deviceCapabilities.push("measure_applianceState"); //applianceState
-        deviceCapabilities.push("measure_applianceMode"); //program
-        deviceCapabilities.push("measure_cyclePhase"); //processPhase
+        for (const cap of OvenDriver.DeviceCapabilities) {
+          deviceCapabilities.push(cap); 
+        }
       }
       
       const device = { 
@@ -41,5 +46,3 @@ class OvenDriver extends SharedDriver {
   }
 
 }
-
-module.exports = OvenDriver;

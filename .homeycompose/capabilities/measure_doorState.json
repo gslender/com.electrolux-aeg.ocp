@@ -1,7 +1,9 @@
 {
     "type": "string",
     "title": {
-        "en": "Door State"
+        "en": "Door State",
+        "de": "Türzustand",
+        "nl": "Deurtoestand"
     },
     "getable": true,
     "setable": false,

@@ -2,19 +2,25 @@
     "type": "enum",
     "uiComponent": "picker",
     "title": {
-      "en": "Execute Command"
+      "en": "Execute Command",
+      "de": "Befehl Ausführen",
+      "nl": "Opdracht Uitvoeren"
     },
     "values": [
       {
         "id": "START",
         "title": {
-          "en": "Start"
+          "en": "Start",
+          "de": "Start",
+          "nl": "Start"
         }
       },
       {
         "id": "STOPRESET",
         "title": {
-          "en": "Stop / Reset"
+          "en": "Stop / Reset",
+          "de": "Stopp / Zurücksetzen",
+          "nl": "Stop / Reset"
         }
       }
     ],

@@ -1,7 +1,9 @@
 {
     "type": "string",
     "title": {
-        "en": "Stop Time"
+        "en": "Stop Time",
+        "de": "Stoppzeit",
+        "nl": "Stoptijd"
     },
     "getable": true,
     "setable": false,

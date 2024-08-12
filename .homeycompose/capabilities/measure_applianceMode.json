@@ -1,7 +1,9 @@
 {
     "type": "string",
     "title": {
-        "en": "Appliance Mode"
+        "en": "Appliance Mode",
+        "de": "Gerätemodus",
+        "nl": "Apparaatmodus"
     },
     "getable": true,
     "setable": false,

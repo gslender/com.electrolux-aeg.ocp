@@ -1,14 +1,18 @@
 {
     "type": "number",
     "title": {
-      "en": "Target Temperature"
+      "en": "Target Temperature",
+      "de": "Zieltemperatur",
+      "nl": "Doeltemperatuur"
     },
     "units": {
       "en": "°C"
     },
     "insights": true,
     "desc": {
-      "en": "Target Temperature in degrees Celsius (°C)"
+      "en": "Target Temperature in degrees Celsius (°C)",
+      "de": "Zieltemperatur in Grad Celsius (°C)",
+      "nl": "Doeltemperatuur in graden Celsius (°C)"
     },
     "decimals": 2,
     "chartType": "spline",

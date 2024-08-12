@@ -1,26 +1,12 @@
-import SharedDevice from '../../lib/shared_device'
+import SharedDevice from '../../lib/shared_device';
+import LaundyDriver from './driver';
 import stringify from 'json-stringify-safe';
 
 class LaundryDevice extends SharedDevice {
 
   async onInit() {
+    this.deviceCapabilities = LaundyDriver.DeviceCapabilities;
     super.onInit();
-
-    // Removed old capabilities when upgrading
-    for (const cap of ["EXECUTE_command"]) {
-      if (this.hasCapability(cap)) {
-        this.log("Migrating device from old version: Removing capability " + cap);
-        await this.removeCapability(cap);
-      }
-    }
-
-    // Add missing capabilities when upgrading
-    for (const cap of ["execute_command"]) {
-      if (!this.hasCapability(cap)) {
-        this.log("Migrating device from old version: Adding capability " + cap);
-        await this.addCapability(cap);
-      }
-    }
     
     // Listen to multiple capabilities simultaneously
     this.registerMultipleCapabilityListener(

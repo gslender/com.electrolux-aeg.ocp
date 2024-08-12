@@ -1,7 +1,9 @@
 {
     "type": "string",
     "title": {
-        "en": "Start Time"
+        "en": "Start Time",
+        "de": "Startzeit",
+        "nl": "Starttijd"
     },
     "getable": true,
     "setable": false,

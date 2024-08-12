@@ -1,7 +1,9 @@
 {
     "type": "string",
     "title": {
-        "en": "Cycle Phase"
+        "en": "Cycle Phase",
+        "de": "Zyklusphase",
+        "nl": "Cyclusfase"
     },
     "getable": true,
     "setable": false,

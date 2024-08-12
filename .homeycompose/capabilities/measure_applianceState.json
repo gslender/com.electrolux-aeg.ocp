@@ -1,7 +1,9 @@
 {
     "type": "string",
     "title": {
-        "en": "Appliance State"
+        "en": "Appliance State",
+        "de": "Gerätezustand",
+        "nl": "Apparaatstatus"
     },
     "getable": true,
     "setable": false,

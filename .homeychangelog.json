@@ -43,5 +43,8 @@
   },
   "1.2.0": {
     "en": "Migrated to shared device/driver code. Added raw json in device Adv Settings"
+  },
+  "1.2.1": {
+    "en": "Added runningTime. Changed how capabilities are added/removed."
   }
 }
