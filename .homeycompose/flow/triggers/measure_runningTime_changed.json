@@ -1,23 +1,45 @@
 {
-    "id": "measure_runningTime_changed",
-    "title": {
-        "en": "The Running Time has changed"
-    },
-    "args": [
-        {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=oven|laundry"
-        }
-    ],
-    "tokens": [
-        {
-            "name": "measure_runningTime",
-            "title": {
-                "en": "Running Time"
-            },
-            "type": "number",
-            "example": 0
-        }
-    ]
+  "id": "measure_runningTime_changed",
+  "title": {
+    "en": "The Running Time has changed",
+    "nl": "De looptijd is veranderd",
+    "da": "Køretiden er ændret",
+    "de": "Die Laufzeit hat sich geändert",
+    "es": "El tiempo de funcionamiento ha cambiado",
+    "fr": "Le temps de fonctionnement a changé",
+    "it": "Il tempo di esecuzione è cambiato",
+    "no": "Kjøretiden har endret seg",
+    "sv": "Körtiden har ändrats",
+    "pl": "Czas działania uległ zmianie",
+    "ru": "Время работы изменилось",
+    "ko": "실행 시간이 변경되었습니다"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=oven|laundry"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "measure_runningTime",
+      "title": {
+        "en": "Running Time",
+        "nl": "Looptijd",
+        "da": "Køretid",
+        "de": "Laufzeit",
+        "es": "Tiempo de funcionamiento",
+        "fr": "Temps de fonctionnement",
+        "it": "Tempo di esecuzione",
+        "no": "Kjøretid",
+        "sv": "Körtid",
+        "pl": "Czas działania",
+        "ru": "Время работы",
+        "ko": "실행 시간"
+      },
+      "type": "number",
+      "example": 0
+    }
+  ]
 }

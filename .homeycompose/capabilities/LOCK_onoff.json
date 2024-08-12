@@ -1,9 +1,19 @@
 {
   "type": "boolean",
   "title": {
-    "en": "Lock controls"
+    "en": "Lock controls",
+    "nl": "Vergrendelingsbediening",
+    "da": "Lås kontrollenheder",
+    "de": "Steuerung sperren",
+    "es": "Controles de bloqueo",
+    "fr": "Verrouiller les commandes",
+    "it": "Blocca i controlli",
+    "no": "Lås kontrollene",
+    "sv": "Lås kontrollerna",
+    "pl": "Zablokuj kontrolki",
+    "ru": "Блокировка управления",
+    "ko": "제어 잠금"
   },
   "getable": true,
   "setable": true
 }
-

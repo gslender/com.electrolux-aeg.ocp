@@ -2,7 +2,16 @@
   "name": {
     "en": "Air Purifier",
     "de": "Luftreiniger",
-    "nl": "Luchtzuiveraar"
+    "nl": "Luchtzuiveraar",
+    "da": "Luftrenser",
+    "es": "Purificador de aire",
+    "fr": "Purificateur d'air",
+    "it": "Purificatore d'aria",
+    "no": "Luftrenser",
+    "sv": "Luftrenare",
+    "pl": "Oczyszczacz powietrza",
+    "ru": "Очиститель воздуха",
+    "ko": "공기 청정기"
   },
   "class": "fan",
   "capabilities": [],
@@ -17,16 +26,16 @@
     "large": "{{driverAssetsPath}}/images/large.png"
   },
   "pair": [
-      {
-          "id": "list_my_devices",
-          "template": "list_devices",
-          "navigation": {
-              "next": "add_my_devices"
-          }
-      },
-      {
-          "id": "add_my_devices",
-          "template": "add_devices"
+    {
+      "id": "list_my_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_my_devices"
       }
+    },
+    {
+      "id": "add_my_devices",
+      "template": "add_devices"
+    }
   ]
 }

@@ -1,25 +1,43 @@
 {
-    "id": "measure_pm1_changed",
-    "title": {
-        "en": "The PM1 value has changed",
-        "nl": "De PM1 waarde is veranderd",
-        "de": "Der PM1-Wert hat sich geändert"
-    },
-    "args": [
-        {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=air-purifier"
-        }
-    ],
-    "tokens": [
-        {
-            "name": "measure_pm1",
-            "title": {
-                "en": "PM1"
-            },
-            "type": "number",
-            "example": 2
-        }
-    ]
+  "id": "measure_pm1_changed",
+  "title": {
+    "en": "The PM1 value has changed",
+    "nl": "De PM1 waarde is veranderd",
+    "de": "Der PM1-Wert hat sich geändert",
+    "da": "PM1-værdien er ændret",
+    "es": "El valor de PM1 ha cambiado",
+    "fr": "La valeur PM1 a changé",
+    "it": "Il valore PM1 è cambiato",
+    "no": "PM1-verdien har endret seg",
+    "sv": "PM1-värdet har ändrats",
+    "pl": "Wartość PM1 zmieniła się",
+    "ru": "Значение PM1 изменилось",
+    "ko": "PM1 값이 변경되었습니다"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=air-purifier"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "measure_pm1",
+      "title": {
+        "en": "PM1",
+        "da": "PM1",
+        "es": "PM1",
+        "fr": "PM1",
+        "it": "PM1",
+        "no": "PM1",
+        "sv": "PM1",
+        "pl": "PM1",
+        "ru": "PM1",
+        "ko": "PM1"
+      },
+      "type": "number",
+      "example": 2
+    }
+  ]
 }

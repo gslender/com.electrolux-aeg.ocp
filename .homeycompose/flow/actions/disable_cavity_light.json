@@ -1,15 +1,37 @@
 {
-    "title": {
-        "en": "Disable cavity light"
-    },
-    "titleFormatted": {
-        "en": "Disable cavity light"
-    },
-    "args": [
-        {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=oven"
-        }
-    ]
+  "title": {
+    "en": "Disable cavity light",
+    "nl": "Koppel de ovendeurlicht uit",
+    "da": "Slå ovnlys fra",
+    "de": "Backofenlicht ausschalten",
+    "es": "Desactivar luz del horno",
+    "fr": "Désactiver la lumière du four",
+    "it": "Disattiva luce del forno",
+    "no": "Deaktiver ovnslys",
+    "sv": "Stäng av ugnsljus",
+    "pl": "Wyłącz światło piekarnika",
+    "ru": "Отключить свет внутри духовки",
+    "ko": "오븐 조명 끄기"
+  },
+  "titleFormatted": {
+    "en": "Disable cavity light",
+    "nl": "Koppel de ovendeurlicht uit",
+    "da": "Slå ovnlys fra",
+    "de": "Backofenlicht ausschalten",
+    "es": "Desactivar luz del horno",
+    "fr": "Désactiver la lumière du four",
+    "it": "Disattiva luce del forno",
+    "no": "Deaktiver ovnslys",
+    "sv": "Stäng av ugnsljus",
+    "pl": "Wyłącz światło piekarnika",
+    "ru": "Отключить свет внутри духовки",
+    "ko": "오븐 조명 끄기"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=oven"
+    }
+  ]
 }

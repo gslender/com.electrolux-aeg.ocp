@@ -1,21 +1,45 @@
 {
-    "id": "measure_applianceState_changed",
-    "title": {
-        "en": "The Appliance State has changed"
-    },
-    "args": [
-        {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=oven|laundry"
-        }
-    ],
-    "tokens": [
-        {
-            "name": "measure_applianceState",
-            "title": { "en": "Appliance State"},
-            "type": "string",
-            "example": "RUNNING"
-        }
-    ]
+  "id": "measure_applianceState_changed",
+  "title": {
+    "en": "The Appliance State has changed",
+    "nl": "De status van het apparaat is gewijzigd",
+    "da": "Apparatets tilstand er ændret",
+    "de": "Der Gerätezustand hat sich geändert",
+    "es": "El estado del electrodoméstico ha cambiado",
+    "fr": "L'état de l'appareil a changé",
+    "it": "Lo stato dell'apparecchio è cambiato",
+    "no": "Apparatets tilstand har endret seg",
+    "sv": "Apparatens tillstånd har ändrats",
+    "pl": "Stan urządzenia uległ zmianie",
+    "ru": "Состояние прибора изменилось",
+    "ko": "가전 제품 상태가 변경되었습니다"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=oven|laundry"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "measure_applianceState",
+      "title": {
+        "en": "Appliance State",
+        "nl": "Apparaatstatus",
+        "da": "Apparatets tilstand",
+        "de": "Zustand des Geräts",
+        "es": "Estado del aparato",
+        "fr": "État de l'appareil",
+        "it": "Stato dell'apparecchio",
+        "no": "Apparatets tilstand",
+        "sv": "Apparatens tillstånd",
+        "pl": "Stan urządzenia",
+        "ru": "Состояние прибора",
+        "ko": "가전 제품 상태"
+      },
+      "type": "string",
+      "example": "RUNNING"
+    }
+  ]
 }

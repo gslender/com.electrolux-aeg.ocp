@@ -1,16 +1,34 @@
 {
-    "type": "number",
-    "units": {
-        "en": "mins",
-        "de": "mins",
-        "nl": "mins"
-    },
-    "title": {
-        "en": "Running Time",
-        "de": "Laufzeit",
-        "nl": "Looptijd"
-    },
-    "getable": true,
-    "setable": false,
-    "icon": "/assets/icons/clock.svg"
+  "type": "number",
+  "units": {
+    "en": "mins",
+    "de": "mins",
+    "nl": "mins",
+    "da": "min",
+    "es": "min",
+    "fr": "min",
+    "it": "min",
+    "no": "min",
+    "sv": "min",
+    "pl": "min",
+    "ru": "мин",
+    "ko": "분"
+  },
+  "title": {
+    "en": "Running Time",
+    "de": "Laufzeit",
+    "nl": "Looptijd",
+    "da": "Køretid",
+    "es": "Tiempo de ejecución",
+    "fr": "Durée",
+    "it": "Durata",
+    "no": "Kjøretid",
+    "sv": "Körtid",
+    "pl": "Czas trwania",
+    "ru": "Время работы",
+    "ko": "실행 시간"
+  },
+  "getable": true,
+  "setable": false,
+  "icon": "/assets/icons/clock.svg"
 }

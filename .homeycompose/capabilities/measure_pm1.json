@@ -1,23 +1,43 @@
 {
-    "type": "number",
-    "title": {
-        "en": "PM1",
-        "nl": "PM1",
-        "de": "PM1"
-    },
-    "units": {
-        "en": "ppm"
-    },
-    "insights": true,
-    "desc": {
-        "en": "Atmospheric Particulate Matter (μg/m3)",
-        "nl": "Deeltjesvormige luchtverontreiniging (μg/m3)",
-        "de": "Atmosphärischer Feinstaub (μg/m3)"
-    },
-    "chartType": "spline",
-    "decimals": 2,
-    "getable": true,
-    "setable": false,
-    "uiComponent": "sensor",
-    "icon": "/assets/icons/pm1.svg"
+  "type": "number",
+  "title": {
+    "en": "PM1",
+    "nl": "PM1",
+    "de": "PM1"
+  },
+  "units": {
+    "en": "ppm",
+    "nl": "ppm",
+    "da": "ppm",
+    "de": "ppm",
+    "es": "ppm",
+    "fr": "ppm",
+    "it": "ppm",
+    "no": "ppm",
+    "sv": "ppm",
+    "pl": "ppm",
+    "ru": "ppm",
+    "ko": "ppm"
+  },
+  "insights": true,
+  "desc": {
+    "en": "Atmospheric Particulate Matter (μg/m3)",
+    "nl": "Deeltjesvormige luchtverontreiniging (μg/m3)",
+    "de": "Atmosphärischer Feinstaub (μg/m3)",
+    "da": "Atmosfærisk partikulært stof (μg/m3)",
+    "es": "Materia Particulada Atmosférica (μg/m3)",
+    "fr": "Matières Particulaires Atmosphériques (μg/m3)",
+    "it": "Materia Particolata Atmosferica (μg/m3)",
+    "no": "Atmosfærisk partikkelmateriell (μg/m3)",
+    "sv": "Atmosfäriska partiklar (μg/m3)",
+    "pl": "Pyły atmosferyczne (μg/m3)",
+    "ru": "Атмосферные твердые частицы (μг/м3)",
+    "ko": "대기 중 입자 물질 (μg/m3)"
+  },
+  "chartType": "spline",
+  "decimals": 2,
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/icons/pm1.svg"
 }

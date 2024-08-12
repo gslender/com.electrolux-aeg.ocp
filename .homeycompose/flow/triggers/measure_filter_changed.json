@@ -1,23 +1,45 @@
 {
-    "id": "measure_filter_changed",
-    "title": {
-      "en": "The filter life changed"
-    },
-    "args": [
-        {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=air-purifier"
-        }
-    ],
-    "tokens": [
-      {
-        "name": "measure_filter",
-        "title": {
-          "en": "Filter life"
-        },
-        "type": "number",
-        "example": 99
-      }
-    ]
-  }
+  "id": "measure_filter_changed",
+  "title": {
+    "en": "The filter life changed",
+    "nl": "Het filterleven is veranderd",
+    "da": "Filterets levetid er ændret",
+    "de": "Die Filterlebensdauer hat sich geändert",
+    "es": "La vida útil del filtro ha cambiado",
+    "fr": "La durée de vie du filtre a changé",
+    "it": "La vita del filtro è cambiata",
+    "no": "Filterlevetiden er endret",
+    "sv": "Filtrets livslängd har ändrats",
+    "pl": "Żywotność filtra została zmieniona",
+    "ru": "Срок службы фильтра изменился",
+    "ko": "필터 수명이 변경되었습니다"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=air-purifier"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "measure_filter",
+      "title": {
+        "en": "Filter life",
+        "nl": "Filterleven",
+        "da": "Filterliv",
+        "de": "Filterlaufzeit",
+        "es": "Vida del filtro",
+        "fr": "Durée de vie du filtre",
+        "it": "Vita del filtro",
+        "no": "Filterliv",
+        "sv": "Filtrets livslängd",
+        "pl": "Żywotność filtra",
+        "ru": "Срок службы фильтра",
+        "ko": "필터 수명"
+      },
+      "type": "number",
+      "example": 99
+    }
+  ]
+}

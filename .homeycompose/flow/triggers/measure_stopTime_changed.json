@@ -1,23 +1,45 @@
 {
-    "id": "measure_stopTime_changed",
-    "title": {
-        "en": "The Stop Time has changed"
-    },
-    "args": [
-        {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=oven|laundry"
-        }
-    ],
-    "tokens": [
-        {
-            "name": "measure_stopTime",
-            "title": {
-                "en": "Stop Time"
-            },
-            "type": "string",
-            "example": "5 minutes"
-        }
-    ]
+  "id": "measure_stopTime_changed",
+  "title": {
+    "en": "The Stop Time has changed",
+    "nl": "De stoptijd is gewijzigd",
+    "da": "Stop tiden er ændret",
+    "de": "Die Stoppzeit hat sich geändert",
+    "es": "El tiempo de detención ha cambiado",
+    "fr": "Le temps d'arrêt a changé",
+    "it": "Il tempo di arresto è cambiato",
+    "no": "Stoptiden har endret seg",
+    "sv": "Stopptiden har ändrats",
+    "pl": "Czas zatrzymania się zmienił",
+    "ru": "Время остановки изменилось",
+    "ko": "정지 시간이 변경되었습니다"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=oven|laundry"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "measure_stopTime",
+      "title": {
+        "en": "Stop Time",
+        "nl": "Stoptijd",
+        "da": "Stoptid",
+        "de": "Stoppzeit",
+        "es": "Tiempo de detención",
+        "fr": "Temps d'arrêt",
+        "it": "Tempo di arresto",
+        "no": "Stoptid",
+        "sv": "Stopptid",
+        "pl": "Czas zatrzymania",
+        "ru": "Время остановки",
+        "ko": "정지 시간"
+      },
+      "type": "string",
+      "example": "5 minutes"
+    }
+  ]
 }

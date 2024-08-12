@@ -1,16 +1,34 @@
 {
-    "type": "number",
-    "units": {
-        "en": "mins",
-        "de": "mins",
-        "nl": "mins"
-    },
-    "title": {
-        "en": "Time To End",
-        "de": "Verbleibende Zeit",
-        "nl": "Tijd Tot Einde"
-    },
-    "getable": true,
-    "setable": false,
-    "icon": "/assets/icons/clock.svg"
+  "type": "number",
+  "units": {
+    "en": "mins",
+    "de": "mins",
+    "nl": "mins",
+    "da": "minutter",
+    "es": "min",
+    "fr": "min",
+    "it": "min",
+    "no": "minutter",
+    "sv": "minuter",
+    "pl": "min",
+    "ru": "мин",
+    "ko": "분"
+  },
+  "title": {
+    "en": "Time To End",
+    "de": "Verbleibende Zeit",
+    "nl": "Tijd Tot Einde",
+    "da": "Tid Til Slut",
+    "es": "Tiempo hasta el final",
+    "fr": "Temps Restant",
+    "it": "Tempo Rimanente",
+    "no": "Tid til slutt",
+    "sv": "Tid till slutet",
+    "pl": "Czas do końca",
+    "ru": "Время до конца",
+    "ko": "종료 시간"
+  },
+  "getable": true,
+  "setable": false,
+  "icon": "/assets/icons/clock.svg"
 }

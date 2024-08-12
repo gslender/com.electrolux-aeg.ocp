@@ -2,7 +2,18 @@
   "type": "number",
   "uiComponent": "slider",
   "title": {
-    "en": "Fan speed"
+    "en": "Fan speed",
+    "nl": "Ventilatorsnelheid",
+    "da": "Blæserhastighed",
+    "de": "Lüftergeschwindigkeit",
+    "es": "Velocidad del ventilador",
+    "fr": "Vitesse du ventilateur",
+    "it": "Velocità della ventola",
+    "no": "Viftehastighet",
+    "sv": "Fläkthastighet",
+    "pl": "Prędkość wentylatora",
+    "ru": "Скорость вентилятора",
+    "ko": "팬 속도"
   },
   "min": 0,
   "max": 100,
@@ -10,4 +21,3 @@
   "getable": true,
   "setable": true
 }
-

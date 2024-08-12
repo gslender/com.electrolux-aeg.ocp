@@ -8,10 +8,32 @@
     "local"
   ],
   "name": {
-    "en": "Electrolux AEG"
+    "en": "Electrolux AEG",
+    "nl": "Electrolux AEG",
+    "da": "Electrolux AEG",
+    "de": "Electrolux AEG",
+    "es": "Electrolux AEG",
+    "fr": "Electrolux AEG",
+    "it": "Electrolux AEG",
+    "no": "Electrolux AEG",
+    "sv": "Electrolux AEG",
+    "pl": "Electrolux AEG",
+    "ru": "Electrolux AEG",
+    "ko": "Electrolux AEG"
   },
   "description": {
-    "en": "One Connected Platform appliances and services - for an effortlessly smarter home"
+    "en": "One Connected Platform appliances and services - for an effortlessly smarter home",
+    "nl": "Eén verbonden platform voor apparaten en diensten - voor een moeiteloos slimmer huis",
+    "da": "En sammenkoblet platform til apparater og tjenester - for et ubesværet smartere hjem",
+    "de": "Eine verbundene Plattform für Geräte und Dienstleistungen - für ein mühelos intelligenteres Zuhause",
+    "es": "Una plataforma conectada para electrodomésticos y servicios - para un hogar más inteligente sin esfuerzo",
+    "fr": "Une plateforme connectée pour les appareils et services - pour une maison plus intelligente et sans effort",
+    "it": "Una piattaforma connessa per elettrodomestici e servizi - per una casa più intelligente senza sforzo",
+    "no": "En tilkoblet plattform for apparater og tjenester - for et ubesværet smartere hjem",
+    "sv": "En ansluten plattform för apparater och tjänster - för ett smartare hem utan ansträngning",
+    "pl": "Jedna połączona platforma urządzeń i usług - dla beztrosko mądrzejszego domu",
+    "ru": "Единая платформа для устройств и услуг - для более умного дома без усилий",
+    "ko": "하나의 연결된 플랫폼 기기 및 서비스 - 더 스마트한 집을 위해"
   },
   "brandColor": "#d31937",
   "category": [
@@ -35,7 +57,18 @@
       {
         "id": "measure_applianceMode_changed",
         "title": {
-          "en": "The Appliance Mode has changed"
+          "en": "The Appliance Mode has changed",
+          "nl": "De modus van het apparaat is gewijzigd",
+          "da": "Apparatets tilstand er ændret",
+          "de": "Der Gerätemodus hat sich geändert",
+          "es": "El modo del electrodoméstico ha cambiado",
+          "fr": "Le mode de l'appareil a changé",
+          "it": "La modalità dell'apparecchio è cambiata",
+          "no": "Enhetens modus har endret",
+          "sv": "Apparatläget har ändrats",
+          "pl": "Tryb urządzenia został zmieniony",
+          "ru": "Режим прибора изменился",
+          "ko": "기기 모드가 변경되었습니다"
         },
         "args": [
           {
@@ -48,7 +81,18 @@
           {
             "name": "measure_applianceMode",
             "title": {
-              "en": "Appliance Mode"
+              "en": "Appliance Mode",
+              "nl": "Apparaatmodus",
+              "da": "Apparattilstand",
+              "de": "Gerätemodus",
+              "es": "Modo del electrodoméstico",
+              "fr": "Mode de l'appareil",
+              "it": "Modalità dell'apparecchio",
+              "no": "Enhetsmodus",
+              "sv": "Apparatläge",
+              "pl": "Tryb urządzenia",
+              "ru": "Режим прибора",
+              "ko": "기기 모드"
             },
             "type": "string",
             "example": "RUNNING"
@@ -58,7 +102,18 @@
       {
         "id": "measure_applianceState_changed",
         "title": {
-          "en": "The Appliance State has changed"
+          "en": "The Appliance State has changed",
+          "nl": "De status van het apparaat is gewijzigd",
+          "da": "Apparatets tilstand er ændret",
+          "de": "Der Gerätezustand hat sich geändert",
+          "es": "El estado del electrodoméstico ha cambiado",
+          "fr": "L'état de l'appareil a changé",
+          "it": "Lo stato dell'apparecchio è cambiato",
+          "no": "Apparatets tilstand har endret seg",
+          "sv": "Apparatens tillstånd har ändrats",
+          "pl": "Stan urządzenia uległ zmianie",
+          "ru": "Состояние прибора изменилось",
+          "ko": "가전 제품 상태가 변경되었습니다"
         },
         "args": [
           {
@@ -71,7 +126,18 @@
           {
             "name": "measure_applianceState",
             "title": {
-              "en": "Appliance State"
+              "en": "Appliance State",
+              "nl": "Apparaatstatus",
+              "da": "Apparatets tilstand",
+              "de": "Zustand des Geräts",
+              "es": "Estado del aparato",
+              "fr": "État de l'appareil",
+              "it": "Stato dell'apparecchio",
+              "no": "Apparatets tilstand",
+              "sv": "Apparatens tillstånd",
+              "pl": "Stan urządzenia",
+              "ru": "Состояние прибора",
+              "ko": "가전 제품 상태"
             },
             "type": "string",
             "example": "RUNNING"
@@ -81,7 +147,18 @@
       {
         "id": "measure_cyclePhase_changed",
         "title": {
-          "en": "The Cycle Phase has changed"
+          "en": "The Cycle Phase has changed",
+          "nl": "De cyclusfase is veranderd",
+          "da": "Cyklusfasen er ændret",
+          "de": "Die Zyklusphase hat sich geändert",
+          "es": "La fase del ciclo ha cambiado",
+          "fr": "La phase du cycle a changé",
+          "it": "La fase del ciclo è cambiata",
+          "no": "Syklusfasen har endret seg",
+          "sv": "Cykelfasen har ändrats",
+          "pl": "Faza cyklu została zmieniona",
+          "ru": "Фаза цикла изменилась",
+          "ko": "사이클 단계가 변경되었습니다"
         },
         "args": [
           {
@@ -94,7 +171,18 @@
           {
             "name": "measure_cyclePhase",
             "title": {
-              "en": "Cycle Phase"
+              "en": "Cycle Phase",
+              "nl": "Cyclusfase",
+              "da": "Cyklusfase",
+              "de": "Zyklusphase",
+              "es": "Fase del ciclo",
+              "fr": "Phase du cycle",
+              "it": "Fase del ciclo",
+              "no": "Syklusfase",
+              "sv": "Cykelfas",
+              "pl": "Faza cyklu",
+              "ru": "Фаза цикла",
+              "ko": "사이클 단계"
             },
             "type": "string",
             "example": "OFF"
@@ -104,7 +192,18 @@
       {
         "id": "measure_doorState_changed",
         "title": {
-          "en": "The Door State has changed"
+          "en": "The Door State has changed",
+          "nl": "De deurstatus is gewijzigd",
+          "da": "Dørstatus er ændret",
+          "de": "Der Türzustand hat sich geändert",
+          "es": "El estado de la puerta ha cambiado",
+          "fr": "L'état de la porte a changé",
+          "it": "Lo stato della porta è cambiato",
+          "no": "Dørtilstanden har endret seg",
+          "sv": "Dörrstatus har ändrats",
+          "pl": "Stan drzwi został zmieniony",
+          "ru": "Состояние двери изменилось",
+          "ko": "문 상태가 변경되었습니다"
         },
         "args": [
           {
@@ -125,7 +224,18 @@
       {
         "id": "measure_filter_changed",
         "title": {
-          "en": "The filter life changed"
+          "en": "The filter life changed",
+          "nl": "Het filterleven is veranderd",
+          "da": "Filterets levetid er ændret",
+          "de": "Die Filterlebensdauer hat sich geändert",
+          "es": "La vida útil del filtro ha cambiado",
+          "fr": "La durée de vie du filtre a changé",
+          "it": "La vita del filtro è cambiata",
+          "no": "Filterlevetiden er endret",
+          "sv": "Filtrets livslängd har ändrats",
+          "pl": "Żywotność filtra została zmieniona",
+          "ru": "Срок службы фильтра изменился",
+          "ko": "필터 수명이 변경되었습니다"
         },
         "args": [
           {
@@ -138,7 +248,18 @@
           {
             "name": "measure_filter",
             "title": {
-              "en": "Filter life"
+              "en": "Filter life",
+              "nl": "Filterleven",
+              "da": "Filterliv",
+              "de": "Filterlaufzeit",
+              "es": "Vida del filtro",
+              "fr": "Durée de vie du filtre",
+              "it": "Vita del filtro",
+              "no": "Filterliv",
+              "sv": "Filtrets livslängd",
+              "pl": "Żywotność filtra",
+              "ru": "Срок службы фильтра",
+              "ko": "필터 수명"
             },
             "type": "number",
             "example": 99
@@ -150,7 +271,16 @@
         "title": {
           "en": "The PM1 value has changed",
           "nl": "De PM1 waarde is veranderd",
-          "de": "Der PM1-Wert hat sich geändert"
+          "de": "Der PM1-Wert hat sich geändert",
+          "da": "PM1-værdien er ændret",
+          "es": "El valor de PM1 ha cambiado",
+          "fr": "La valeur PM1 a changé",
+          "it": "Il valore PM1 è cambiato",
+          "no": "PM1-verdien har endret seg",
+          "sv": "PM1-värdet har ändrats",
+          "pl": "Wartość PM1 zmieniła się",
+          "ru": "Значение PM1 изменилось",
+          "ko": "PM1 값이 변경되었습니다"
         },
         "args": [
           {
@@ -163,7 +293,16 @@
           {
             "name": "measure_pm1",
             "title": {
-              "en": "PM1"
+              "en": "PM1",
+              "da": "PM1",
+              "es": "PM1",
+              "fr": "PM1",
+              "it": "PM1",
+              "no": "PM1",
+              "sv": "PM1",
+              "pl": "PM1",
+              "ru": "PM1",
+              "ko": "PM1"
             },
             "type": "number",
             "example": 2
@@ -175,7 +314,16 @@
         "title": {
           "en": "The PM10 value has changed",
           "nl": "De PM10 waarde is veranderd",
-          "de": "Der PM10-Wert hat sich geändert"
+          "de": "Der PM10-Wert hat sich geändert",
+          "da": "PM10-værdien er ændret",
+          "es": "El valor de PM10 ha cambiado",
+          "fr": "La valeur PM10 a changé",
+          "it": "Il valore PM10 è cambiato",
+          "no": "PM10-verdien har endret seg",
+          "sv": "PM10-värdet har ändrats",
+          "pl": "Wartość PM10 się zmieniła",
+          "ru": "Значение PM10 изменилось",
+          "ko": "PM10 값이 변경되었습니다"
         },
         "args": [
           {
@@ -196,7 +344,18 @@
       {
         "id": "measure_runningTime_changed",
         "title": {
-          "en": "The Running Time has changed"
+          "en": "The Running Time has changed",
+          "nl": "De looptijd is veranderd",
+          "da": "Køretiden er ændret",
+          "de": "Die Laufzeit hat sich geändert",
+          "es": "El tiempo de funcionamiento ha cambiado",
+          "fr": "Le temps de fonctionnement a changé",
+          "it": "Il tempo di esecuzione è cambiato",
+          "no": "Kjøretiden har endret seg",
+          "sv": "Körtiden har ändrats",
+          "pl": "Czas działania uległ zmianie",
+          "ru": "Время работы изменилось",
+          "ko": "실행 시간이 변경되었습니다"
         },
         "args": [
           {
@@ -209,7 +368,18 @@
           {
             "name": "measure_runningTime",
             "title": {
-              "en": "Running Time"
+              "en": "Running Time",
+              "nl": "Looptijd",
+              "da": "Køretid",
+              "de": "Laufzeit",
+              "es": "Tiempo de funcionamiento",
+              "fr": "Temps de fonctionnement",
+              "it": "Tempo di esecuzione",
+              "no": "Kjøretid",
+              "sv": "Körtid",
+              "pl": "Czas działania",
+              "ru": "Время работы",
+              "ko": "실행 시간"
             },
             "type": "number",
             "example": 0
@@ -219,7 +389,18 @@
       {
         "id": "measure_startTime_changed",
         "title": {
-          "en": "The Start Time has changed"
+          "en": "The Start Time has changed",
+          "nl": "De starttijd is veranderd",
+          "da": "Starttiden er ændret",
+          "de": "Die Startzeit hat sich geändert",
+          "es": "La hora de inicio ha cambiado",
+          "fr": "L'heure de début a changé",
+          "it": "L'orario di inizio è cambiato",
+          "no": "Starttiden har endret seg",
+          "sv": "Starttiden har ändrats",
+          "pl": "Czas rozpoczęcia został zmieniony",
+          "ru": "Время начала изменилось",
+          "ko": "시작 시간이 변경되었습니다"
         },
         "args": [
           {
@@ -232,7 +413,18 @@
           {
             "name": "measure_startTime",
             "title": {
-              "en": "Start Time"
+              "en": "Start Time",
+              "nl": "Starttijd",
+              "da": "Starttid",
+              "de": "Startzeit",
+              "es": "Hora de inicio",
+              "fr": "Heure de début",
+              "it": "Orario di inizio",
+              "no": "Starttid",
+              "sv": "Starttid",
+              "pl": "Czas rozpoczęcia",
+              "ru": "Время начала",
+              "ko": "시작 시간"
             },
             "type": "string",
             "example": "5 minutes"
@@ -242,7 +434,18 @@
       {
         "id": "measure_stopTime_changed",
         "title": {
-          "en": "The Stop Time has changed"
+          "en": "The Stop Time has changed",
+          "nl": "De stoptijd is gewijzigd",
+          "da": "Stop tiden er ændret",
+          "de": "Die Stoppzeit hat sich geändert",
+          "es": "El tiempo de detención ha cambiado",
+          "fr": "Le temps d'arrêt a changé",
+          "it": "Il tempo di arresto è cambiato",
+          "no": "Stoptiden har endret seg",
+          "sv": "Stopptiden har ändrats",
+          "pl": "Czas zatrzymania się zmienił",
+          "ru": "Время остановки изменилось",
+          "ko": "정지 시간이 변경되었습니다"
         },
         "args": [
           {
@@ -255,7 +458,18 @@
           {
             "name": "measure_stopTime",
             "title": {
-              "en": "Stop Time"
+              "en": "Stop Time",
+              "nl": "Stoptijd",
+              "da": "Stoptid",
+              "de": "Stoppzeit",
+              "es": "Tiempo de detención",
+              "fr": "Temps d'arrêt",
+              "it": "Tempo di arresto",
+              "no": "Stoptid",
+              "sv": "Stopptid",
+              "pl": "Czas zatrzymania",
+              "ru": "Время остановки",
+              "ko": "정지 시간"
             },
             "type": "string",
             "example": "5 minutes"
@@ -288,7 +502,18 @@
       {
         "id": "measure_timeToEnd_changed",
         "title": {
-          "en": "The Time To End has changed"
+          "en": "The Time To End has changed",
+          "nl": "De Tijd Tot Eind is veranderd",
+          "da": "Tiden til slutning er ændret",
+          "de": "Die Zeit bis zum Ende hat sich geändert",
+          "es": "El tiempo para terminar ha cambiado",
+          "fr": "Le Temps Jusqu'à la Fin a changé",
+          "it": "Il tempo per finire è cambiato",
+          "no": "Tiden til slutt har endret seg",
+          "sv": "Tiden till slut har ändrats",
+          "pl": "Czas do końca zmienił się",
+          "ru": "Время до конца изменилось",
+          "ko": "종료 시간 변경됨"
         },
         "args": [
           {
@@ -301,7 +526,18 @@
           {
             "name": "measure_timeToEnd",
             "title": {
-              "en": "Time To End"
+              "en": "Time To End",
+              "nl": "Tijd Tot Einde",
+              "da": "Tid til afslutning",
+              "de": "Zeit bis zum Ende",
+              "es": "Tiempo para terminar",
+              "fr": "Temps jusqu'à la fin",
+              "it": "Tempo per finire",
+              "no": "Tid til slutt",
+              "sv": "Tid till slut",
+              "pl": "Czas do końca",
+              "ru": "Время до конца",
+              "ko": "종료 시간"
             },
             "type": "number",
             "example": 0
@@ -313,7 +549,16 @@
         "title": {
           "en": "The VOC value has changed",
           "nl": "De VOC waarde is veranderd",
-          "de": "Der VOC-Wert hat sich geändert"
+          "de": "Der VOC-Wert hat sich geändert",
+          "da": "VOC-værdien har ændret sig",
+          "es": "El valor de VOC ha cambiado",
+          "fr": "La valeur de COV a changé",
+          "it": "Il valore VOC è cambiato",
+          "no": "VOC-verdien har endret seg",
+          "sv": "VOC-värdet har ändrats",
+          "pl": "Wartość VOC się zmieniła",
+          "ru": "Значение VOC изменилось",
+          "ko": "VOC 값이 변경되었습니다"
         },
         "args": [
           {
@@ -335,13 +580,46 @@
     "conditions": [
       {
         "title": {
-          "en": "Appliance State !{{is|isn't}} ..."
+          "en": "Appliance State !{{is|isn't}} ...",
+          "nl": "Apparaatstatus !{{is|is niet}} ...",
+          "da": "Apparatstatus !{{er|er ikke}} ...",
+          "de": "Gerätestatus !{{ist|ist nicht}} ...",
+          "es": "Estado del aparato !{{está|no está}} ...",
+          "fr": "État de l'appareil !{{est|n'est pas}} ...",
+          "it": "Stato dell'apparecchio !{{è|non è}} ...",
+          "no": "Apparatstatus !{{er|er ikke}} ...",
+          "sv": "Apparatstatus !{{är|är inte}} ...",
+          "pl": "Stan urządzenia !{{jest|nie jest}} ...",
+          "ru": "Состояние прибора !{{есть|нет}} ...",
+          "ko": "기기 상태 !{{입니다|아닙니다}} ..."
         },
         "titleFormatted": {
-          "en": "Appliance State !{{is|isn't}} [[value]]"
+          "en": "Appliance State !{{is|isn't}} [[value]]",
+          "nl": "Apparaatstatus !{{is|is niet}} [[value]]",
+          "da": "Apparatstatus !{{er|er ikke}} [[value]]",
+          "de": "Gerätestatus !{{ist|ist nicht}} [[value]]",
+          "es": "Estado del aparato !{{está|no está}} [[value]]",
+          "fr": "État de l'appareil !{{est|n'est pas}} [[value]]",
+          "it": "Stato dell'apparecchio !{{è|non è}} [[value]]",
+          "no": "Apparatstatus !{{er|er ikke}} [[value]]",
+          "sv": "Apparatstatus !{{är|är inte}} [[value]]",
+          "pl": "Stan urządzenia !{{jest|nie jest}} [[value]]",
+          "ru": "Состояние прибора !{{есть|нет}} [[value]]",
+          "ko": "기기 상태 !{{입니다|아닙니다}} [[value]]"
         },
         "hint": {
-          "en": "Checks if Appliance State will/will not be the given value."
+          "en": "Checks if Appliance State will/will not be the given value.",
+          "nl": "Controleert of de apparaatstatus de opgegeven waarde wel/niet zal zijn.",
+          "da": "Kontrollerer om apparatets status vil/vil ikke være den givne værdi.",
+          "de": "Überprüft, ob der Gerätestatus den vorgegebenen Wert hat oder nicht.",
+          "es": "Verifica si el estado del aparato será o no el valor dado.",
+          "fr": "Vérifie si l'état de l'appareil sera ou non la valeur donnée.",
+          "it": "Controlla se lo stato dell'apparecchio sarà o non sarà il valore dato.",
+          "no": "Sjekker om apparatets status vil/vil ikke være den gitte verdien.",
+          "sv": "Kontrollerar om apparatstatus kommer/inte kommer att vara det angivna värdet.",
+          "pl": "Sprawdza, czy stan urządzenia będzie/nie będzie wartością podaną.",
+          "ru": "Проверяет, будет ли состояние прибора соответствовать указанному значению или нет.",
+          "ko": "기기 상태가 주어진 값이 될지 여부를 확인합니다."
         },
         "args": [
           {
@@ -409,13 +687,46 @@
       },
       {
         "title": {
-          "en": "Cycle Phase !{{is|isn't}} ..."
+          "en": "Cycle Phase !{{is|isn't}} ...",
+          "nl": "Cycle-fase !{{is|isn't}} ...",
+          "da": "Cyklusfase !{{is|isn't}} ...",
+          "de": "Zyklusphase !{{is|isn't}} ...",
+          "es": "Fase de Ciclo !{{is|isn't}} ...",
+          "fr": "Phase de Cycle !{{is|isn't}} ...",
+          "it": "Fase del Ciclo !{{is|isn't}} ...",
+          "no": "Syklusfase !{{is|isn't}} ...",
+          "sv": "Cykelfas !{{is|isn't}} ...",
+          "pl": "Faza Cyklu !{{is|isn't}} ...",
+          "ru": "Фаза цикла !{{is|isn't}} ...",
+          "ko": "주기 단계 !{{is|isn't}} ..."
         },
         "titleFormatted": {
-          "en": "Cycle Phase !{{is|isn't}} [[value]]"
+          "en": "Cycle Phase !{{is|isn't}} [[value]]",
+          "nl": "Cycle-fase !{{is|isn't}} [[value]]",
+          "da": "Cyklusfase !{{is|isn't}} [[value]]",
+          "de": "Zyklusphase !{{is|isn't}} [[value]]",
+          "es": "Fase de Ciclo !{{is|isn't}} [[value]]",
+          "fr": "Phase de Cycle !{{is|isn't}} [[value]]",
+          "it": "Fase del Ciclo !{{is|isn't}} [[value]]",
+          "no": "Syklusfase !{{is|isn't}} [[value]]",
+          "sv": "Cykelfas !{{is|isn't}} [[value]]",
+          "pl": "Faza Cyklu !{{is|isn't}} [[value]]",
+          "ru": "Фаза цикла !{{is|isn't}} [[value]]",
+          "ko": "주기 단계 !{{is|isn't}} [[value]]"
         },
         "hint": {
-          "en": "Checks if Cycle Phase will/will not be the given value."
+          "en": "Checks if Cycle Phase will/will not be the given value.",
+          "nl": "Controleert of de Cycle-fase de opgegeven waarde zal/zal niet zijn.",
+          "da": "Tjekker om cyklusfasen vil/vil ikke være den givne værdi.",
+          "de": "Überprüft, ob die Zyklusphase der angegebenen Wert sein wird/nicht sein wird.",
+          "es": "Comprueba si la fase de ciclo será/no será el valor dado.",
+          "fr": "Vérifie si la phase de cycle sera/ne sera pas la valeur donnée.",
+          "it": "Verifica se la fase del ciclo sarà/non sarà il valore dato.",
+          "no": "Sjekker om syklusfasen vil/ikke vil være den gitte verdien.",
+          "sv": "Kontrollerar om cykelfasen kommer/kommer inte att vara det givna värdet.",
+          "pl": "Sprawdza, czy faza cyklu będzie/nie będzie podaną wartością.",
+          "ru": "Проверяет, будет ли фаза цикла заданным значением/не будет им.",
+          "ko": "주기 단계가 주어진 값인지/아닌지 확인합니다."
         },
         "args": [
           {
@@ -455,10 +766,32 @@
     "actions": [
       {
         "title": {
-          "en": "Disable cavity light"
+          "en": "Disable cavity light",
+          "nl": "Koppel de ovendeurlicht uit",
+          "da": "Slå ovnlys fra",
+          "de": "Backofenlicht ausschalten",
+          "es": "Desactivar luz del horno",
+          "fr": "Désactiver la lumière du four",
+          "it": "Disattiva luce del forno",
+          "no": "Deaktiver ovnslys",
+          "sv": "Stäng av ugnsljus",
+          "pl": "Wyłącz światło piekarnika",
+          "ru": "Отключить свет внутри духовки",
+          "ko": "오븐 조명 끄기"
         },
         "titleFormatted": {
-          "en": "Disable cavity light"
+          "en": "Disable cavity light",
+          "nl": "Koppel de ovendeurlicht uit",
+          "da": "Slå ovnlys fra",
+          "de": "Backofenlicht ausschalten",
+          "es": "Desactivar luz del horno",
+          "fr": "Désactiver la lumière du four",
+          "it": "Disattiva luce del forno",
+          "no": "Deaktiver ovnslys",
+          "sv": "Stäng av ugnsljus",
+          "pl": "Wyłącz światło piekarnika",
+          "ru": "Отключить свет внутри духовки",
+          "ko": "오븐 조명 끄기"
         },
         "args": [
           {
@@ -471,10 +804,32 @@
       },
       {
         "title": {
-          "en": "Disable indicator light"
+          "en": "Disable indicator light",
+          "nl": "Indicatie lamp uitschakelen",
+          "da": "Deaktiver indikatorlys",
+          "de": "Anzeigeleuchte deaktivieren",
+          "es": "Desactivar luz indicadora",
+          "fr": "Désactiver le voyant",
+          "it": "Disabilita la spia",
+          "no": "Deaktiver indikatorlys",
+          "sv": "Inaktivera indikatorljus",
+          "pl": "Wyłącz wskaźnik",
+          "ru": "Отключить индикатор",
+          "ko": "표시등 비활성화"
         },
         "titleFormatted": {
-          "en": "Disable indicator light"
+          "en": "Disable indicator light",
+          "nl": "Indicatie lamp uitschakelen",
+          "da": "Deaktiver indikatorlys",
+          "de": "Anzeigeleuchte deaktivieren",
+          "es": "Desactivar luz indicadora",
+          "fr": "Désactiver le voyant",
+          "it": "Disabilita la spia",
+          "no": "Deaktiver indikatorlys",
+          "sv": "Inaktivera indikatorljus",
+          "pl": "Wyłącz wskaźnik",
+          "ru": "Отключить индикатор",
+          "ko": "표시등 비활성화"
         },
         "args": [
           {
@@ -487,13 +842,46 @@
       },
       {
         "title": {
-          "en": "Disable ionizer"
+          "en": "Disable ionizer",
+          "nl": "Ionisator uitschakelen",
+          "da": "Deaktiver ionisator",
+          "de": "Ionisator deaktivieren",
+          "es": "Desactivar ionizador",
+          "fr": "Désactiver l'ioniseur",
+          "it": "Disabilita ionizzatore",
+          "no": "Deaktiver ionisator",
+          "sv": "Inaktivera jonisator",
+          "pl": "Wyłączjonizator",
+          "ru": "Отключить ионизатор",
+          "ko": "이온 발생기 비활성화"
         },
         "titleFormatted": {
-          "en": "Disable ionizer"
+          "en": "Disable ionizer",
+          "nl": "Ionisator uitschakelen",
+          "da": "Deaktiver ionisator",
+          "de": "Ionisator deaktivieren",
+          "es": "Desactivar ionizador",
+          "fr": "Désactiver l'ioniseur",
+          "it": "Disabilita ionizzatore",
+          "no": "Deaktiver ionisator",
+          "sv": "Inaktivera jonisator",
+          "pl": "Wyłączjonizator",
+          "ru": "Отключить ионизатор",
+          "ko": "이온 발생기 비활성화"
         },
         "hint": {
-          "en": "Disables the ionizer"
+          "en": "Disables the ionizer",
+          "nl": "Schakelt de ionisator uit",
+          "da": "Deaktiverer ionisatoren",
+          "de": "Deaktiviert den Ionisator",
+          "es": "Desactiva el ionizador",
+          "fr": "Désactive l'ioniseur",
+          "it": "Disabilita l'ionizzatore",
+          "no": "Deaktiverer ionisatoren",
+          "sv": "Inaktiverar jonisatorn",
+          "pl": "Wyłącza jonizator",
+          "ru": "Отключает ионизатор",
+          "ko": "이온 발생기를 비활성화합니다"
         },
         "args": [
           {
@@ -506,10 +894,32 @@
       },
       {
         "title": {
-          "en": "Disable lock control"
+          "en": "Disable lock control",
+          "nl": "Schakel vergrendelingsbesturing uit",
+          "da": "Deaktiver låsekontrol",
+          "de": "Sperrsteuerung deaktivieren",
+          "es": "Desactivar control de bloqueo",
+          "fr": "Désactiver le contrôle du verrouillage",
+          "it": "Disattiva controllo blocco",
+          "no": "Deaktiver låskontroll",
+          "sv": "Inaktivera låskontroll",
+          "pl": "Wyłącz kontrolę blokady",
+          "ru": "Отключить управление блокировкой",
+          "ko": "잠금 제어 비활성화"
         },
         "titleFormatted": {
-          "en": "Disable lock control"
+          "en": "Disable lock control",
+          "nl": "Schakel vergrendelingsbesturing uit",
+          "da": "Deaktiver låsekontrol",
+          "de": "Sperrsteuerung deaktivieren",
+          "es": "Desactivar control de bloqueo",
+          "fr": "Désactiver le contrôle du verrouillage",
+          "it": "Disattiva controllo blocco",
+          "no": "Deaktiver låskontroll",
+          "sv": "Inaktivera låskontroll",
+          "pl": "Wyłącz kontrolę blokady",
+          "ru": "Отключить управление блокировкой",
+          "ko": "잠금 제어 비활성화"
         },
         "args": [
           {
@@ -522,10 +932,32 @@
       },
       {
         "title": {
-          "en": "Enable cavity light"
+          "en": "Enable cavity light",
+          "nl": "Schakel de ovenverlichting in",
+          "da": "Tænd ovnbelysningen",
+          "de": "Backofenbeleuchtung einschalten",
+          "es": "Encender luz del horno",
+          "fr": "Allumer la lumière du four",
+          "it": "Accendi la luce del forno",
+          "no": "Skru på ovnslyset",
+          "sv": "Sätt på ugnsbelysningen",
+          "pl": "Włącz światło piekarnika",
+          "ru": "Включить свет в духовом шкафу",
+          "ko": "오븐 조명 켜기"
         },
         "titleFormatted": {
-          "en": "Enable cavity light"
+          "en": "Enable cavity light",
+          "nl": "Schakel de ovenverlichting in",
+          "da": "Tænd ovnbelysningen",
+          "de": "Backofenbeleuchtung einschalten",
+          "es": "Encender luz del horno",
+          "fr": "Allumer la lumière du four",
+          "it": "Accendi la luce del forno",
+          "no": "Skru på ovnslyset",
+          "sv": "Sätt på ugnsbelysningen",
+          "pl": "Włącz światło piekarnika",
+          "ru": "Включить свет в духовом шкафу",
+          "ko": "오븐 조명 켜기"
         },
         "args": [
           {
@@ -538,10 +970,32 @@
       },
       {
         "title": {
-          "en": "Enable indicator light"
+          "en": "Enable indicator light",
+          "nl": "Schakel controlelampje in",
+          "da": "Aktiver indikatorlys",
+          "de": "Indikatorlicht einschalten",
+          "es": "Activar luz indicadora",
+          "fr": "Activer le voyant",
+          "it": "Attiva la luce indicatore",
+          "no": "Aktiver indikatorlampe",
+          "sv": "Aktivera indikatorlampan",
+          "pl": "Włącz światło wskaźnika",
+          "ru": "Включить индикаторный свет",
+          "ko": "표시등 켜기"
         },
         "titleFormatted": {
-          "en": "Enable indicator light"
+          "en": "Enable indicator light",
+          "nl": "Schakel controlelampje in",
+          "da": "Aktiver indikatorlys",
+          "de": "Indikatorlicht einschalten",
+          "es": "Activar luz indicadora",
+          "fr": "Activer le voyant",
+          "it": "Attiva la luce indicatore",
+          "no": "Aktiver indikatorlampe",
+          "sv": "Aktivera indikatorlampan",
+          "pl": "Włącz światło wskaźnika",
+          "ru": "Включить индикаторный свет",
+          "ko": "표시등 켜기"
         },
         "args": [
           {
@@ -554,13 +1008,46 @@
       },
       {
         "title": {
-          "en": "Enable ionizer"
+          "en": "Enable ionizer",
+          "nl": "Ionisator inschakelen",
+          "da": "Aktivér ionisator",
+          "de": "Ionisator aktivieren",
+          "es": "Activar ionizador",
+          "fr": "Activer l'ioniseur",
+          "it": "Abilita ionizzatore",
+          "no": "Aktiver ionisator",
+          "sv": "Aktivera jonisator",
+          "pl": "Włącz jonizator",
+          "ru": "Включить ионизатор",
+          "ko": "이온화기 활성화"
         },
         "titleFormatted": {
-          "en": "Enable ionizer"
+          "en": "Enable ionizer",
+          "nl": "Ionisator inschakelen",
+          "da": "Aktivér ionisator",
+          "de": "Ionisator aktivieren",
+          "es": "Activar ionizador",
+          "fr": "Activer l'ioniseur",
+          "it": "Abilita ionizzatore",
+          "no": "Aktiver ionisator",
+          "sv": "Aktivera jonisator",
+          "pl": "Włącz jonizator",
+          "ru": "Включить ионизатор",
+          "ko": "이온화기 활성화"
         },
         "hint": {
-          "en": "Enables the ionizer"
+          "en": "Enables the ionizer",
+          "nl": "Schakelt de ionisator in",
+          "da": "Tænder for ionisatoren",
+          "de": "Aktiviert den Ionisator",
+          "es": "Activa el ionizador",
+          "fr": "Active l'ioniseur",
+          "it": "Abilita l'ionizzatore",
+          "no": "Aktiverer ionisatoren",
+          "sv": "Aktiverar jonisatorn",
+          "pl": "Włącza jonizator",
+          "ru": "Включает ионизатор",
+          "ko": "이온화기를 활성화합니다"
         },
         "args": [
           {
@@ -573,10 +1060,32 @@
       },
       {
         "title": {
-          "en": "Enable lock control"
+          "en": "Enable lock control",
+          "nl": "Schakel vergrendeling in",
+          "da": "Aktiver låsekontrol",
+          "de": "Sperrkontrolle aktivieren",
+          "es": "Habilitar control de bloqueo",
+          "fr": "Activer le contrôle de verrouillage",
+          "it": "Abilita il controllo della serratura",
+          "no": "Aktiver låskontroll",
+          "sv": "Aktivera låskontroll",
+          "pl": "Włącz kontrolę zamka",
+          "ru": "Включить управление замком",
+          "ko": "잠금 제어 활성화"
         },
         "titleFormatted": {
-          "en": "Enable lock control"
+          "en": "Enable lock control",
+          "nl": "Schakel vergrendeling in",
+          "da": "Aktiver låsekontrol",
+          "de": "Sperrkontrolle aktivieren",
+          "es": "Habilitar control de bloqueo",
+          "fr": "Activer le contrôle de verrouillage",
+          "it": "Abilita il controllo della serratura",
+          "no": "Aktiver låskontroll",
+          "sv": "Aktivera låskontroll",
+          "pl": "Włącz kontrolę zamka",
+          "ru": "Включить управление замком",
+          "ko": "잠금 제어 활성화"
         },
         "args": [
           {
@@ -589,13 +1098,46 @@
       },
       {
         "title": {
-          "en": "Enable manual mode"
+          "en": "Enable manual mode",
+          "nl": "Handmatige modus inschakelen",
+          "da": "Aktiver manuel tilstand",
+          "de": "Manuellen Modus aktivieren",
+          "es": "Activar modo manual",
+          "fr": "Activer le mode manuel",
+          "it": "Attiva la modalità manuale",
+          "no": "Aktiver manuell modus",
+          "sv": "Aktivera manuellt läge",
+          "pl": "Włącz tryb ręczny",
+          "ru": "Включить ручной режим",
+          "ko": "수동 모드 활성화"
         },
         "titleFormatted": {
-          "en": "Enable manual mode"
+          "en": "Enable manual mode",
+          "nl": "Handmatige modus inschakelen",
+          "da": "Aktiver manuel tilstand",
+          "de": "Manuellen Modus aktivieren",
+          "es": "Activar modo manual",
+          "fr": "Activer le mode manuel",
+          "it": "Attiva la modalità manuale",
+          "no": "Aktiver manuell modus",
+          "sv": "Aktivera manuellt läge",
+          "pl": "Włącz tryb ręczny",
+          "ru": "Включить ручной режим",
+          "ko": "수동 모드 활성화"
         },
         "hint": {
-          "en": "Start the fan in manual mode (or switch to manual mode if running)"
+          "en": "Start the fan in manual mode (or switch to manual mode if running)",
+          "nl": "Start de ventilator in handmatige modus (of schakel over naar handmatige modus als deze al draait)",
+          "da": "Start ventilatoren i manuel tilstand (eller skift til manuel tilstand, hvis den er i gang)",
+          "de": "Starten Sie den Ventilator im manuellen Modus (oder wechseln Sie in den manuellen Modus, wenn er bereits läuft)",
+          "es": "Inicia el ventilador en modo manual (o cambia al modo manual si ya está en funcionamiento)",
+          "fr": "Démarrez le ventilateur en mode manuel (ou passez en mode manuel s'il est déjà en marche)",
+          "it": "Avvia il ventilatore in modalità manuale (o passa alla modalità manuale se è già in funzione)",
+          "no": "Start viften i manuell modus (eller bytt til manuell modus hvis den allerede kjører)",
+          "sv": "Starta fläkten i manuellt läge (eller byt till manuellt läge om den redan är igång)",
+          "pl": "Uruchom wentylator w trybie ręcznym (lub przełącz na tryb ręczny, jeśli już działa)",
+          "ru": "Запустите вентилятор в ручном режиме (или переключитесь на ручной режим, если он уже работает)",
+          "ko": "팬을 수동 모드로 시작하세요 (또는 실행 중인 경우 수동 모드로 전환하세요)"
         },
         "args": [
           {
@@ -608,13 +1150,46 @@
       },
       {
         "title": {
-          "en": "Enable smart mode"
+          "en": "Enable smart mode",
+          "nl": "Slimme modus inschakelen",
+          "da": "Aktiver smarttilstand",
+          "de": "Smart-Modus aktivieren",
+          "es": "Habilitar modo inteligente",
+          "fr": "Activer le mode intelligent",
+          "it": "Abilita modalità intelligente",
+          "no": "Aktiver smart-modus",
+          "sv": "Aktivera smart läge",
+          "pl": "Włącz tryb inteligentny",
+          "ru": "Включить умный режим",
+          "ko": "스마트 모드 활성화"
         },
         "titleFormatted": {
-          "en": "Enable smart mode"
+          "en": "Enable smart mode",
+          "nl": "Slimme modus inschakelen",
+          "da": "Aktiver smarttilstand",
+          "de": "Smart-Modus aktivieren",
+          "es": "Habilitar modo inteligente",
+          "fr": "Activer le mode intelligent",
+          "it": "Abilita modalità intelligente",
+          "no": "Aktiver smart-modus",
+          "sv": "Aktivera smart läge",
+          "pl": "Włącz tryb inteligentny",
+          "ru": "Включить умный режим",
+          "ko": "스마트 모드 활성화"
         },
         "hint": {
-          "en": "Start the fan in smart mode (or switch to smart mode if running)"
+          "en": "Start the fan in smart mode (or switch to smart mode if running)",
+          "nl": "Start de ventilator in slimme modus (of schakel over naar slimme modus als deze al draait)",
+          "da": "Start ventilatoren i smarttilstand (eller skift til smarttilstand, hvis den kører)",
+          "de": "Starten Sie den Ventilator im Smart-Modus (oder wechseln Sie in den Smart-Modus, falls er bereits läuft)",
+          "es": "Inicie el ventilador en modo inteligente (o cambie a modo inteligente si está en funcionamiento)",
+          "fr": "Démarrez le ventilateur en mode intelligent (ou passez en mode intelligent s'il est déjà en marche)",
+          "it": "Avvia la ventola in modalità intelligente (o passa alla modalità intelligente se è già in funzione)",
+          "no": "Start viften i smart-modus (eller bytt til smart-modus hvis den allerede kjører)",
+          "sv": "Starta fläkten i smart läge (eller växla till smart läge om det redan körs)",
+          "pl": "Uruchom wentylator w trybie inteligentnym (lub przełącz na tryb inteligentny, jeśli już działa)",
+          "ru": "Запустите вентилятор в умном режиме (или переключите в умный режим, если уже работает)",
+          "ko": "팬을 스마트 모드에서 시작합니다 (또는 실행 중일 경우 스마트 모드로 전환합니다)"
         },
         "args": [
           {
@@ -627,10 +1202,32 @@
       },
       {
         "title": {
-          "en": "Execute Command"
+          "en": "Execute Command",
+          "nl": "Voer opdracht uit",
+          "da": "Udfør kommando",
+          "de": "Befehl ausführen",
+          "es": "Ejecutar comando",
+          "fr": "Exécuter la commande",
+          "it": "Esegui comando",
+          "no": "Utfør kommando",
+          "sv": "Utför kommando",
+          "pl": "Wykonaj polecenie",
+          "ru": "Выполнить команду",
+          "ko": "명령 실행"
         },
         "titleFormatted": {
-          "en": "Execute [[what]] Command"
+          "en": "Execute [[what]] Command",
+          "nl": "Voer opdracht [[what]] uit",
+          "da": "Udfør [[what]] kommando",
+          "de": "Befehl [[what]] ausführen",
+          "es": "Ejecutar comando [[what]]",
+          "fr": "Exécuter la commande [[what]]",
+          "it": "Esegui comando [[what]]",
+          "no": "Utfør [[what]] kommando",
+          "sv": "Utför [[what]] kommando",
+          "pl": "Wykonaj polecenie [[what]]",
+          "ru": "Выполнить команду [[what]]",
+          "ko": "[[what]] 명령 실행"
         },
         "args": [
           {
@@ -642,19 +1239,52 @@
             "type": "dropdown",
             "name": "what",
             "title": {
-              "en": "What command will be executed"
+              "en": "What command will be executed",
+              "nl": "Welke opdracht zal worden uitgevoerd",
+              "da": "Hvilken kommando vil blive udført",
+              "de": "Welcher Befehl wird ausgeführt",
+              "es": "Qué comando se ejecutará",
+              "fr": "Quelle commande sera exécutée",
+              "it": "Quale comando verrà eseguito",
+              "no": "Hvilken kommando vil bli utført",
+              "sv": "Vilken kommando kommer att utföras",
+              "pl": "Jakie polecenie zostanie wykonane",
+              "ru": "Какая команда будет выполнена",
+              "ko": "어떤 명령이 실행될 것인가요?"
             },
             "values": [
               {
                 "id": "START",
                 "title": {
-                  "en": "Start"
+                  "en": "Start",
+                  "nl": "Start",
+                  "da": "Start",
+                  "de": "Start",
+                  "es": "Comenzar",
+                  "fr": "Démarrer",
+                  "it": "Avviare",
+                  "no": "Start",
+                  "sv": "Starta",
+                  "pl": "Uruchom",
+                  "ru": "Начать",
+                  "ko": "시작"
                 }
               },
               {
                 "id": "STOPRESET",
                 "title": {
-                  "en": "Stop / Reset"
+                  "en": "Stop / Reset",
+                  "nl": "Stop / Reset",
+                  "da": "Stop / Nulstil",
+                  "de": "Stopp / Zurücksetzen",
+                  "es": "Detener / Restablecer",
+                  "fr": "Arrêter / Réinitialiser",
+                  "it": "Ferma / Ripristina",
+                  "no": "Stopp / Tilbakestill",
+                  "sv": "Stoppa / Återställ",
+                  "pl": "Zatrzymaj / Resetuj",
+                  "ru": "Остановить / Сбросить",
+                  "ko": "중지 / 재설정"
                 }
               }
             ]
@@ -664,13 +1294,46 @@
       },
       {
         "title": {
-          "en": "Set fan speed"
+          "en": "Set fan speed",
+          "nl": "Stel ventilatorsnelheid in",
+          "da": "Indstil blæserhastighed",
+          "de": "Lüftergeschwindigkeit einstellen",
+          "es": "Ajustar velocidad del ventilador",
+          "fr": "Régler la vitesse du ventilateur",
+          "it": "Imposta velocità della ventola",
+          "no": "Sett viftehastighet",
+          "sv": "Ställ in fläkthastighet",
+          "pl": "Ustaw prędkość wentylatora",
+          "ru": "Установить скорость вентилятора",
+          "ko": "팬 속도 설정"
         },
         "titleFormatted": {
-          "en": "Set fan speed to [[fan_speed]]%"
+          "en": "Set fan speed to [[fan_speed]]%",
+          "nl": "Stel ventilatorsnelheid in op [[fan_speed]]%",
+          "da": "Indstil blæserhastighed til [[fan_speed]]%",
+          "de": "Lüftergeschwindigkeit auf [[fan_speed]]% einstellen",
+          "es": "Ajustar velocidad del ventilador a [[fan_speed]]%",
+          "fr": "Régler la vitesse du ventilateur à [[fan_speed]]%",
+          "it": "Imposta la velocità della ventola a [[fan_speed]]%",
+          "no": "Sett viftehastighet til [[fan_speed]]%",
+          "sv": "Ställ in fläkthastighet till [[fan_speed]]%",
+          "pl": "Ustaw prędkość wentylatora na [[fan_speed]]%",
+          "ru": "Установить скорость вентилятора на [[fan_speed]]%",
+          "ko": "[[fan_speed]]%로 팬 속도 설정"
         },
         "hint": {
-          "en": "This action will set a fixed fan speed (and disable smart mode)"
+          "en": "This action will set a fixed fan speed (and disable smart mode)",
+          "nl": "Deze actie stelt een vaste ventilatorsnelheid in (en schakelt de slimme modus uit)",
+          "da": "Denne handling vil indstille en fast blæserhastighed (og deaktivere smart tilstand)",
+          "de": "Diese Aktion wird eine feste Lüftergeschwindigkeit einstellen (und den Smart-Modus deaktivieren)",
+          "es": "Esta acción establecerá una velocidad fija del ventilador (y desactivará el modo inteligente)",
+          "fr": "Cette action définira une vitesse de ventilateur fixe (et désactivera le mode intelligent)",
+          "it": "Questa azione imposterà una velocità fissa della ventola (e disabiliterà la modalità intelligente)",
+          "no": "Denne handlingen vil sette en fast viftehastighet (og deaktivere smart modus)",
+          "sv": "Denna åtgärd ställer in en fast fläkthastighet (och inaktiverar smart läge)",
+          "pl": "Ta akcja ustawi stałą prędkość wentylatora (i wyłączy tryb inteligentny)",
+          "ru": "Это действие установит фиксированную скорость вентилятора (и отключит умный режим)",
+          "ko": "이 작업은 고정된 팬 속도를 설정하고 스마트 모드를 비활성화합니다."
         },
         "args": [
           {
@@ -684,7 +1347,18 @@
             "min": 0,
             "max": 100,
             "title": {
-              "en": "Fan speed"
+              "en": "Fan speed",
+              "nl": "Ventilatorsnelheid",
+              "da": "Blæserhastighed",
+              "de": "Lüftergeschwindigkeit",
+              "es": "Velocidad del ventilador",
+              "fr": "Vitesse du ventilateur",
+              "it": "Velocità della ventola",
+              "no": "Viftehastighet",
+              "sv": "Fläkthastighet",
+              "pl": "Prędkość wentylatora",
+              "ru": "Скорость вентилятора",
+              "ko": "팬 속도"
             }
           }
         ],
@@ -697,7 +1371,16 @@
       "name": {
         "en": "Air Purifier",
         "de": "Luftreiniger",
-        "nl": "Luchtzuiveraar"
+        "nl": "Luchtzuiveraar",
+        "da": "Luftrenser",
+        "es": "Purificador de aire",
+        "fr": "Purificateur d'air",
+        "it": "Purificatore d'aria",
+        "no": "Luftrenser",
+        "sv": "Luftrenare",
+        "pl": "Oczyszczacz powietrza",
+        "ru": "Очиститель воздуха",
+        "ko": "공기 청정기"
       },
       "class": "fan",
       "capabilities": [],
@@ -730,12 +1413,32 @@
           "id": "applianceState",
           "type": "label",
           "label": {
-            "en": "Appliance State"
+            "en": "Appliance State",
+            "nl": "Apparaatstatus",
+            "da": "Apparatets tilstand",
+            "de": "Gerätezustand",
+            "es": "Estado del electrodoméstico",
+            "fr": "État de l'appareil",
+            "it": "Stato dell'apparecchio",
+            "no": "Apparatstatus",
+            "sv": "Apparatstatus",
+            "pl": "Stan urządzenia",
+            "ru": "Состояние устройства",
+            "ko": "기기 상태"
           },
           "hint": {
             "en": "The Electrolux/AEG raw Appliance State JSON",
             "de": "Die Electrolux/AEG Roh-Gerätezustand JSON",
-            "nl": "De Electrolux/AEG ruwe Apparaatstatus JSON"
+            "nl": "De Electrolux/AEG ruwe Apparaatstatus JSON",
+            "da": "Electrolux/AEG rå apparatstatus JSON",
+            "es": "El estado bruto del electrodoméstico JSON de Electrolux/AEG",
+            "fr": "L'état brut de l'appareil Electrolux/AEG JSON",
+            "it": "Lo stato grezzo dell'apparecchio Electrolux/AEG JSON",
+            "no": "Electrolux/AEG rå apparatstatus JSON",
+            "sv": "Electrolux/AEG rå apparatstatus JSON",
+            "pl": "Surowy stan urządzenia Electrolux/AEG JSON",
+            "ru": "Сырые данные состояния прибора Electrolux/AEG в формате JSON",
+            "ko": "Electrolux/AEG 원시 기기 상태 JSON"
           },
           "value": ""
         },
@@ -743,12 +1446,32 @@
           "id": "applianceCapabilities",
           "type": "label",
           "label": {
-            "en": "Appliance Capabilities"
+            "en": "Appliance Capabilities",
+            "nl": "Apparaatmogelijkheden",
+            "da": "Apparatets kapaciteter",
+            "de": "Gerätefunktionen",
+            "es": "Capacidades del electrodoméstico",
+            "fr": "Capacités de l'appareil",
+            "it": "Capacità dell'apparecchio",
+            "no": "Apparatfunksjoner",
+            "sv": "Apparatsfunktioner",
+            "pl": "Możliwości urządzenia",
+            "ru": "Возможности устройства",
+            "ko": "기기 기능"
           },
           "hint": {
             "en": "The Electrolux/AEG raw Appliance Capabilities JSON",
             "de": "Die Electrolux/AEG Roh-Gerätefunktionen JSON",
-            "nl": "De Electrolux/AEG ruwe Apparaatmogelijkheden JSON"
+            "nl": "De Electrolux/AEG ruwe Apparaatmogelijkheden JSON",
+            "da": "Electrolux/AEG rå apparatets kapaciteter JSON",
+            "es": "Las capacidades brutas del electrodoméstico JSON de Electrolux/AEG",
+            "fr": "Les capacités brutes de l'appareil Electrolux/AEG JSON",
+            "it": "Le capacità grezze dell'apparecchio Electrolux/AEG JSON",
+            "no": "Electrolux/AEG rå apparatfunksjoner JSON",
+            "sv": "Electrolux/AEG rå apparatsfunktioner JSON",
+            "pl": "Surowe możliwości urządzenia Electrolux/AEG JSON",
+            "ru": "Сырые данные возможностей прибора Electrolux/AEG в формате JSON",
+            "ko": "Electrolux/AEG 원시 기기 기능 JSON"
           },
           "value": ""
         }
@@ -758,7 +1481,16 @@
       "name": {
         "en": "Laundry",
         "de": "Wäsche",
-        "nl": "Wasserij"
+        "nl": "Wasserij",
+        "da": "Vaskeri",
+        "es": "Lavandería",
+        "fr": "Laverie",
+        "it": "Lavanderia",
+        "no": "Vaskeri",
+        "sv": "Tvättstuga",
+        "pl": "Pralnia",
+        "ru": "Прачечная",
+        "ko": "세탁소"
       },
       "class": "washer_and_dryer",
       "capabilities": [],
@@ -791,12 +1523,32 @@
           "id": "applianceState",
           "type": "label",
           "label": {
-            "en": "Appliance State"
+            "en": "Appliance State",
+            "nl": "Apparaatstatus",
+            "da": "Apparatstatus",
+            "de": "Gerätestatus",
+            "es": "Estado del Electrodoméstico",
+            "fr": "État de l'Appareil",
+            "it": "Stato dell'Elettrodomestico",
+            "no": "Apparatstatus",
+            "sv": "Apparatstatus",
+            "pl": "Stan Urządzenia",
+            "ru": "Состояние Устройства",
+            "ko": "기기 상태"
           },
           "hint": {
             "en": "The Electrolux/AEG raw Appliance State JSON",
             "de": "Die Electrolux/AEG Roh-Gerätezustand JSON",
-            "nl": "De Electrolux/AEG ruwe Apparaatstatus JSON"
+            "nl": "De Electrolux/AEG ruwe Apparaatstatus JSON",
+            "da": "Electrolux/AEG rå Apparatstatus JSON",
+            "es": "El JSON del estado bruto del electrodoméstico Electrolux/AEG",
+            "fr": "Le JSON de l'état brut de l'appareil Electrolux/AEG",
+            "it": "Il JSON dello stato grezzo dell'elettrodomestico Electrolux/AEG",
+            "no": "Electrolux/AEG rå Apparatstatus JSON",
+            "sv": "Electrolux/AEG rå Apparatstatus JSON",
+            "pl": "Surowy stan urządzeń Electrolux/AEG JSON",
+            "ru": "Сырой JSON состояния устройства Electrolux/AEG",
+            "ko": "Electrolux/AEG 원시 기기 상태 JSON"
           },
           "value": ""
         },
@@ -804,12 +1556,32 @@
           "id": "applianceCapabilities",
           "type": "label",
           "label": {
-            "en": "Appliance Capabilities"
+            "en": "Appliance Capabilities",
+            "nl": "Apparaatmogelijkheden",
+            "da": "Apparatfunktioner",
+            "de": "Gerätefunktionen",
+            "es": "Capacidades del Electrodoméstico",
+            "fr": "Capacités de l'Appareil",
+            "it": "Capacità dell'Elettrodomestico",
+            "no": "Apparatfunksjoner",
+            "sv": "Apparatfunktioner",
+            "pl": "Możliwości Urządzenia",
+            "ru": "Функции Устройства",
+            "ko": "기기 기능"
           },
           "hint": {
             "en": "The Electrolux/AEG raw Appliance Capabilities JSON",
             "de": "Die Electrolux/AEG Roh-Gerätefunktionen JSON",
-            "nl": "De Electrolux/AEG ruwe Apparaatmogelijkheden JSON"
+            "nl": "De Electrolux/AEG ruwe Apparaatmogelijkheden JSON",
+            "da": "Electrolux/AEG rå Apparatfunktioner JSON",
+            "es": "El JSON de las capacidades brutas del electrodoméstico Electrolux/AEG",
+            "fr": "Le JSON des capacités brutes de l'appareil Electrolux/AEG",
+            "it": "Il JSON delle capacità grezze dell'elettrodomestico Electrolux/AEG",
+            "no": "Electrolux/AEG rå Apparatfunksjoner JSON",
+            "sv": "Electrolux/AEG rå Apparatfunktioner JSON",
+            "pl": "Surowe możliwości urządzeń Electrolux/AEG JSON",
+            "ru": "Сырой JSON возможностей устройства Electrolux/AEG",
+            "ko": "Electrolux/AEG 원시 기기 기능 JSON"
           },
           "value": ""
         }
@@ -819,7 +1591,16 @@
       "name": {
         "en": "Oven",
         "de": "Ofen",
-        "nl": "Oven"
+        "nl": "Oven",
+        "da": "Ovn",
+        "es": "Horno",
+        "fr": "Four",
+        "it": "Forno",
+        "no": "Ovn",
+        "sv": "Ugn",
+        "pl": "Piekarnik",
+        "ru": "Духовка",
+        "ko": "오븐"
       },
       "class": "other",
       "capabilities": [],
@@ -852,12 +1633,32 @@
           "id": "applianceState",
           "type": "label",
           "label": {
-            "en": "Appliance State"
+            "en": "Appliance State",
+            "nl": "Toestelstatus",
+            "da": "Apparatstatus",
+            "de": "Gerätestatus",
+            "es": "Estado del dispositivo",
+            "fr": "État de l'appareil",
+            "it": "Stato dell'apparecchio",
+            "no": "Apparatstatus",
+            "sv": "Enhetsstatus",
+            "pl": "Stan urządzenia",
+            "ru": "Состояние устройства",
+            "ko": "기기 상태"
           },
           "hint": {
             "en": "The Electrolux/AEG raw Appliance State JSON",
             "de": "Die Electrolux/AEG Roh-Gerätezustand JSON",
-            "nl": "De Electrolux/AEG ruwe Apparaatstatus JSON"
+            "nl": "De Electrolux/AEG ruwe Apparaatstatus JSON",
+            "da": "Electrolux/AEG rå Apparattillstånd JSON",
+            "es": "El JSON de estado de dispositivo sin procesar de Electrolux/AEG",
+            "fr": "Le JSON brut de l'état de l'appareil Electrolux/AEG",
+            "it": "Il JSON grezzo dello stato dell'apparecchio Electrolux/AEG",
+            "no": "Electrolux/AEG rå Apparatstatus JSON",
+            "sv": "Electrolux/AEG rå Apparattillstånd JSON",
+            "pl": "Surowy JSON stanu urządzenia Electrolux/AEG",
+            "ru": "Сырые данные состояния устройства Electrolux/AEG в формате JSON",
+            "ko": "Electrolux/AEG 원시 기기 상태 JSON"
           },
           "value": ""
         },
@@ -865,12 +1666,32 @@
           "id": "applianceCapabilities",
           "type": "label",
           "label": {
-            "en": "Appliance Capabilities"
+            "en": "Appliance Capabilities",
+            "nl": "Apparaatmogelijkheden",
+            "da": "Apparatens kapabiliteter",
+            "de": "Gerätefunktionen",
+            "es": "Capacidades del dispositivo",
+            "fr": "Capacités de l'appareil",
+            "it": "Capacità dell'apparecchio",
+            "no": "Apparatens egenskaper",
+            "sv": "Enhetens kapabiliteter",
+            "pl": "Możliwości urządzenia",
+            "ru": "Возможности устройства",
+            "ko": "기기 기능"
           },
           "hint": {
             "en": "The Electrolux/AEG raw Appliance Capabilities JSON",
             "de": "Die Electrolux/AEG Roh-Gerätefunktionen JSON",
-            "nl": "De Electrolux/AEG ruwe Apparaatmogelijkheden JSON"
+            "nl": "De Electrolux/AEG ruwe Apparaatmogelijkheden JSON",
+            "da": "Electrolux/AEG rå Apparatevner JSON",
+            "es": "El JSON de capacidades de dispositivo sin procesar de Electrolux/AEG",
+            "fr": "Le JSON brut des capacités de l'appareil Electrolux/AEG",
+            "it": "Il JSON grezzo delle capacità dell'apparecchio Electrolux/AEG",
+            "no": "Electrolux/AEG rå Apparatkapasitet JSON",
+            "sv": "Electrolux/AEG rå Apparatevner JSON",
+            "pl": "Surowy JSON możliwości urządzenia Electrolux/AEG",
+            "ru": "Сырые данные возможностей устройства Electrolux/AEG в формате JSON",
+            "ko": "Electrolux/AEG 원시 기기 기능 JSON"
           },
           "value": ""
         }
@@ -880,7 +1701,16 @@
       "name": {
         "en": "Unknown (log only)",
         "de": "Unbekannt (nur protokolliert)",
-        "nl": "Onbekend (alleen logboek)"
+        "nl": "Onbekend (alleen logboek)",
+        "da": "Ukendt (kun log)",
+        "es": "Desconocido (solo registro)",
+        "fr": "Inconnu (seulement journalisé)",
+        "it": "Sconosciuto (solo registro)",
+        "no": "Ukjent (kun logg)",
+        "sv": "Okänd (endast logg)",
+        "pl": "Nieznany (tylko log)",
+        "ru": "Неизвестно (только журнал)",
+        "ko": "알 수 없음 (로그만)"
       },
       "class": "other",
       "capabilities": [],
@@ -913,12 +1743,32 @@
           "id": "applianceState",
           "type": "label",
           "label": {
-            "en": "Appliance State"
+            "en": "Appliance State",
+            "nl": "Apparaatstatus",
+            "da": "Apparatets status",
+            "de": "Gerätezustand",
+            "es": "Estado del aparato",
+            "fr": "État de l'appareil",
+            "it": "Stato dell'apparecchio",
+            "no": "Applikasjonstilstand",
+            "sv": "Apparatstatus",
+            "pl": "Stan urządzenia",
+            "ru": "Состояние устройства",
+            "ko": "기기 상태"
           },
           "hint": {
             "en": "The Electrolux/AEG raw Appliance State JSON",
             "de": "Die Electrolux/AEG Roh-Gerätezustand JSON",
-            "nl": "De Electrolux/AEG ruwe Apparaatstatus JSON"
+            "nl": "De Electrolux/AEG ruwe Apparaatstatus JSON",
+            "da": "Electrolux/AEG rå Applikationstilstand JSON",
+            "es": "El JSON de estado del aparato en bruto de Electrolux/AEG",
+            "fr": "Le JSON brut de l'état de l'appareil Electrolux/AEG",
+            "it": "Il JSON dello stato dell'apparecchio grezzo di Electrolux/AEG",
+            "no": "Electrolux/AEG rå Apparattilstand JSON",
+            "sv": "Electrolux/AEG rå Apparatstatus JSON",
+            "pl": "Electrolux/AEG surowy stan urządzenia JSON",
+            "ru": "Сырой JSON состояния устройства Electrolux/AEG",
+            "ko": "Electrolux/AEG 원시 기기 상태 JSON"
           },
           "value": ""
         },
@@ -926,12 +1776,32 @@
           "id": "applianceCapabilities",
           "type": "label",
           "label": {
-            "en": "Appliance Capabilities"
+            "en": "Appliance Capabilities",
+            "nl": "Apparaatmogelijkheden",
+            "da": "Apparatets kapaciteter",
+            "de": "Gerätefunktionen",
+            "es": "Capacidades del aparato",
+            "fr": "Capacités de l'appareil",
+            "it": "Capacità dell'apparecchio",
+            "no": "Applikasjonsegenskaper",
+            "sv": "Apparatkapacitet",
+            "pl": "Funkcje urządzenia",
+            "ru": "Возможности устройства",
+            "ko": "기기 기능"
           },
           "hint": {
             "en": "The Electrolux/AEG raw Appliance Capabilities JSON",
             "de": "Die Electrolux/AEG Roh-Gerätefunktionen JSON",
-            "nl": "De Electrolux/AEG ruwe Apparaatmogelijkheden JSON"
+            "nl": "De Electrolux/AEG ruwe Apparaatmogelijkheden JSON",
+            "da": "Electrolux/AEG rå Apparatets kapaciteter JSON",
+            "es": "El JSON de capacidades del aparato en bruto de Electrolux/AEG",
+            "fr": "Le JSON brut des capacités de l'appareil Electrolux/AEG",
+            "it": "Il JSON delle capacità dell'apparecchio grezzo di Electrolux/AEG",
+            "no": "Electrolux/AEG rå Apparatsegenskaper JSON",
+            "sv": "Electrolux/AEG rå Apparatkapacitet JSON",
+            "pl": "Electrolux/AEG surowe funkcje urządzenia JSON",
+            "ru": "Сырой JSON возможностей устройства Electrolux/AEG",
+            "ko": "Electrolux/AEG 원시 기기 기능 JSON"
           },
           "value": ""
         }
@@ -945,7 +1815,16 @@
       "title": {
         "en": "Execute Command",
         "de": "Befehl Ausführen",
-        "nl": "Opdracht Uitvoeren"
+        "nl": "Opdracht Uitvoeren",
+        "da": "Udfør Kommando",
+        "es": "Ejecutar Comando",
+        "fr": "Exécuter Commande",
+        "it": "Esegui Comando",
+        "no": "Utfør Kommando",
+        "sv": "Utför Kommando",
+        "pl": "Wykonaj Polecenie",
+        "ru": "Выполнить Команду",
+        "ko": "명령 실행"
       },
       "values": [
         {
@@ -953,7 +1832,16 @@
           "title": {
             "en": "Start",
             "de": "Start",
-            "nl": "Start"
+            "nl": "Start",
+            "da": "Start",
+            "es": "Comenzar",
+            "fr": "Démarrer",
+            "it": "Avvia",
+            "no": "Start",
+            "sv": "Starta",
+            "pl": "Start",
+            "ru": "Старт",
+            "ko": "시작"
           }
         },
         {
@@ -961,7 +1849,16 @@
           "title": {
             "en": "Stop / Reset",
             "de": "Stopp / Zurücksetzen",
-            "nl": "Stop / Reset"
+            "nl": "Stop / Reset",
+            "da": "Stop / Nulstil",
+            "es": "Parar / Reiniciar",
+            "fr": "Arrêter / Réinitialiser",
+            "it": "Ferma / Reimposta",
+            "no": "Stopp / Tilbakestill",
+            "sv": "Stoppa / Återställ",
+            "pl": "Zatrzymaj / Reset",
+            "ru": "Стоп / Сброс",
+            "ko": "중지 / 재설정"
           }
         }
       ],
@@ -972,7 +1869,18 @@
       "type": "number",
       "uiComponent": "slider",
       "title": {
-        "en": "Fan speed"
+        "en": "Fan speed",
+        "nl": "Ventilatorsnelheid",
+        "da": "Blæserhastighed",
+        "de": "Lüftergeschwindigkeit",
+        "es": "Velocidad del ventilador",
+        "fr": "Vitesse du ventilateur",
+        "it": "Velocità della ventola",
+        "no": "Viftehastighet",
+        "sv": "Fläkthastighet",
+        "pl": "Prędkość wentylatora",
+        "ru": "Скорость вентилятора",
+        "ko": "팬 속도"
       },
       "min": 0,
       "max": 100,
@@ -983,7 +1891,18 @@
     "IONIZER_onoff": {
       "type": "boolean",
       "title": {
-        "en": "Ionizer active"
+        "en": "Ionizer active",
+        "nl": "Ionisator actief",
+        "da": "Ionisator aktiv",
+        "de": "Ionisator aktiv",
+        "es": "Ionizador activo",
+        "fr": "Ioniseur actif",
+        "it": "Ionizzatore attivo",
+        "no": "Ionisator aktiv",
+        "sv": "Jonisator aktiv",
+        "pl": "Jonizator aktywny",
+        "ru": "Ионизатор активирован",
+        "ko": "이온화기 활성화"
       },
       "getable": true,
       "setable": true
@@ -991,7 +1910,18 @@
     "LIGHT_onoff": {
       "type": "boolean",
       "title": {
-        "en": "Light"
+        "en": "Light",
+        "nl": "Licht",
+        "da": "Lys",
+        "de": "Licht",
+        "es": "Luz",
+        "fr": "Lumière",
+        "it": "Luce",
+        "no": "Lys",
+        "sv": "Ljus",
+        "pl": "Światło",
+        "ru": "Свет",
+        "ko": "빛"
       },
       "getable": true,
       "setable": true
@@ -999,7 +1929,18 @@
     "LOCK_onoff": {
       "type": "boolean",
       "title": {
-        "en": "Lock controls"
+        "en": "Lock controls",
+        "nl": "Vergrendelingsbediening",
+        "da": "Lås kontrollenheder",
+        "de": "Steuerung sperren",
+        "es": "Controles de bloqueo",
+        "fr": "Verrouiller les commandes",
+        "it": "Blocca i controlli",
+        "no": "Lås kontrollene",
+        "sv": "Lås kontrollerna",
+        "pl": "Zablokuj kontrolki",
+        "ru": "Блокировка управления",
+        "ko": "제어 잠금"
       },
       "getable": true,
       "setable": true
@@ -1009,7 +1950,16 @@
       "title": {
         "en": "Appliance Mode",
         "de": "Gerätemodus",
-        "nl": "Apparaatmodus"
+        "nl": "Apparaatmodus",
+        "da": "Apparattilstand",
+        "es": "Modo de electrodoméstico",
+        "fr": "Mode appareil",
+        "it": "Modalità elettrodomestico",
+        "no": "Apparatmodus",
+        "sv": "Apparatläge",
+        "pl": "Tryb urządzenia",
+        "ru": "Режим прибора",
+        "ko": "가전 모드"
       },
       "getable": true,
       "setable": false,
@@ -1020,7 +1970,16 @@
       "title": {
         "en": "Appliance State",
         "de": "Gerätezustand",
-        "nl": "Apparaatstatus"
+        "nl": "Apparaatstatus",
+        "da": "Apparatstatus",
+        "es": "Estado del aparato",
+        "fr": "État de l'appareil",
+        "it": "Stato dell'apparecchio",
+        "no": "Apparattilstand",
+        "sv": "Apparattillstånd",
+        "pl": "Stan urządzenia",
+        "ru": "Состояние устройства",
+        "ko": "기기 상태"
       },
       "getable": true,
       "setable": false,
@@ -1031,7 +1990,16 @@
       "title": {
         "en": "Cycle Phase",
         "de": "Zyklusphase",
-        "nl": "Cyclusfase"
+        "nl": "Cyclusfase",
+        "da": "Cyklusfase",
+        "es": "Fase del ciclo",
+        "fr": "Phase du cycle",
+        "it": "Fase del ciclo",
+        "no": "Syklusfase",
+        "sv": "Cykelfas",
+        "pl": "Faza cyklu",
+        "ru": "Фаза цикла",
+        "ko": "사이클 단계"
       },
       "getable": true,
       "setable": false,
@@ -1042,7 +2010,16 @@
       "title": {
         "en": "Door State",
         "de": "Türzustand",
-        "nl": "Deurtoestand"
+        "nl": "Deurtoestand",
+        "da": "Dørtilstand",
+        "es": "Estado de la puerta",
+        "fr": "État de la porte",
+        "it": "Stato della porta",
+        "no": "Dørtilstand",
+        "sv": "Dörrstatus",
+        "pl": "Stan drzwi",
+        "ru": "Состояние двери",
+        "ko": "문 상태"
       },
       "getable": true,
       "setable": false,
@@ -1051,16 +2028,49 @@
     "measure_filter": {
       "type": "number",
       "title": {
-        "en": "Filter life"
+        "en": "Filter life",
+        "nl": "Filterleven",
+        "da": "Filterlevetid",
+        "de": "Filterlebensdauer",
+        "es": "Vida del filtro",
+        "fr": "Durée de vie du filtre",
+        "it": "Durata del filtro",
+        "no": "Filterets levetid",
+        "sv": "Filterlivslängd",
+        "pl": "Czas życia filtra",
+        "ru": "Срок службы фильтра",
+        "ko": "필터 수명"
       },
       "units": {
-        "en": "%"
+        "en": "%",
+        "nl": "%",
+        "da": "%",
+        "de": "%",
+        "es": "%",
+        "fr": "%",
+        "it": "%",
+        "no": "%",
+        "sv": "%",
+        "pl": "%",
+        "ru": "%",
+        "ko": "%"
       },
       "insights": true,
       "min": 0,
       "max": 100,
       "desc": {
-        "en": "Filter life in percentage (%)"
+        "en": "Filter life in percentage (%)",
+        "nl": "Filterleven in procenten (%)",
+        "da": "Filterlevetid i procent (%)",
+        "de": "Filterlebensdauer in Prozent (%)",
+        "es": "Vida del filtro en porcentaje (%)",
+        "fr": "Durée de vie du filtre en pourcentage (%)",
+        "it": "Durata del filtro in percentuale (%)",
+        "no": "Filterets levetid i prosent (%)",
+        "sv": "Filterlivslängd i procent (%)",
+        "pl": "Czas życia filtra w procentach (%)",
+        "ru": "Срок службы фильтра в процентах (%)",
+        "ko": "필터 수명 백분율 (%)"
       },
       "chartType": "spline",
       "decimals": 2,
@@ -1077,13 +2087,33 @@
         "de": "PM1"
       },
       "units": {
-        "en": "ppm"
+        "en": "ppm",
+        "nl": "ppm",
+        "da": "ppm",
+        "de": "ppm",
+        "es": "ppm",
+        "fr": "ppm",
+        "it": "ppm",
+        "no": "ppm",
+        "sv": "ppm",
+        "pl": "ppm",
+        "ru": "ppm",
+        "ko": "ppm"
       },
       "insights": true,
       "desc": {
         "en": "Atmospheric Particulate Matter (μg/m3)",
         "nl": "Deeltjesvormige luchtverontreiniging (μg/m3)",
-        "de": "Atmosphärischer Feinstaub (μg/m3)"
+        "de": "Atmosphärischer Feinstaub (μg/m3)",
+        "da": "Atmosfærisk partikulært stof (μg/m3)",
+        "es": "Materia Particulada Atmosférica (μg/m3)",
+        "fr": "Matières Particulaires Atmosphériques (μg/m3)",
+        "it": "Materia Particolata Atmosferica (μg/m3)",
+        "no": "Atmosfærisk partikkelmateriell (μg/m3)",
+        "sv": "Atmosfäriska partiklar (μg/m3)",
+        "pl": "Pyły atmosferyczne (μg/m3)",
+        "ru": "Атмосферные твердые частицы (μг/м3)",
+        "ko": "대기 중 입자 물질 (μg/m3)"
       },
       "chartType": "spline",
       "decimals": 2,
@@ -1097,16 +2127,44 @@
       "title": {
         "en": "PM10",
         "nl": "PM10",
-        "de": "PM10"
+        "de": "PM10",
+        "da": "PM10",
+        "es": "PM10",
+        "fr": "PM10",
+        "it": "PM10",
+        "no": "PM10",
+        "sv": "PM10",
+        "pl": "PM10",
+        "ru": "PM10",
+        "ko": "PM10"
       },
       "units": {
-        "en": "ppm"
+        "en": "ppm",
+        "da": "ppm",
+        "de": "ppm",
+        "es": "ppm",
+        "fr": "ppm",
+        "it": "ppm",
+        "no": "ppm",
+        "sv": "ppm",
+        "pl": "ppm",
+        "ru": "ppm",
+        "ko": "ppm"
       },
       "insights": true,
       "desc": {
         "en": "Atmospheric Particulate Matter (μg/m3)",
         "nl": "Deeltjesvormige luchtverontreiniging (μg/m3)",
-        "de": "Atmosphärischer Feinstaub (μg/m3)"
+        "de": "Atmosphärischer Feinstaub (μg/m3)",
+        "da": "Atmosfærisk partikelforurening (μg/m3)",
+        "es": "Materia particulada atmosférica (μg/m3)",
+        "fr": "Particules atmosphériques (μg/m3)",
+        "it": "Materiale particolato atmosferico (μg/m3)",
+        "no": "Atmosfærisk partikkelforurensning (μg/m3)",
+        "sv": "Atmosfäriska partiklar (μg/m3)",
+        "pl": "Atmosferyczny pył zawieszony (μg/m3)",
+        "ru": "Атмосферные взвешенные частицы (μg/m3)",
+        "ko": "대기 미세 입자 (μg/m3)"
       },
       "chartType": "spline",
       "decimals": 2,
@@ -1120,12 +2178,30 @@
       "units": {
         "en": "mins",
         "de": "mins",
-        "nl": "mins"
+        "nl": "mins",
+        "da": "min",
+        "es": "min",
+        "fr": "min",
+        "it": "min",
+        "no": "min",
+        "sv": "min",
+        "pl": "min",
+        "ru": "мин",
+        "ko": "분"
       },
       "title": {
         "en": "Running Time",
         "de": "Laufzeit",
-        "nl": "Looptijd"
+        "nl": "Looptijd",
+        "da": "Køretid",
+        "es": "Tiempo de ejecución",
+        "fr": "Durée",
+        "it": "Durata",
+        "no": "Kjøretid",
+        "sv": "Körtid",
+        "pl": "Czas trwania",
+        "ru": "Время работы",
+        "ko": "실행 시간"
       },
       "getable": true,
       "setable": false,
@@ -1136,7 +2212,16 @@
       "title": {
         "en": "Start Time",
         "de": "Startzeit",
-        "nl": "Starttijd"
+        "nl": "Starttijd",
+        "da": "Starttid",
+        "es": "Hora de inicio",
+        "fr": "Heure de début",
+        "it": "Ora di inizio",
+        "no": "Starttid",
+        "sv": "Starttid",
+        "pl": "Czas rozpoczęcia",
+        "ru": "Время начала",
+        "ko": "시작 시간"
       },
       "getable": true,
       "setable": false,
@@ -1147,7 +2232,16 @@
       "title": {
         "en": "Stop Time",
         "de": "Stoppzeit",
-        "nl": "Stoptijd"
+        "nl": "Stoptijd",
+        "da": "Stoptid",
+        "es": "Tiempo de parada",
+        "fr": "Temps d'arrêt",
+        "it": "Tempo di stop",
+        "no": "Stopp tid",
+        "sv": "Stopptid",
+        "pl": "Czas zatrzymania",
+        "ru": "Остановка времени",
+        "ko": "정지 시간"
       },
       "getable": true,
       "setable": false,
@@ -1158,16 +2252,44 @@
       "title": {
         "en": "Target Temperature",
         "de": "Zieltemperatur",
-        "nl": "Doeltemperatuur"
+        "nl": "Doeltemperatuur",
+        "da": "Måletemperatur",
+        "es": "Temperatura Objetivo",
+        "fr": "Température Cible",
+        "it": "Temperatura Obiettivo",
+        "no": "Måltemperatur",
+        "sv": "Måltemperatur",
+        "pl": "Temperatura Docelowa",
+        "ru": "Целевая Температура",
+        "ko": "목표 온도"
       },
       "units": {
-        "en": "°C"
+        "en": "°C",
+        "da": "°C",
+        "de": "°C",
+        "es": "°C",
+        "fr": "°C",
+        "it": "°C",
+        "no": "°C",
+        "sv": "°C",
+        "pl": "°C",
+        "ru": "°C",
+        "ko": "°C"
       },
       "insights": true,
       "desc": {
         "en": "Target Temperature in degrees Celsius (°C)",
         "de": "Zieltemperatur in Grad Celsius (°C)",
-        "nl": "Doeltemperatuur in graden Celsius (°C)"
+        "nl": "Doeltemperatuur in graden Celsius (°C)",
+        "da": "Måletemperatur i grader Celsius (°C)",
+        "es": "Temperatura objetivo en grados Celsius (°C)",
+        "fr": "Température cible en degrés Celsius (°C)",
+        "it": "Temperatura obiettivo in gradi Celsius (°C)",
+        "no": "Måltemperatur i grader Celsius (°C)",
+        "sv": "Måltemperatur i grader Celsius (°C)",
+        "pl": "Temperatura docelowa w stopniach Celsjusza (°C)",
+        "ru": "Целевая температура в градусах Цельсия (°C)",
+        "ko": "목표 온도 (섭씨 °C)"
       },
       "decimals": 2,
       "chartType": "spline",
@@ -1181,12 +2303,30 @@
       "units": {
         "en": "mins",
         "de": "mins",
-        "nl": "mins"
+        "nl": "mins",
+        "da": "minutter",
+        "es": "min",
+        "fr": "min",
+        "it": "min",
+        "no": "minutter",
+        "sv": "minuter",
+        "pl": "min",
+        "ru": "мин",
+        "ko": "분"
       },
       "title": {
         "en": "Time To End",
         "de": "Verbleibende Zeit",
-        "nl": "Tijd Tot Einde"
+        "nl": "Tijd Tot Einde",
+        "da": "Tid Til Slut",
+        "es": "Tiempo hasta el final",
+        "fr": "Temps Restant",
+        "it": "Tempo Rimanente",
+        "no": "Tid til slutt",
+        "sv": "Tid till slutet",
+        "pl": "Czas do końca",
+        "ru": "Время до конца",
+        "ko": "종료 시간"
       },
       "getable": true,
       "setable": false,
@@ -1200,11 +2340,33 @@
         "de": "VOC"
       },
       "units": {
-        "en": "ppb"
+        "en": "ppb",
+        "nl": "ppb",
+        "da": "ppb",
+        "de": "ppb",
+        "es": "ppb",
+        "fr": "ppb",
+        "it": "ppb",
+        "no": "ppb",
+        "sv": "ppb",
+        "pl": "ppb",
+        "ru": "ppb",
+        "ko": "ppb"
       },
       "insights": true,
       "desc": {
-        "en": "Volatile Organic Compound (ppb)"
+        "en": "Volatile Organic Compound (ppb)",
+        "nl": "Vluchtige organische stof (ppb)",
+        "da": "Flygtigt organisk stof (ppb)",
+        "de": "Flüchtige organische Verbindung (ppb)",
+        "es": "Compuesto Orgánico Volátil (ppb)",
+        "fr": "Composé organique volatil (ppb)",
+        "it": "Composto organico volatile (ppb)",
+        "no": "Flyktig organisk forbindelse (ppb)",
+        "sv": "Flyktig organisk förening (ppb)",
+        "pl": "Lotny związek organiczny (ppb)",
+        "ru": "Летучие органические соединения (ppb)",
+        "ko": "휘발성 유기 화합물 (ppb)"
       },
       "chartType": "spline",
       "decimals": 2,
@@ -1217,19 +2379,52 @@
       "type": "enum",
       "uiComponent": "picker",
       "title": {
-        "en": "Mode"
+        "en": "Mode",
+        "nl": "Modus",
+        "da": "Tilstand",
+        "de": "Modus",
+        "es": "Modo",
+        "fr": "Mode",
+        "it": "Modalità",
+        "no": "Modus",
+        "sv": "Läge",
+        "pl": "Tryb",
+        "ru": "Режим",
+        "ko": "모드"
       },
       "values": [
         {
           "id": "manual",
           "title": {
-            "en": "Manual"
+            "en": "Manual",
+            "nl": "Handmatig",
+            "da": "Manuel",
+            "de": "Manuell",
+            "es": "Manual",
+            "fr": "Manuel",
+            "it": "Manuale",
+            "no": "Manuell",
+            "sv": "Manuell",
+            "pl": "Ręczny",
+            "ru": "Ручной",
+            "ko": "수동"
           }
         },
         {
           "id": "smart",
           "title": {
-            "en": "Smart"
+            "en": "Smart",
+            "nl": "Slim",
+            "da": "Smart",
+            "de": "Smart",
+            "es": "Inteligente",
+            "fr": "Intelligent",
+            "it": "Intelligente",
+            "no": "Smart",
+            "sv": "Smart",
+            "pl": "Inteligentny",
+            "ru": "Умный",
+            "ko": "스마트"
           }
         }
       ],

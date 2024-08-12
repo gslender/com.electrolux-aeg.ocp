@@ -1,11 +1,20 @@
 {
-    "type": "string",
-    "title": {
-        "en": "Cycle Phase",
-        "de": "Zyklusphase",
-        "nl": "Cyclusfase"
-    },
-    "getable": true,
-    "setable": false,
-    "icon": "/assets/icons/rotate.svg"
+  "type": "string",
+  "title": {
+    "en": "Cycle Phase",
+    "de": "Zyklusphase",
+    "nl": "Cyclusfase",
+    "da": "Cyklusfase",
+    "es": "Fase del ciclo",
+    "fr": "Phase du cycle",
+    "it": "Fase del ciclo",
+    "no": "Syklusfase",
+    "sv": "Cykelfas",
+    "pl": "Faza cyklu",
+    "ru": "Фаза цикла",
+    "ko": "사이클 단계"
+  },
+  "getable": true,
+  "setable": false,
+  "icon": "/assets/icons/rotate.svg"
 }

@@ -1,15 +1,37 @@
 {
-    "title": {
-        "en": "Enable lock control"
-    },
-    "titleFormatted": {
-        "en": "Enable lock control"
-    },
-    "args": [
-        {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=air-purifier"
-        }
-    ]
+  "title": {
+    "en": "Enable lock control",
+    "nl": "Schakel vergrendeling in",
+    "da": "Aktiver låsekontrol",
+    "de": "Sperrkontrolle aktivieren",
+    "es": "Habilitar control de bloqueo",
+    "fr": "Activer le contrôle de verrouillage",
+    "it": "Abilita il controllo della serratura",
+    "no": "Aktiver låskontroll",
+    "sv": "Aktivera låskontroll",
+    "pl": "Włącz kontrolę zamka",
+    "ru": "Включить управление замком",
+    "ko": "잠금 제어 활성화"
+  },
+  "titleFormatted": {
+    "en": "Enable lock control",
+    "nl": "Schakel vergrendeling in",
+    "da": "Aktiver låsekontrol",
+    "de": "Sperrkontrolle aktivieren",
+    "es": "Habilitar control de bloqueo",
+    "fr": "Activer le contrôle de verrouillage",
+    "it": "Abilita il controllo della serratura",
+    "no": "Aktiver låskontroll",
+    "sv": "Aktivera låskontroll",
+    "pl": "Włącz kontrolę zamka",
+    "ru": "Включить управление замком",
+    "ko": "잠금 제어 활성화"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=air-purifier"
+    }
+  ]
 }

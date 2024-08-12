@@ -1,21 +1,43 @@
 {
-    "type": "number",
-    "title": {
-        "en": "VOC",
-        "nl": "VOC",
-        "de": "VOC"
-    },
-    "units": {
-        "en": "ppb"
-    },
-    "insights": true,
-    "desc": {
-        "en": "Volatile Organic Compound (ppb)"
-    },
-    "chartType": "spline",
-    "decimals": 2,
-    "getable": true,
-    "setable": false,
-    "uiComponent": "sensor",
-    "icon": "/assets/icons/voc.svg"
+  "type": "number",
+  "title": {
+    "en": "VOC",
+    "nl": "VOC",
+    "de": "VOC"
+  },
+  "units": {
+    "en": "ppb",
+    "nl": "ppb",
+    "da": "ppb",
+    "de": "ppb",
+    "es": "ppb",
+    "fr": "ppb",
+    "it": "ppb",
+    "no": "ppb",
+    "sv": "ppb",
+    "pl": "ppb",
+    "ru": "ppb",
+    "ko": "ppb"
+  },
+  "insights": true,
+  "desc": {
+    "en": "Volatile Organic Compound (ppb)",
+    "nl": "Vluchtige organische stof (ppb)",
+    "da": "Flygtigt organisk stof (ppb)",
+    "de": "Flüchtige organische Verbindung (ppb)",
+    "es": "Compuesto Orgánico Volátil (ppb)",
+    "fr": "Composé organique volatil (ppb)",
+    "it": "Composto organico volatile (ppb)",
+    "no": "Flyktig organisk forbindelse (ppb)",
+    "sv": "Flyktig organisk förening (ppb)",
+    "pl": "Lotny związek organiczny (ppb)",
+    "ru": "Летучие органические соединения (ppb)",
+    "ko": "휘발성 유기 화합물 (ppb)"
+  },
+  "chartType": "spline",
+  "decimals": 2,
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/icons/voc.svg"
 }

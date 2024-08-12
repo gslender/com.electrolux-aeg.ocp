@@ -1,16 +1,49 @@
 {
   "type": "number",
   "title": {
-    "en": "Filter life"
+    "en": "Filter life",
+    "nl": "Filterleven",
+    "da": "Filterlevetid",
+    "de": "Filterlebensdauer",
+    "es": "Vida del filtro",
+    "fr": "Durée de vie du filtre",
+    "it": "Durata del filtro",
+    "no": "Filterets levetid",
+    "sv": "Filterlivslängd",
+    "pl": "Czas życia filtra",
+    "ru": "Срок службы фильтра",
+    "ko": "필터 수명"
   },
   "units": {
-    "en": "%"
+    "en": "%",
+    "nl": "%",
+    "da": "%",
+    "de": "%",
+    "es": "%",
+    "fr": "%",
+    "it": "%",
+    "no": "%",
+    "sv": "%",
+    "pl": "%",
+    "ru": "%",
+    "ko": "%"
   },
   "insights": true,
   "min": 0,
   "max": 100,
   "desc": {
-    "en": "Filter life in percentage (%)"
+    "en": "Filter life in percentage (%)",
+    "nl": "Filterleven in procenten (%)",
+    "da": "Filterlevetid i procent (%)",
+    "de": "Filterlebensdauer in Prozent (%)",
+    "es": "Vida del filtro en porcentaje (%)",
+    "fr": "Durée de vie du filtre en pourcentage (%)",
+    "it": "Durata del filtro in percentuale (%)",
+    "no": "Filterets levetid i prosent (%)",
+    "sv": "Filterlivslängd i procent (%)",
+    "pl": "Czas życia filtra w procentach (%)",
+    "ru": "Срок службы фильтра в процентах (%)",
+    "ko": "필터 수명 백분율 (%)"
   },
   "chartType": "spline",
   "decimals": 2,

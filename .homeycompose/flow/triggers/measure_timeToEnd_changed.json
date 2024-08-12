@@ -1,23 +1,45 @@
 {
-    "id": "measure_timeToEnd_changed",
-    "title": {
-        "en": "The Time To End has changed"
-    },
-    "args": [
-        {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=oven|laundry"
-        }
-    ],
-    "tokens": [
-        {
-            "name": "measure_timeToEnd",
-            "title": {
-                "en": "Time To End"
-            },
-            "type": "number",
-            "example": 0
-        }
-    ]
+  "id": "measure_timeToEnd_changed",
+  "title": {
+    "en": "The Time To End has changed",
+    "nl": "De Tijd Tot Eind is veranderd",
+    "da": "Tiden til slutning er ændret",
+    "de": "Die Zeit bis zum Ende hat sich geändert",
+    "es": "El tiempo para terminar ha cambiado",
+    "fr": "Le Temps Jusqu'à la Fin a changé",
+    "it": "Il tempo per finire è cambiato",
+    "no": "Tiden til slutt har endret seg",
+    "sv": "Tiden till slut har ändrats",
+    "pl": "Czas do końca zmienił się",
+    "ru": "Время до конца изменилось",
+    "ko": "종료 시간 변경됨"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=oven|laundry"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "measure_timeToEnd",
+      "title": {
+        "en": "Time To End",
+        "nl": "Tijd Tot Einde",
+        "da": "Tid til afslutning",
+        "de": "Zeit bis zum Ende",
+        "es": "Tiempo para terminar",
+        "fr": "Temps jusqu'à la fin",
+        "it": "Tempo per finire",
+        "no": "Tid til slutt",
+        "sv": "Tid till slut",
+        "pl": "Czas do końca",
+        "ru": "Время до конца",
+        "ko": "종료 시간"
+      },
+      "type": "number",
+      "example": 0
+    }
+  ]
 }

@@ -1,11 +1,20 @@
 {
-    "type": "string",
-    "title": {
-        "en": "Stop Time",
-        "de": "Stoppzeit",
-        "nl": "Stoptijd"
-    },
-    "getable": true,
-    "setable": false,
-    "icon": "/assets/icons/clock.svg"
+  "type": "string",
+  "title": {
+    "en": "Stop Time",
+    "de": "Stoppzeit",
+    "nl": "Stoptijd",
+    "da": "Stoptid",
+    "es": "Tiempo de parada",
+    "fr": "Temps d'arrêt",
+    "it": "Tempo di stop",
+    "no": "Stopp tid",
+    "sv": "Stopptid",
+    "pl": "Czas zatrzymania",
+    "ru": "Остановка времени",
+    "ko": "정지 시간"
+  },
+  "getable": true,
+  "setable": false,
+  "icon": "/assets/icons/clock.svg"
 }

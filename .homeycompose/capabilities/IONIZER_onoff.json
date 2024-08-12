@@ -1,9 +1,19 @@
 {
   "type": "boolean",
   "title": {
-    "en": "Ionizer active"
+    "en": "Ionizer active",
+    "nl": "Ionisator actief",
+    "da": "Ionisator aktiv",
+    "de": "Ionisator aktiv",
+    "es": "Ionizador activo",
+    "fr": "Ioniseur actif",
+    "it": "Ionizzatore attivo",
+    "no": "Ionisator aktiv",
+    "sv": "Jonisator aktiv",
+    "pl": "Jonizator aktywny",
+    "ru": "Ионизатор активирован",
+    "ko": "이온화기 활성화"
   },
   "getable": true,
   "setable": true
 }
-

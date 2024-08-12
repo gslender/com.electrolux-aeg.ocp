@@ -3,12 +3,32 @@
     "id": "applianceState",
     "type": "label",
     "label": {
-      "en": "Appliance State"
+      "en": "Appliance State",
+      "nl": "Apparaatstatus",
+      "da": "Apparatets tilstand",
+      "de": "Gerätezustand",
+      "es": "Estado del electrodoméstico",
+      "fr": "État de l'appareil",
+      "it": "Stato dell'apparecchio",
+      "no": "Apparatstatus",
+      "sv": "Apparatstatus",
+      "pl": "Stan urządzenia",
+      "ru": "Состояние устройства",
+      "ko": "기기 상태"
     },
     "hint": {
       "en": "The Electrolux/AEG raw Appliance State JSON",
       "de": "Die Electrolux/AEG Roh-Gerätezustand JSON",
-      "nl": "De Electrolux/AEG ruwe Apparaatstatus JSON"
+      "nl": "De Electrolux/AEG ruwe Apparaatstatus JSON",
+      "da": "Electrolux/AEG rå apparatstatus JSON",
+      "es": "El estado bruto del electrodoméstico JSON de Electrolux/AEG",
+      "fr": "L'état brut de l'appareil Electrolux/AEG JSON",
+      "it": "Lo stato grezzo dell'apparecchio Electrolux/AEG JSON",
+      "no": "Electrolux/AEG rå apparatstatus JSON",
+      "sv": "Electrolux/AEG rå apparatstatus JSON",
+      "pl": "Surowy stan urządzenia Electrolux/AEG JSON",
+      "ru": "Сырые данные состояния прибора Electrolux/AEG в формате JSON",
+      "ko": "Electrolux/AEG 원시 기기 상태 JSON"
     },
     "value": ""
   },
@@ -16,12 +36,32 @@
     "id": "applianceCapabilities",
     "type": "label",
     "label": {
-      "en": "Appliance Capabilities"
+      "en": "Appliance Capabilities",
+      "nl": "Apparaatmogelijkheden",
+      "da": "Apparatets kapaciteter",
+      "de": "Gerätefunktionen",
+      "es": "Capacidades del electrodoméstico",
+      "fr": "Capacités de l'appareil",
+      "it": "Capacità dell'apparecchio",
+      "no": "Apparatfunksjoner",
+      "sv": "Apparatsfunktioner",
+      "pl": "Możliwości urządzenia",
+      "ru": "Возможности устройства",
+      "ko": "기기 기능"
     },
     "hint": {
       "en": "The Electrolux/AEG raw Appliance Capabilities JSON",
       "de": "Die Electrolux/AEG Roh-Gerätefunktionen JSON",
-      "nl": "De Electrolux/AEG ruwe Apparaatmogelijkheden JSON"
+      "nl": "De Electrolux/AEG ruwe Apparaatmogelijkheden JSON",
+      "da": "Electrolux/AEG rå apparatets kapaciteter JSON",
+      "es": "Las capacidades brutas del electrodoméstico JSON de Electrolux/AEG",
+      "fr": "Les capacités brutes de l'appareil Electrolux/AEG JSON",
+      "it": "Le capacità grezze dell'apparecchio Electrolux/AEG JSON",
+      "no": "Electrolux/AEG rå apparatfunksjoner JSON",
+      "sv": "Electrolux/AEG rå apparatsfunktioner JSON",
+      "pl": "Surowe możliwości urządzenia Electrolux/AEG JSON",
+      "ru": "Сырые данные возможностей прибора Electrolux/AEG в формате JSON",
+      "ko": "Electrolux/AEG 원시 기기 기능 JSON"
     },
     "value": ""
   }

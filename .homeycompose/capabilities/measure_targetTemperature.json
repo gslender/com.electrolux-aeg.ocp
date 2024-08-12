@@ -1,23 +1,51 @@
 {
-    "type": "number",
-    "title": {
-      "en": "Target Temperature",
-      "de": "Zieltemperatur",
-      "nl": "Doeltemperatuur"
-    },
-    "units": {
-      "en": "°C"
-    },
-    "insights": true,
-    "desc": {
-      "en": "Target Temperature in degrees Celsius (°C)",
-      "de": "Zieltemperatur in Grad Celsius (°C)",
-      "nl": "Doeltemperatuur in graden Celsius (°C)"
-    },
-    "decimals": 2,
-    "chartType": "spline",
-    "getable": true,
-    "setable": false,
-    "uiComponent": "sensor",
-    "icon": "/assets/icons/temp-up.svg"
-  }
+  "type": "number",
+  "title": {
+    "en": "Target Temperature",
+    "de": "Zieltemperatur",
+    "nl": "Doeltemperatuur",
+    "da": "Måletemperatur",
+    "es": "Temperatura Objetivo",
+    "fr": "Température Cible",
+    "it": "Temperatura Obiettivo",
+    "no": "Måltemperatur",
+    "sv": "Måltemperatur",
+    "pl": "Temperatura Docelowa",
+    "ru": "Целевая Температура",
+    "ko": "목표 온도"
+  },
+  "units": {
+    "en": "°C",
+    "da": "°C",
+    "de": "°C",
+    "es": "°C",
+    "fr": "°C",
+    "it": "°C",
+    "no": "°C",
+    "sv": "°C",
+    "pl": "°C",
+    "ru": "°C",
+    "ko": "°C"
+  },
+  "insights": true,
+  "desc": {
+    "en": "Target Temperature in degrees Celsius (°C)",
+    "de": "Zieltemperatur in Grad Celsius (°C)",
+    "nl": "Doeltemperatuur in graden Celsius (°C)",
+    "da": "Måletemperatur i grader Celsius (°C)",
+    "es": "Temperatura objetivo en grados Celsius (°C)",
+    "fr": "Température cible en degrés Celsius (°C)",
+    "it": "Temperatura obiettivo in gradi Celsius (°C)",
+    "no": "Måltemperatur i grader Celsius (°C)",
+    "sv": "Måltemperatur i grader Celsius (°C)",
+    "pl": "Temperatura docelowa w stopniach Celsjusza (°C)",
+    "ru": "Целевая температура в градусах Цельсия (°C)",
+    "ko": "목표 온도 (섭씨 °C)"
+  },
+  "decimals": 2,
+  "chartType": "spline",
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/icons/temp-up.svg"
+}

@@ -1,18 +1,51 @@
 {
-    "title": {
-        "en": "Enable ionizer"
-    },
-    "titleFormatted": {
-        "en": "Enable ionizer"
-    },
-    "hint": {
-        "en": "Enables the ionizer"
-    },
-    "args": [
-        {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=air-purifier"
-        }
-    ]
+  "title": {
+    "en": "Enable ionizer",
+    "nl": "Ionisator inschakelen",
+    "da": "Aktivér ionisator",
+    "de": "Ionisator aktivieren",
+    "es": "Activar ionizador",
+    "fr": "Activer l'ioniseur",
+    "it": "Abilita ionizzatore",
+    "no": "Aktiver ionisator",
+    "sv": "Aktivera jonisator",
+    "pl": "Włącz jonizator",
+    "ru": "Включить ионизатор",
+    "ko": "이온화기 활성화"
+  },
+  "titleFormatted": {
+    "en": "Enable ionizer",
+    "nl": "Ionisator inschakelen",
+    "da": "Aktivér ionisator",
+    "de": "Ionisator aktivieren",
+    "es": "Activar ionizador",
+    "fr": "Activer l'ioniseur",
+    "it": "Abilita ionizzatore",
+    "no": "Aktiver ionisator",
+    "sv": "Aktivera jonisator",
+    "pl": "Włącz jonizator",
+    "ru": "Включить ионизатор",
+    "ko": "이온화기 활성화"
+  },
+  "hint": {
+    "en": "Enables the ionizer",
+    "nl": "Schakelt de ionisator in",
+    "da": "Tænder for ionisatoren",
+    "de": "Aktiviert den Ionisator",
+    "es": "Activa el ionizador",
+    "fr": "Active l'ioniseur",
+    "it": "Abilita l'ionizzatore",
+    "no": "Aktiverer ionisatoren",
+    "sv": "Aktiverar jonisatorn",
+    "pl": "Włącza jonizator",
+    "ru": "Включает ионизатор",
+    "ko": "이온화기를 활성화합니다"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=air-purifier"
+    }
+  ]
 }

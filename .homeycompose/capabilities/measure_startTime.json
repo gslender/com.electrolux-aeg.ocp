@@ -1,11 +1,20 @@
 {
-    "type": "string",
-    "title": {
-        "en": "Start Time",
-        "de": "Startzeit",
-        "nl": "Starttijd"
-    },
-    "getable": true,
-    "setable": false,
-    "icon": "/assets/icons/clock.svg"
+  "type": "string",
+  "title": {
+    "en": "Start Time",
+    "de": "Startzeit",
+    "nl": "Starttijd",
+    "da": "Starttid",
+    "es": "Hora de inicio",
+    "fr": "Heure de début",
+    "it": "Ora di inizio",
+    "no": "Starttid",
+    "sv": "Starttid",
+    "pl": "Czas rozpoczęcia",
+    "ru": "Время начала",
+    "ko": "시작 시간"
+  },
+  "getable": true,
+  "setable": false,
+  "icon": "/assets/icons/clock.svg"
 }

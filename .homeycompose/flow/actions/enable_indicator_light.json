@@ -1,15 +1,37 @@
 {
-    "title": {
-        "en": "Enable indicator light"
-    },
-    "titleFormatted": {
-        "en": "Enable indicator light"
-    },
-    "args": [
-        {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=air-purifier"
-        }
-    ]
+  "title": {
+    "en": "Enable indicator light",
+    "nl": "Schakel controlelampje in",
+    "da": "Aktiver indikatorlys",
+    "de": "Indikatorlicht einschalten",
+    "es": "Activar luz indicadora",
+    "fr": "Activer le voyant",
+    "it": "Attiva la luce indicatore",
+    "no": "Aktiver indikatorlampe",
+    "sv": "Aktivera indikatorlampan",
+    "pl": "Włącz światło wskaźnika",
+    "ru": "Включить индикаторный свет",
+    "ko": "표시등 켜기"
+  },
+  "titleFormatted": {
+    "en": "Enable indicator light",
+    "nl": "Schakel controlelampje in",
+    "da": "Aktiver indikatorlys",
+    "de": "Indikatorlicht einschalten",
+    "es": "Activar luz indicadora",
+    "fr": "Activer le voyant",
+    "it": "Attiva la luce indicatore",
+    "no": "Aktiver indikatorlampe",
+    "sv": "Aktivera indikatorlampan",
+    "pl": "Włącz światło wskaźnika",
+    "ru": "Включить индикаторный свет",
+    "ko": "표시등 켜기"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=air-purifier"
+    }
+  ]
 }

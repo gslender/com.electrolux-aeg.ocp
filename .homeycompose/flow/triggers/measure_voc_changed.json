@@ -1,23 +1,32 @@
 {
-    "id": "measure_voc_changed",
-    "title": {
-        "en": "The VOC value has changed",
-        "nl": "De VOC waarde is veranderd",
-        "de": "Der VOC-Wert hat sich geändert"
-    },
-    "args": [
-        {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=air-purifier"
-        }
-    ],
-    "tokens": [
-        {
-            "name": "measure_voc",
-            "title": "VOC",
-            "type": "number",
-            "example": 2
-        }
-    ]
+  "id": "measure_voc_changed",
+  "title": {
+    "en": "The VOC value has changed",
+    "nl": "De VOC waarde is veranderd",
+    "de": "Der VOC-Wert hat sich geändert",
+    "da": "VOC-værdien har ændret sig",
+    "es": "El valor de VOC ha cambiado",
+    "fr": "La valeur de COV a changé",
+    "it": "Il valore VOC è cambiato",
+    "no": "VOC-verdien har endret seg",
+    "sv": "VOC-värdet har ändrats",
+    "pl": "Wartość VOC się zmieniła",
+    "ru": "Значение VOC изменилось",
+    "ko": "VOC 값이 변경되었습니다"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=air-purifier"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "measure_voc",
+      "title": "VOC",
+      "type": "number",
+      "example": 2
+    }
+  ]
 }

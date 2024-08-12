@@ -1,11 +1,20 @@
 {
-    "type": "string",
-    "title": {
-        "en": "Appliance State",
-        "de": "Gerätezustand",
-        "nl": "Apparaatstatus"
-    },
-    "getable": true,
-    "setable": false,
-    "icon": "/assets/icons/gear.svg"
+  "type": "string",
+  "title": {
+    "en": "Appliance State",
+    "de": "Gerätezustand",
+    "nl": "Apparaatstatus",
+    "da": "Apparatstatus",
+    "es": "Estado del aparato",
+    "fr": "État de l'appareil",
+    "it": "Stato dell'apparecchio",
+    "no": "Apparattilstand",
+    "sv": "Apparattillstånd",
+    "pl": "Stan urządzenia",
+    "ru": "Состояние устройства",
+    "ko": "기기 상태"
+  },
+  "getable": true,
+  "setable": false,
+  "icon": "/assets/icons/gear.svg"
 }

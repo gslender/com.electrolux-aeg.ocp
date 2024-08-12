@@ -1,9 +1,19 @@
 {
   "type": "boolean",
   "title": {
-    "en": "Light"
+    "en": "Light",
+    "nl": "Licht",
+    "da": "Lys",
+    "de": "Licht",
+    "es": "Luz",
+    "fr": "Lumière",
+    "it": "Luce",
+    "no": "Lys",
+    "sv": "Ljus",
+    "pl": "Światło",
+    "ru": "Свет",
+    "ko": "빛"
   },
   "getable": true,
   "setable": true
 }
-

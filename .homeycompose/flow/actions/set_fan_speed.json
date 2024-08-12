@@ -1,27 +1,71 @@
 {
-    "title": {
-        "en": "Set fan speed"
+  "title": {
+    "en": "Set fan speed",
+    "nl": "Stel ventilatorsnelheid in",
+    "da": "Indstil blæserhastighed",
+    "de": "Lüftergeschwindigkeit einstellen",
+    "es": "Ajustar velocidad del ventilador",
+    "fr": "Régler la vitesse du ventilateur",
+    "it": "Imposta velocità della ventola",
+    "no": "Sett viftehastighet",
+    "sv": "Ställ in fläkthastighet",
+    "pl": "Ustaw prędkość wentylatora",
+    "ru": "Установить скорость вентилятора",
+    "ko": "팬 속도 설정"
+  },
+  "titleFormatted": {
+    "en": "Set fan speed to [[fan_speed]]%",
+    "nl": "Stel ventilatorsnelheid in op [[fan_speed]]%",
+    "da": "Indstil blæserhastighed til [[fan_speed]]%",
+    "de": "Lüftergeschwindigkeit auf [[fan_speed]]% einstellen",
+    "es": "Ajustar velocidad del ventilador a [[fan_speed]]%",
+    "fr": "Régler la vitesse du ventilateur à [[fan_speed]]%",
+    "it": "Imposta la velocità della ventola a [[fan_speed]]%",
+    "no": "Sett viftehastighet til [[fan_speed]]%",
+    "sv": "Ställ in fläkthastighet till [[fan_speed]]%",
+    "pl": "Ustaw prędkość wentylatora na [[fan_speed]]%",
+    "ru": "Установить скорость вентилятора на [[fan_speed]]%",
+    "ko": "[[fan_speed]]%로 팬 속도 설정"
+  },
+  "hint": {
+    "en": "This action will set a fixed fan speed (and disable smart mode)",
+    "nl": "Deze actie stelt een vaste ventilatorsnelheid in (en schakelt de slimme modus uit)",
+    "da": "Denne handling vil indstille en fast blæserhastighed (og deaktivere smart tilstand)",
+    "de": "Diese Aktion wird eine feste Lüftergeschwindigkeit einstellen (und den Smart-Modus deaktivieren)",
+    "es": "Esta acción establecerá una velocidad fija del ventilador (y desactivará el modo inteligente)",
+    "fr": "Cette action définira une vitesse de ventilateur fixe (et désactivera le mode intelligent)",
+    "it": "Questa azione imposterà una velocità fissa della ventola (e disabiliterà la modalità intelligente)",
+    "no": "Denne handlingen vil sette en fast viftehastighet (og deaktivere smart modus)",
+    "sv": "Denna åtgärd ställer in en fast fläkthastighet (och inaktiverar smart läge)",
+    "pl": "Ta akcja ustawi stałą prędkość wentylatora (i wyłączy tryb inteligentny)",
+    "ru": "Это действие установит фиксированную скорость вентилятора (и отключит умный режим)",
+    "ko": "이 작업은 고정된 팬 속도를 설정하고 스마트 모드를 비활성화합니다."
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=air-purifier"
     },
-    "titleFormatted": {
-        "en": "Set fan speed to [[fan_speed]]%"
-    },
-    "hint": {
-        "en": "This action will set a fixed fan speed (and disable smart mode)"
-    },
-    "args": [
-        {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=air-purifier"
-        },
-        {
-            "name": "fan_speed",
-            "type": "number",
-            "min": 0,
-            "max": 100,
-            "title": {
-                "en": "Fan speed"
-            }
-        }
-    ]
+    {
+      "name": "fan_speed",
+      "type": "number",
+      "min": 0,
+      "max": 100,
+      "title": {
+        "en": "Fan speed",
+        "nl": "Ventilatorsnelheid",
+        "da": "Blæserhastighed",
+        "de": "Lüftergeschwindigkeit",
+        "es": "Velocidad del ventilador",
+        "fr": "Vitesse du ventilateur",
+        "it": "Velocità della ventola",
+        "no": "Viftehastighet",
+        "sv": "Fläkthastighet",
+        "pl": "Prędkość wentylatora",
+        "ru": "Скорость вентилятора",
+        "ko": "팬 속도"
+      }
+    }
+  ]
 }

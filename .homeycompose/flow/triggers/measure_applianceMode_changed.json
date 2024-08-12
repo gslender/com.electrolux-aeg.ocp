@@ -1,21 +1,45 @@
 {
-    "id": "measure_applianceMode_changed",
-    "title": {
-        "en": "The Appliance Mode has changed"
-    },
-    "args": [
-        {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=oven|laundry"
-        }
-    ],
-    "tokens": [
-        {
-            "name": "measure_applianceMode",
-            "title": { "en": "Appliance Mode"},
-            "type": "string",
-            "example": "RUNNING"
-        }
-    ]
+  "id": "measure_applianceMode_changed",
+  "title": {
+    "en": "The Appliance Mode has changed",
+    "nl": "De modus van het apparaat is gewijzigd",
+    "da": "Apparatets tilstand er ændret",
+    "de": "Der Gerätemodus hat sich geändert",
+    "es": "El modo del electrodoméstico ha cambiado",
+    "fr": "Le mode de l'appareil a changé",
+    "it": "La modalità dell'apparecchio è cambiata",
+    "no": "Enhetens modus har endret",
+    "sv": "Apparatläget har ändrats",
+    "pl": "Tryb urządzenia został zmieniony",
+    "ru": "Режим прибора изменился",
+    "ko": "기기 모드가 변경되었습니다"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=oven|laundry"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "measure_applianceMode",
+      "title": {
+        "en": "Appliance Mode",
+        "nl": "Apparaatmodus",
+        "da": "Apparattilstand",
+        "de": "Gerätemodus",
+        "es": "Modo del electrodoméstico",
+        "fr": "Mode de l'appareil",
+        "it": "Modalità dell'apparecchio",
+        "no": "Enhetsmodus",
+        "sv": "Apparatläge",
+        "pl": "Tryb urządzenia",
+        "ru": "Режим прибора",
+        "ko": "기기 모드"
+      },
+      "type": "string",
+      "example": "RUNNING"
+    }
+  ]
 }

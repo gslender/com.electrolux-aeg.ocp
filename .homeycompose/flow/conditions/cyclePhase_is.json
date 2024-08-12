@@ -1,28 +1,76 @@
 {
-    "title": {
-      "en": "Cycle Phase !{{is|isn't}} ..."
+  "title": {
+    "en": "Cycle Phase !{{is|isn't}} ...",
+    "nl": "Cycle-fase !{{is|isn't}} ...",
+    "da": "Cyklusfase !{{is|isn't}} ...",
+    "de": "Zyklusphase !{{is|isn't}} ...",
+    "es": "Fase de Ciclo !{{is|isn't}} ...",
+    "fr": "Phase de Cycle !{{is|isn't}} ...",
+    "it": "Fase del Ciclo !{{is|isn't}} ...",
+    "no": "Syklusfase !{{is|isn't}} ...",
+    "sv": "Cykelfas !{{is|isn't}} ...",
+    "pl": "Faza Cyklu !{{is|isn't}} ...",
+    "ru": "Фаза цикла !{{is|isn't}} ...",
+    "ko": "주기 단계 !{{is|isn't}} ..."
+  },
+  "titleFormatted": {
+    "en": "Cycle Phase !{{is|isn't}} [[value]]",
+    "nl": "Cycle-fase !{{is|isn't}} [[value]]",
+    "da": "Cyklusfase !{{is|isn't}} [[value]]",
+    "de": "Zyklusphase !{{is|isn't}} [[value]]",
+    "es": "Fase de Ciclo !{{is|isn't}} [[value]]",
+    "fr": "Phase de Cycle !{{is|isn't}} [[value]]",
+    "it": "Fase del Ciclo !{{is|isn't}} [[value]]",
+    "no": "Syklusfase !{{is|isn't}} [[value]]",
+    "sv": "Cykelfas !{{is|isn't}} [[value]]",
+    "pl": "Faza Cyklu !{{is|isn't}} [[value]]",
+    "ru": "Фаза цикла !{{is|isn't}} [[value]]",
+    "ko": "주기 단계 !{{is|isn't}} [[value]]"
+  },
+  "hint": {
+    "en": "Checks if Cycle Phase will/will not be the given value.",
+    "nl": "Controleert of de Cycle-fase de opgegeven waarde zal/zal niet zijn.",
+    "da": "Tjekker om cyklusfasen vil/vil ikke være den givne værdi.",
+    "de": "Überprüft, ob die Zyklusphase der angegebenen Wert sein wird/nicht sein wird.",
+    "es": "Comprueba si la fase de ciclo será/no será el valor dado.",
+    "fr": "Vérifie si la phase de cycle sera/ne sera pas la valeur donnée.",
+    "it": "Verifica se la fase del ciclo sarà/non sarà il valore dato.",
+    "no": "Sjekker om syklusfasen vil/ikke vil være den gitte verdien.",
+    "sv": "Kontrollerar om cykelfasen kommer/kommer inte att vara det givna värdet.",
+    "pl": "Sprawdza, czy faza cyklu będzie/nie będzie podaną wartością.",
+    "ru": "Проверяет, будет ли фаза цикла заданным значением/не будет им.",
+    "ko": "주기 단계가 주어진 값인지/아닌지 확인합니다."
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=oven|laundry"
     },
-    "titleFormatted": {
-      "en": "Cycle Phase !{{is|isn't}} [[value]]"
-    },
-    "hint": {
-      "en": "Checks if Cycle Phase will/will not be the given value."
-    },
-    "args": [
-      {
-          "type": "device",
-          "name": "device",
-          "filter": "driver_id=oven|laundry"
-      },
-      {
-        "name": "value",
-        "filter": "driver_id=laundry",
-        "type": "dropdown",
-        "values": [
-          { "id": "ANTICREASE", "label": { "en": "ANTICREASE" } },
-          { "id": "COOL", "label": { "en": "COOL" } },
-          { "id": "DRY", "label": { "en": "DRY" } }
-        ]
-      }
-    ]
-  }
+    {
+      "name": "value",
+      "filter": "driver_id=laundry",
+      "type": "dropdown",
+      "values": [
+        {
+          "id": "ANTICREASE",
+          "label": {
+            "en": "ANTICREASE"
+          }
+        },
+        {
+          "id": "COOL",
+          "label": {
+            "en": "COOL"
+          }
+        },
+        {
+          "id": "DRY",
+          "label": {
+            "en": "DRY"
+          }
+        }
+      ]
+    }
+  ]
+}

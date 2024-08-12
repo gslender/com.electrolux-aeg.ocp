@@ -1,15 +1,37 @@
 {
-    "title": {
-        "en": "Disable lock control"
-    },
-    "titleFormatted": {
-        "en": "Disable lock control"
-    },
-    "args": [
-        {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=air-purifier"
-        }
-    ]
+  "title": {
+    "en": "Disable lock control",
+    "nl": "Schakel vergrendelingsbesturing uit",
+    "da": "Deaktiver låsekontrol",
+    "de": "Sperrsteuerung deaktivieren",
+    "es": "Desactivar control de bloqueo",
+    "fr": "Désactiver le contrôle du verrouillage",
+    "it": "Disattiva controllo blocco",
+    "no": "Deaktiver låskontroll",
+    "sv": "Inaktivera låskontroll",
+    "pl": "Wyłącz kontrolę blokady",
+    "ru": "Отключить управление блокировкой",
+    "ko": "잠금 제어 비활성화"
+  },
+  "titleFormatted": {
+    "en": "Disable lock control",
+    "nl": "Schakel vergrendelingsbesturing uit",
+    "da": "Deaktiver låsekontrol",
+    "de": "Sperrsteuerung deaktivieren",
+    "es": "Desactivar control de bloqueo",
+    "fr": "Désactiver le contrôle du verrouillage",
+    "it": "Disattiva controllo blocco",
+    "no": "Deaktiver låskontroll",
+    "sv": "Inaktivera låskontroll",
+    "pl": "Wyłącz kontrolę blokady",
+    "ru": "Отключить управление блокировкой",
+    "ko": "잠금 제어 비활성화"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=air-purifier"
+    }
+  ]
 }

@@ -1,33 +1,106 @@
 {
-    "title": {
-      "en": "Appliance State !{{is|isn't}} ..."
+  "title": {
+    "en": "Appliance State !{{is|isn't}} ...",
+    "nl": "Apparaatstatus !{{is|is niet}} ...",
+    "da": "Apparatstatus !{{er|er ikke}} ...",
+    "de": "Gerätestatus !{{ist|ist nicht}} ...",
+    "es": "Estado del aparato !{{está|no está}} ...",
+    "fr": "État de l'appareil !{{est|n'est pas}} ...",
+    "it": "Stato dell'apparecchio !{{è|non è}} ...",
+    "no": "Apparatstatus !{{er|er ikke}} ...",
+    "sv": "Apparatstatus !{{är|är inte}} ...",
+    "pl": "Stan urządzenia !{{jest|nie jest}} ...",
+    "ru": "Состояние прибора !{{есть|нет}} ...",
+    "ko": "기기 상태 !{{입니다|아닙니다}} ..."
+  },
+  "titleFormatted": {
+    "en": "Appliance State !{{is|isn't}} [[value]]",
+    "nl": "Apparaatstatus !{{is|is niet}} [[value]]",
+    "da": "Apparatstatus !{{er|er ikke}} [[value]]",
+    "de": "Gerätestatus !{{ist|ist nicht}} [[value]]",
+    "es": "Estado del aparato !{{está|no está}} [[value]]",
+    "fr": "État de l'appareil !{{est|n'est pas}} [[value]]",
+    "it": "Stato dell'apparecchio !{{è|non è}} [[value]]",
+    "no": "Apparatstatus !{{er|er ikke}} [[value]]",
+    "sv": "Apparatstatus !{{är|är inte}} [[value]]",
+    "pl": "Stan urządzenia !{{jest|nie jest}} [[value]]",
+    "ru": "Состояние прибора !{{есть|нет}} [[value]]",
+    "ko": "기기 상태 !{{입니다|아닙니다}} [[value]]"
+  },
+  "hint": {
+    "en": "Checks if Appliance State will/will not be the given value.",
+    "nl": "Controleert of de apparaatstatus de opgegeven waarde wel/niet zal zijn.",
+    "da": "Kontrollerer om apparatets status vil/vil ikke være den givne værdi.",
+    "de": "Überprüft, ob der Gerätestatus den vorgegebenen Wert hat oder nicht.",
+    "es": "Verifica si el estado del aparato será o no el valor dado.",
+    "fr": "Vérifie si l'état de l'appareil sera ou non la valeur donnée.",
+    "it": "Controlla se lo stato dell'apparecchio sarà o non sarà il valore dato.",
+    "no": "Sjekker om apparatets status vil/vil ikke være den gitte verdien.",
+    "sv": "Kontrollerar om apparatstatus kommer/inte kommer att vara det angivna värdet.",
+    "pl": "Sprawdza, czy stan urządzenia będzie/nie będzie wartością podaną.",
+    "ru": "Проверяет, будет ли состояние прибора соответствовать указанному значению или нет.",
+    "ko": "기기 상태가 주어진 값이 될지 여부를 확인합니다."
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=oven|laundry"
     },
-    "titleFormatted": {
-      "en": "Appliance State !{{is|isn't}} [[value]]"
-    },
-    "hint": {
-      "en": "Checks if Appliance State will/will not be the given value."
-    },
-    "args": [
-      {
-          "type": "device",
-          "name": "device",
-          "filter": "driver_id=oven|laundry"
-      },
-      {
-        "name": "value",
-        "filter": "driver_id=laundry",
-        "type": "dropdown",
-        "values": [
-          { "id": "ALARM", "label": { "en": "ALARM" } },
-          { "id": "DELAYED_START", "label": { "en": "DELAYED START" } },
-          { "id": "END_OF_CYCLE", "label": { "en": "END OF CYCLE" } },
-          { "id": "IDLE", "label": { "en": "IDLE" } },
-          { "id": "OFF", "label": { "en": "OFF" } },
-          { "id": "PAUSED", "label": { "en": "PAUSED" } },
-          { "id": "READY_TO_START", "label": { "en": "READY TO START" } },
-          { "id": "RUNNING", "label": { "en": "RUNNING" } }
-        ]
-      }
-    ]
-  }
+    {
+      "name": "value",
+      "filter": "driver_id=laundry",
+      "type": "dropdown",
+      "values": [
+        {
+          "id": "ALARM",
+          "label": {
+            "en": "ALARM"
+          }
+        },
+        {
+          "id": "DELAYED_START",
+          "label": {
+            "en": "DELAYED START"
+          }
+        },
+        {
+          "id": "END_OF_CYCLE",
+          "label": {
+            "en": "END OF CYCLE"
+          }
+        },
+        {
+          "id": "IDLE",
+          "label": {
+            "en": "IDLE"
+          }
+        },
+        {
+          "id": "OFF",
+          "label": {
+            "en": "OFF"
+          }
+        },
+        {
+          "id": "PAUSED",
+          "label": {
+            "en": "PAUSED"
+          }
+        },
+        {
+          "id": "READY_TO_START",
+          "label": {
+            "en": "READY TO START"
+          }
+        },
+        {
+          "id": "RUNNING",
+          "label": {
+            "en": "RUNNING"
+          }
+        }
+      ]
+    }
+  ]
+}

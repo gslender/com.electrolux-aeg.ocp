@@ -1,18 +1,51 @@
 {
-    "title": {
-        "en": "Enable manual mode"
-    },
-    "titleFormatted": {
-        "en": "Enable manual mode"
-    },
-    "hint": {
-        "en": "Start the fan in manual mode (or switch to manual mode if running)"
-    },
-    "args": [
-        {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=air-purifier"
-        }
-    ]
+  "title": {
+    "en": "Enable manual mode",
+    "nl": "Handmatige modus inschakelen",
+    "da": "Aktiver manuel tilstand",
+    "de": "Manuellen Modus aktivieren",
+    "es": "Activar modo manual",
+    "fr": "Activer le mode manuel",
+    "it": "Attiva la modalità manuale",
+    "no": "Aktiver manuell modus",
+    "sv": "Aktivera manuellt läge",
+    "pl": "Włącz tryb ręczny",
+    "ru": "Включить ручной режим",
+    "ko": "수동 모드 활성화"
+  },
+  "titleFormatted": {
+    "en": "Enable manual mode",
+    "nl": "Handmatige modus inschakelen",
+    "da": "Aktiver manuel tilstand",
+    "de": "Manuellen Modus aktivieren",
+    "es": "Activar modo manual",
+    "fr": "Activer le mode manuel",
+    "it": "Attiva la modalità manuale",
+    "no": "Aktiver manuell modus",
+    "sv": "Aktivera manuellt läge",
+    "pl": "Włącz tryb ręczny",
+    "ru": "Включить ручной режим",
+    "ko": "수동 모드 활성화"
+  },
+  "hint": {
+    "en": "Start the fan in manual mode (or switch to manual mode if running)",
+    "nl": "Start de ventilator in handmatige modus (of schakel over naar handmatige modus als deze al draait)",
+    "da": "Start ventilatoren i manuel tilstand (eller skift til manuel tilstand, hvis den er i gang)",
+    "de": "Starten Sie den Ventilator im manuellen Modus (oder wechseln Sie in den manuellen Modus, wenn er bereits läuft)",
+    "es": "Inicia el ventilador en modo manual (o cambia al modo manual si ya está en funcionamiento)",
+    "fr": "Démarrez le ventilateur en mode manuel (ou passez en mode manuel s'il est déjà en marche)",
+    "it": "Avvia il ventilatore in modalità manuale (o passa alla modalità manuale se è già in funzione)",
+    "no": "Start viften i manuell modus (eller bytt til manuell modus hvis den allerede kjører)",
+    "sv": "Starta fläkten i manuellt läge (eller byt till manuellt läge om den redan är igång)",
+    "pl": "Uruchom wentylator w trybie ręcznym (lub przełącz na tryb ręczny, jeśli już działa)",
+    "ru": "Запустите вентилятор в ручном режиме (или переключитесь на ручной режим, если он уже работает)",
+    "ko": "팬을 수동 모드로 시작하세요 (또는 실행 중인 경우 수동 모드로 전환하세요)"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=air-purifier"
+    }
+  ]
 }

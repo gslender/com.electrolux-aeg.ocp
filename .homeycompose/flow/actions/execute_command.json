@@ -1,24 +1,91 @@
 {
-    "title": {
-        "en": "Execute Command"
+  "title": {
+    "en": "Execute Command",
+    "nl": "Voer opdracht uit",
+    "da": "Udfør kommando",
+    "de": "Befehl ausführen",
+    "es": "Ejecutar comando",
+    "fr": "Exécuter la commande",
+    "it": "Esegui comando",
+    "no": "Utfør kommando",
+    "sv": "Utför kommando",
+    "pl": "Wykonaj polecenie",
+    "ru": "Выполнить команду",
+    "ko": "명령 실행"
+  },
+  "titleFormatted": {
+    "en": "Execute [[what]] Command",
+    "nl": "Voer opdracht [[what]] uit",
+    "da": "Udfør [[what]] kommando",
+    "de": "Befehl [[what]] ausführen",
+    "es": "Ejecutar comando [[what]]",
+    "fr": "Exécuter la commande [[what]]",
+    "it": "Esegui comando [[what]]",
+    "no": "Utfør [[what]] kommando",
+    "sv": "Utför [[what]] kommando",
+    "pl": "Wykonaj polecenie [[what]]",
+    "ru": "Выполнить команду [[what]]",
+    "ko": "[[what]] 명령 실행"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=oven|laundry"
     },
-    "titleFormatted": {
-        "en": "Execute [[what]] Command"
-    },
-    "args": [
+    {
+      "type": "dropdown",
+      "name": "what",
+      "title": {
+        "en": "What command will be executed",
+        "nl": "Welke opdracht zal worden uitgevoerd",
+        "da": "Hvilken kommando vil blive udført",
+        "de": "Welcher Befehl wird ausgeführt",
+        "es": "Qué comando se ejecutará",
+        "fr": "Quelle commande sera exécutée",
+        "it": "Quale comando verrà eseguito",
+        "no": "Hvilken kommando vil bli utført",
+        "sv": "Vilken kommando kommer att utföras",
+        "pl": "Jakie polecenie zostanie wykonane",
+        "ru": "Какая команда будет выполнена",
+        "ko": "어떤 명령이 실행될 것인가요?"
+      },
+      "values": [
         {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=oven|laundry"
+          "id": "START",
+          "title": {
+            "en": "Start",
+            "nl": "Start",
+            "da": "Start",
+            "de": "Start",
+            "es": "Comenzar",
+            "fr": "Démarrer",
+            "it": "Avviare",
+            "no": "Start",
+            "sv": "Starta",
+            "pl": "Uruchom",
+            "ru": "Начать",
+            "ko": "시작"
+          }
         },
         {
-            "type": "dropdown",
-            "name": "what",
-            "title": { "en": "What command will be executed" },
-            "values": [
-              { "id": "START", "title": { "en": "Start" } },
-              { "id": "STOPRESET", "title": { "en": "Stop / Reset" } }
-            ]
+          "id": "STOPRESET",
+          "title": {
+            "en": "Stop / Reset",
+            "nl": "Stop / Reset",
+            "da": "Stop / Nulstil",
+            "de": "Stopp / Zurücksetzen",
+            "es": "Detener / Restablecer",
+            "fr": "Arrêter / Réinitialiser",
+            "it": "Ferma / Ripristina",
+            "no": "Stopp / Tilbakestill",
+            "sv": "Stoppa / Återställ",
+            "pl": "Zatrzymaj / Resetuj",
+            "ru": "Остановить / Сбросить",
+            "ko": "중지 / 재설정"
+          }
         }
-    ]
+      ]
+    }
+  ]
 }

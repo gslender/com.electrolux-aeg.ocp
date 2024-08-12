@@ -1,15 +1,37 @@
 {
-    "title": {
-        "en": "Disable indicator light"
-    },
-    "titleFormatted": {
-        "en": "Disable indicator light"
-    },
-    "args": [
-        {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=air-purifier"
-        }
-    ]
+  "title": {
+    "en": "Disable indicator light",
+    "nl": "Indicatie lamp uitschakelen",
+    "da": "Deaktiver indikatorlys",
+    "de": "Anzeigeleuchte deaktivieren",
+    "es": "Desactivar luz indicadora",
+    "fr": "Désactiver le voyant",
+    "it": "Disabilita la spia",
+    "no": "Deaktiver indikatorlys",
+    "sv": "Inaktivera indikatorljus",
+    "pl": "Wyłącz wskaźnik",
+    "ru": "Отключить индикатор",
+    "ko": "표시등 비활성화"
+  },
+  "titleFormatted": {
+    "en": "Disable indicator light",
+    "nl": "Indicatie lamp uitschakelen",
+    "da": "Deaktiver indikatorlys",
+    "de": "Anzeigeleuchte deaktivieren",
+    "es": "Desactivar luz indicadora",
+    "fr": "Désactiver le voyant",
+    "it": "Disabilita la spia",
+    "no": "Deaktiver indikatorlys",
+    "sv": "Inaktivera indikatorljus",
+    "pl": "Wyłącz wskaźnik",
+    "ru": "Отключить индикатор",
+    "ko": "표시등 비활성화"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=air-purifier"
+    }
+  ]
 }

@@ -1,23 +1,51 @@
 {
-    "type": "number",
-    "title": {
-        "en": "PM10",
-        "nl": "PM10",
-        "de": "PM10"
-    },
-    "units": {
-        "en": "ppm"
-    },
-    "insights": true,
-    "desc": {
-        "en": "Atmospheric Particulate Matter (μg/m3)",
-        "nl": "Deeltjesvormige luchtverontreiniging (μg/m3)",
-        "de": "Atmosphärischer Feinstaub (μg/m3)"
-    },
-    "chartType": "spline",
-    "decimals": 2,
-    "getable": true,
-    "setable": false,
-    "uiComponent": "sensor",
-    "icon": "/assets/icons/pm10.svg"
+  "type": "number",
+  "title": {
+    "en": "PM10",
+    "nl": "PM10",
+    "de": "PM10",
+    "da": "PM10",
+    "es": "PM10",
+    "fr": "PM10",
+    "it": "PM10",
+    "no": "PM10",
+    "sv": "PM10",
+    "pl": "PM10",
+    "ru": "PM10",
+    "ko": "PM10"
+  },
+  "units": {
+    "en": "ppm",
+    "da": "ppm",
+    "de": "ppm",
+    "es": "ppm",
+    "fr": "ppm",
+    "it": "ppm",
+    "no": "ppm",
+    "sv": "ppm",
+    "pl": "ppm",
+    "ru": "ppm",
+    "ko": "ppm"
+  },
+  "insights": true,
+  "desc": {
+    "en": "Atmospheric Particulate Matter (μg/m3)",
+    "nl": "Deeltjesvormige luchtverontreiniging (μg/m3)",
+    "de": "Atmosphärischer Feinstaub (μg/m3)",
+    "da": "Atmosfærisk partikelforurening (μg/m3)",
+    "es": "Materia particulada atmosférica (μg/m3)",
+    "fr": "Particules atmosphériques (μg/m3)",
+    "it": "Materiale particolato atmosferico (μg/m3)",
+    "no": "Atmosfærisk partikkelforurensning (μg/m3)",
+    "sv": "Atmosfäriska partiklar (μg/m3)",
+    "pl": "Atmosferyczny pył zawieszony (μg/m3)",
+    "ru": "Атмосферные взвешенные частицы (μg/m3)",
+    "ko": "대기 미세 입자 (μg/m3)"
+  },
+  "chartType": "spline",
+  "decimals": 2,
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/icons/pm10.svg"
 }

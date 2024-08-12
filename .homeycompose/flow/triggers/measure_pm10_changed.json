@@ -1,23 +1,32 @@
 {
-    "id": "measure_pm10_changed",
-    "title": {
-        "en": "The PM10 value has changed",
-        "nl": "De PM10 waarde is veranderd",
-        "de": "Der PM10-Wert hat sich geändert"
-    },
-    "args": [
-        {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=air-purifier"
-        }
-    ],
-    "tokens": [
-        {
-            "name": "measure_pm10",
-            "title": "PM10",
-            "type": "number",
-            "example": 2
-        }
-    ]
+  "id": "measure_pm10_changed",
+  "title": {
+    "en": "The PM10 value has changed",
+    "nl": "De PM10 waarde is veranderd",
+    "de": "Der PM10-Wert hat sich geändert",
+    "da": "PM10-værdien er ændret",
+    "es": "El valor de PM10 ha cambiado",
+    "fr": "La valeur PM10 a changé",
+    "it": "Il valore PM10 è cambiato",
+    "no": "PM10-verdien har endret seg",
+    "sv": "PM10-värdet har ändrats",
+    "pl": "Wartość PM10 się zmieniła",
+    "ru": "Значение PM10 изменилось",
+    "ko": "PM10 값이 변경되었습니다"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=air-purifier"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "measure_pm10",
+      "title": "PM10",
+      "type": "number",
+      "example": 2
+    }
+  ]
 }

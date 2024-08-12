@@ -1,21 +1,45 @@
 {
-    "id": "measure_cyclePhase_changed",
-    "title": {
-        "en": "The Cycle Phase has changed"
-    },
-    "args": [
-        {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=oven|laundry"
-        }
-    ],
-    "tokens": [
-        {
-            "name": "measure_cyclePhase",
-            "title": { "en": "Cycle Phase"},
-            "type": "string",
-            "example": "OFF"
-        }
-    ]
+  "id": "measure_cyclePhase_changed",
+  "title": {
+    "en": "The Cycle Phase has changed",
+    "nl": "De cyclusfase is veranderd",
+    "da": "Cyklusfasen er ændret",
+    "de": "Die Zyklusphase hat sich geändert",
+    "es": "La fase del ciclo ha cambiado",
+    "fr": "La phase du cycle a changé",
+    "it": "La fase del ciclo è cambiata",
+    "no": "Syklusfasen har endret seg",
+    "sv": "Cykelfasen har ändrats",
+    "pl": "Faza cyklu została zmieniona",
+    "ru": "Фаза цикла изменилась",
+    "ko": "사이클 단계가 변경되었습니다"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=oven|laundry"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "measure_cyclePhase",
+      "title": {
+        "en": "Cycle Phase",
+        "nl": "Cyclusfase",
+        "da": "Cyklusfase",
+        "de": "Zyklusphase",
+        "es": "Fase del ciclo",
+        "fr": "Phase du cycle",
+        "it": "Fase del ciclo",
+        "no": "Syklusfase",
+        "sv": "Cykelfas",
+        "pl": "Faza cyklu",
+        "ru": "Фаза цикла",
+        "ko": "사이클 단계"
+      },
+      "type": "string",
+      "example": "OFF"
+    }
+  ]
 }

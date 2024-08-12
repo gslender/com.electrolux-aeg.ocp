@@ -7,10 +7,32 @@
     "local"
   ],
   "name": {
-    "en": "Electrolux AEG"
+    "en": "Electrolux AEG",
+    "nl": "Electrolux AEG",
+    "da": "Electrolux AEG",
+    "de": "Electrolux AEG",
+    "es": "Electrolux AEG",
+    "fr": "Electrolux AEG",
+    "it": "Electrolux AEG",
+    "no": "Electrolux AEG",
+    "sv": "Electrolux AEG",
+    "pl": "Electrolux AEG",
+    "ru": "Electrolux AEG",
+    "ko": "Electrolux AEG"
   },
   "description": {
-    "en": "One Connected Platform appliances and services - for an effortlessly smarter home"
+    "en": "One Connected Platform appliances and services - for an effortlessly smarter home",
+    "nl": "Eén verbonden platform voor apparaten en diensten - voor een moeiteloos slimmer huis",
+    "da": "En sammenkoblet platform til apparater og tjenester - for et ubesværet smartere hjem",
+    "de": "Eine verbundene Plattform für Geräte und Dienstleistungen - für ein mühelos intelligenteres Zuhause",
+    "es": "Una plataforma conectada para electrodomésticos y servicios - para un hogar más inteligente sin esfuerzo",
+    "fr": "Une plateforme connectée pour les appareils et services - pour une maison plus intelligente et sans effort",
+    "it": "Una piattaforma connessa per elettrodomestici e servizi - per una casa più intelligente senza sforzo",
+    "no": "En tilkoblet plattform for apparater og tjenester - for et ubesværet smartere hjem",
+    "sv": "En ansluten plattform för apparater och tjänster - för ett smartare hem utan ansträngning",
+    "pl": "Jedna połączona platforma urządzeń i usług - dla beztrosko mądrzejszego domu",
+    "ru": "Единая платформа для устройств и услуг - для более умного дома без усилий",
+    "ko": "하나의 연결된 플랫폼 기기 및 서비스 - 더 스마트한 집을 위해"
   },
   "brandColor": "#d31937",
   "category": [

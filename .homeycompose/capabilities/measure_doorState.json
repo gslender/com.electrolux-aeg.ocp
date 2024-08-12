@@ -1,11 +1,20 @@
 {
-    "type": "string",
-    "title": {
-        "en": "Door State",
-        "de": "Türzustand",
-        "nl": "Deurtoestand"
-    },
-    "getable": true,
-    "setable": false,
-    "icon": "/assets/icons/door.svg"
+  "type": "string",
+  "title": {
+    "en": "Door State",
+    "de": "Türzustand",
+    "nl": "Deurtoestand",
+    "da": "Dørtilstand",
+    "es": "Estado de la puerta",
+    "fr": "État de la porte",
+    "it": "Stato della porta",
+    "no": "Dørtilstand",
+    "sv": "Dörrstatus",
+    "pl": "Stan drzwi",
+    "ru": "Состояние двери",
+    "ko": "문 상태"
+  },
+  "getable": true,
+  "setable": false,
+  "icon": "/assets/icons/door.svg"
 }

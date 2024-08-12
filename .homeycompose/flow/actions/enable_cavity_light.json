@@ -1,15 +1,37 @@
 {
-    "title": {
-        "en": "Enable cavity light"
-    },
-    "titleFormatted": {
-        "en": "Enable cavity light"
-    },
-    "args": [
-        {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=oven"
-        }
-    ]
+  "title": {
+    "en": "Enable cavity light",
+    "nl": "Schakel de ovenverlichting in",
+    "da": "Tænd ovnbelysningen",
+    "de": "Backofenbeleuchtung einschalten",
+    "es": "Encender luz del horno",
+    "fr": "Allumer la lumière du four",
+    "it": "Accendi la luce del forno",
+    "no": "Skru på ovnslyset",
+    "sv": "Sätt på ugnsbelysningen",
+    "pl": "Włącz światło piekarnika",
+    "ru": "Включить свет в духовом шкафу",
+    "ko": "오븐 조명 켜기"
+  },
+  "titleFormatted": {
+    "en": "Enable cavity light",
+    "nl": "Schakel de ovenverlichting in",
+    "da": "Tænd ovnbelysningen",
+    "de": "Backofenbeleuchtung einschalten",
+    "es": "Encender luz del horno",
+    "fr": "Allumer la lumière du four",
+    "it": "Accendi la luce del forno",
+    "no": "Skru på ovnslyset",
+    "sv": "Sätt på ugnsbelysningen",
+    "pl": "Włącz światło piekarnika",
+    "ru": "Включить свет в духовом шкафу",
+    "ko": "오븐 조명 켜기"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=oven"
+    }
+  ]
 }

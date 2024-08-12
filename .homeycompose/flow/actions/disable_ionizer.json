@@ -1,18 +1,51 @@
 {
-    "title": {
-        "en": "Disable ionizer"
-    },
-    "titleFormatted": {
-        "en": "Disable ionizer"
-    },
-    "hint": {
-        "en": "Disables the ionizer"
-    },
-    "args": [
-        {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=air-purifier"
-        }
-    ]
+  "title": {
+    "en": "Disable ionizer",
+    "nl": "Ionisator uitschakelen",
+    "da": "Deaktiver ionisator",
+    "de": "Ionisator deaktivieren",
+    "es": "Desactivar ionizador",
+    "fr": "Désactiver l'ioniseur",
+    "it": "Disabilita ionizzatore",
+    "no": "Deaktiver ionisator",
+    "sv": "Inaktivera jonisator",
+    "pl": "Wyłączjonizator",
+    "ru": "Отключить ионизатор",
+    "ko": "이온 발생기 비활성화"
+  },
+  "titleFormatted": {
+    "en": "Disable ionizer",
+    "nl": "Ionisator uitschakelen",
+    "da": "Deaktiver ionisator",
+    "de": "Ionisator deaktivieren",
+    "es": "Desactivar ionizador",
+    "fr": "Désactiver l'ioniseur",
+    "it": "Disabilita ionizzatore",
+    "no": "Deaktiver ionisator",
+    "sv": "Inaktivera jonisator",
+    "pl": "Wyłączjonizator",
+    "ru": "Отключить ионизатор",
+    "ko": "이온 발생기 비활성화"
+  },
+  "hint": {
+    "en": "Disables the ionizer",
+    "nl": "Schakelt de ionisator uit",
+    "da": "Deaktiverer ionisatoren",
+    "de": "Deaktiviert den Ionisator",
+    "es": "Desactiva el ionizador",
+    "fr": "Désactive l'ioniseur",
+    "it": "Disabilita l'ionizzatore",
+    "no": "Deaktiverer ionisatoren",
+    "sv": "Inaktiverar jonisatorn",
+    "pl": "Wyłącza jonizator",
+    "ru": "Отключает ионизатор",
+    "ko": "이온 발생기를 비활성화합니다"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=air-purifier"
+    }
+  ]
 }

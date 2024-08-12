@@ -1,11 +1,20 @@
 {
-    "type": "string",
-    "title": {
-        "en": "Appliance Mode",
-        "de": "Gerätemodus",
-        "nl": "Apparaatmodus"
-    },
-    "getable": true,
-    "setable": false,
-    "icon": "/assets/icons/gear.svg"
+  "type": "string",
+  "title": {
+    "en": "Appliance Mode",
+    "de": "Gerätemodus",
+    "nl": "Apparaatmodus",
+    "da": "Apparattilstand",
+    "es": "Modo de electrodoméstico",
+    "fr": "Mode appareil",
+    "it": "Modalità elettrodomestico",
+    "no": "Apparatmodus",
+    "sv": "Apparatläge",
+    "pl": "Tryb urządzenia",
+    "ru": "Режим прибора",
+    "ko": "가전 모드"
+  },
+  "getable": true,
+  "setable": false,
+  "icon": "/assets/icons/gear.svg"
 }

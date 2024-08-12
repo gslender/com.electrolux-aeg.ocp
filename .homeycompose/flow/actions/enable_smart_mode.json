@@ -1,18 +1,51 @@
 {
-    "title": {
-        "en": "Enable smart mode"
-    },
-    "titleFormatted": {
-        "en": "Enable smart mode"
-    },
-    "hint": {
-        "en": "Start the fan in smart mode (or switch to smart mode if running)"
-    },
-    "args": [
-        {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=air-purifier"
-        }
-    ]
+  "title": {
+    "en": "Enable smart mode",
+    "nl": "Slimme modus inschakelen",
+    "da": "Aktiver smarttilstand",
+    "de": "Smart-Modus aktivieren",
+    "es": "Habilitar modo inteligente",
+    "fr": "Activer le mode intelligent",
+    "it": "Abilita modalità intelligente",
+    "no": "Aktiver smart-modus",
+    "sv": "Aktivera smart läge",
+    "pl": "Włącz tryb inteligentny",
+    "ru": "Включить умный режим",
+    "ko": "스마트 모드 활성화"
+  },
+  "titleFormatted": {
+    "en": "Enable smart mode",
+    "nl": "Slimme modus inschakelen",
+    "da": "Aktiver smarttilstand",
+    "de": "Smart-Modus aktivieren",
+    "es": "Habilitar modo inteligente",
+    "fr": "Activer le mode intelligent",
+    "it": "Abilita modalità intelligente",
+    "no": "Aktiver smart-modus",
+    "sv": "Aktivera smart läge",
+    "pl": "Włącz tryb inteligentny",
+    "ru": "Включить умный режим",
+    "ko": "스마트 모드 활성화"
+  },
+  "hint": {
+    "en": "Start the fan in smart mode (or switch to smart mode if running)",
+    "nl": "Start de ventilator in slimme modus (of schakel over naar slimme modus als deze al draait)",
+    "da": "Start ventilatoren i smarttilstand (eller skift til smarttilstand, hvis den kører)",
+    "de": "Starten Sie den Ventilator im Smart-Modus (oder wechseln Sie in den Smart-Modus, falls er bereits läuft)",
+    "es": "Inicie el ventilador en modo inteligente (o cambie a modo inteligente si está en funcionamiento)",
+    "fr": "Démarrez le ventilateur en mode intelligent (ou passez en mode intelligent s'il est déjà en marche)",
+    "it": "Avvia la ventola in modalità intelligente (o passa alla modalità intelligente se è già in funzione)",
+    "no": "Start viften i smart-modus (eller bytt til smart-modus hvis den allerede kjører)",
+    "sv": "Starta fläkten i smart läge (eller växla till smart läge om det redan körs)",
+    "pl": "Uruchom wentylator w trybie inteligentnym (lub przełącz na tryb inteligentny, jeśli już działa)",
+    "ru": "Запустите вентилятор в умном режиме (или переключите в умный режим, если уже работает)",
+    "ko": "팬을 스마트 모드에서 시작합니다 (또는 실행 중일 경우 스마트 모드로 전환합니다)"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=air-purifier"
+    }
+  ]
 }
