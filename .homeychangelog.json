@@ -52,5 +52,11 @@
   },
   "1.2.3": {
     "en": "Added Title Case for some display values"
+  },
+  "1.2.4": {
+    "en": "Support lots of languages"
+  },
+  "1.2.5": {
+    "en": "Fix oven runningTime bug"
   }
 }
