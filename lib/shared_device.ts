@@ -25,7 +25,7 @@ export default class SharedDevice extends Homey.Device {
     }
   }
 
-  private _isMissingAnyCapabilities(caps: string[]) : boolean {
+  private _isMissingAnyCapabilities(caps: string[]): boolean {
     for (const cap of caps) {
       if (!this.hasCapability(cap)) {
         this.log("Missing capability " + cap);
@@ -52,6 +52,18 @@ export default class SharedDevice extends Homey.Device {
         await this.removeCapability(cap);
       }
     }
+  }
+
+  toTitleCase(input: string): string {
+    const words = input.split('_');
+    const capitalizedWords = words.map(word => {
+      if (/[a-zA-Z]/.test(word.charAt(0))) {
+        return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+      } else {
+        return word;
+      }
+    });
+    return capitalizedWords.join(' ');
   }
 
   async updateCapabilities() {

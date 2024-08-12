@@ -45,3 +45,5 @@ export default class LaundryDriver extends SharedDriver {
   }
 
 }
+
+module.exports = LaundryDriver;

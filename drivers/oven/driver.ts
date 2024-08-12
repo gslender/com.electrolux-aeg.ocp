@@ -46,3 +46,5 @@ export default class OvenDriver extends SharedDriver {
   }
 
 }
+
+module.exports = OvenDriver;

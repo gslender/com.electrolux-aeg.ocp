@@ -64,15 +64,15 @@ class OvenDevice extends SharedDevice {
 
     try {
       await this.setCapabilityValue("LIGHT_onoff", props.cavityLight);
-      await this.setCapabilityValue("measure_doorState", props.doorState);
+      await this.setCapabilityValue("measure_doorState", this.toTitleCase(props.doorState));
       await this.setCapabilityValue("measure_timeToEnd", this.convertSecondsToMinNumber(props.timeToEnd));
       await this.setCapabilityValue("measure_runningTime", this.convertSecondsToHrMinString(props.runningTime));
       await this.setCapabilityValue("measure_startTime", this.convertSecondsToHrMinString(props.startTime));
       await this.setCapabilityValue("measure_targetTemperature", props.targetTemperatureC);
       await this.setCapabilityValue("measure_temperature", props.displayTemperatureC);
-      await this.setCapabilityValue("measure_applianceState", props.applianceState);
-      await this.setCapabilityValue("measure_applianceMode", props.program);
-      await this.setCapabilityValue("measure_cyclePhase", props.processPhase);
+      await this.setCapabilityValue("measure_applianceState", this.toTitleCase(props.applianceState));
+      await this.setCapabilityValue("measure_applianceMode", this.toTitleCase(props.program));
+      await this.setCapabilityValue("measure_cyclePhase", this.toTitleCase(props.processPhase));
 
       this.log("Device data updated");
     } catch (error) {

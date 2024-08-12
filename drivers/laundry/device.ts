@@ -66,13 +66,13 @@ class LaundryDevice extends SharedDevice {
     const props = state.properties.reported;
 
     try {
-      await this.setCapabilityValue("measure_doorState", props.doorState);
+      await this.setCapabilityValue("measure_doorState", this.toTitleCase(props.doorState));
       await this.setCapabilityValue("measure_timeToEnd", this.convertSecondsToMinNumber(props.timeToEnd));
       await this.setCapabilityValue("measure_stopTime", this.convertSecondsToHrMinString(props.stopTime)); // in seconds 
       await this.setCapabilityValue("measure_startTime", this.convertSecondsToHrMinString(props.startTime));
-      await this.setCapabilityValue("measure_applianceState", props.applianceState);
-      await this.setCapabilityValue("measure_applianceMode", props.applianceMode);
-      await this.setCapabilityValue("measure_cyclePhase", props.cyclePhase);
+      await this.setCapabilityValue("measure_applianceState", this.toTitleCase(props.applianceState));
+      await this.setCapabilityValue("measure_applianceMode", this.toTitleCase(props.applianceMode));
+      await this.setCapabilityValue("measure_cyclePhase", this.toTitleCase(props.cyclePhase));
     } catch (error) {
       this.log("Error updating device state: ", error);
     }
