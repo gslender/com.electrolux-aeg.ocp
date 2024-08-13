@@ -58,5 +58,8 @@
   },
   "1.2.5": {
     "en": "Fix oven runningTime bug"
+  },
+  "1.2.6": {
+    "en": "Fix AirPurifier bug - missing DeviceCapabilities[]"
   }
 }

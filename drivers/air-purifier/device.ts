@@ -1,10 +1,11 @@
 import SharedDevice from '../../lib/shared_device'
-import stringify from 'json-stringify-safe';
+import AirPurifierDriver from './driver';
 
 class AirPurifierDevice extends SharedDevice {
   Workmode!: string;
 
   async onInit() {
+    this.deviceCapabilities = AirPurifierDriver.DeviceCapabilities;
     super.onInit();
 
     // Listen to multiple capabilities simultaneously

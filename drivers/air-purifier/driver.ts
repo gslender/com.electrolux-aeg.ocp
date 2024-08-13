@@ -1,7 +1,6 @@
 import SharedDriver from '../../lib/shared_driver'
 
-class AirPurifierDriver extends SharedDriver {
-
+export default class AirPurifierDriver extends SharedDriver {
   static DeviceCapabilities = [
     "measure_co2",
     "measure_humidity",
