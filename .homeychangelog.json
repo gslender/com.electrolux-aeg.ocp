@@ -61,5 +61,11 @@
   },
   "1.2.6": {
     "en": "Fix AirPurifier bug - missing DeviceCapabilities[]"
+  },
+  "1.2.7": {
+    "en": "Tiny bug"
+  },
+  "1.3.0": {
+    "en": "Added Dishwasher support"
   }
 }

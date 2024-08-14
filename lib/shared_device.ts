@@ -19,6 +19,7 @@ export default class SharedDevice extends Homey.Device {
     const capabilities = await this.app.getApplianceCapabilities(deviceId);
     this.setSettings({ applianceCapabilities: stringify(capabilities) });
 
+    this.deviceCapabilities = this.deviceCapabilities ?? [];
     if (this._isMissingAnyCapabilities(this.deviceCapabilities)) {
       await this._removeAllExistingCapabilities();
       await this._addMissingCapabilities(this.deviceCapabilities);
