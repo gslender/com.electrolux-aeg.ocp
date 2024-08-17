@@ -130,9 +130,9 @@ class AirPurifierDevice extends SharedDevice {
       this.setCapabilityValue("FAN_speed", 0);
     }
 
-    this.setCapabilityValue("IONIZER_onoff", props.Ionizer);
-    this.setCapabilityValue("LIGHT_onoff", props.UILight);
-    this.setCapabilityValue("LOCK_onoff", props.SafetyLock);
+    this.setCapabilityValue("IONIZER_onoff", Boolean(props.Ionizer));
+    this.setCapabilityValue("LIGHT_onoff", Boolean(props.UILight));
+    this.setCapabilityValue("LOCK_onoff", Boolean(props.SafetyLock));
   }
 
   flow_set_fan_speed(args: { fan_speed: number }, state: {}) {
