@@ -1,0 +1,9 @@
+{
+  "type": "string",
+  "title": {
+    "en": "Alerts"
+  },
+  "getable": true,
+  "setable": false,
+  "icon": "/assets/icons/alert.svg"
+}

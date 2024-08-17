@@ -1,0 +1,23 @@
+{
+  "id": "measure_alerts_changed",
+  "title": {
+    "en": "The Alerts has changed"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=oven|laundry|dishwasher|air-purifier"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "measure_alerts",
+      "title": {
+        "en": "Alert"
+      },
+      "type": "string",
+      "example": "NEEDS SALT"
+    }
+  ]
+}

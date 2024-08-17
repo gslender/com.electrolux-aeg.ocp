@@ -7,19 +7,13 @@ assignees: ''
 
 ---
 
-To request a new device, please run the Electrolux/AEG OCP app locally using Homey CLI.
-
-```bash
-$ git clone git@github.com:https://github.com/gslender/com.electrolux-aeg.ocp.git
-$ cd com.electrolux-aeg.ocp
-$ homey app run -r
-```
+To request a new device, install the Electrolux/AEG OCP Homey App
 
 Add your email and password to the app Configure settings.
 
-Then add a New Device, choose the Electrolux/AEG OCP app Brand, and choose a Laundry device even if your device is not a Laundry appliance. 
+Then add a New Device, choose the Electrolux/AEG OCP app Brand, and choose the Unknown device and if you have any appliance, it should be found and added. 
 
-Watch the logging closely for `********* appliances[...] ********` and copy-paste the JSON into this issue.
+I will need the Appliance State {json} and Appliance Capabilities {json} files that are published in the device Advanced Settings when you install the Unknown device. Include these two data files in your submission below.
 
 Without this information, we cannot add support for your device, and the issue will be closed.
 

@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.electrolux-aeg.ocp",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "compatibility": ">=12.0.0",
   "sdk": 3,
   "platforms": [
@@ -55,6 +55,29 @@
   "flow": {
     "triggers": [
       {
+        "id": "measure_alerts_changed",
+        "title": {
+          "en": "The Alerts has changed"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=oven|laundry|dishwasher|air-purifier"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "measure_alerts",
+            "title": {
+              "en": "Alert"
+            },
+            "type": "string",
+            "example": "NEEDS SALT"
+          }
+        ]
+      },
+      {
         "id": "measure_applianceMode_changed",
         "title": {
           "en": "The Appliance Mode has changed",
@@ -74,7 +97,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=oven|laundry"
+            "filter": "driver_id=oven|laundry|dishwasher|air-purifier"
           }
         ],
         "tokens": [
@@ -119,7 +142,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=oven|laundry"
+            "filter": "driver_id=oven|laundry|dishwasher|air-purifier"
           }
         ],
         "tokens": [
@@ -164,7 +187,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=oven|laundry"
+            "filter": "driver_id=oven|laundry|dishwasher|air-purifier"
           }
         ],
         "tokens": [
@@ -209,7 +232,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=air-purifier"
+            "filter": "driver_id=oven|laundry|dishwasher|air-purifier"
           }
         ],
         "tokens": [
@@ -361,7 +384,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=oven|laundry"
+            "filter": "driver_id=oven|laundry|dishwasher|air-purifier"
           }
         ],
         "tokens": [
@@ -406,7 +429,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=oven|laundry"
+            "filter": "driver_id=oven|laundry|dishwasher|air-purifier"
           }
         ],
         "tokens": [
@@ -519,7 +542,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=oven|laundry"
+            "filter": "driver_id=oven|laundry|dishwasher|air-purifier"
           }
         ],
         "tokens": [
@@ -1233,7 +1256,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=oven|laundry"
+            "filter": "driver_id=oven|laundry|dishwasher|air-purifier"
           },
           {
             "type": "dropdown",
@@ -2055,6 +2078,15 @@
       "getable": true,
       "setable": true
     },
+    "measure_alerts": {
+      "type": "string",
+      "title": {
+        "en": "Alerts"
+      },
+      "getable": true,
+      "setable": false,
+      "icon": "/assets/icons/alert.svg"
+    },
     "measure_applianceMode": {
       "type": "string",
       "title": {
@@ -2282,6 +2314,18 @@
       "setable": false,
       "uiComponent": "sensor",
       "icon": "/assets/icons/pm10.svg"
+    },
+    "measure_rinseAidLevel": {
+      "type": "number",
+      "units": {
+        "en": "level"
+      },
+      "title": {
+        "en": "Rinse Aid"
+      },
+      "getable": true,
+      "setable": false,
+      "icon": "/assets/icons/drop.svg"
     },
     "measure_runningTime": {
       "type": "number",

@@ -15,7 +15,8 @@ export default class AirPurifierDriver extends SharedDriver {
     "IONIZER_onoff",
     "LOCK_onoff",
     "LIGHT_onoff",
-    "measure_filter"
+    "measure_filter",
+    "measure_alerts"
   ];
 
   async onInit (): Promise<void> {

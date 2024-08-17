@@ -73,6 +73,8 @@ class DishwasherDevice extends SharedDevice {
       await this.setCapabilityValue("measure_applianceState", this.toTitleCase(props.applianceState));
       await this.setCapabilityValue("measure_applianceMode", this.toTitleCase(props.applianceMode));
       await this.setCapabilityValue("measure_cyclePhase", this.toTitleCase(props.cyclePhase));
+      await this.setCapabilityValue("measure_rinseAidLevel", props.rinseAidLevel);      
+      await this.updateMeasureAlerts(props);
     } catch (error) {
       this.log("Error updating device state: ", error);
     }

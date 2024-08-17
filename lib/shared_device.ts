@@ -8,6 +8,7 @@ export default class SharedDevice extends Homey.Device {
   static enableDebug = true;
   private refreshInterval: NodeJS.Timeout | null = null;
   deviceCapabilities!: string[]
+  alertIndex: number = 0;
 
   async onInit() {
     this.log("Device Init: " + this.getName());
@@ -68,6 +69,16 @@ export default class SharedDevice extends Homey.Device {
   }
 
   async updateCapabilities() {
+  }
+
+  async updateMeasureAlerts(props: any) {
+    if (props.alerts && props.alerts.length > 0) {
+      this.alertIndex = (this.alertIndex + 1) % props.alerts.length;
+      const currentCode = props.alerts[this.alertIndex].code;
+      await this.setCapabilityValue("measure_alerts", this.toTitleCase(currentCode));
+    } else {
+      await this.setCapabilityValue("measure_alerts", this.homey.__('measure_alerts_none'));
+    }
   }
 
   convertSecondsToMinNumber(seconds: number): number {

@@ -13,7 +13,8 @@ export default class OvenDriver extends SharedDriver {
     "measure_temperature", //displayTemperatureC
     "measure_applianceState",
     "measure_applianceMode", //program
-    "measure_cyclePhase" //processPhase
+    "measure_cyclePhase", //processPhase
+    "measure_alerts"
   ];
 
   async onInit (): Promise<void> {

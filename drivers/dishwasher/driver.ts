@@ -9,7 +9,9 @@ export default class DishwasherDriver extends SharedDriver {
     "measure_startTime",
     "measure_applianceState",
     "measure_applianceMode", 
-    "measure_cyclePhase" 
+    "measure_cyclePhase",
+    "measure_rinseAidLevel",
+    "measure_alerts"
   ];
 
   async onInit (): Promise<void> {

@@ -1,3 +1,4 @@
+import Homey from 'homey/lib/Homey';
 import SharedDevice from '../../lib/shared_device';
 import LaundyDriver from './driver';
 import stringify from 'json-stringify-safe';
@@ -7,7 +8,7 @@ class LaundryDevice extends SharedDevice {
   async onInit() {
     this.deviceCapabilities = LaundyDriver.DeviceCapabilities;
     super.onInit();
-    
+
     // Listen to multiple capabilities simultaneously
     this.registerMultipleCapabilityListener(
       [
@@ -73,6 +74,7 @@ class LaundryDevice extends SharedDevice {
       await this.setCapabilityValue("measure_applianceState", this.toTitleCase(props.applianceState));
       await this.setCapabilityValue("measure_applianceMode", this.toTitleCase(props.applianceMode));
       await this.setCapabilityValue("measure_cyclePhase", this.toTitleCase(props.cyclePhase));
+      await this.updateMeasureAlerts(props);
     } catch (error) {
       this.log("Error updating device state: ", error);
     }
@@ -80,7 +82,7 @@ class LaundryDevice extends SharedDevice {
 
 
   flow_execute_command(args: { what: string }, state: {}) {
-    this.log(`flow_cyclePhase_is: args=${stringify( args.what)} state=${stringify(state)}`);
+    this.log(`flow_cyclePhase_is: args=${stringify(args.what)} state=${stringify(state)}`);
     return this.setDeviceOpts({ execute_command: args.what });
   }
 

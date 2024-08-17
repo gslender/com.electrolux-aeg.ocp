@@ -1,0 +1,12 @@
+{
+  "type": "number",
+  "units": {
+    "en": "level"
+  },
+  "title": {
+    "en": "Rinse Aid"
+  },
+  "getable": true,
+  "setable": false,
+  "icon": "/assets/icons/drop.svg"
+}

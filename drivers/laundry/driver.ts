@@ -10,7 +10,8 @@ export default class LaundryDriver extends SharedDriver {
     "measure_startTime",
     "measure_applianceState",
     "measure_applianceMode", 
-    "measure_cyclePhase" 
+    "measure_cyclePhase",
+    "measure_alerts"
   ];
 
   async onInit (): Promise<void> {

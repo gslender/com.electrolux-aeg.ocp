@@ -31,7 +31,7 @@
     {
       "type": "device",
       "name": "device",
-      "filter": "driver_id=oven|laundry"
+      "filter": "driver_id=oven|laundry|dishwasher|air-purifier"
     },
     {
       "type": "dropdown",
