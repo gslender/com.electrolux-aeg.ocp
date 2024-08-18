@@ -71,6 +71,21 @@ export default class SharedDevice extends Homey.Device {
   async updateCapabilities() {
   }
 
+  async updateProperty(key: string, value: any) {
+    if (this.hasCapability(key)) {
+      if (typeof value !== 'undefined' && value !== null) {
+        let oldValue = this.getCapabilityValue(key);
+        if (oldValue !== null && oldValue != value) {
+          await this.setCapabilityValue(key, value);
+        }
+      } else {
+        this.log(`capability '${key}' is 'undefined'`);
+      }
+    } else {
+      this.log(`missing capability: '${key}'`);
+    }
+  }
+
   async updateMeasureAlerts(props: any) {
     if (props.alerts && props.alerts.length > 0) {
       this.alertIndex = (this.alertIndex + 1) % props.alerts.length;

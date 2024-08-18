@@ -103,14 +103,16 @@ class AirPurifierDevice extends SharedDevice {
     this.Workmode = props.Workmode;
 
     try {
-      await this.setCapabilityValue("measure_voc", props.TVOC);
-      await this.setCapabilityValue("measure_co2", props.ECO2);
-      await this.setCapabilityValue("measure_humidity", props.Humidity);
-      await this.setCapabilityValue("measure_pm25", props.PM2_5);
-      await this.setCapabilityValue("measure_pm10", props.PM10);
-      await this.setCapabilityValue("measure_pm1", props.PM1);
-      await this.setCapabilityValue("measure_temperature", props.Temp);
-      await this.setCapabilityValue("measure_filter", props.FilterLife);      
+      await this.updateProperty("measure_voc", props.TVOC);
+      await this.updateProperty("measure_co2", props.ECO2);
+      await this.updateProperty("measure_humidity", props.Humidity);
+      await this.updateProperty("measure_pm25", props.PM2_5);
+      await this.updateProperty("measure_pm10", props.PM10);
+      await this.updateProperty("measure_pm1", props.PM1);
+      await this.updateProperty("measure_temperature", props.Temp);
+      await this.updateProperty("measure_filter", props.FilterLife);    
+      await this.updateProperty("measure_applianceState", this.toTitleCase(props.applianceState));
+      await this.updateProperty("measure_applianceMode", this.toTitleCase(props.applianceMode));  
       await this.updateMeasureAlerts(props);
       this.log("Device data updated");
     } catch (error) {
@@ -118,21 +120,21 @@ class AirPurifierDevice extends SharedDevice {
     }
 
     if (props.Workmode === "Auto") {
-      this.setCapabilityValue("onoff", true);
-      this.setCapabilityValue("SMART_mode", "smart");
-      this.setCapabilityValue("FAN_speed", 10.0 * (props.Fanspeed + 1));
+      this.updateProperty("onoff", true);
+      this.updateProperty("SMART_mode", "smart");
+      this.updateProperty("FAN_speed", 10.0 * (props.Fanspeed + 1));
     } else if (props.Workmode === "Manual") {
-      this.setCapabilityValue("onoff", true);
-      this.setCapabilityValue("SMART_mode", "manual");
-      this.setCapabilityValue("FAN_speed", 10.0 * (props.Fanspeed + 1));
+      this.updateProperty("onoff", true);
+      this.updateProperty("SMART_mode", "manual");
+      this.updateProperty("FAN_speed", 10.0 * (props.Fanspeed + 1));
     } else {
-      this.setCapabilityValue("onoff", false);
-      this.setCapabilityValue("FAN_speed", 0);
+      this.updateProperty("onoff", false);
+      this.updateProperty("FAN_speed", 0);
     }
 
-    this.setCapabilityValue("IONIZER_onoff", Boolean(props.Ionizer));
-    this.setCapabilityValue("LIGHT_onoff", Boolean(props.UILight));
-    this.setCapabilityValue("LOCK_onoff", Boolean(props.SafetyLock));
+    this.updateProperty("IONIZER_onoff", Boolean(props.Ionizer));
+    this.updateProperty("LIGHT_onoff", Boolean(props.UILight));
+    this.updateProperty("LOCK_onoff", Boolean(props.SafetyLock));
   }
 
   flow_set_fan_speed(args: { fan_speed: number }, state: {}) {

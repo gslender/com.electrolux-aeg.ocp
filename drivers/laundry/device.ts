@@ -67,13 +67,13 @@ class LaundryDevice extends SharedDevice {
     const props = state.properties.reported;
 
     try {
-      await this.setCapabilityValue("measure_doorState", this.toTitleCase(props.doorState));
-      await this.setCapabilityValue("measure_timeToEnd", this.convertSecondsToMinNumber(props.timeToEnd));
-      await this.setCapabilityValue("measure_stopTime", this.convertSecondsToHrMinString(props.stopTime)); // in seconds 
-      await this.setCapabilityValue("measure_startTime", this.convertSecondsToHrMinString(props.startTime));
-      await this.setCapabilityValue("measure_applianceState", this.toTitleCase(props.applianceState));
-      await this.setCapabilityValue("measure_applianceMode", this.toTitleCase(props.applianceMode));
-      await this.setCapabilityValue("measure_cyclePhase", this.toTitleCase(props.cyclePhase));
+      await this.updateProperty("measure_doorState", this.toTitleCase(props.doorState));
+      await this.updateProperty("measure_timeToEnd", this.convertSecondsToMinNumber(props.timeToEnd));
+      await this.updateProperty("measure_stopTime", this.convertSecondsToHrMinString(props.stopTime)); // in seconds 
+      await this.updateProperty("measure_startTime", this.convertSecondsToHrMinString(props.startTime));
+      await this.updateProperty("measure_applianceState", this.toTitleCase(props.applianceState));
+      await this.updateProperty("measure_applianceMode", this.toTitleCase(props.applianceMode));
+      await this.updateProperty("measure_cyclePhase", this.toTitleCase(props.cyclePhase));
       await this.updateMeasureAlerts(props);
     } catch (error) {
       this.log("Error updating device state: ", error);
