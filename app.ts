@@ -173,6 +173,18 @@ export default class ElectroluxAEGApp extends Homey.App {
     }
   }
 
+  async getAppliancesTypeContains(contains: string): Promise<any> {
+    const appliances = await this.getAppliances();
+    if (contains.length > 1) {
+      const filteredAppliances = appliances.filter((appliance) => {
+        let modelName: string = appliance.applianceData.modelName;
+        return modelName.includes(contains);
+      });
+      return filteredAppliances;
+    }
+    return appliances;
+  }
+
   async getAppliancesByTypes(types: string[]): Promise<any> {
     const appliances = await this.getAppliances();
     if (types.length > 1) {

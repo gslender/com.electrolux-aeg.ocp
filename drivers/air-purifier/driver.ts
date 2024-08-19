@@ -28,8 +28,8 @@ export default class AirPurifierDriver extends SharedDriver {
   async onPairListDevices() {
    
     var devices = [];
-    //don't yet know what this would be?? so restricting to just AX until someone confirms
-    const appliances = await this.app.getAppliancesByTypes(['AX']); 
+    
+    const appliances = await this.app.getAppliancesTypeContains('PURE'); 
     
     let deviceCapabilities = [];
     for (const cap of AirPurifierDriver.DeviceCapabilities) {

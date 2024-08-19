@@ -66,13 +66,13 @@ class DishwasherDevice extends SharedDevice {
     const props = state.properties.reported;
 
     try {
-      await this.updateProperty("measure_doorState", this.toTitleCase(props.doorState));
-      await this.updateProperty("measure_timeToEnd", this.convertSecondsToMinNumber(props.timeToEnd));
-      await this.updateProperty("measure_stopTime", this.convertSecondsToHrMinString(props.stopTime)); // in seconds 
-      await this.updateProperty("measure_applianceState", this.toTitleCase(props.applianceState));
-      await this.updateProperty("measure_applianceMode", this.toTitleCase(props.applianceMode));
-      await this.updateProperty("measure_cyclePhase", this.toTitleCase(props.cyclePhase));
-      await this.updateProperty("measure_rinseAidLevel", props.rinseAidLevel);      
+      await this.safeUpdateCapabilityValue("measure_doorState", this.toTitleCase(props.doorState));
+      await this.safeUpdateCapabilityValue("measure_timeToEnd", this.convertSecondsToMinNumber(props.timeToEnd));
+      await this.safeUpdateCapabilityValue("measure_stopTime", this.convertSecondsToHrMinString(props.stopTime)); // in seconds 
+      await this.safeUpdateCapabilityValue("measure_applianceState", this.toTitleCase(props.applianceState));
+      await this.safeUpdateCapabilityValue("measure_applianceMode", this.toTitleCase(props.applianceMode));
+      await this.safeUpdateCapabilityValue("measure_cyclePhase", this.toTitleCase(props.cyclePhase));
+      await this.safeUpdateCapabilityValue("measure_rinseAidLevel", props.rinseAidLevel);      
       await this.updateMeasureAlerts(props);
     } catch (error) {
       this.log("Error updating device state: ", error);

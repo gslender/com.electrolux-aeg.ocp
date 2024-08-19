@@ -71,7 +71,7 @@ export default class SharedDevice extends Homey.Device {
   async updateCapabilities() {
   }
 
-  async updateProperty(key: string, value: any) {
+  async safeUpdateCapabilityValue(key: string, value: any) {
     if (this.hasCapability(key)) {
       if (typeof value !== 'undefined' && value !== null) {
         let oldValue = this.getCapabilityValue(key);
@@ -90,9 +90,9 @@ export default class SharedDevice extends Homey.Device {
     if (props.alerts && props.alerts.length > 0) {
       this.alertIndex = (this.alertIndex + 1) % props.alerts.length;
       const currentCode = props.alerts[this.alertIndex].code;
-      await this.setCapabilityValue("measure_alerts", this.toTitleCase(currentCode));
+      await this.safeUpdateCapabilityValue("measure_alerts", this.toTitleCase(currentCode));
     } else {
-      await this.setCapabilityValue("measure_alerts", this.homey.__('measure_alerts_none'));
+      await this.safeUpdateCapabilityValue("measure_alerts", this.homey.__('measure_alerts_none'));
     }
   }
 
