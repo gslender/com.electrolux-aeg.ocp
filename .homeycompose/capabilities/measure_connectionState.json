@@ -1,0 +1,20 @@
+{
+  "type": "string",
+  "title": {
+    "en": "Connection State",
+    "de": "",
+    "nl": "",
+    "da": "",
+    "es": "",
+    "fr": "",
+    "it": "",
+    "no": "",
+    "sv": "",
+    "pl": "",
+    "ru": "",
+    "ko": ""
+  },
+  "getable": true,
+  "setable": false,
+  "icon": "/assets/icons/wifi.svg"
+}

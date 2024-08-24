@@ -9,6 +9,7 @@ export default class AirPurifierDriver extends SharedDriver {
     "measure_pm1",
     "measure_temperature",
     "measure_voc",
+    "measure_connectionState",
     "onoff",
     "SMART_mode",
     "FAN_speed",

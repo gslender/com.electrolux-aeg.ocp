@@ -67,6 +67,7 @@ class DishwasherDevice extends SharedDevice {
 
     try {
       await this.safeUpdateCapabilityValue("measure_doorState", this.toTitleCase(props.doorState));
+      await this.safeUpdateCapabilityValue("measure_connectionState", this.toTitleCase(state.connectionState));      
       await this.safeUpdateCapabilityValue("measure_timeToEnd", this.convertSecondsToMinNumber(props.timeToEnd));
       await this.safeUpdateCapabilityValue("measure_stopTime", this.convertSecondsToHrMinString(props.stopTime)); // in seconds 
       await this.safeUpdateCapabilityValue("measure_applianceState", this.toTitleCase(props.applianceState));
@@ -81,7 +82,7 @@ class DishwasherDevice extends SharedDevice {
 
 
   flow_execute_command(args: { what: string }, state: {}) {
-    this.log(`flow_cyclePhase_is: args=${stringify( args.what)} state=${stringify(state)}`);
+    this.log(`flow_execute_command: args=${stringify( args.what)} state=${stringify(state)}`);
     return this.setDeviceOpts({ execute_command: args.what });
   }
 

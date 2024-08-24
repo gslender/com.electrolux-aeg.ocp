@@ -57,6 +57,7 @@ export default class SharedDevice extends Homey.Device {
   }
 
   toTitleCase(input: string): string {
+    if (input === undefined || input === null) return '';
     const words = input.split('_');
     const capitalizedWords = words.map(word => {
       if (/[a-zA-Z]/.test(word.charAt(0))) {

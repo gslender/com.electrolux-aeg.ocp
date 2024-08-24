@@ -1,0 +1,32 @@
+{
+  "id": "measure_connectionState_changed",
+  "title": {
+    "en": "The Connection State has changed",
+    "de": "",
+    "nl": "",
+    "da": "",
+    "es": "",
+    "fr": "",
+    "it": "",
+    "no": "",
+    "sv": "",
+    "pl": "",
+    "ru": "",
+    "ko": ""
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=oven|laundry|dishwasher|air-purifier"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "measure_connectionState",
+      "title": "Connection State",
+      "type": "string",
+      "example": "connected"
+    }
+  ]
+}
