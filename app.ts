@@ -107,7 +107,7 @@ export default class ElectroluxAEGApp extends Homey.App {
     this.pollApplianceState();
     this.timeoutId = this.homey.setInterval(() => {
       this.pollApplianceState();
-    }, pollingInterval); // every 10 seconds     
+    }, pollingInterval); 
   }
 
 
@@ -199,6 +199,10 @@ export default class ElectroluxAEGApp extends Homey.App {
     try {
       const http = await this.ocpApiFactory.createHttp();
       await http.put(`/appliances/${deviceId}/command`, command);
+      this.homey.setTimeout(async () => {
+        this.pollApplianceState();
+      }, 1000);
+
     } catch (e) {
       this.error(`Send Command Error!? ${deviceId} : ${e}`);
     }

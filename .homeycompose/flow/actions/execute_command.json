@@ -69,6 +69,40 @@
           }
         },
         {
+          "id": "PAUSE",
+          "title": {
+            "en": "Pause",
+            "de": "Pause",
+            "nl": "Pauze",
+            "da": "Pause",
+            "es": "Pausa",
+            "fr": "Pause",
+            "it": "Pausa",
+            "no": "Pause",
+            "sv": "Paus",
+            "pl": "Pauza",
+            "ru": "Пауза",
+            "ko": "일시 정지"
+          }
+        },
+        {
+          "id": "RESUME",
+          "title": {
+            "en": "Resume",
+            "de": "Fortsetzen",
+            "nl": "Hervatten",
+            "da": "Genoptag",
+            "es": "Reanudar",
+            "fr": "Reprendre",
+            "it": "Riprendi",
+            "no": "Fortsett",
+            "sv": "Återuppta",
+            "pl": "Wznów",
+            "ru": "Продолжить",
+            "ko": "재개"
+          }
+        },
+        {
           "id": "STOPRESET",
           "title": {
             "en": "Stop / Reset",
