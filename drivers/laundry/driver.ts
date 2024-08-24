@@ -6,6 +6,7 @@ export default class LaundryDriver extends SharedDriver {
     "execute_command",
     "measure_doorState",
     "measure_connectionState",
+    "measure_remoteControl",
     "measure_timeToEnd",
     "measure_stopTime",
     "measure_startTime",

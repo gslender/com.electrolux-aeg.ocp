@@ -66,13 +66,14 @@ class DishwasherDevice extends SharedDevice {
     const props = state.properties.reported;
 
     try {
-      await this.safeUpdateCapabilityValue("measure_doorState", this.toTitleCase(props.doorState));
-      await this.safeUpdateCapabilityValue("measure_connectionState", this.toTitleCase(state.connectionState));      
+      await this.safeUpdateCapabilityValue("measure_doorState", this.translate(props.doorState));
+      await this.safeUpdateCapabilityValue("measure_connectionState", this.translate(state.connectionState));          
+      await this.safeUpdateCapabilityValue("measure_remoteControl", this.translate(props.remoteControl)); 
       await this.safeUpdateCapabilityValue("measure_timeToEnd", this.convertSecondsToMinNumber(props.timeToEnd));
       await this.safeUpdateCapabilityValue("measure_stopTime", this.convertSecondsToHrMinString(props.stopTime)); // in seconds 
-      await this.safeUpdateCapabilityValue("measure_applianceState", this.toTitleCase(props.applianceState));
-      await this.safeUpdateCapabilityValue("measure_applianceMode", this.toTitleCase(props.applianceMode));
-      await this.safeUpdateCapabilityValue("measure_cyclePhase", this.toTitleCase(props.cyclePhase));
+      await this.safeUpdateCapabilityValue("measure_applianceState", this.translate(props.applianceState));
+      await this.safeUpdateCapabilityValue("measure_applianceMode", this.translate(props.applianceMode));
+      await this.safeUpdateCapabilityValue("measure_cyclePhase", this.translate(props.cyclePhase));
       await this.safeUpdateCapabilityValue("measure_rinseAidLevel", props.rinseAidLevel);      
       await this.updateMeasureAlerts(props);
     } catch (error) {
@@ -88,12 +89,22 @@ class DishwasherDevice extends SharedDevice {
 
   flow_cyclePhase_is(args: { value: string }, state: {}) {
     this.log(`flow_cyclePhase_is: args=${stringify(args.value)} state=${stringify(state)}`);
-    return args.value === this.getCapabilityValue("measure_cyclePhase");
+    return this.compareCaseInsensitiveString(args.value,this.getCapabilityValue("measure_cyclePhase"));
   }
 
   flow_applianceState_is(args: { value: string }, state: {}) {
     this.log(`flow_applianceState_is: args=${stringify(args.value)} state=${stringify(state)}`);
-    return args.value === this.getCapabilityValue("measure_applianceState");
+    return this.compareCaseInsensitiveString(args.value,this.getCapabilityValue("measure_applianceState"));
+  }
+
+  flow_connectionState_is(args: { value: string }, state: {}) {
+    this.log(`flow_connectionState_is: args=${stringify(args.value)} state=${stringify(state)}`);
+    return this.compareCaseInsensitiveString(args.value,this.getCapabilityValue("measure_connectionState"));
+  }
+
+  flow_remoteControl_is(args: { value: string }, state: {}) {
+    this.log(`flow_remoteControl_is: args=${stringify(args.value)} state=${stringify(state)}`);
+    return this.compareCaseInsensitiveString(args.value,this.getCapabilityValue("measure_remoteControl"));
   }
 }
 

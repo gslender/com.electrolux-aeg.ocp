@@ -6,6 +6,7 @@ export default class DishwasherDriver extends SharedDriver {
     "execute_command",
     "measure_doorState",
     "measure_connectionState",
+    "measure_remoteControl",
     "measure_timeToEnd",
     "measure_startTime",
     "measure_applianceState",

@@ -27,47 +27,74 @@
     "ru": "Фаза цикла !{{is|isn't}} [[value]]",
     "ko": "주기 단계 !{{is|isn't}} [[value]]"
   },
-  "hint": {
-    "en": "Checks if Cycle Phase will/will not be the given value.",
-    "nl": "Controleert of de Cycle-fase de opgegeven waarde zal/zal niet zijn.",
-    "da": "Tjekker om cyklusfasen vil/vil ikke være den givne værdi.",
-    "de": "Überprüft, ob die Zyklusphase der angegebenen Wert sein wird/nicht sein wird.",
-    "es": "Comprueba si la fase de ciclo será/no será el valor dado.",
-    "fr": "Vérifie si la phase de cycle sera/ne sera pas la valeur donnée.",
-    "it": "Verifica se la fase del ciclo sarà/non sarà il valore dato.",
-    "no": "Sjekker om syklusfasen vil/ikke vil være den gitte verdien.",
-    "sv": "Kontrollerar om cykelfasen kommer/kommer inte att vara det givna värdet.",
-    "pl": "Sprawdza, czy faza cyklu będzie/nie będzie podaną wartością.",
-    "ru": "Проверяет, будет ли фаза цикла заданным значением/не будет им.",
-    "ko": "주기 단계가 주어진 값인지/아닌지 확인합니다."
-  },
   "args": [
     {
       "type": "device",
       "name": "device",
-      "filter": "driver_id=oven|laundry"
+      "filter": "driver_id=oven|laundry|dishwasher"
     },
     {
       "name": "value",
-      "filter": "driver_id=laundry",
       "type": "dropdown",
       "values": [
         {
           "id": "ANTICREASE",
           "label": {
-            "en": "ANTICREASE"
+            "en": "Anti-Crease"
           }
         },
         {
           "id": "COOL",
           "label": {
-            "en": "COOL"
+            "en": "Cool"
           }
         },
         {
           "id": "DRY",
           "label": {
-            "en": "DRY"
+            "en": "Dry"
+          }
+        },
+        {
+          "id": "COLDRINSE",
+          "label": {
+            "en": "Cold Rinse"
+          }
+        },
+        {
+          "id": "EXTRARINSE",
+          "label": {
+            "en": "Extra Rinse"
+          }
+        },
+        {
+          "id": "HOTRINSE",
+          "label": {
+            "en": "Hot Rinse"
+          }
+        },
+        {
+          "id": "DRYING",
+          "label": {
+            "en": "Drying"
+          }
+        },
+        {
+          "id": "PREWASH",
+          "label": {
+            "en": "Pre Wash"
+          }
+        },
+        {
+          "id": "MAINWASH",
+          "label": {
+            "en": "Main Wash"
+          }
+        },
+        {
+          "id": "UNAVAILABLE",
+          "label": {
+            "en": "Unavailable"
           }
         }
       ]

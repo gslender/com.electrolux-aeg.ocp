@@ -27,29 +27,14 @@
     "ru": "Состояние прибора !{{есть|нет}} [[value]]",
     "ko": "기기 상태 !{{입니다|아닙니다}} [[value]]"
   },
-  "hint": {
-    "en": "Checks if Appliance State will/will not be the given value.",
-    "nl": "Controleert of de apparaatstatus de opgegeven waarde wel/niet zal zijn.",
-    "da": "Kontrollerer om apparatets status vil/vil ikke være den givne værdi.",
-    "de": "Überprüft, ob der Gerätestatus den vorgegebenen Wert hat oder nicht.",
-    "es": "Verifica si el estado del aparato será o no el valor dado.",
-    "fr": "Vérifie si l'état de l'appareil sera ou non la valeur donnée.",
-    "it": "Controlla se lo stato dell'apparecchio sarà o non sarà il valore dato.",
-    "no": "Sjekker om apparatets status vil/vil ikke være den gitte verdien.",
-    "sv": "Kontrollerar om apparatstatus kommer/inte kommer att vara det angivna värdet.",
-    "pl": "Sprawdza, czy stan urządzenia będzie/nie będzie wartością podaną.",
-    "ru": "Проверяет, будет ли состояние прибора соответствовать указанному значению или нет.",
-    "ko": "기기 상태가 주어진 값이 될지 여부를 확인합니다."
-  },
   "args": [
     {
       "type": "device",
       "name": "device",
-      "filter": "driver_id=oven|laundry"
+      "filter": "driver_id=oven|laundry|dishwasher"
     },
     {
       "name": "value",
-      "filter": "driver_id=laundry",
       "type": "dropdown",
       "values": [
         {

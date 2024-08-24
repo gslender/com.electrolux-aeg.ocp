@@ -30,6 +30,8 @@ export default class ElectroluxAEGApp extends Homey.App {
     this.registerFlowCardAction("disable_indicator_light");
 
     this.registerFlowCardCondtion("applianceState_is");
+    this.registerFlowCardCondtion("connectionState_is");
+    this.registerFlowCardCondtion("remoteControl_is");
     this.registerFlowCardCondtion("cyclePhase_is");
 
     this.ocpApiFactory.init(

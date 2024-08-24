@@ -7,6 +7,7 @@ export default class OvenDriver extends SharedDriver {
     "LIGHT_onoff",
     "measure_doorState",
     "measure_connectionState",
+    "measure_remoteControl",
     "measure_timeToEnd",
     "measure_runningTime",
     "measure_startTime",

@@ -56,8 +56,10 @@ export default class SharedDevice extends Homey.Device {
     }
   }
 
-  toTitleCase(input: string): string {
+  translate(input: string): string {
     if (input === undefined || input === null) return '';
+
+    if (input === 'NOT_SAFETY_RELEVANT_ENABLED') input = 'ENABLED';
     const words = input.split('_');
     const capitalizedWords = words.map(word => {
       if (/[a-zA-Z]/.test(word.charAt(0))) {
@@ -67,6 +69,11 @@ export default class SharedDevice extends Homey.Device {
       }
     });
     return capitalizedWords.join(' ');
+  }
+
+  compareCaseInsensitiveString(str1: any, str2: any): boolean {
+    if (typeof str1 != 'string' || typeof str2 != 'string') return false;
+    return str1.toLowerCase() === str2.toLowerCase();
   }
 
   async updateCapabilities() {
@@ -88,7 +95,7 @@ export default class SharedDevice extends Homey.Device {
     if (props.alerts && props.alerts.length > 0) {
       this.alertIndex = (this.alertIndex + 1) % props.alerts.length;
       const currentCode = props.alerts[this.alertIndex].code;
-      await this.safeUpdateCapabilityValue("measure_alerts", this.toTitleCase(currentCode));
+      await this.safeUpdateCapabilityValue("measure_alerts", this.translate(currentCode));
     } else {
       await this.safeUpdateCapabilityValue("measure_alerts", this.homey.__('measure_alerts_none'));
     }

@@ -1,5 +1,6 @@
 import SharedDevice from '../../lib/shared_device';
 import OvenDriver from './driver';
+import stringify from 'json-stringify-safe';
 
 class OvenDevice extends SharedDevice {
 
@@ -64,16 +65,17 @@ class OvenDevice extends SharedDevice {
 
     try {
       await this.safeUpdateCapabilityValue("LIGHT_onoff", props.cavityLight);
-      await this.safeUpdateCapabilityValue("measure_doorState", this.toTitleCase(props.doorState));
-      await this.safeUpdateCapabilityValue("measure_connectionState", this.toTitleCase(state.connectionState));      
+      await this.safeUpdateCapabilityValue("measure_doorState", this.translate(props.doorState));
+      await this.safeUpdateCapabilityValue("measure_connectionState", this.translate(state.connectionState));     
+      await this.safeUpdateCapabilityValue("measure_remoteControl", this.translate(props.remoteControl)); 
       await this.safeUpdateCapabilityValue("measure_timeToEnd", this.convertSecondsToMinNumber(props.timeToEnd));
       await this.safeUpdateCapabilityValue("measure_runningTime", this.convertSecondsToMinNumber(props.runningTime));
       await this.safeUpdateCapabilityValue("measure_startTime", this.convertSecondsToHrMinString(props.startTime));
       await this.safeUpdateCapabilityValue("measure_targetTemperature", props.targetTemperatureC);
       await this.safeUpdateCapabilityValue("measure_temperature", props.displayTemperatureC);
-      await this.safeUpdateCapabilityValue("measure_applianceState", this.toTitleCase(props.applianceState));
-      await this.safeUpdateCapabilityValue("measure_applianceMode", this.toTitleCase(props.program));
-      await this.safeUpdateCapabilityValue("measure_cyclePhase", this.toTitleCase(props.processPhase));      
+      await this.safeUpdateCapabilityValue("measure_applianceState", this.translate(props.applianceState));
+      await this.safeUpdateCapabilityValue("measure_applianceMode", this.translate(props.program));
+      await this.safeUpdateCapabilityValue("measure_cyclePhase", this.translate(props.processPhase));      
       await this.updateMeasureAlerts(props);
 
       this.log("Device data updated");
@@ -93,6 +95,26 @@ class OvenDevice extends SharedDevice {
 
   flow_execute_command(args: {what: string}, state: {}) {
     return this.setDeviceOpts({ execute_command: args.what });
+  }
+
+  flow_cyclePhase_is(args: { value: string }, state: {}) {
+    this.log(`flow_cyclePhase_is: args=${stringify(args.value)} state=${stringify(state)}`);
+    return this.compareCaseInsensitiveString(args.value,this.getCapabilityValue("measure_cyclePhase"));
+  }
+
+  flow_applianceState_is(args: { value: string }, state: {}) {
+    this.log(`flow_applianceState_is: args=${stringify(args.value)} state=${stringify(state)}`);
+    return this.compareCaseInsensitiveString(args.value,this.getCapabilityValue("measure_applianceState"));
+  }
+
+  flow_connectionState_is(args: { value: string }, state: {}) {
+    this.log(`flow_connectionState_is: args=${stringify(args.value)} state=${stringify(state)}`);
+    return this.compareCaseInsensitiveString(args.value,this.getCapabilityValue("measure_connectionState"));
+  }
+
+  flow_remoteControl_is(args: { value: string }, state: {}) {
+    this.log(`flow_remoteControl_is: args=${stringify(args.value)} state=${stringify(state)}`);
+    return this.compareCaseInsensitiveString(args.value,this.getCapabilityValue("measure_remoteControl"));
   }
   
 }

@@ -1,0 +1,111 @@
+{
+  "title": {
+    "en": "Remote Control !{{is|isn't}} ...",
+    "de": "Fernbedienung !{{ist|ist nicht}} ...",
+    "nl": "Afstandsbediening !{{is|is niet}} ...",
+    "da": "Fjernbetjening !{{er|er ikke}} ...",
+    "es": "Control Remoto !{{es|no es}} ...",
+    "fr": "Télécommande !{{est|n'est pas}} ...",
+    "it": "Telecomando !{{è|non è}} ...",
+    "no": "Fjernkontroll !{{er|er ikke}} ...",
+    "sv": "Fjärrkontroll !{{är|är inte}} ...",
+    "pl": "Pilot !{{jest|nie jest}} ...",
+    "ru": "Удаленное управление !{{есть|нет}} ...",
+    "ko": "원격 제어 !{{연결됨|연결되지 않음}} ..."
+  },
+  "titleFormatted": {
+    "en": "Remote Control !{{is|isn't}} [[value]]",
+    "de": "Fernbedienung !{{ist|ist nicht}} [[value]]",
+    "nl": "Afstandsbediening !{{is|is niet}} [[value]]",
+    "da": "Fjernbetjening !{{er|er ikke}} [[value]]",
+    "es": "Control Remoto !{{es|no es}} [[value]]",
+    "fr": "Télécommande !{{est|n'est pas}} [[value]]",
+    "it": "Telecomando !{{è|non è}} [[value]]",
+    "no": "Fjernkontroll !{{er|er ikke}} [[value]]",
+    "sv": "Fjärrkontroll !{{är|är inte}} [[value]]",
+    "pl": "Pilot !{{jest|nie jest}} [[value]]",
+    "ru": "Удаленное управление !{{есть|нет}} [[value]]",
+    "ko": "원격 제어 !{{연결됨|연결되지 않음}} [[value]]"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=oven|laundry|dishwasher|air-purifier"
+    },
+    {
+      "name": "value",
+      "type": "dropdown",
+      "values": [
+        {
+          "id": "DISABLED",
+          "label": {
+            "en": "Disabled",
+            "de": "Deaktiviert",
+            "nl": "Uitgeschakeld",
+            "da": "Deaktiveret",
+            "es": "Desactivado",
+            "fr": "Désactivé",
+            "it": "Disabilitato",
+            "no": "Deaktivert",
+            "sv": "Inaktiverad",
+            "pl": "Wyłączony",
+            "ru": "Отключено",
+            "ko": "비활성화됨"
+          }
+        },
+        {
+          "id": "ENABLED",
+          "label": {
+            "en": "Enabled",
+            "de": "Aktiviert",
+            "nl": "Ingeschakeld",
+            "da": "Aktiveret",
+            "es": "Activado",
+            "fr": "Activé",
+            "it": "Abilitato",
+            "no": "Aktivert",
+            "sv": "Aktiverad",
+            "pl": "Włączony",
+            "ru": "Включено",
+            "ko": "활성화됨"
+          }
+        },
+        {
+          "id": "NOT_SAFETY_RELEVANT_ENABLED",
+          "label": {
+            "en": "Enabled",
+            "de": "Aktiviert",
+            "nl": "Ingeschakeld",
+            "da": "Aktiveret",
+            "es": "Activado",
+            "fr": "Activé",
+            "it": "Abilitato",
+            "no": "Aktivert",
+            "sv": "Aktiverad",
+            "pl": "Włączony",
+            "ru": "Включено",
+            "ko": "활성화됨"
+          }
+        },
+        {
+          "id": "TEMPORARY_LOCKED",
+          "label": {
+            "en": "Temporary Locked",
+            "de": "Vorübergehend gesperrt",
+            "nl": "Tijdelijk geblokkeerd",
+            "da": "Midlertidigt låst",
+            "es": "Bloqueado temporalmente",
+            "fr": "Verrouillé temporairement",
+            "it": "Bloccato temporaneamente",
+            "no": "Midlertidig låst",
+            "sv": "Tillfälligt låst",
+            "pl": "Tymczasowo zablokowany",
+            "ru": "Временно заблокировано",
+            "ko": "일시적으로 잠김"
+          }
+        }
+      ]
+    }
+  ]
+}
