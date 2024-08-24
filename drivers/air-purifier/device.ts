@@ -6,7 +6,7 @@ class AirPurifierDevice extends SharedDevice {
 
   async onInit() {
     this.deviceCapabilities = AirPurifierDriver.DeviceCapabilities;
-    super.onInit();
+    await super.onInit();
 
     // Listen to multiple capabilities simultaneously
     this.registerMultipleCapabilityListener(
@@ -103,6 +103,7 @@ class AirPurifierDevice extends SharedDevice {
     this.Workmode = props.Workmode;
 
     try {
+      await this.safeUpdateCapabilityValue("measure_pm25", props.PM2_5_approximate);
       await this.safeUpdateCapabilityValue("measure_voc", props.TVOC);
       await this.safeUpdateCapabilityValue("measure_co2", props.ECO2);
       await this.safeUpdateCapabilityValue("measure_humidity", props.Humidity);
@@ -117,13 +118,17 @@ class AirPurifierDevice extends SharedDevice {
       this.log("Error updating device state: ", error);
     }
 
-    if (props.Workmode === "Auto") {
+    if (props.Workmode === "Auto" || props.Workmode === "Smart") {
       this.safeUpdateCapabilityValue("onoff", true);
       this.safeUpdateCapabilityValue("SMART_mode", "smart");
       this.safeUpdateCapabilityValue("FAN_speed", 10.0 * (props.Fanspeed + 1));
     } else if (props.Workmode === "Manual") {
       this.safeUpdateCapabilityValue("onoff", true);
       this.safeUpdateCapabilityValue("SMART_mode", "manual");
+      this.safeUpdateCapabilityValue("FAN_speed", 10.0 * (props.Fanspeed + 1));
+    } else if (props.Workmode === "Quiet") {
+      this.safeUpdateCapabilityValue("onoff", true);
+      this.safeUpdateCapabilityValue("SMART_mode", "quiet");
       this.safeUpdateCapabilityValue("FAN_speed", 10.0 * (props.Fanspeed + 1));
     } else {
       this.safeUpdateCapabilityValue("onoff", false);

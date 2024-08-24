@@ -34,6 +34,23 @@
       }
     },
     {
+      "id": "quiet",
+      "title": {
+        "en": "Quiet",
+        "nl": "Stil",
+        "da": "Stille",
+        "de": "Ruhig",
+        "es": "Silencioso",
+        "fr": "Calme",
+        "it": "Tranquillo",
+        "no": "Stille",
+        "sv": "Tyst",
+        "pl": "Cichy",
+        "ru": "Тихий",
+        "ko": "조용한"
+      }
+    },
+    {
       "id": "smart",
       "title": {
         "en": "Smart",

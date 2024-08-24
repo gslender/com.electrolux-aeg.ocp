@@ -74,12 +74,9 @@ export default class SharedDevice extends Homey.Device {
   async safeUpdateCapabilityValue(key: string, value: any) {
     if (this.hasCapability(key)) {
       if (typeof value !== 'undefined' && value !== null) {
-        let oldValue = this.getCapabilityValue(key);
-        if (oldValue !== null && oldValue != value) {
-          await this.setCapabilityValue(key, value);
-        }
+        await this.setCapabilityValue(key, value);
       } else {
-        this.log(`capability '${key}' is 'undefined'`);
+        this.log(`'value' for capability '${key}' is undefined`);
       }
     } else {
       this.log(`missing capability: '${key}'`);

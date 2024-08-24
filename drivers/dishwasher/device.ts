@@ -6,7 +6,7 @@ class DishwasherDevice extends SharedDevice {
 
   async onInit() {
     this.deviceCapabilities = DishwasherDriver.DeviceCapabilities;
-    super.onInit();
+    await super.onInit();
     
     // Listen to multiple capabilities simultaneously
     this.registerMultipleCapabilityListener(

@@ -7,7 +7,7 @@ class LaundryDevice extends SharedDevice {
 
   async onInit() {
     this.deviceCapabilities = LaundyDriver.DeviceCapabilities;
-    super.onInit();
+    await super.onInit();
 
     // Listen to multiple capabilities simultaneously
     this.registerMultipleCapabilityListener(

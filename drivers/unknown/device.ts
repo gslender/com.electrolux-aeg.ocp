@@ -3,7 +3,7 @@ import SharedDevice from '../../lib/shared_device'
 class UnknownDevice extends SharedDevice {
 
   async onInit() {
-    super.onInit();
+    await super.onInit();
   }
 
 }

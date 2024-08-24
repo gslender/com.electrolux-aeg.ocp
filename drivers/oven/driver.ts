@@ -22,6 +22,10 @@ export default class OvenDriver extends SharedDriver {
   }
   
   async onPairListDevices() {
+    return super.getDevicesByType(['OV'],OvenDriver.DeviceCapabilities);
+  }
+  /*
+  async onPairListDevices() {
    
     var devices = [];
     const appliances = await this.app.getAppliances(); 
@@ -44,7 +48,7 @@ export default class OvenDriver extends SharedDriver {
     }
 
     return devices;
-  }
+  }*/
 
 }
 

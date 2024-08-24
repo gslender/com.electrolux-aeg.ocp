@@ -22,31 +22,10 @@ export default class AirPurifierDriver extends SharedDriver {
   async onInit (): Promise<void> {
     super.onInit();
   }
-  
+
   async onPairListDevices() {
-   
-    var devices = [];
-    
-    const appliances = await this.app.getAppliancesTypeContains('PURE'); 
-    
-    let deviceCapabilities = [];
-    for (const cap of AirPurifierDriver.DeviceCapabilities) {
-      deviceCapabilities.push(cap); 
-    }
-    
-    for (let i = 0; i < appliances.length; i++) {
-      const appliance = appliances[i];
-      const device = { 
-        name: appliance.applianceData.applianceName,
-        data: { id: appliance.applianceId },
-        capabilities: deviceCapabilities,
-      };
-      devices.push(device);
-    }
-
-    return devices;
+    return super.getDevicesByType(['PURE','Muju'],AirPurifierDriver.DeviceCapabilities);
   }
-
 }
 
 module.exports = AirPurifierDriver;
