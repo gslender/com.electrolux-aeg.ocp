@@ -1,0 +1,32 @@
+{
+  "id": "measure_remoteControl_changed",
+  "title": {
+    "en": "The Remote Control status has changed",
+    "de": "Der Fernbedienungsstatus hat sich geändert",
+    "nl": "De status van de afstandsbediening is gewijzigd",
+    "da": "Fjernbetjeningens status er ændret",
+    "es": "El estado del control remoto ha cambiado",
+    "fr": "Le statut de la télécommande a changé",
+    "it": "Lo stato del telecomando è cambiato",
+    "no": "Fjernkontrollens status har endret seg",
+    "sv": "Fjärrkontrollens status har ändrats",
+    "pl": "Status pilota uległ zmianie",
+    "ru": "Статус удаленного управления изменился",
+    "ko": "원격 제어 상태가 변경되었습니다"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=oven|laundry|dishwasher|air-purifier"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "measure_remoteControl",
+      "title": "Remote Control",
+      "type": "string",
+      "example": "Enabled"
+    }
+  ]
+}
