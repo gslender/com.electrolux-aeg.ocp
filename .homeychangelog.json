@@ -100,5 +100,11 @@
   },
   "1.4.1": {
     "en": "Added Remote Control status"
+  },
+  "1.4.2": {
+    "en": "Swap NOT_SAFETY_RELEVANT_ENABLED to disabled"
+  },
+  "1.4.3": {
+    "en": "Fix Muju missing state modelname"
   }
 }

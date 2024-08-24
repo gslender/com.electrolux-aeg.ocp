@@ -59,7 +59,7 @@ export default class SharedDevice extends Homey.Device {
   translate(input: string): string {
     if (input === undefined || input === null) return '';
 
-    if (input === 'NOT_SAFETY_RELEVANT_ENABLED') input = 'ENABLED';
+    if (input === 'NOT_SAFETY_RELEVANT_ENABLED') input = 'DISABLED';
     const words = input.split('_');
     const capitalizedWords = words.map(word => {
       if (/[a-zA-Z]/.test(word.charAt(0))) {

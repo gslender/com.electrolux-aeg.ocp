@@ -20,7 +20,9 @@ export default class SharedDriver extends Homey.Driver {
     for (let i = 0; i < appliances.length; i++) {
       const appliance = appliances[i];
       for (let queryType of queryTypes) {
-        const applianceType = appliance.properties?.reported?.applianceInfo?.applianceType;
+        const applianceType = appliance.applianceData?.modelName;
+        if (applianceType === undefined || applianceType === null) continue;
+        // const applianceType = appliance.properties?.reported?.applianceInfo?.applianceType;
         this.log(`applianceType=${applianceType} queryType=${queryType} applianceType.includes(queryType)=${applianceType.includes(queryType)}`);
         if (typeof applianceType === 'string' && applianceType.includes(queryType)) {
           let deviceCapabilities = [];
