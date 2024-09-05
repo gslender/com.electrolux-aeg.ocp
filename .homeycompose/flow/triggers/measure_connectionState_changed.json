@@ -2,17 +2,17 @@
   "id": "measure_connectionState_changed",
   "title": {
     "en": "The Connection State has changed",
-    "de": "",
-    "nl": "",
-    "da": "",
-    "es": "",
-    "fr": "",
-    "it": "",
-    "no": "",
-    "sv": "",
-    "pl": "",
-    "ru": "",
-    "ko": ""
+    "de": "Der Verbindungsstatus hat sich geändert",
+    "nl": "De verbindingsstatus is gewijzigd",
+    "da": "Forbindelsestilstanden er ændret",
+    "es": "El estado de la conexión ha cambiado",
+    "fr": "L'état de la connexion a changé",
+    "it": "Lo stato della connessione è cambiato",
+    "no": "Tilkoblingstilstanden har endret seg",
+    "sv": "Anslutningstillståndet har ändrats",
+    "pl": "Stan połączenia uległ zmianie",
+    "ru": "Состояние подключения изменилось",
+    "ko": "연결 상태가 변경되었습니다"
   },
   "args": [
     {
