@@ -46,6 +46,13 @@ class AirConditionerDevice extends SharedDevice {
       await this.safeUpdateCapabilityValue("measure_connectionState", this.translate(state.connectionState));       
       await this.safeUpdateCapabilityValue("measure_applianceState", this.translate(props.applianceState));
       await this.safeUpdateCapabilityValue("measure_applianceMode", this.translate(props.applianceMode));
+      await this.safeUpdateCapabilityValue("measure_startTime", this.convertSecondsToHrMinString(props.startTime));
+      await this.safeUpdateCapabilityValue("measure_stopTime", this.convertSecondsToHrMinString(props.stopTime)); 
+      await this.safeUpdateCapabilityValue("target_temperature", props.targetTemperatureC); 
+      await this.safeUpdateCapabilityValue("measure_temperature", props.ambientTemperatureC); 
+      await this.safeUpdateCapabilityValue("thermostat_mode", props.mode); 
+      await this.safeUpdateCapabilityValue("fan_mode", props.fanSpeedSetting); 
+
       await this.updateMeasureAlerts(props);
     } catch (error) {
       this.log("Error updating device state: ", error);

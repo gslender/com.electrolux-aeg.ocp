@@ -7,7 +7,13 @@ export default class AirConditionerDriver extends SharedDriver {
     "measure_connectionState",
     "measure_applianceState",
     "measure_applianceMode", 
-    "measure_alerts"
+    "measure_startTime",
+    "measure_stopTime",
+    "target_temperature",
+    "fan_mode",
+    "thermostat_mode",
+    "measure_temperature",
+    "measure_alerts",
   ];
 
   async onInit (): Promise<void> {
