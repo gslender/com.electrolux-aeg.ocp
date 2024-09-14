@@ -1,1 +1,24 @@
-{}
+{
+    "measure_alerts_none": "Ingen",
+    "robot_status": {        
+        "1": "Städar",
+        "2": "Pausad städning",
+        "3": "Punktstädning",
+        "4": "Pausad punktstädning",
+        "5": "Återvänd",
+        "6": "Pausad återvändning",
+        "7": "Återvänd för Pitstop",
+        "8": "Pitstop pausad",
+        "9": "Laddar",
+        "10": "Sover",
+        "11": "Fel",
+        "12": "Pitstop",
+        "13": "Manuell styrning",
+        "14": "Firmware-uppgradering"
+    },
+    "robot_powermode": {
+        "1": "Låg",
+        "2": "Medium",
+        "3": "Hög"
+    }
+}

@@ -1,1 +1,24 @@
-{}
+{
+    "measure_alerts_none": "Ingen",
+    "robot_status": {        
+        "1": "Rengjøring",
+        "2": "Rengjøring pauset",
+        "3": "Spot Rengjøring",
+        "4": "Spot Rengjøring pauset",
+        "5": "Retur",
+        "6": "Retur pauset",
+        "7": "Retur for Pitstop",
+        "8": "Pitstop pauset",
+        "9": "Lading",
+        "10": "Sover",
+        "11": "Feil",
+        "12": "Pitstop",
+        "13": "Manuell styring",
+        "14": "Firmware-oppgradering"
+    },
+    "robot_powermode": {
+        "1": "Lav",
+        "2": "Middels",
+        "3": "Høy"
+    }
+}

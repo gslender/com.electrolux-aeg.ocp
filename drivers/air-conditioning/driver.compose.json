@@ -1,0 +1,41 @@
+{
+  "name": {
+    "en": "Air Conditioning",
+    "nl": "Airconditioning",
+    "da": "Aircondition",
+    "de": "Klimaanlage",
+    "es": "Aire acondicionado",
+    "fr": "Climatisation",
+    "it": "Aria condizionata",
+    "no": "Klimaanlegg",
+    "sv": "Luftkonditionering",
+    "pl": "Klimatyzacja",
+    "ru": "Кондиционер",
+    "ko": "에어컨"
+  },
+  "class": "washer_and_dryer",
+  "capabilities": [],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "lan"
+  ],
+  "images": {
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png"
+  },
+  "pair": [
+    {
+      "id": "list_my_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_my_devices"
+      }
+    },
+    {
+      "id": "add_my_devices",
+      "template": "add_devices"
+    }
+  ]
+}

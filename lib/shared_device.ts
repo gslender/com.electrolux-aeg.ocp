@@ -8,7 +8,7 @@ export default class SharedDevice extends Homey.Device {
   static enableDebug = true;
   private refreshInterval: NodeJS.Timeout | null = null;
   deviceCapabilities!: string[]
-  alertIndex: number = 0;
+  stringsIdx: number = 0;
 
   async onInit() {
     this.log("Device Init: " + this.getName());
@@ -92,9 +92,13 @@ export default class SharedDevice extends Homey.Device {
   }
 
   async updateMeasureAlerts(props: any) {
-    if (props.alerts && props.alerts.length > 0) {
-      this.alertIndex = (this.alertIndex + 1) % props.alerts.length;
-      const currentCode = props.alerts[this.alertIndex].code;
+    this.updateMeasureStrings(props.alerts);
+  }
+
+  async updateMeasureStrings(strings: any) {
+    if (strings && strings.length > 0) {
+      this.stringsIdx = (this.stringsIdx + 1) % strings.length;
+      const currentCode = strings[this.stringsIdx].code;
       await this.safeUpdateCapabilityValue("measure_alerts", this.translate(currentCode));
     } else {
       await this.safeUpdateCapabilityValue("measure_alerts", this.homey.__('measure_alerts_none'));

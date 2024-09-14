@@ -1,1 +1,24 @@
-{}
+{
+    "measure_alerts_none": "Geen",
+    "robot_status": {        
+        "1": "Schoonmaken",
+        "2": "Schoonmaak gepauzeerd",
+        "3": "Vlekreiniging",
+        "4": "Vlekreiniging gepauzeerd",
+        "5": "Terugkeren",
+        "6": "Terugkeer gepauzeerd",
+        "7": "Terugkeren voor Pitstop",
+        "8": "Pitstop gepauzeerd",
+        "9": "Opladen",
+        "10": "Slapen",
+        "11": "Fout",
+        "12": "Pitstop",
+        "13": "Handmatig sturen",
+        "14": "Firmware-upgrade"
+    },
+    "robot_powermode": {
+        "1": "Laag",
+        "2": "Medium",
+        "3": "Hoog"
+    }
+}

@@ -1,1 +1,24 @@
-{}
+{
+    "measure_alerts_none": "Keine",
+    "robot_status": {        
+        "1": "Reinigen",
+        "2": "Reinigung pausiert",
+        "3": "Fleckreinigung",
+        "4": "Fleckreinigung pausiert",
+        "5": "Rückkehr",
+        "6": "Rückkehr pausiert",
+        "7": "Rückkehr für Pitstop",
+        "8": "Pitstop pausiert",
+        "9": "Laden",
+        "10": "Schlafen",
+        "11": "Fehler",
+        "12": "Pitstop",
+        "13": "Manuelle Steuerung",
+        "14": "Firmware-Upgrade"
+    },
+    "robot_powermode": {
+        "1": "Niedrig",
+        "2": "Mittel",
+        "3": "Hoch"
+    }
+}

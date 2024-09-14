@@ -1,1 +1,24 @@
-{}
+{
+    "measure_alerts_none": "Nessuno",
+    "robot_status": {        
+        "1": "Pulizia",
+        "2": "Pulizia in pausa",
+        "3": "Pulizia delle macchie",
+        "4": "Pulizia delle macchie in pausa",
+        "5": "Ritorno",
+        "6": "Ritorno in pausa",
+        "7": "Ritorno per Pitstop",
+        "8": "Pitstop in pausa",
+        "9": "Caricamento",
+        "10": "Dormendo",
+        "11": "Errore",
+        "12": "Pitstop",
+        "13": "Guida manuale",
+        "14": "Aggiornamento firmware"
+    },
+    "robot_powermode": {
+        "1": "Basso",
+        "2": "Medio",
+        "3": "Alto"
+    }
+}

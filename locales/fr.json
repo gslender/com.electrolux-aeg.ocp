@@ -1,1 +1,24 @@
-{}
+{
+    "measure_alerts_none": "Aucun",
+    "robot_status": {        
+        "1": "Nettoyage",
+        "2": "Nettoyage en pause",
+        "3": "Nettoyage de zone",
+        "4": "Nettoyage de zone en pause",
+        "5": "Retour",
+        "6": "Retour en pause",
+        "7": "Retour pour Pitstop",
+        "8": "Pitstop en pause",
+        "9": "Chargement",
+        "10": "Dormir",
+        "11": "Erreur",
+        "12": "Pitstop",
+        "13": "Conduite manuelle",
+        "14": "Mise à jour du firmware"
+    },
+    "robot_powermode": {
+        "1": "Faible",
+        "2": "Moyen",
+        "3": "Élevé"
+    }
+}

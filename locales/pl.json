@@ -1,1 +1,24 @@
-{}
+{
+    "measure_alerts_none": "Brak",
+    "robot_status": {        
+        "1": "Sprzątanie",
+        "2": "Sprzątanie wstrzymane",
+        "3": "Sprzątanie miejscowe",
+        "4": "Sprzątanie miejscowe wstrzymane",
+        "5": "Powrót",
+        "6": "Powrót wstrzymany",
+        "7": "Powrót do Pitstopu",
+        "8": "Pitstop wstrzymany",
+        "9": "Ładowanie",
+        "10": "Spanie",
+        "11": "Błąd",
+        "12": "Pitstop",
+        "13": "Ręczne sterowanie",
+        "14": "Aktualizacja oprogramowania"
+    },
+    "robot_powermode": {
+        "1": "Niski",
+        "2": "Średni",
+        "3": "Wysoki"
+    }
+}
