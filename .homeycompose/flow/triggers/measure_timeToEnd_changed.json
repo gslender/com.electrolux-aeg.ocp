@@ -18,7 +18,7 @@
     {
       "type": "device",
       "name": "device",
-      "filter": "driver_id=oven|laundry|dishwasher|air-purifier"
+      "filter": "driver_id=oven|laundry|dishwasher"
     }
   ],
   "tokens": [

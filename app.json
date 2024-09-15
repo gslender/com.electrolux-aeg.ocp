@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.electrolux-aeg.ocp",
-  "version": "1.4.6",
+  "version": "1.4.7",
   "compatibility": ">=12.0.0",
   "sdk": 3,
   "platforms": [
@@ -63,7 +63,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=oven|laundry|dishwasher|air-purifier"
+            "filter": "driver_id=oven|laundry|dishwasher|air-purifier|robot|air-conditioning"
           }
         ],
         "tokens": [
@@ -97,7 +97,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=oven|laundry|dishwasher|air-purifier"
+            "filter": "driver_id=oven|laundry|dishwasher|air-purifier|robot|air-conditioning"
           }
         ],
         "tokens": [
@@ -142,7 +142,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=oven|laundry|dishwasher|air-purifier"
+            "filter": "driver_id=oven|laundry|dishwasher|air-purifier|robot|air-conditioning"
           }
         ],
         "tokens": [
@@ -187,7 +187,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=oven|laundry|dishwasher|air-purifier"
+            "filter": "driver_id=oven|laundry|dishwasher|air-purifier|robot|air-conditioning"
           }
         ],
         "tokens": [
@@ -493,7 +493,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=oven|laundry|dishwasher|air-purifier"
+            "filter": "driver_id=oven|laundry|dishwasher|air-conditioning"
           }
         ],
         "tokens": [
@@ -538,7 +538,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=oven|laundry"
+            "filter": "driver_id=laundry|air-conditioning"
           }
         ],
         "tokens": [
@@ -606,7 +606,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=oven|laundry|dishwasher|air-purifier"
+            "filter": "driver_id=oven|laundry|dishwasher"
           }
         ],
         "tokens": [
@@ -698,7 +698,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=oven|laundry|dishwasher"
+            "filter": "driver_id=oven|laundry|dishwasher|air-purifier|robot|air-conditioning"
           },
           {
             "name": "value",
@@ -790,7 +790,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=oven|laundry|dishwasher|air-purifier"
+            "filter": "driver_id=oven|laundry|dishwasher|air-purifier|robot|air-conditioning"
           },
           {
             "name": "value",
@@ -885,7 +885,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=oven|laundry|dishwasher"
+            "filter": "driver_id=oven|laundry|dishwasher|air-purifier|robot|air-conditioning"
           },
           {
             "name": "value",
@@ -1539,7 +1539,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=oven|laundry|dishwasher|air-purifier"
+            "filter": "driver_id=oven|laundry|dishwasher|air-purifier|robot|air-conditioning"
           },
           {
             "type": "dropdown",
