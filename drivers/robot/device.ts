@@ -11,7 +11,7 @@ class RobotDevice extends SharedDevice {
     // Listen to multiple capabilities simultaneously
     this.registerMultipleCapabilityListener(
       [
-        "execute_command"
+        "execute_command", "power_mode"
       ],
       (valueObj, optsObj) => this.setDeviceOpts(valueObj),
       500
@@ -32,6 +32,12 @@ class RobotDevice extends SharedDevice {
         await this.app.sendDeviceCommand(deviceId, { CleaningCommand: cmd });
       }
 
+      // Update power_mode
+      if (valueObj.power_mode !== undefined) {
+        this.log("power_mode: " + valueObj.power_mode);
+        await this.app.sendDeviceCommand(deviceId, { PowerMode: Number(valueObj.power_mode) });
+      }
+
     } catch (error) {
       this.log(`Error in setDeviceOpts: ${error}`);
     }
@@ -48,7 +54,7 @@ class RobotDevice extends SharedDevice {
     try {
       await this.safeUpdateCapabilityValue("measure_battery", (props.batteryStatus - 1) * 20);
       await this.safeUpdateCapabilityValue("measure_applianceState", this.homey.__(`robot_status.${props.robotStatus}`));
-      await this.safeUpdateCapabilityValue("measure_applianceMode", this.homey.__(`robot_powermode.${props.powerMode}`));
+      await this.safeUpdateCapabilityValue("power_mode", `${props.powerMode}`);
       await this.updateMeasureStrings(props.messageList.messages);
     } catch (error) {
       this.log("Error updating device state: ", error);

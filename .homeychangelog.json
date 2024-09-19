@@ -118,5 +118,11 @@
   },
   "1.4.7": {
     "en": "Fix flows"
+  },
+  "1.4.8": {
+    "en": "airconditioning fixes"
+  },
+  "1.4.9": {
+    "en": "robot vac power mode + other fixes"
   }
 }

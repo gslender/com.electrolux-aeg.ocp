@@ -11,7 +11,7 @@ class AirConditionerDevice extends SharedDevice {
     // Listen to multiple capabilities simultaneously
     this.registerMultipleCapabilityListener(
       [
-        "execute_command"
+        "onoff","target_temperature"
       ],
       (valueObj, optsObj) => this.setDeviceOpts(valueObj),
       500
@@ -23,10 +23,16 @@ class AirConditionerDevice extends SharedDevice {
 
     try {
 
-      // Update execute_command
-      if (valueObj.execute_command !== undefined) {
-        this.log("execute_command: " + valueObj.execute_command);
-        await this.app.sendDeviceCommand(deviceId, { executeCommand: valueObj.execute_command });
+      // Update onoff
+      if (valueObj.onoff !== undefined) {
+        this.log("onoff: " + valueObj.onoff);
+        await this.app.sendDeviceCommand(deviceId, { executeCommand: valueObj.onoff });
+      }
+
+      // Update target_temperature
+      if (valueObj.target_temperature !== undefined) {
+        this.log("target_temperature: " + valueObj.target_temperature);
+        await this.app.sendDeviceCommand(deviceId, { targetTemperatureC: valueObj.target_temperature });
       }
 
     } catch (error) {
@@ -42,13 +48,14 @@ class AirConditionerDevice extends SharedDevice {
 
     const props = state.properties.reported;
     
-    try {
+    try {   
+      await this.safeUpdateCapabilityValue("onoff", props.applianceState === 'RUNNING');
+      await this.safeUpdateCapabilityValue("target_temperature", props.targetTemperatureC); 
       await this.safeUpdateCapabilityValue("measure_connectionState", this.translate(state.connectionState));       
       await this.safeUpdateCapabilityValue("measure_applianceState", this.translate(props.applianceState));
       await this.safeUpdateCapabilityValue("measure_applianceMode", this.translate(props.applianceMode));
       await this.safeUpdateCapabilityValue("measure_startTime", this.convertSecondsToHrMinString(props.startTime));
       await this.safeUpdateCapabilityValue("measure_stopTime", this.convertSecondsToHrMinString(props.stopTime)); 
-      await this.safeUpdateCapabilityValue("target_temperature", props.targetTemperatureC); 
       await this.safeUpdateCapabilityValue("measure_temperature", props.ambientTemperatureC); 
       await this.safeUpdateCapabilityValue("thermostat_mode", props.mode); 
       await this.safeUpdateCapabilityValue("fan_mode", props.fanSpeedSetting); 

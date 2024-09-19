@@ -6,7 +6,7 @@ export default class RobotDriver extends SharedDriver {
     "execute_command",
     "measure_battery", 
     "measure_applianceState", 
-    "measure_applianceMode", 
+    "power_mode", 
     "measure_alerts" 
   ];
 

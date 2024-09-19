@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.electrolux-aeg.ocp",
-  "version": "1.4.7",
+  "version": "1.4.9",
   "compatibility": ">=12.0.0",
   "sdk": 3,
   "platforms": [
@@ -3230,6 +3230,79 @@
       "setable": false,
       "uiComponent": "sensor",
       "icon": "/assets/icons/voc.svg"
+    },
+    "power_mode": {
+      "type": "enum",
+      "uiComponent": "picker",
+      "title": {
+        "en": "Power Mode",
+        "de": "Leistungsmodus",
+        "nl": "Stroommodus",
+        "da": "Strømtilstand",
+        "es": "Modo de energía",
+        "fr": "Mode d'alimentation",
+        "it": "Modalità di alimentazione",
+        "no": "Kraftmodus",
+        "sv": "Strömläge",
+        "pl": "Tryb zasilania",
+        "ru": "Режим питания",
+        "ko": "전원 모드"
+      },
+      "values": [
+        {
+          "id": "1",
+          "title": {
+            "en": "Quiet",
+            "de": "Leise",
+            "nl": "Stil",
+            "da": "Stille",
+            "es": "Silencioso",
+            "fr": "Silencieux",
+            "it": "Silenzioso",
+            "no": "Stille",
+            "sv": "Tyst",
+            "pl": "Cichy",
+            "ru": "Тихий",
+            "ko": "조용한"
+          }
+        },
+        {
+          "id": "2",
+          "title": {
+            "en": "Smart",
+            "de": "Intelligent",
+            "nl": "Slim",
+            "da": "Smart",
+            "es": "Inteligente",
+            "fr": "Intelligent",
+            "it": "Intelligente",
+            "no": "Smart",
+            "sv": "Smart",
+            "pl": "Inteligentny",
+            "ru": "Умный",
+            "ko": "스마트"
+          }
+        },
+        {
+          "id": "3",
+          "title": {
+            "en": "Power",
+            "de": "Leistung",
+            "nl": "Kracht",
+            "da": "Strøm",
+            "es": "Potencia",
+            "fr": "Puissance",
+            "it": "Potenza",
+            "no": "Kraft",
+            "sv": "Kraft",
+            "pl": "Moc",
+            "ru": "Мощность",
+            "ko": "파워"
+          }
+        }
+      ],
+      "getable": true,
+      "setable": true
     },
     "SMART_mode": {
       "type": "enum",

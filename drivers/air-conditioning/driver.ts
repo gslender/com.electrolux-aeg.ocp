@@ -3,7 +3,7 @@ import SharedDriver from '../../lib/shared_driver'
 export default class AirConditionerDriver extends SharedDriver {
 
   static DeviceCapabilities = [
-    "execute_command",
+    "onoff",
     "measure_connectionState",
     "measure_applianceState",
     "measure_applianceMode", 
