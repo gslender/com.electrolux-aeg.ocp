@@ -124,5 +124,8 @@
   },
   "1.4.9": {
     "en": "robot vac power mode + other fixes"
+  },
+  "1.4.10": {
+    "en": "AC bug fix"
   }
 }

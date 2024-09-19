@@ -56,6 +56,13 @@ export default class SharedDevice extends Homey.Device {
     }
   }
 
+  safeUppercase(input: any): string {
+    if (typeof input === 'string') {
+      return input.toUpperCase();
+    }
+    return '';
+  }
+
   translate(input: string): string {
     if (input === undefined || input === null) return '';
 
