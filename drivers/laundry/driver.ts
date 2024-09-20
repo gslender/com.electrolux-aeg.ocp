@@ -21,7 +21,7 @@ export default class LaundryDriver extends SharedDriver {
   }
 
   async onPairListDevices() {
-    return super.getDevicesByType(['WM','TD'],LaundryDriver.DeviceCapabilities);
+    return super.getDevicesByType(['WM','TD','WD'],LaundryDriver.DeviceCapabilities);
   }
 }
 
