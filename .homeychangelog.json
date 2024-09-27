@@ -136,5 +136,8 @@
   },
   "1.4.13": {
     "en": "bug fix AC issues"
+  },
+  "1.4.14": {
+    "en": "fix c/Connected bug"
   }
 }

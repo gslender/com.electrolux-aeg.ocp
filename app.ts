@@ -109,7 +109,7 @@ export default class ElectroluxAEGApp extends Homey.App {
     this.pollApplianceState();
     this.timeoutId = this.homey.setInterval(() => {
       this.pollApplianceState();
-    }, pollingInterval); 
+    }, pollingInterval);
   }
 
 
@@ -121,7 +121,8 @@ export default class ElectroluxAEGApp extends Homey.App {
         if (isUpdatableDevice(device)) {
           const applianceId = device.getData().id;
           const state = await this.getApplianceState(applianceId);
-          if (state?.connectionState === 'connected') {
+          if (state?.connectionState === 'connected' ||
+            state?.connectionState === 'Connected') {
             device.setAvailable();
             device.updateCapabilityValues(state);
           } else {
