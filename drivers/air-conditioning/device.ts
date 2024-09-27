@@ -7,11 +7,11 @@ class AirConditionerDevice extends SharedDevice {
   async onInit() {
     this.deviceCapabilities = AirConditionerDriver.DeviceCapabilities;
     await super.onInit();
-    
+
     // Listen to multiple capabilities simultaneously
     this.registerMultipleCapabilityListener(
       [
-        "onoff","target_temperature"
+        "onoff", "target_temperature"
       ],
       (valueObj, optsObj) => this.setDeviceOpts(valueObj),
       500
@@ -26,24 +26,27 @@ class AirConditionerDevice extends SharedDevice {
       // Update onoff
       if (valueObj.onoff !== undefined) {
         this.log("onoff: " + valueObj.onoff);
-        if (valueObj.onoff) {
+        const isOn = (valueObj.onoff === true || valueObj.onoff === 'true');
+        if (isOn) {
           await this.app.sendDeviceCommand(deviceId, { executeCommand: 'ON' });
-        }
-        else {
+        } else {
           await this.app.sendDeviceCommand(deviceId, { executeCommand: 'OFF' });
         }
+        await this.app.pollApplianceState();
       }
 
       // Update target_temperature
       if (valueObj.target_temperature !== undefined) {
         this.log("target_temperature: " + valueObj.target_temperature);
         await this.app.sendDeviceCommand(deviceId, { targetTemperatureC: valueObj.target_temperature });
+        await this.app.pollApplianceState();
       }
 
       // Update thermostat_mode
       if (valueObj.thermostat_mode !== undefined) {
         this.log("thermostat_mode: " + valueObj.thermostat_mode);
         await this.app.sendDeviceCommand(deviceId, { mode: this.safeUppercase(valueObj.thermostat_mode) });
+        await this.app.pollApplianceState();
       }
 
     } catch (error) {
@@ -58,18 +61,18 @@ class AirConditionerDevice extends SharedDevice {
     }
 
     const props = state.properties.reported;
-    
-    try {   
+
+    try {
       await this.safeUpdateCapabilityValue("onoff", props.applianceState === 'RUNNING');
-      await this.safeUpdateCapabilityValue("target_temperature", props.targetTemperatureC); 
-      await this.safeUpdateCapabilityValue("measure_connectionState", this.translateUnderscore(state.connectionState));       
+      await this.safeUpdateCapabilityValue("target_temperature", props.targetTemperatureC);
+      await this.safeUpdateCapabilityValue("measure_connectionState", this.translateUnderscore(state.connectionState));
       await this.safeUpdateCapabilityValue("measure_applianceState", this.translateUnderscore(props.applianceState));
       await this.safeUpdateCapabilityValue("measure_applianceMode", this.translateUnderscore(props.applianceMode));
       await this.safeUpdateCapabilityValue("measure_startTime", this.convertSecondsToHrMinString(props.startTime));
-      await this.safeUpdateCapabilityValue("measure_stopTime", this.convertSecondsToHrMinString(props.stopTime)); 
-      await this.safeUpdateCapabilityValue("measure_temperature", props.ambientTemperatureC); 
-      await this.safeUpdateCapabilityValue("thermostat_mode", props.mode); 
-      await this.safeUpdateCapabilityValue("fan_mode", props.fanSpeedSetting); 
+      await this.safeUpdateCapabilityValue("measure_stopTime", this.convertSecondsToHrMinString(props.stopTime));
+      await this.safeUpdateCapabilityValue("measure_temperature", props.ambientTemperatureC);
+      await this.safeUpdateCapabilityValue("thermostat_mode", props.mode);
+      await this.safeUpdateCapabilityValue("fan_mode", props.fanSpeedSetting);
 
       await this.updateMeasureAlerts(props);
     } catch (error) {
@@ -79,14 +82,14 @@ class AirConditionerDevice extends SharedDevice {
 
 
   flow_execute_command(args: { what: string }, state: {}) {
-    this.log(`flow_execute_command: args=${stringify( args.what)} state=${stringify(state)}`);
+    this.log(`flow_execute_command: args=${stringify(args.what)} state=${stringify(state)}`);
     return this.setDeviceOpts({ execute_command: args.what });
   }
 
 
   flow_applianceState_is(args: { value: string }, state: {}) {
     this.log(`flow_applianceState_is: args=${stringify(args.value)} state=${stringify(state)}`);
-    return this.compareCaseInsensitiveString(args.value,this.getCapabilityValue("measure_applianceState"));
+    return this.compareCaseInsensitiveString(args.value, this.getCapabilityValue("measure_applianceState"));
   }
 
 }
