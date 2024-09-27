@@ -66,15 +66,15 @@ class LaundryDevice extends SharedDevice {
 
     const props = state.properties.reported;
     try {
-      await this.safeUpdateCapabilityValue("measure_doorState", this.translate(props.doorState));
-      await this.safeUpdateCapabilityValue("measure_connectionState", this.translate(state.connectionState));          
-      await this.safeUpdateCapabilityValue("measure_remoteControl", this.translate(props.remoteControl)); 
+      await this.safeUpdateCapabilityValue("measure_doorState", this.translateUnderscore(props.doorState));
+      await this.safeUpdateCapabilityValue("measure_connectionState", this.translateUnderscore(state.connectionState));          
+      await this.safeUpdateCapabilityValue("measure_remoteControl", this.translateUnderscore(props.remoteControl)); 
       await this.safeUpdateCapabilityValue("measure_timeToEnd", this.convertSecondsToMinNumber(props.timeToEnd));
       await this.safeUpdateCapabilityValue("measure_stopTime", this.convertSecondsToHrMinString(props.stopTime)); // in seconds 
       await this.safeUpdateCapabilityValue("measure_startTime", this.convertSecondsToHrMinString(props.startTime));
-      await this.safeUpdateCapabilityValue("measure_applianceState", this.translate(props.applianceState));
-      await this.safeUpdateCapabilityValue("measure_applianceMode", this.translate(props.applianceMode));
-      await this.safeUpdateCapabilityValue("measure_cyclePhase", this.translate(props.cyclePhase));
+      await this.safeUpdateCapabilityValue("measure_applianceState", this.translateUnderscore(props.applianceState));
+      await this.safeUpdateCapabilityValue("measure_applianceMode", this.translateUnderscore(props.applianceMode));
+      await this.safeUpdateCapabilityValue("measure_cyclePhase", this.translateUnderscore(props.cyclePhase));
       await this.updateMeasureAlerts(props);
     } catch (error) {
       this.log("Error updating device state: ", error);

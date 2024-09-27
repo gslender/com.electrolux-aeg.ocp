@@ -65,17 +65,17 @@ class OvenDevice extends SharedDevice {
 
     try {
       await this.safeUpdateCapabilityValue("LIGHT_onoff", props.cavityLight);
-      await this.safeUpdateCapabilityValue("measure_doorState", this.translate(props.doorState));
-      await this.safeUpdateCapabilityValue("measure_connectionState", this.translate(state.connectionState));     
-      await this.safeUpdateCapabilityValue("measure_remoteControl", this.translate(props.remoteControl)); 
+      await this.safeUpdateCapabilityValue("measure_doorState", this.translateUnderscore(props.doorState));
+      await this.safeUpdateCapabilityValue("measure_connectionState", this.translateUnderscore(state.connectionState));     
+      await this.safeUpdateCapabilityValue("measure_remoteControl", this.translateUnderscore(props.remoteControl)); 
       await this.safeUpdateCapabilityValue("measure_timeToEnd", this.convertSecondsToMinNumber(props.timeToEnd));
       await this.safeUpdateCapabilityValue("measure_runningTime", this.convertSecondsToMinNumber(props.runningTime));
       await this.safeUpdateCapabilityValue("measure_startTime", this.convertSecondsToHrMinString(props.startTime));
       await this.safeUpdateCapabilityValue("measure_targetTemperature", props.targetTemperatureC);
       await this.safeUpdateCapabilityValue("measure_temperature", props.displayTemperatureC);
-      await this.safeUpdateCapabilityValue("measure_applianceState", this.translate(props.applianceState));
-      await this.safeUpdateCapabilityValue("measure_applianceMode", this.translate(props.program));
-      await this.safeUpdateCapabilityValue("measure_cyclePhase", this.translate(props.processPhase));      
+      await this.safeUpdateCapabilityValue("measure_applianceState", this.translateUnderscore(props.applianceState));
+      await this.safeUpdateCapabilityValue("measure_applianceMode", this.translateUnderscore(props.program));
+      await this.safeUpdateCapabilityValue("measure_cyclePhase", this.translateUnderscore(props.processPhase));      
       await this.updateMeasureAlerts(props);
 
       this.log("Device data updated");

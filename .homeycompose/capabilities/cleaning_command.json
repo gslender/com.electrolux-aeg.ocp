@@ -1,0 +1,141 @@
+{
+  "type": "enum",
+  "uiComponent": "picker",
+  "title": {
+    "en": "Cleaning Command",
+    "de": "Reinigungsbefehl",
+    "nl": "Schoonmaakopdracht",
+    "da": "Rengøringskommando",
+    "es": "Comando de limpieza",
+    "fr": "Commande de nettoyage",
+    "it": "Comando di pulizia",
+    "no": "Rengjøringskommando",
+    "sv": "Rengöringskommando",
+    "pl": "Polecenie sprzątania",
+    "ru": "Команда очистки",
+    "ko": "청소 명령"
+  },
+  "values": [
+    {
+      "id": "pauseClean",
+      "title": {
+        "en": "Pause Clean",
+        "de": "Reinigung pausieren",
+        "nl": "Schoonmaak pauzeren",
+        "da": "Pause rengøring",
+        "es": "Pausar limpieza",
+        "fr": "Pause nettoyage",
+        "it": "Metti in pausa la pulizia",
+        "no": "Pause rengjøring",
+        "sv": "Pausa rengöring",
+        "pl": "Wstrzymaj sprzątanie",
+        "ru": "Пауза очистки",
+        "ko": "청소 일시 중지"
+      }
+    },
+    {
+      "id": "resumeClean",
+      "title": {
+        "en": "Resume Clean",
+        "de": "Reinigung fortsetzen",
+        "nl": "Schoonmaak hervatten",
+        "da": "Genoptag rengøring",
+        "es": "Reanudar limpieza",
+        "fr": "Reprendre nettoyage",
+        "it": "Riprendi pulizia",
+        "no": "Fortsett rengjøring",
+        "sv": "Återuppta rengöring",
+        "pl": "Wznów sprzątanie",
+        "ru": "Возобновить очистку",
+        "ko": "청소 재개"
+      }
+    },
+    {
+      "id": "startEdgeClean",
+      "title": {
+        "en": "Start Edge Clean",
+        "de": "Kantenreinigung starten",
+        "nl": "Rand schoonmaken starten",
+        "da": "Start kant rengøring",
+        "es": "Iniciar limpieza de bordes",
+        "fr": "Démarrer nettoyage des bords",
+        "it": "Avvia pulizia dei bordi",
+        "no": "Start kant rengjøring",
+        "sv": "Starta kant rengöring",
+        "pl": "Rozpocznij czyszczenie krawędzi",
+        "ru": "Начать очистку краев",
+        "ko": "가장자리 청소 시작"
+      }
+    },
+    {
+      "id": "startGlobalClean",
+      "title": {
+        "en": "Start Global Clean",
+        "de": "Globale Reinigung starten",
+        "nl": "Globaal schoonmaken starten",
+        "da": "Start global rengøring",
+        "es": "Iniciar limpieza global",
+        "fr": "Démarrer nettoyage global",
+        "it": "Avvia pulizia globale",
+        "no": "Start global rengjøring",
+        "sv": "Starta global rengöring",
+        "pl": "Rozpocznij globalne sprzątanie",
+        "ru": "Начать глобальную очистку",
+        "ko": "전체 청소 시작"
+      }
+    },
+    {
+      "id": "startGoToCharger",
+      "title": {
+        "en": "Start Go To Charger",
+        "de": "Ladegerät anfahren starten",
+        "nl": "Naar oplader gaan starten",
+        "da": "Start kør til oplader",
+        "es": "Iniciar ir a cargador",
+        "fr": "Démarrer aller à la station de charge",
+        "it": "Avvia vai al caricatore",
+        "no": "Start gå til lader",
+        "sv": "Starta gå till laddare",
+        "pl": "Rozpocznij jazdę do ładowarki",
+        "ru": "Начать движение к зарядному устройству",
+        "ko": "충전기로 이동 시작"
+      }
+    },
+    {
+      "id": "startPointClean",
+      "title": {
+        "en": "Start Point Clean",
+        "de": "Punktuelle Reinigung starten",
+        "nl": "Punt schoonmaken starten",
+        "da": "Start punkt rengøring",
+        "es": "Iniciar limpieza puntual",
+        "fr": "Démarrer nettoyage ciblé",
+        "it": "Avvia pulizia a punti",
+        "no": "Start punkt rengjøring",
+        "sv": "Starta punkt rengöring",
+        "pl": "Rozpocznij czyszczenie punktowe",
+        "ru": "Начать точечную очистку",
+        "ko": "지점 청소 시작"
+      }
+    },
+    {
+      "id": "stopClean",
+      "title": {
+        "en": "Stop Clean",
+        "de": "Reinigung stoppen",
+        "nl": "Schoonmaak stoppen",
+        "da": "Stop rengøring",
+        "es": "Detener limpieza",
+        "fr": "Arrêter nettoyage",
+        "it": "Interrompi la pulizia",
+        "no": "Stopp rengjøring",
+        "sv": "Stoppa rengöring",
+        "pl": "Zatrzymaj sprzątanie",
+        "ru": "Остановить очистку",
+        "ko": "청소 중지"
+      }
+    }
+  ],
+  "getable": false,
+  "setable": true
+}

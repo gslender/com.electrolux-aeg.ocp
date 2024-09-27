@@ -20,5 +20,12 @@
         "1": "Lav",
         "2": "Mellem",
         "3": "Høj"
+    },
+    "robot_state": {    
+        "goingHome": "Går hjem",
+        "idle": "Inaktiv",
+        "inProgress": "I gang",
+        "paused": "Sat på pause",
+        "sleeping": "Sover"
     }
 }

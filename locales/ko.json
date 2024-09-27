@@ -20,5 +20,12 @@
         "1": "낮음",
         "2": "중간",
         "3": "높음"
+    },
+    "robot_state": {    
+        "goingHome": "집에 가는 중",
+        "idle": "유휴 상태",
+        "inProgress": "진행 중",
+        "paused": "일시 중지됨",
+        "sleeping": "잠자고 있음"
     }
 }

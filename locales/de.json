@@ -20,5 +20,12 @@
         "1": "Niedrig",
         "2": "Mittel",
         "3": "Hoch"
+    },
+    "robot_state": {    
+        "goingHome": "Geht nach Hause",
+        "idle": "Leerlauf",
+        "inProgress": "In Bearbeitung",
+        "paused": "Pausiert",
+        "sleeping": "Schlafend"
     }
 }

@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.electrolux-aeg.ocp",
-  "version": "1.4.11",
+  "version": "1.4.12",
   "compatibility": ">=12.0.0",
   "sdk": 3,
   "platforms": [
@@ -2259,18 +2259,18 @@
     },
     {
       "name": {
-        "en": "Vacuum Robot",
-        "nl": "Robotstofzuiger",
-        "da": "Robotstøvsuger",
-        "de": "Saugroboter",
-        "es": "Robot aspirador",
-        "fr": "Aspirateur robot",
-        "it": "Robot aspirapolvere",
-        "no": "Robotstøvsuger",
-        "sv": "Robotdammsugare",
-        "pl": "Robot odkurzający",
-        "ru": "Робот-пылесос",
-        "ko": "로봇 청소기"
+        "en": "PUREi9 Vacuum Robot",
+        "nl": "PUREi9 Robotstofzuiger",
+        "da": "PUREi9 Robotstøvsuger",
+        "de": "PUREi9 Saugroboter",
+        "es": "PUREi9 Robot aspirador",
+        "fr": "PUREi9 Aspirateur robot",
+        "it": "PUREi9 Robot aspirapolvere",
+        "no": "PUREi9 Robotstøvsuger",
+        "sv": "PUREi9 Robotdammsugare",
+        "pl": "PUREi9 Robot odkurzający",
+        "ru": "PUREi9 Робот-пылесос",
+        "ko": "PUREi9 로봇 청소기"
       },
       "class": "washer_and_dryer",
       "capabilities": [],
@@ -2298,6 +2298,116 @@
         }
       ],
       "id": "robot",
+      "settings": [
+        {
+          "id": "applianceState",
+          "type": "label",
+          "label": {
+            "en": "Appliance State",
+            "nl": "Apparaatstatus",
+            "da": "Apparatstatus",
+            "de": "Gerätestatus",
+            "es": "Estado del Electrodoméstico",
+            "fr": "État de l'Appareil",
+            "it": "Stato dell'Elettrodomestico",
+            "no": "Apparatstatus",
+            "sv": "Apparatstatus",
+            "pl": "Stan Urządzenia",
+            "ru": "Состояние Устройства",
+            "ko": "기기 상태"
+          },
+          "hint": {
+            "en": "The Electrolux/AEG raw Appliance State JSON",
+            "de": "Die Electrolux/AEG Roh-Gerätezustand JSON",
+            "nl": "De Electrolux/AEG ruwe Apparaatstatus JSON",
+            "da": "Electrolux/AEG rå Apparatstatus JSON",
+            "es": "El JSON del estado bruto del electrodoméstico Electrolux/AEG",
+            "fr": "Le JSON de l'état brut de l'appareil Electrolux/AEG",
+            "it": "Il JSON dello stato grezzo dell'elettrodomestico Electrolux/AEG",
+            "no": "Electrolux/AEG rå Apparatstatus JSON",
+            "sv": "Electrolux/AEG rå Apparatstatus JSON",
+            "pl": "Surowy stan urządzeń Electrolux/AEG JSON",
+            "ru": "Сырой JSON состояния устройства Electrolux/AEG",
+            "ko": "Electrolux/AEG 원시 기기 상태 JSON"
+          },
+          "value": ""
+        },
+        {
+          "id": "applianceCapabilities",
+          "type": "label",
+          "label": {
+            "en": "Appliance Capabilities",
+            "nl": "Apparaatmogelijkheden",
+            "da": "Apparatfunktioner",
+            "de": "Gerätefunktionen",
+            "es": "Capacidades del Electrodoméstico",
+            "fr": "Capacités de l'Appareil",
+            "it": "Capacità dell'Elettrodomestico",
+            "no": "Apparatfunksjoner",
+            "sv": "Apparatfunktioner",
+            "pl": "Możliwości Urządzenia",
+            "ru": "Функции Устройства",
+            "ko": "기기 기능"
+          },
+          "hint": {
+            "en": "The Electrolux/AEG raw Appliance Capabilities JSON",
+            "de": "Die Electrolux/AEG Roh-Gerätefunktionen JSON",
+            "nl": "De Electrolux/AEG ruwe Apparaatmogelijkheden JSON",
+            "da": "Electrolux/AEG rå Apparatfunktioner JSON",
+            "es": "El JSON de las capacidades brutas del electrodoméstico Electrolux/AEG",
+            "fr": "Le JSON des capacités brutes de l'appareil Electrolux/AEG",
+            "it": "Il JSON delle capacità grezze dell'elettrodomestico Electrolux/AEG",
+            "no": "Electrolux/AEG rå Apparatfunksjoner JSON",
+            "sv": "Electrolux/AEG rå Apparatfunktioner JSON",
+            "pl": "Surowe możliwości urządzeń Electrolux/AEG JSON",
+            "ru": "Сырой JSON возможностей устройства Electrolux/AEG",
+            "ko": "Electrolux/AEG 원시 기기 기능 JSON"
+          },
+          "value": ""
+        }
+      ]
+    },
+    {
+      "name": {
+        "en": "600x/700x Vacuum Robot",
+        "nl": "600x/700x Robotstofzuiger",
+        "da": "600x/700x Robotstøvsuger",
+        "de": "600x/700x Saugroboter",
+        "es": "600x/700x Robot aspirador",
+        "fr": "600x/700x Aspirateur robot",
+        "it": "600x/700x Robot aspirapolvere",
+        "no": "600x/700x Robotstøvsuger",
+        "sv": "600x/700x Robotdammsugare",
+        "pl": "600x/700x Robot odkurzający",
+        "ru": "600x/700x Робот-пылесос",
+        "ko": "600x/700x 로봇 청소기"
+      },
+      "class": "washer_and_dryer",
+      "capabilities": [],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "images": {
+        "small": "/drivers/robot.700series/assets/images/small.png",
+        "large": "/drivers/robot.700series/assets/images/large.png"
+      },
+      "pair": [
+        {
+          "id": "list_my_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_my_devices"
+          }
+        },
+        {
+          "id": "add_my_devices",
+          "template": "add_devices"
+        }
+      ],
+      "id": "robot.700series",
       "settings": [
         {
           "id": "applianceState",
@@ -2479,6 +2589,147 @@
     }
   ],
   "capabilities": {
+    "cleaning_command": {
+      "type": "enum",
+      "uiComponent": "picker",
+      "title": {
+        "en": "Cleaning Command",
+        "de": "Reinigungsbefehl",
+        "nl": "Schoonmaakopdracht",
+        "da": "Rengøringskommando",
+        "es": "Comando de limpieza",
+        "fr": "Commande de nettoyage",
+        "it": "Comando di pulizia",
+        "no": "Rengjøringskommando",
+        "sv": "Rengöringskommando",
+        "pl": "Polecenie sprzątania",
+        "ru": "Команда очистки",
+        "ko": "청소 명령"
+      },
+      "values": [
+        {
+          "id": "pauseClean",
+          "title": {
+            "en": "Pause Clean",
+            "de": "Reinigung pausieren",
+            "nl": "Schoonmaak pauzeren",
+            "da": "Pause rengøring",
+            "es": "Pausar limpieza",
+            "fr": "Pause nettoyage",
+            "it": "Metti in pausa la pulizia",
+            "no": "Pause rengjøring",
+            "sv": "Pausa rengöring",
+            "pl": "Wstrzymaj sprzątanie",
+            "ru": "Пауза очистки",
+            "ko": "청소 일시 중지"
+          }
+        },
+        {
+          "id": "resumeClean",
+          "title": {
+            "en": "Resume Clean",
+            "de": "Reinigung fortsetzen",
+            "nl": "Schoonmaak hervatten",
+            "da": "Genoptag rengøring",
+            "es": "Reanudar limpieza",
+            "fr": "Reprendre nettoyage",
+            "it": "Riprendi pulizia",
+            "no": "Fortsett rengjøring",
+            "sv": "Återuppta rengöring",
+            "pl": "Wznów sprzątanie",
+            "ru": "Возобновить очистку",
+            "ko": "청소 재개"
+          }
+        },
+        {
+          "id": "startEdgeClean",
+          "title": {
+            "en": "Start Edge Clean",
+            "de": "Kantenreinigung starten",
+            "nl": "Rand schoonmaken starten",
+            "da": "Start kant rengøring",
+            "es": "Iniciar limpieza de bordes",
+            "fr": "Démarrer nettoyage des bords",
+            "it": "Avvia pulizia dei bordi",
+            "no": "Start kant rengjøring",
+            "sv": "Starta kant rengöring",
+            "pl": "Rozpocznij czyszczenie krawędzi",
+            "ru": "Начать очистку краев",
+            "ko": "가장자리 청소 시작"
+          }
+        },
+        {
+          "id": "startGlobalClean",
+          "title": {
+            "en": "Start Global Clean",
+            "de": "Globale Reinigung starten",
+            "nl": "Globaal schoonmaken starten",
+            "da": "Start global rengøring",
+            "es": "Iniciar limpieza global",
+            "fr": "Démarrer nettoyage global",
+            "it": "Avvia pulizia globale",
+            "no": "Start global rengjøring",
+            "sv": "Starta global rengöring",
+            "pl": "Rozpocznij globalne sprzątanie",
+            "ru": "Начать глобальную очистку",
+            "ko": "전체 청소 시작"
+          }
+        },
+        {
+          "id": "startGoToCharger",
+          "title": {
+            "en": "Start Go To Charger",
+            "de": "Ladegerät anfahren starten",
+            "nl": "Naar oplader gaan starten",
+            "da": "Start kør til oplader",
+            "es": "Iniciar ir a cargador",
+            "fr": "Démarrer aller à la station de charge",
+            "it": "Avvia vai al caricatore",
+            "no": "Start gå til lader",
+            "sv": "Starta gå till laddare",
+            "pl": "Rozpocznij jazdę do ładowarki",
+            "ru": "Начать движение к зарядному устройству",
+            "ko": "충전기로 이동 시작"
+          }
+        },
+        {
+          "id": "startPointClean",
+          "title": {
+            "en": "Start Point Clean",
+            "de": "Punktuelle Reinigung starten",
+            "nl": "Punt schoonmaken starten",
+            "da": "Start punkt rengøring",
+            "es": "Iniciar limpieza puntual",
+            "fr": "Démarrer nettoyage ciblé",
+            "it": "Avvia pulizia a punti",
+            "no": "Start punkt rengjøring",
+            "sv": "Starta punkt rengöring",
+            "pl": "Rozpocznij czyszczenie punktowe",
+            "ru": "Начать точечную очистку",
+            "ko": "지점 청소 시작"
+          }
+        },
+        {
+          "id": "stopClean",
+          "title": {
+            "en": "Stop Clean",
+            "de": "Reinigung stoppen",
+            "nl": "Schoonmaak stoppen",
+            "da": "Stop rengøring",
+            "es": "Detener limpieza",
+            "fr": "Arrêter nettoyage",
+            "it": "Interrompi la pulizia",
+            "no": "Stopp rengjøring",
+            "sv": "Stoppa rengöring",
+            "pl": "Zatrzymaj sprzątanie",
+            "ru": "Остановить очистку",
+            "ko": "청소 중지"
+          }
+        }
+      ],
+      "getable": false,
+      "setable": true
+    },
     "execute_command": {
       "type": "enum",
       "uiComponent": "picker",
@@ -3371,6 +3622,113 @@
             "pl": "Inteligentny",
             "ru": "Умный",
             "ko": "스마트"
+          }
+        }
+      ],
+      "getable": true,
+      "setable": true
+    },
+    "vacuum_mode": {
+      "type": "enum",
+      "uiComponent": "picker",
+      "title": {
+        "en": "Vacuum Mode",
+        "de": "",
+        "nl": "",
+        "da": "",
+        "es": "",
+        "fr": "",
+        "it": "",
+        "no": "",
+        "sv": "",
+        "pl": "",
+        "ru": "",
+        "ko": ""
+      },
+      "values": [
+        {
+          "id": "energySaving",
+          "title": {
+            "en": "Energy Saving",
+            "de": "",
+            "nl": "",
+            "da": "",
+            "es": "",
+            "fr": "",
+            "it": "",
+            "no": "",
+            "sv": "",
+            "pl": "",
+            "ru": "",
+            "ko": ""
+          }
+        },
+        {
+          "id": "maxPower",
+          "title": {
+            "en": "Max Power",
+            "de": "",
+            "nl": "",
+            "da": "",
+            "es": "",
+            "fr": "",
+            "it": "",
+            "no": "",
+            "sv": "",
+            "pl": "",
+            "ru": "",
+            "ko": ""
+          }
+        },
+        {
+          "id": "powerful",
+          "title": {
+            "en": "Powerful",
+            "de": "",
+            "nl": "",
+            "da": "",
+            "es": "",
+            "fr": "",
+            "it": "",
+            "no": "",
+            "sv": "",
+            "pl": "",
+            "ru": "",
+            "ko": ""
+          }
+        },
+        {
+          "id": "quiet",
+          "title": {
+            "en": "Quiet",
+            "de": "",
+            "nl": "",
+            "da": "",
+            "es": "",
+            "fr": "",
+            "it": "",
+            "no": "",
+            "sv": "",
+            "pl": "",
+            "ru": "",
+            "ko": ""
+          }
+        },
+        {
+          "id": "standard",
+          "title": {
+            "en": "Standard",
+            "de": "",
+            "nl": "",
+            "da": "",
+            "es": "",
+            "fr": "",
+            "it": "",
+            "no": "",
+            "sv": "",
+            "pl": "",
+            "ru": "",
+            "ko": ""
           }
         }
       ],

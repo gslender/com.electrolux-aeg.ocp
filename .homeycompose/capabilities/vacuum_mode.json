@@ -1,0 +1,107 @@
+{
+  "type": "enum",
+  "uiComponent": "picker",
+  "title": {
+    "en": "Vacuum Mode",
+    "de": "",
+    "nl": "",
+    "da": "",
+    "es": "",
+    "fr": "",
+    "it": "",
+    "no": "",
+    "sv": "",
+    "pl": "",
+    "ru": "",
+    "ko": ""
+  },
+  "values": [
+    {
+      "id": "energySaving",
+      "title": {
+        "en": "Energy Saving",
+        "de": "",
+        "nl": "",
+        "da": "",
+        "es": "",
+        "fr": "",
+        "it": "",
+        "no": "",
+        "sv": "",
+        "pl": "",
+        "ru": "",
+        "ko": ""
+      }
+    },
+    {
+      "id": "maxPower",
+      "title": {
+        "en": "Max Power",
+        "de": "",
+        "nl": "",
+        "da": "",
+        "es": "",
+        "fr": "",
+        "it": "",
+        "no": "",
+        "sv": "",
+        "pl": "",
+        "ru": "",
+        "ko": ""
+      }
+    },
+    {
+      "id": "powerful",
+      "title": {
+        "en": "Powerful",
+        "de": "",
+        "nl": "",
+        "da": "",
+        "es": "",
+        "fr": "",
+        "it": "",
+        "no": "",
+        "sv": "",
+        "pl": "",
+        "ru": "",
+        "ko": ""
+      }
+    },
+    {
+      "id": "quiet",
+      "title": {
+        "en": "Quiet",
+        "de": "",
+        "nl": "",
+        "da": "",
+        "es": "",
+        "fr": "",
+        "it": "",
+        "no": "",
+        "sv": "",
+        "pl": "",
+        "ru": "",
+        "ko": ""
+      }
+    },
+    {
+      "id": "standard",
+      "title": {
+        "en": "Standard",
+        "de": "",
+        "nl": "",
+        "da": "",
+        "es": "",
+        "fr": "",
+        "it": "",
+        "no": "",
+        "sv": "",
+        "pl": "",
+        "ru": "",
+        "ko": ""
+      }
+    }
+  ],
+  "getable": true,
+  "setable": true
+}

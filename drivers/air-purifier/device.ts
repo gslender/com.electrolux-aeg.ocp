@@ -113,8 +113,8 @@ class AirPurifierDevice extends SharedDevice {
       await this.safeUpdateCapabilityValue("measure_pm1", props.PM1);
       await this.safeUpdateCapabilityValue("measure_temperature", props.Temp);
       await this.safeUpdateCapabilityValue("measure_filter", props.FilterLife);   
-      await this.safeUpdateCapabilityValue("measure_connectionState", this.translate(state.connectionState));        
-      await this.safeUpdateCapabilityValue("measure_remoteControl", this.translate(props.remoteControl));    
+      await this.safeUpdateCapabilityValue("measure_connectionState", this.translateUnderscore(state.connectionState));        
+      await this.safeUpdateCapabilityValue("measure_remoteControl", this.translateUnderscore(props.remoteControl));    
       await this.updateMeasureAlerts(props);
       this.log("Device data updated");
     } catch (error) {

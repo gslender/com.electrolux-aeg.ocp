@@ -20,5 +20,12 @@
         "1": "Låg",
         "2": "Medium",
         "3": "Hög"
+    },
+    "robot_state": {    
+        "goingHome": "Går hem",
+        "idle": "Inaktiv",
+        "inProgress": "Pågående",
+        "paused": "Pausad",
+        "sleeping": "Sover"
     }
 }

@@ -20,5 +20,12 @@
         "1": "Laag",
         "2": "Medium",
         "3": "Hoog"
+    },
+    "robot_state": {    
+        "goingHome": "Gaat naar huis",
+        "idle": "Inactief",
+        "inProgress": "Bezig",
+        "paused": "Gepauzeerd",
+        "sleeping": "Slapend"
     }
 }
