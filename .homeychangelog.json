@@ -139,5 +139,8 @@
   },
   "1.4.14": {
     "en": "fix c/Connected bug"
+  },
+  "1.4.15": {
+    "en": "Fix cleaning_command bug"
   }
 }

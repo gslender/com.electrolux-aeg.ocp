@@ -11,7 +11,7 @@ class Robot700Device extends SharedDevice {
     // Listen to multiple capabilities simultaneously
     this.registerMultipleCapabilityListener(
       [
-        "execute_command", "power_mode"
+        "cleaning_command", "power_mode"
       ],
       (valueObj, optsObj) => this.setDeviceOpts(valueObj),
       500
