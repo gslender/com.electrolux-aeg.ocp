@@ -142,5 +142,8 @@
   },
   "1.4.15": {
     "en": "Fix cleaning_command bug"
+  },
+  "1.4.16": {
+    "en": "Depends update"
   }
 }
