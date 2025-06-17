@@ -3,6 +3,7 @@
 import Homey from 'homey';
 import { UpdatableDevice, isUpdatableDevice } from './types'
 import { OcpApi } from './lib/ocpapi';
+let isAppShuttingDown: boolean = false;
 
 export default class ElectroluxAEGApp extends Homey.App {
 
@@ -112,12 +113,22 @@ export default class ElectroluxAEGApp extends Homey.App {
     }, pollingInterval);
   }
 
+  async onUninit(): Promise<void> {
+    this.log('App is shutting down.');
+    isAppShuttingDown = true;
+    // Wait for a moment to ensure tasks have stopped
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    this.log('Cleanup completed.');
+  }
+
 
   async pollApplianceState() {
     const drivers = this.homey.drivers.getDrivers();
     for (const driver in drivers) {
+      if (isAppShuttingDown) return;
       const devices = this.homey.drivers.getDriver(driver).getDevices();
       for (const device of devices) {
+        if (isAppShuttingDown) return;
         if (isUpdatableDevice(device)) {
           const applianceId = device.getData().id;
           const state = await this.getApplianceState(applianceId);
