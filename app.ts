@@ -100,8 +100,8 @@ export default class ElectroluxAEGApp extends Homey.App {
 
   async startPolling() {
     let pollingInterval = this.homey.settings.get('ocp.polling');
-    if (isNaN(pollingInterval) || pollingInterval === null || pollingInterval === undefined) {
-      pollingInterval = 15000;
+    if (isNaN(pollingInterval) || pollingInterval === null || pollingInterval === undefined || pollingInterval < 60000) {                   
+      pollingInterval = 300000; // Default to 5 minutes if not set or too low
     } else {
       pollingInterval = Number(pollingInterval);
     }

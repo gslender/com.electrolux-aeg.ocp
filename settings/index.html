@@ -27,11 +27,11 @@
         </div>
         <label class="homey-form-label" for="select-polling">Polling Interval</label>
         <select class="homey-form-select" name="select-polling" id="select-polling">
-            <option value="15000">15 Seconds</option>
-            <option value="30000">30 Seconds</option>
             <option value="60000">1 Minute</option>
             <option value="120000">2 Minutes</option>
             <option value="300000">5 Minutes</option>
+            <option value="600000">10 Minutes</option>
+            <option value="900000">15 Minutes</option>
         </select>
 
     </fieldset>
@@ -68,8 +68,8 @@
 
             Homey.get('ocp.polling', function (err, polling) {
                 if (err) return Homey.alert(err);
-                if (polling === null || polling === undefined || polling === '') {
-                    polling = '15000';
+                if (polling === null || polling === undefined || polling === '' || polling < 60000) {
+                    polling = '300000'; // Default to 5 minutes if not set or too low
                 }
                 pollingElement.value = polling;
                 oldpolling = polling;

@@ -32,21 +32,18 @@ class AirConditionerDevice extends SharedDevice {
         } else {
           await this.app.sendDeviceCommand(deviceId, { executeCommand: 'OFF' });
         }
-        await this.app.pollApplianceState();
       }
 
       // Update target_temperature
       if (valueObj.target_temperature !== undefined) {
         this.log("target_temperature: " + valueObj.target_temperature);
         await this.app.sendDeviceCommand(deviceId, { targetTemperatureC: valueObj.target_temperature });
-        await this.app.pollApplianceState();
       }
 
       // Update thermostat_mode
       if (valueObj.thermostat_mode !== undefined) {
         this.log("thermostat_mode: " + valueObj.thermostat_mode);
         await this.app.sendDeviceCommand(deviceId, { mode: this.safeUppercase(valueObj.thermostat_mode) });
-        await this.app.pollApplianceState();
       }
 
     } catch (error) {

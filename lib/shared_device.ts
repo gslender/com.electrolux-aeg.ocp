@@ -6,7 +6,6 @@ export default class SharedDevice extends Homey.Device {
 
   app!: ElectroluxAEGApp
   static enableDebug = true;
-  private refreshInterval: NodeJS.Timeout | null = null;
   deviceCapabilities!: string[]
   stringsIdx: number = 0;
 
