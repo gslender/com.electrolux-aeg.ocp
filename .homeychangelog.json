@@ -154,5 +154,8 @@
   },
   "1.4.19": {
     "en": "deps update"
+  },
+  "1.4.20": {
+    "en": "Added new Oven types and updated Depends"
   }
 }

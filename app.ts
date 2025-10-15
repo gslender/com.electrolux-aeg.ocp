@@ -9,6 +9,7 @@ export default class ElectroluxAEGApp extends Homey.App {
 
   timeoutId!: NodeJS.Timeout;
   ocpApiFactory: OcpApi = new OcpApi();
+  private pollingInProgress = false;
   /**
    * onInit is called when the app is initialized.
    */
@@ -30,10 +31,10 @@ export default class ElectroluxAEGApp extends Homey.App {
     this.registerFlowCardAction("enable_indicator_light");
     this.registerFlowCardAction("disable_indicator_light");
 
-    this.registerFlowCardCondtion("applianceState_is");
-    this.registerFlowCardCondtion("connectionState_is");
-    this.registerFlowCardCondtion("remoteControl_is");
-    this.registerFlowCardCondtion("cyclePhase_is");
+    this.registerFlowCardCondition("applianceState_is");
+    this.registerFlowCardCondition("connectionState_is");
+    this.registerFlowCardCondition("remoteControl_is");
+    this.registerFlowCardCondition("cyclePhase_is");
 
     this.ocpApiFactory.init(
       () => { return this.homey.settings.get('ocp.username'); },
@@ -89,33 +90,39 @@ export default class ElectroluxAEGApp extends Homey.App {
     });
   }
 
-  registerFlowCardCondtion(cardName: string) {
+  registerFlowCardCondition(cardName: string) {
     const card = this.homey.flow.getConditionCard(cardName);
     card.registerRunListener(async (args, state) => {
-      this.log(`${"flow_" + cardName} args=${args} state=${state}`);
+      this.log(`flow_${cardName} args=${JSON.stringify(args)} state=${JSON.stringify(state)}`);
       return args.device["flow_" + cardName](args, state);
     });
   }
 
 
   async startPolling() {
-    let pollingInterval = this.homey.settings.get('ocp.polling');
-    if (isNaN(pollingInterval) || pollingInterval === null || pollingInterval === undefined || pollingInterval < 60000) {                   
-      pollingInterval = 300000; // Default to 5 minutes if not set or too low
-    } else {
-      pollingInterval = Number(pollingInterval);
+    const raw = this.homey.settings.get('ocp.polling');
+    let pollingInterval = Number(raw);
+    if (!Number.isFinite(pollingInterval) || pollingInterval < 60000) {
+      // Default to 5 minutes if not set or too low
+      pollingInterval = 300000;
     }
+
+    // Ensure we don't leak intervals on repeated calls
+    this.homey.clearInterval(this.timeoutId);
+
     this.log(`${this.id} polling every ${pollingInterval / 1000}sec started...`);
 
-    this.pollApplianceState();
+    // Kick off an immediate poll, then schedule subsequent polls
+    await this.pollApplianceState();
     this.timeoutId = this.homey.setInterval(() => {
-      this.pollApplianceState();
+      void this.pollApplianceState();
     }, pollingInterval);
   }
 
   async onUninit(): Promise<void> {
     this.log('App is shutting down.');
     isAppShuttingDown = true;
+    this.homey.clearInterval(this.timeoutId);
     // Wait for a moment to ensure tasks have stopped
     await new Promise(resolve => setTimeout(resolve, 2000));
     this.log('Cleanup completed.');
@@ -123,38 +130,50 @@ export default class ElectroluxAEGApp extends Homey.App {
 
 
   async pollApplianceState() {
-    const drivers = this.homey.drivers.getDrivers();
-    for (const driver in drivers) {
-      if (isAppShuttingDown) return;
-      const devices = this.homey.drivers.getDriver(driver).getDevices();
-      for (const device of devices) {
+    if (this.pollingInProgress || isAppShuttingDown) return;
+    this.pollingInProgress = true;
+    try {
+      const driversMap = this.homey.drivers.getDrivers();
+      const drivers = Object.values(driversMap);
+      for (const driver of drivers) {
         if (isAppShuttingDown) return;
-        if (isUpdatableDevice(device)) {
-          const applianceId = device.getData().id;
-          const state = await this.getApplianceState(applianceId);
-          if (state?.connectionState === 'connected' ||
-            state?.connectionState === 'Connected') {
-            device.setAvailable();
-            device.updateCapabilityValues(state);
-          } else {
-            this.log(`${JSON.stringify(state)}`);
-            device.setUnavailable();
+        const devices = driver.getDevices();
+        for (const device of devices) {
+          if (isAppShuttingDown) return;
+          if (isUpdatableDevice(device)) {
+            try {
+              const applianceId = device.getData().id;
+              const state = await this.getApplianceState(applianceId);
+              const conn = state?.connectionState;
+              if (conn === 'connected' || conn === 'Connected') {
+                device.setAvailable();
+                device.updateCapabilityValues(state);
+              } else {
+                this.log(`Disconnected or unknown state for ${applianceId}: ${JSON.stringify(state)}`);
+                device.setUnavailable();
+              }
+            } catch (err) {
+              this.error(`Device poll error: ${err}`);
+            }
           }
         }
       }
+    } finally {
+      this.pollingInProgress = false;
     }
   }
 
 
   isAccessTokenExpired() {
-    const tokenexp = this.homey.settings.get('tokenexp');
-    return tokenexp <= Date.now();
+    const raw = this.homey.settings.get('tokenexp');
+    const tokenexp = Number(raw);
+    return !Number.isFinite(tokenexp) || tokenexp <= Date.now();
   }
 
   async attemptAccessTokenCheck(): Promise<boolean> {
-
     try {
       this.log(`attemptAccessTokenCheck() isAccessTokenExpired:${this.isAccessTokenExpired()}`);
+      if (this.isAccessTokenExpired()) return false;
       const http = await this.ocpApiFactory.createHttp();
       const response = await http.get(`/appliances?includeMetadata=true`);
       if (response && response.data) return true;
@@ -193,7 +212,7 @@ export default class ElectroluxAEGApp extends Homey.App {
     }
   }
 
-  async getApplianceState(deviceId: String): Promise<any> {
+  async getApplianceState(deviceId: string): Promise<any> {
     try {
       const http = await this.ocpApiFactory.createHttp();
       const response = await http.get(`/appliances/${deviceId}`);
@@ -204,7 +223,7 @@ export default class ElectroluxAEGApp extends Homey.App {
     }
   }
 
-  async getApplianceCapabilities(deviceId: String): Promise<any> {
+  async getApplianceCapabilities(deviceId: string): Promise<any> {
     try {
       const http = await this.ocpApiFactory.createHttp();
       const response = await http.get(`/appliances/${deviceId}/capabilities`);

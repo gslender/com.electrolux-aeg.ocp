@@ -24,7 +24,7 @@ export default class OvenDriver extends SharedDriver {
   }
   
   async onPairListDevices() {
-    return super.getDevicesByType(['OV'],OvenDriver.DeviceCapabilities);
+    return super.getDevicesByType(['OV','SO'],OvenDriver.DeviceCapabilities);
   }
   /*
   async onPairListDevices() {
