@@ -7,17 +7,17 @@
     "lint": "eslint --ext .js,.ts --ignore-path .gitignore ."
   },
   "devDependencies": {
-    "@tsconfig/node16": "^16.1.5",
+    "@tsconfig/node16": "^16.1.6",
     "@types/homey": "npm:homey-apps-sdk-v3-types@^0.3.12",
     "@types/json-stringify-safe": "^5.0.3",
-    "@types/node": "^24.7.2",
-    "eslint": "^9.37.0",
+    "@types/node": "^24.10.0",
+    "eslint": "^9.39.1",
     "eslint-config-athom": "^3.1.5",
     "typescript": "^5.9.3"
   },
   "dependencies": {
     "@gslender/gigya": "^3.1.1",
-    "axios": "^1.12.2",
+    "axios": "^1.13.2",
     "json-stringify-safe": "^5.0.1",
     "ws": "^8.18.3"
   }

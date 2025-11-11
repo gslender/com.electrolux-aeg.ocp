@@ -157,5 +157,8 @@
   },
   "1.4.20": {
     "en": "Added new Oven types and updated Depends"
+  },
+  "1.4.21": {
+    "en": "Added Fuji model plus depends update"
   }
 }
