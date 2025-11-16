@@ -26,7 +26,7 @@ export default class AirPurifierDriver extends SharedDriver {
   }
 
   async onPairListDevices() {
-    return super.getDevicesByType(['PURE','Muju','WELLA','Fuji'],AirPurifierDriver.DeviceCapabilities);
+    return super.getDevicesByType(['PURE','Muju','WELLA','Fuji','Verbier'],AirPurifierDriver.DeviceCapabilities);
   }
 }
 
