@@ -3,6 +3,7 @@
 import Homey from 'homey';
 import { UpdatableDevice, isUpdatableDevice } from './types'
 import { OcpApi } from './lib/ocpapi';
+import stringify from 'json-stringify-safe';
 let isAppShuttingDown: boolean = false;
 
 export default class ElectroluxAEGApp extends Homey.App {
@@ -93,7 +94,7 @@ export default class ElectroluxAEGApp extends Homey.App {
   registerFlowCardCondition(cardName: string) {
     const card = this.homey.flow.getConditionCard(cardName);
     card.registerRunListener(async (args, state) => {
-      this.log(`flow_${cardName} args=${JSON.stringify(args)} state=${JSON.stringify(state)}`);
+      this.log(`flow_${cardName} args=${stringify(args)} state=${stringify(state)}`);
       return args.device["flow_" + cardName](args, state);
     });
   }
@@ -149,7 +150,7 @@ export default class ElectroluxAEGApp extends Homey.App {
                 device.setAvailable();
                 device.updateCapabilityValues(state);
               } else {
-                this.log(`Disconnected or unknown state for ${applianceId}: ${JSON.stringify(state)}`);
+                this.log(`Disconnected or unknown state for ${applianceId}: ${stringify(state)}`);
                 device.setUnavailable();
               }
             } catch (err) {

@@ -7,13 +7,13 @@
     "lint": "eslint --ext .js,.ts --ignore-path .gitignore ."
   },
   "devDependencies": {
-    "@tsconfig/node16": "^16.1.7",
+    "@tsconfig/node22": "^22.0.5",
+    "@types/node": "^22.9.0",
+    "typescript": "^5.9.3",
     "@types/homey": "npm:homey-apps-sdk-v3-types@^0.3.12",
     "@types/json-stringify-safe": "^5.0.3",
-    "@types/node": "^24.10.1",
     "eslint": "^9.39.1",
-    "eslint-config-athom": "^3.1.5",
-    "typescript": "^5.9.3"
+    "eslint-config-athom": "^3.1.5"
   },
   "dependencies": {
     "@gslender/gigya": "^3.1.1",

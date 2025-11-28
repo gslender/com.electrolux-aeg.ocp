@@ -163,5 +163,8 @@
   },
   "1.4.22": {
     "en": "Added Pure 700 / Verbier plus depends updates"
+  },
+  "1.5.0": {
+    "en": "Migrated to node24 and used safe json stringify"
   }
 }
