@@ -166,5 +166,8 @@
   },
   "1.5.0": {
     "en": "Migrated to node24 and used safe json stringify"
+  },
+  "1.5.1": {
+    "en": "Fixed flawed FlowCardCondition logic"
   }
 }

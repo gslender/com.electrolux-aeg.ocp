@@ -8,17 +8,17 @@
   },
   "devDependencies": {
     "@tsconfig/node22": "^22.0.5",
-    "@types/node": "^22.9.0",
+    "@types/node": "^25.0.8",
     "typescript": "^5.9.3",
     "@types/homey": "npm:homey-apps-sdk-v3-types@^0.3.12",
     "@types/json-stringify-safe": "^5.0.3",
-    "eslint": "^9.39.1",
+    "eslint": "^9.39.2",
     "eslint-config-athom": "^3.1.5"
   },
   "dependencies": {
     "@gslender/gigya": "^3.1.1",
     "axios": "^1.13.2",
     "json-stringify-safe": "^5.0.1",
-    "ws": "^8.18.3"
+    "ws": "^8.19.0"
   }
 }

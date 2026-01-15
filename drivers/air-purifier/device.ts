@@ -181,12 +181,12 @@ class AirPurifierDevice extends SharedDevice {
 
   flow_connectionState_is(args: { value: string }, state: {}) {
     this.log(`flow_connectionState_is: args=${stringify(args.value)} state=${stringify(state)}`);
-    return this.compareCaseInsensitiveString(args.value,this.getCapabilityValue("measure_connectionState"));
+    return this.compareCaseInsensitiveString(args.value,this.getCapabilityValue("connectionState"));
   }
 
   flow_remoteControl_is(args: { value: string }, state: {}) {
     this.log(`flow_remoteControl_is: args=${stringify(args.value)} state=${stringify(state)}`);
-    return this.compareCaseInsensitiveString(args.value,this.getCapabilityValue("measure_remoteControl"));
+    return this.compareCaseInsensitiveString(args.value,this.getCapabilityValue("remoteControl"));
   }
 }
 
