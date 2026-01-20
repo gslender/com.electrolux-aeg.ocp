@@ -1,17 +1,16 @@
 import SharedDevice from '../../lib/shared_device';
-import OvenDriver from './driver';
+import FridgeFreezerDriver from './driver';
 import stringify from 'json-stringify-safe';
 
-class OvenDevice extends SharedDevice {
+class FridgeFreezerDevice extends SharedDevice {
 
   async onInit() {
-    this.deviceCapabilities = OvenDriver.DeviceCapabilities;
+    this.deviceCapabilities = FridgeFreezerDriver.DeviceCapabilities;
     await super.onInit();
 
     // Listen to multiple capabilities simultaneously
     this.registerMultipleCapabilityListener(
       [
-        "LIGHT_onoff",
         "execute_command"
       ],
       (valueObj, optsObj) => this.setDeviceOpts(valueObj),
@@ -29,27 +28,7 @@ class OvenDevice extends SharedDevice {
         this.log("execute_command: " + valueObj.execute_command);
         await this.app.sendDeviceCommand(deviceId, { executeCommand: valueObj.execute_command });
       }
-
-      const commandMapping: { [x: string]: string } = {
-        LIGHT_onoff: "cavityLight",
-      };
-
-      // Update other capabilities
-      const capabilitiesToUpdate = [
-        "LIGHT_onoff",
-      ];
-
-      for (const cap of capabilitiesToUpdate) {
-        if (valueObj[cap] !== undefined) {
-          const apiCommandName = commandMapping[cap] || cap;
-
-          await this.app.sendDeviceCommand(deviceId, {
-            [apiCommandName]: valueObj[cap],
-          });
-          this.log(`${cap}: ${valueObj[cap]}`);
-
-        }
-      }
+     
     } catch (error) {
       this.log(`Error in setDeviceOpts: ${error}`);
     }
@@ -64,7 +43,6 @@ class OvenDevice extends SharedDevice {
     const props = state.properties.reported;
 
     try {
-      await this.safeUpdateCapabilityValue("LIGHT_onoff", props.cavityLight);
       await this.safeUpdateCapabilityValue("measure_doorState", this.translateUnderscore(props.doorState));
       await this.safeUpdateCapabilityValue("measure_connectionState", this.translateUnderscore(state.connectionState));     
       await this.safeUpdateCapabilityValue("measure_remoteControl", this.translateUnderscore(props.remoteControl)); 
@@ -83,14 +61,6 @@ class OvenDevice extends SharedDevice {
       this.log("Error updating device state: ", error);
     }
 
-  }
-
-  flow_enable_cavity_light(args: {}, state: {}) {
-    return this.setDeviceOpts({ LIGHT_onoff: true });
-  }
-
-  flow_disable_cavity_light(args: {}, state: {}) {
-    return this.setDeviceOpts({ LIGHT_onoff: false });
   }
 
   flow_execute_command(args: {what: string}, state: {}) {
@@ -119,4 +89,4 @@ class OvenDevice extends SharedDevice {
   
 }
 
-module.exports = OvenDevice;
+module.exports = FridgeFreezerDevice;

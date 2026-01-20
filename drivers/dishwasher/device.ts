@@ -89,22 +89,22 @@ class DishwasherDevice extends SharedDevice {
 
   flow_cyclePhase_is(args: { value: string }, state: {}) {
     this.log(`flow_cyclePhase_is: args=${stringify(args.value)} state=${stringify(state)}`);
-    return this.compareCaseInsensitiveString(args.value,this.getCapabilityValue("cyclePhase"));
+    return this.compareCaseInsensitiveString(args.value,this.getCapabilityValue("measure_cyclePhase"));
   }
 
   flow_applianceState_is(args: { value: string }, state: {}) {
     this.log(`flow_applianceState_is: args=${stringify(args.value)} state=${stringify(state)}`);
-    return this.compareCaseInsensitiveString(args.value,this.getCapabilityValue("applianceState"));
+    return this.compareCaseInsensitiveString(args.value,this.getCapabilityValue("measure_applianceState"));
   }
 
   flow_connectionState_is(args: { value: string }, state: {}) {
     this.log(`flow_connectionState_is: args=${stringify(args.value)} state=${stringify(state)}`);
-    return this.compareCaseInsensitiveString(args.value,this.getCapabilityValue("connectionState"));
+    return this.compareCaseInsensitiveString(args.value,this.getCapabilityValue("measure_connectionState"));
   }
 
   flow_remoteControl_is(args: { value: string }, state: {}) {
     this.log(`flow_remoteControl_is: args=${stringify(args.value)} state=${stringify(state)}`);
-    return this.compareCaseInsensitiveString(args.value,this.getCapabilityValue("remoteControl"));
+    return this.compareCaseInsensitiveString(args.value,this.getCapabilityValue("measure_remoteControl"));
   }
 }
 
