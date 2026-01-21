@@ -13,7 +13,7 @@ export default class SharedDevice extends Homey.Device {
     this.log("Device Init: " + this.getName());
     this.app = this.homey.app as ElectroluxAEGApp;
 
-    const deviceId = this.getData().id;
+    const deviceId = this.getApplianceId();
     const state = await this.app.getApplianceState(deviceId);
     this.setSettings({ applianceState: stringify(state) });
     const capabilities = await this.app.getApplianceCapabilities(deviceId);
@@ -24,6 +24,11 @@ export default class SharedDevice extends Homey.Device {
       await this._removeAllExistingCapabilities();
       await this._addMissingCapabilities(this.deviceCapabilities);
     }
+  }
+
+  protected getApplianceId(): string {
+    const data: any = this.getData();
+    return data?.applianceId ?? data.id;
   }
 
   private _isMissingAnyCapabilities(caps: string[]): boolean {

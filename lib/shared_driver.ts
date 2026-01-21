@@ -13,9 +13,11 @@ export default class SharedDriver extends Homey.Driver {
     return [];
   }
 
-  async getDevicesByType(queryTypes: string[], capabilities: string[]) {
+  async getDevicesByType(queryTypes: string[], capabilities: string[], subtypes?: string[]) {
     var devices = [];
     const appliances = await this.app.getAppliances();
+
+    const hasSubtypes = Array.isArray(subtypes) && subtypes.length > 0;
 
     for (let i = 0; i < appliances.length; i++) {
       const appliance = appliances[i];
@@ -30,12 +32,24 @@ export default class SharedDriver extends Homey.Driver {
             deviceCapabilities.push(cap);
           }
 
-          const device = {
-            name: appliance.applianceData.applianceName,
-            data: { id: appliance.applianceId },
-            capabilities: deviceCapabilities,
-          };
-          devices.push(device);
+          if (hasSubtypes) {
+            for (const subtype of subtypes ?? []) {
+              const formattedSubtype = subtype.charAt(0).toUpperCase() + subtype.slice(1);
+              const device = {
+                name: `${appliance.applianceData.applianceName} ${formattedSubtype}`,
+                data: { id: `${appliance.applianceId}-${subtype}`, applianceId: appliance.applianceId, subtype: subtype },
+                capabilities: deviceCapabilities,
+              };
+              devices.push(device);
+            }
+          } else {
+            const device = {
+              name: appliance.applianceData.applianceName,
+              data: { id: appliance.applianceId },
+              capabilities: deviceCapabilities,
+            };
+            devices.push(device);
+          }
         }
       }
     }

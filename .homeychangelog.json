@@ -169,5 +169,8 @@
   },
   "1.5.1": {
     "en": "Fixed flawed FlowCardCondition logic"
+  },
+  "1.5.2": {
+    "en": "Added Fridge / fixed _is flows"
   }
 }

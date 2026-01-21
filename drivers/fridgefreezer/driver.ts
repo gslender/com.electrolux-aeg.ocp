@@ -20,7 +20,7 @@ export default class FridgeFreezerDriver extends SharedDriver {
   }
   
   async onPairListDevices() {
-    return super.getDevicesByType(['CR'],FridgeFreezerDriver.DeviceCapabilities);
+    return super.getDevicesByType(['CR'],FridgeFreezerDriver.DeviceCapabilities, ['fridge','freezer']);
   }
 }
 

@@ -3,9 +3,13 @@ import FridgeFreezerDriver from './driver';
 import stringify from 'json-stringify-safe';
 
 class FridgeFreezerDevice extends SharedDevice {
+  subtype!: string;
+  applianceId!: string;
 
   async onInit() {
     this.deviceCapabilities = FridgeFreezerDriver.DeviceCapabilities;
+    this.subtype = this.getData().subtype ?? 'fridge';
+    this.applianceId = this.getApplianceId();
     await super.onInit();
 
     // Listen to multiple capabilities simultaneously
@@ -19,7 +23,7 @@ class FridgeFreezerDevice extends SharedDevice {
   }
 
   async setDeviceOpts(valueObj: { [x: string]: any }) {
-    const deviceId = this.getData().id;
+    const deviceId = this.applianceId;
 
     try {
 
@@ -41,20 +45,16 @@ class FridgeFreezerDevice extends SharedDevice {
     }
 
     const props = state.properties.reported;
+    const subProps = props[this.subtype] ?? {};
 
     try {
-      await this.safeUpdateCapabilityValue("measure_doorState", this.translateUnderscore(props.doorState));
-      await this.safeUpdateCapabilityValue("measure_connectionState", this.translateUnderscore(state.connectionState));     
-      await this.safeUpdateCapabilityValue("measure_remoteControl", this.translateUnderscore(props.remoteControl)); 
-      await this.safeUpdateCapabilityValue("measure_timeToEnd", this.convertSecondsToMinNumber(props.timeToEnd));
-      await this.safeUpdateCapabilityValue("measure_runningTime", this.convertSecondsToMinNumber(props.runningTime));
-      await this.safeUpdateCapabilityValue("measure_startTime", this.convertSecondsToHrMinString(props.startTime));
-      await this.safeUpdateCapabilityValue("measure_targetTemperature", props.targetTemperatureC);
-      await this.safeUpdateCapabilityValue("measure_temperature", props.displayTemperatureC);
-      await this.safeUpdateCapabilityValue("measure_applianceState", this.translateUnderscore(props.applianceState));
-      await this.safeUpdateCapabilityValue("measure_applianceMode", this.translateUnderscore(props.program));
-      await this.safeUpdateCapabilityValue("measure_cyclePhase", this.translateUnderscore(props.processPhase));      
-      await this.updateMeasureAlerts(props);
+      await this.safeUpdateCapabilityValue("measure_doorState", this.translateUnderscore(subProps.doorState));
+      await this.safeUpdateCapabilityValue("measure_applianceState", this.translateUnderscore(subProps.applianceState));
+      await this.safeUpdateCapabilityValue("measure_targetTemperature", subProps.targetTemperatureC);
+      await this.safeUpdateCapabilityValue("measure_fanState", this.translateUnderscore(subProps.fanState));
+      await this.safeUpdateCapabilityValue("measure_energySavingMode", this.translateUnderscore(props.energySavingMode));
+      await this.safeUpdateCapabilityValue("measure_connectionState", this.translateUnderscore(props.connectivityState));     
+      await this.updateMeasureAlerts(subProps);
 
       this.log("Device data updated");
     } catch (error) {
