@@ -28,7 +28,7 @@ export default class SharedDevice extends Homey.Device {
 
   protected getApplianceId(): string {
     const data: any = this.getData();
-    return data?.applianceId ?? data.id;
+    return data.id;
   }
 
   private _isMissingAnyCapabilities(caps: string[]): boolean {

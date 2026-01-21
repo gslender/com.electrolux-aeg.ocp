@@ -36,8 +36,8 @@ export default class SharedDriver extends Homey.Driver {
             for (const subtype of subtypes ?? []) {
               const formattedSubtype = subtype.charAt(0).toUpperCase() + subtype.slice(1);
               const device = {
-                name: `${appliance.applianceData.applianceName} ${formattedSubtype}`,
-                data: { id: `${appliance.applianceId}-${subtype}`, applianceId: appliance.applianceId, subtype: subtype },
+                name: formattedSubtype,
+                data: { id: appliance.applianceId, subtype: subtype },
                 capabilities: deviceCapabilities,
               };
               devices.push(device);

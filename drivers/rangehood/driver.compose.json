@@ -1,0 +1,41 @@
+{
+  "name": {
+    "en": "Range Hood",
+    "de": "Dunstabzugshaube",
+    "nl": "Afzuigkap",
+    "da": "Emhætte",
+    "es": "Campana extractora",
+    "fr": "Hotte aspirante",
+    "it": "Cappa aspirante",
+    "no": "Kjøkkenhette",
+    "sv": "Köksfläkt",
+    "pl": "Okap kuchenny",
+    "ru": "Кухонная вытяжка",
+    "ko": "레인지 후드"
+  },
+  "class": "other",
+  "capabilities": [],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "lan"
+  ],
+  "images": {
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png"
+  },
+  "pair": [
+    {
+      "id": "list_my_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_my_devices"
+      }
+    },
+    {
+      "id": "add_my_devices",
+      "template": "add_devices"
+    }
+  ]
+}
