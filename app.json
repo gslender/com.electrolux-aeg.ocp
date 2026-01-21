@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.electrolux-aeg.ocp",
-  "version": "1.5.2",
+  "version": "1.5.3",
   "compatibility": ">=12.0.0",
   "sdk": 3,
   "platforms": [
@@ -3209,6 +3209,46 @@
       "getable": true,
       "setable": false,
       "icon": "/assets/icons/door.svg"
+    },
+    "measure_energySavingMode": {
+      "type": "string",
+      "title": {
+        "en": "Energy Saving Mode",
+        "de": "Energiesparmodus",
+        "nl": "Energiebesparingsmodus",
+        "da": "Energisparetilstand",
+        "es": "Modo de ahorro de energía",
+        "fr": "Mode économie d’énergie",
+        "it": "Modalità risparmio energetico",
+        "no": "Energisparemodus",
+        "sv": "Energisparläge",
+        "pl": "Tryb oszczędzania energii",
+        "ru": "Режим энергосбережения",
+        "ko": "절전 모드"
+      },
+      "getable": true,
+      "setable": false,
+      "icon": "/assets/icons/bolt.svg"
+    },
+    "measure_fanState": {
+      "type": "string",
+      "title": {
+        "en": "Fan State",
+        "de": "Lüfterstatus",
+        "nl": "Ventilatorstatus",
+        "da": "Ventilatorstatus",
+        "es": "Estado del ventilador",
+        "fr": "État du ventilateur",
+        "it": "Stato della ventola",
+        "no": "Viftestatus",
+        "sv": "Fläktstatus",
+        "pl": "Stan wentylatora",
+        "ru": "Состояние вентилятора",
+        "ko": "팬 상태"
+      },
+      "getable": true,
+      "setable": false,
+      "icon": "/assets/icons/rotate.svg"
     },
     "measure_filter": {
       "type": "number",

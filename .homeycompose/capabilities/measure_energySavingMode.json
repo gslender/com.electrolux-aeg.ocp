@@ -1,0 +1,20 @@
+{
+  "type": "string",
+  "title": {
+    "en": "Energy Saving Mode",
+    "de": "Energiesparmodus",
+    "nl": "Energiebesparingsmodus",
+    "da": "Energisparetilstand",
+    "es": "Modo de ahorro de energía",
+    "fr": "Mode économie d’énergie",
+    "it": "Modalità risparmio energetico",
+    "no": "Energisparemodus",
+    "sv": "Energisparläge",
+    "pl": "Tryb oszczędzania energii",
+    "ru": "Режим энергосбережения",
+    "ko": "절전 모드"
+  },
+  "getable": true,
+  "setable": false,
+  "icon": "/assets/icons/bolt.svg"
+}

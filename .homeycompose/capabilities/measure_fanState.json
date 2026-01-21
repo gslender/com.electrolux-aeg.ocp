@@ -1,0 +1,20 @@
+{
+  "type": "string",
+  "title": {
+    "en": "Fan State",
+    "de": "Lüfterstatus",
+    "nl": "Ventilatorstatus",
+    "da": "Ventilatorstatus",
+    "es": "Estado del ventilador",
+    "fr": "État du ventilateur",
+    "it": "Stato della ventola",
+    "no": "Viftestatus",
+    "sv": "Fläktstatus",
+    "pl": "Stan wentylatora",
+    "ru": "Состояние вентилятора",
+    "ko": "팬 상태"
+  },
+  "getable": true,
+  "setable": false,
+  "icon": "/assets/icons/rotate.svg"
+}

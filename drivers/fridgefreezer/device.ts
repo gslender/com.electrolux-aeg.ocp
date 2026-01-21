@@ -67,11 +67,6 @@ class FridgeFreezerDevice extends SharedDevice {
     return this.setDeviceOpts({ execute_command: args.what });
   }
 
-  flow_cyclePhase_is(args: { value: string }, state: {}) {
-    this.log(`flow_cyclePhase_is: args=${stringify(args.value)} state=${stringify(state)}`);
-    return this.compareCaseInsensitiveString(args.value,this.getCapabilityValue("measure_cyclePhase"));
-  }
-
   flow_applianceState_is(args: { value: string }, state: {}) {
     this.log(`flow_applianceState_is: args=${stringify(args.value)} state=${stringify(state)}`);
     return this.compareCaseInsensitiveString(args.value,this.getCapabilityValue("measure_applianceState"));
@@ -80,11 +75,6 @@ class FridgeFreezerDevice extends SharedDevice {
   flow_connectionState_is(args: { value: string }, state: {}) {
     this.log(`flow_connectionState_is: args=${stringify(args.value)} state=${stringify(state)}`);
     return this.compareCaseInsensitiveString(args.value,this.getCapabilityValue("measure_connectionState"));
-  }
-
-  flow_remoteControl_is(args: { value: string }, state: {}) {
-    this.log(`flow_remoteControl_is: args=${stringify(args.value)} state=${stringify(state)}`);
-    return this.compareCaseInsensitiveString(args.value,this.getCapabilityValue("measure_remoteControl"));
   }
   
 }

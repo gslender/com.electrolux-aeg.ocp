@@ -172,5 +172,8 @@
   },
   "1.5.2": {
     "en": "Added Fridge / fixed _is flows"
+  },
+  "1.5.3": {
+    "en": "Fix missing capabilities"
   }
 }
