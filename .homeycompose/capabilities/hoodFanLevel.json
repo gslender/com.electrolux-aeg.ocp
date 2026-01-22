@@ -1,0 +1,125 @@
+{
+  "type": "enum",
+  "values": [
+    {
+      "id": "OFF",
+      "title": {
+        "en": "Off",
+        "nl": "Uit",
+        "da": "Fra",
+        "de": "Aus",
+        "es": "Apagado",
+        "fr": "Arrêt",
+        "it": "Spento",
+        "no": "Av",
+        "sv": "Av",
+        "pl": "Wył.",
+        "ru": "Выкл.",
+        "ko": "꺼짐"
+      }
+    },
+    {
+      "id": "BREEZE",
+      "title": {
+        "en": "Breeze",
+        "nl": "Bries",
+        "da": "Brise",
+        "de": "Brise",
+        "es": "Brisa",
+        "fr": "Brise",
+        "it": "Brezza",
+        "no": "Bris",
+        "sv": "Bris",
+        "pl": "Bryza",
+        "ru": "Лёгкий обдув",
+        "ko": "미풍"
+      }
+    },
+    {
+      "id": "STEP_1",
+      "title": {
+        "en": "One",
+        "nl": "Eén",
+        "da": "Én",
+        "de": "Eins",
+        "es": "Uno",
+        "fr": "Un",
+        "it": "Uno",
+        "no": "Én",
+        "sv": "Ett",
+        "pl": "Jeden",
+        "ru": "Один",
+        "ko": "1단계"
+      }
+    },
+    {
+      "id": "STEP_2",
+      "title": {
+        "en": "Two",
+        "nl": "Twee",
+        "da": "To",
+        "de": "Zwei",
+        "es": "Dos",
+        "fr": "Deux",
+        "it": "Due",
+        "no": "To",
+        "sv": "Två",
+        "pl": "Dwa",
+        "ru": "Два",
+        "ko": "2단계"
+      }
+    },
+    {
+      "id": "STEP_3",
+      "title": {
+        "en": "Three",
+        "nl": "Drie",
+        "da": "Tre",
+        "de": "Drei",
+        "es": "Tres",
+        "fr": "Trois",
+        "it": "Tre",
+        "no": "Tre",
+        "sv": "Tre",
+        "pl": "Trzy",
+        "ru": "Три",
+        "ko": "3단계"
+      }
+    },
+    {
+      "id": "BOOST",
+      "title": {
+        "en": "Boost",
+        "nl": "Boost",
+        "da": "Boost",
+        "de": "Boost",
+        "es": "Turbo",
+        "fr": "Boost",
+        "it": "Boost",
+        "no": "Boost",
+        "sv": "Boost",
+        "pl": "Boost",
+        "ru": "Усиление",
+        "ko": "부스트"
+      }
+    }
+  ],
+  "title": {
+    "en": "Fan Level",
+    "nl": "Ventilatorstand",
+    "da": "Ventilatortrin",
+    "de": "Lüfterstufe",
+    "es": "Nivel del ventilador",
+    "fr": "Niveau du ventilateur",
+    "it": "Livello ventola",
+    "no": "Viftenivå",
+    "sv": "Fläktnivå",
+    "pl": "Poziom wentylatora",
+    "ru": "Уровень вентилятора",
+    "ko": "팬 속도"
+  },
+  "getable": true,
+  "setable": true,
+  "uiComponent": "picker",
+  "uiQuickAction": true
+}

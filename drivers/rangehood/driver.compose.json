@@ -14,7 +14,11 @@
     "ko": "레인지 후드"
   },
   "class": "other",
-  "capabilities": [],
+  "capabilities": [
+    "onoff",
+    "hoodLightIntensity",
+    "hoodFanLevel"
+  ],
   "platforms": [
     "local"
   ],

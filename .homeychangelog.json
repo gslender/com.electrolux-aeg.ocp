@@ -178,5 +178,8 @@
   },
   "1.5.4": {
     "en": "Fix fridgefreezer get capabilities / added Range Hood device"
+  },
+  "1.5.5": {
+    "en": "Updated fan and light control for range hood"
   }
 }

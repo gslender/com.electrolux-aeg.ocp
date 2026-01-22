@@ -11,7 +11,9 @@ class RangeHoodDevice extends SharedDevice {
     // Listen to multiple capabilities simultaneously
     this.registerMultipleCapabilityListener(
       [
-        "LIGHT_onoff",
+        "onoff",
+        "hoodFanLevel",
+        "hoodLightIntensity",
         "execute_command"
       ],
       (valueObj, optsObj) => this.setDeviceOpts(valueObj),
@@ -31,12 +33,14 @@ class RangeHoodDevice extends SharedDevice {
       }
 
       const commandMapping: { [x: string]: string } = {
-        LIGHT_onoff: "cavityLight",
+        hoodFanLevel: "hoodFanLevel",
+        hoodLightIntensity: "lightIntensity",
       };
 
       // Update other capabilities
       const capabilitiesToUpdate = [
-        "LIGHT_onoff",
+        "hoodFanLevel",
+        "hoodLightIntensity",
       ];
 
       for (const cap of capabilitiesToUpdate) {
@@ -64,18 +68,12 @@ class RangeHoodDevice extends SharedDevice {
     const props = state.properties.reported;
 
     try {
-      await this.safeUpdateCapabilityValue("LIGHT_onoff", props.cavityLight);
-      await this.safeUpdateCapabilityValue("measure_doorState", this.translateUnderscore(props.doorState));
-      await this.safeUpdateCapabilityValue("measure_connectionState", this.translateUnderscore(state.connectionState));     
-      await this.safeUpdateCapabilityValue("measure_remoteControl", this.translateUnderscore(props.remoteControl)); 
-      await this.safeUpdateCapabilityValue("measure_timeToEnd", this.convertSecondsToMinNumber(props.timeToEnd));
-      await this.safeUpdateCapabilityValue("measure_runningTime", this.convertSecondsToMinNumber(props.runningTime));
-      await this.safeUpdateCapabilityValue("measure_startTime", this.convertSecondsToHrMinString(props.startTime));
-      await this.safeUpdateCapabilityValue("measure_targetTemperature", props.targetTemperatureC);
-      await this.safeUpdateCapabilityValue("measure_temperature", props.displayTemperatureC);
+      await this.safeUpdateCapabilityValue("onoff", props.hoodFanLevel !== "OFF" || props.lightIntensity > 0);
+      await this.safeUpdateCapabilityValue("hoodFanLevel", props.hoodFanLevel);
+      await this.safeUpdateCapabilityValue("hoodLightIntensity", props.lightIntensity);
+      await this.safeUpdateCapabilityValue("measure_connectionState", this.translateUnderscore(state.connectionState));
       await this.safeUpdateCapabilityValue("measure_applianceState", this.translateUnderscore(props.applianceState));
       await this.safeUpdateCapabilityValue("measure_applianceMode", this.translateUnderscore(props.program));
-      await this.safeUpdateCapabilityValue("measure_cyclePhase", this.translateUnderscore(props.processPhase));      
       await this.updateMeasureAlerts(props);
 
       this.log("Device data updated");
@@ -85,38 +83,20 @@ class RangeHoodDevice extends SharedDevice {
 
   }
 
-  flow_enable_cavity_light(args: {}, state: {}) {
-    return this.setDeviceOpts({ LIGHT_onoff: true });
-  }
-
-  flow_disable_cavity_light(args: {}, state: {}) {
-    return this.setDeviceOpts({ LIGHT_onoff: false });
-  }
-
-  flow_execute_command(args: {what: string}, state: {}) {
+  flow_execute_command(args: { what: string }, state: {}) {
     return this.setDeviceOpts({ execute_command: args.what });
-  }
-
-  flow_cyclePhase_is(args: { value: string }, state: {}) {
-    this.log(`flow_cyclePhase_is: args=${stringify(args.value)} state=${stringify(state)}`);
-    return this.compareCaseInsensitiveString(args.value,this.getCapabilityValue("measure_cyclePhase"));
   }
 
   flow_applianceState_is(args: { value: string }, state: {}) {
     this.log(`flow_applianceState_is: args=${stringify(args.value)} state=${stringify(state)}`);
-    return this.compareCaseInsensitiveString(args.value,this.getCapabilityValue("measure_applianceState"));
+    return this.compareCaseInsensitiveString(args.value, this.getCapabilityValue("measure_applianceState"));
   }
 
   flow_connectionState_is(args: { value: string }, state: {}) {
     this.log(`flow_connectionState_is: args=${stringify(args.value)} state=${stringify(state)}`);
-    return this.compareCaseInsensitiveString(args.value,this.getCapabilityValue("measure_connectionState"));
+    return this.compareCaseInsensitiveString(args.value, this.getCapabilityValue("measure_connectionState"));
   }
 
-  flow_remoteControl_is(args: { value: string }, state: {}) {
-    this.log(`flow_remoteControl_is: args=${stringify(args.value)} state=${stringify(state)}`);
-    return this.compareCaseInsensitiveString(args.value,this.getCapabilityValue("measure_remoteControl"));
-  }
-  
 }
 
 module.exports = RangeHoodDevice;

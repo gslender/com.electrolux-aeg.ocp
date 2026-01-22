@@ -3,6 +3,9 @@ import SharedDriver from '../../lib/shared_driver'
 export default class RangeHoodDriver extends SharedDriver {
 
   static DeviceCapabilities = [
+    "onoff",
+    "hoodFanLevel",
+    "hoodLightIntensity",
     "execute_command",
     "measure_connectionState",
     "measure_applianceState",
