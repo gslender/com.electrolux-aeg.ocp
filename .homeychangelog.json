@@ -181,5 +181,8 @@
   },
   "1.5.5": {
     "en": "Updated fan and light control for range hood"
+  },
+  "1.5.6": {
+    "en": "Clean up of code and depends update"
   }
 }

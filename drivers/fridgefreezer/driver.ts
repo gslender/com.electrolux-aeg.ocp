@@ -3,7 +3,6 @@ import SharedDriver from '../../lib/shared_driver'
 export default class FridgeFreezerDriver extends SharedDriver {
 
   static DeviceCapabilities = [
-    "execute_command",
 // fridge. or freezer. specific capabilities
     "measure_doorState",
     "measure_applianceState",

@@ -13,29 +13,29 @@ class FridgeFreezerDevice extends SharedDevice {
     await super.onInit();
 
     // Listen to multiple capabilities simultaneously
-    this.registerMultipleCapabilityListener(
-      [
-        "execute_command"
-      ],
-      (valueObj, optsObj) => this.setDeviceOpts(valueObj),
-      500
-    );
+    // this.registerMultipleCapabilityListener(
+    //   [
+    //     ""
+    //   ],
+    //   (valueObj, optsObj) => this.setDeviceOpts(valueObj),
+    //   500
+    // );
   }
 
   async setDeviceOpts(valueObj: { [x: string]: any }) {
     const deviceId = this.applianceId;
 
-    try {
+    // try {
 
-      // Update execute_command
-      if (valueObj.execute_command !== undefined) {
-        this.log("execute_command: " + valueObj.execute_command);
-        await this.app.sendDeviceCommand(deviceId, { executeCommand: valueObj.execute_command });
-      }
+    //   // Update execute_command
+    //   if (valueObj.execute_command !== undefined) {
+    //     this.log("execute_command: " + valueObj.execute_command);
+    //     await this.app.sendDeviceCommand(deviceId, { executeCommand: valueObj.execute_command });
+    //   }
      
-    } catch (error) {
-      this.log(`Error in setDeviceOpts: ${error}`);
-    }
+    // } catch (error) {
+    //   this.log(`Error in setDeviceOpts: ${error}`);
+    // }
   }
 
   async updateCapabilityValues(state: any) {

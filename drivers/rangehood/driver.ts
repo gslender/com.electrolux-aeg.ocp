@@ -6,7 +6,6 @@ export default class RangeHoodDriver extends SharedDriver {
     "onoff",
     "hoodFanLevel",
     "hoodLightIntensity",
-    "execute_command",
     "measure_connectionState",
     "measure_applianceState",
     "measure_applianceMode", //program

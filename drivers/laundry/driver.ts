@@ -3,7 +3,6 @@ import SharedDriver from '../../lib/shared_driver'
 export default class LaundryDriver extends SharedDriver {
 
   static DeviceCapabilities = [
-    "execute_command",
     "measure_doorState",
     "measure_connectionState",
     "measure_remoteControl",

@@ -13,8 +13,7 @@ class RangeHoodDevice extends SharedDevice {
       [
         "onoff",
         "hoodFanLevel",
-        "hoodLightIntensity",
-        "execute_command"
+        "hoodLightIntensity"
       ],
       (valueObj, optsObj) => this.setDeviceOpts(valueObj),
       500
@@ -25,12 +24,6 @@ class RangeHoodDevice extends SharedDevice {
     const deviceId = this.getData().id;
 
     try {
-
-      // Update execute_command
-      if (valueObj.execute_command !== undefined) {
-        this.log("execute_command: " + valueObj.execute_command);
-        await this.app.sendDeviceCommand(deviceId, { executeCommand: valueObj.execute_command });
-      }
 
       const commandMapping: { [x: string]: string } = {
         hoodFanLevel: "hoodFanLevel",
