@@ -184,5 +184,8 @@
   },
   "1.5.6": {
     "en": "Clean up of code and depends update"
+  },
+  "1.5.7": {
+    "en": "Added rangehood on/off"
   }
 }
