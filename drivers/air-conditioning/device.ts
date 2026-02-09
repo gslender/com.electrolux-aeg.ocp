@@ -22,6 +22,14 @@ class AirConditionerDevice extends SharedDevice {
     const deviceId = this.getData().id;
 
     try {
+      // Update execute_command
+      if (valueObj.execute_command !== undefined) {
+        this.log("execute_command: " + valueObj.execute_command);
+        const cmd = valueObj.execute_command === 'START' || valueObj.execute_command === 'RESUME'
+          ? 'ON'
+          : 'OFF';
+        await this.app.sendDeviceCommand(deviceId, { executeCommand: cmd });
+      }
 
       // Update onoff
       if (valueObj.onoff !== undefined) {
@@ -87,6 +95,11 @@ class AirConditionerDevice extends SharedDevice {
   flow_applianceState_is(args: { value: string }, state: {}) {
     this.log(`flow_applianceState_is: args=${stringify(args.value)} state=${stringify(state)}`);
     return this.compareCaseInsensitiveString(args.value, this.getCapabilityValue("measure_applianceState"));
+  }
+
+  flow_connectionState_is(args: { value: string }, state: {}) {
+    this.log(`flow_connectionState_is: args=${stringify(args.value)} state=${stringify(state)}`);
+    return this.compareCaseInsensitiveString(args.value, this.getCapabilityValue("measure_connectionState"));
   }
 
 }

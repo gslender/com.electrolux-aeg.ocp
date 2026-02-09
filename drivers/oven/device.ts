@@ -24,10 +24,10 @@ class OvenDevice extends SharedDevice {
     try {
 
       // Update execute_command
-      // if (valueObj.execute_command !== undefined) {
-      //   this.log("execute_command: " + valueObj.execute_command);
-      //   await this.app.sendDeviceCommand(deviceId, { executeCommand: valueObj.execute_command });
-      // }
+      if (valueObj.execute_command !== undefined) {
+        this.log("execute_command: " + valueObj.execute_command);
+        await this.app.sendDeviceCommand(deviceId, { executeCommand: valueObj.execute_command });
+      }
 
       const commandMapping: { [x: string]: string } = {
         LIGHT_onoff: "cavityLight",

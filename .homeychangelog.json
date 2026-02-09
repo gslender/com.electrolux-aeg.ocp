@@ -187,5 +187,8 @@
   },
   "1.5.7": {
     "en": "Added rangehood on/off"
+  },
+  "1.5.8": {
+    "en": "Added/removed flows and commands that do/don't exist"
   }
 }

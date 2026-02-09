@@ -22,6 +22,22 @@ class Robot700Device extends SharedDevice {
     const deviceId = this.getData().id;
 
     try {
+      // Update execute_command (generic flow card)
+      if (valueObj.execute_command !== undefined) {
+        this.log("execute_command: " + valueObj.execute_command);
+        const commandMapping: { [key: string]: string } = {
+          START: 'startGlobalClean',
+          RESUME: 'resumeClean',
+          PAUSE: 'pauseClean',
+          STOPRESET: 'stopClean',
+        };
+        const mapped = commandMapping[valueObj.execute_command];
+        if (mapped) {
+          await this.app.sendDeviceCommand(deviceId, { cleaningCommand: mapped });
+        } else {
+          this.log(`Unsupported execute_command value: ${valueObj.execute_command}`);
+        }
+      }
 
       // Update cleaning_command
       if (valueObj.cleaning_command !== undefined) {

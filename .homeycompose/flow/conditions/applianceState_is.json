@@ -31,7 +31,7 @@
     {
       "type": "device",
       "name": "device",
-      "filter": "driver_id=oven|laundry|dishwasher|air-purifier|robot|air-conditioning"
+      "filter": "driver_id=oven|laundry|dishwasher|robot|air-conditioning|fridgefreezer|rangehood|robot.700series"
     },
     {
       "name": "value",
