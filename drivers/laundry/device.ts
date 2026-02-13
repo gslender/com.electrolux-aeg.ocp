@@ -10,23 +10,40 @@ class LaundryDevice extends SharedDevice {
     await super.onInit();
 
     // Listen to multiple capabilities simultaneously
-    // this.registerMultipleCapabilityListener(
-    //   [
-    //     ""
-    //   ],
-    //   (valueObj, optsObj) => this.setDeviceOpts(valueObj),
-    //   500
-    // );
+    this.registerMultipleCapabilityListener(
+      [
+        "onoff",
+      ],
+      (valueObj, optsObj) => this.setDeviceOpts(valueObj),
+      500
+    );
   }
 
   async setDeviceOpts(valueObj: { [x: string]: any }) {
     const deviceId = this.getData().id;
 
     try {
+      if (valueObj.onoff !== undefined) {
+        const isOn = valueObj.onoff === true || valueObj.onoff === 'true';
+        const command = isOn ? 'ON' : 'OFF';
+        if (this.supportsCommandValue('executeCommand', command)) {
+          await this.app.sendDeviceCommand(deviceId, { executeCommand: command });
+        } else {
+          const fallback = isOn ? 'START' : 'STOPRESET';
+          if (this.supportsCommandValue('executeCommand', fallback)) {
+            await this.app.sendDeviceCommand(deviceId, { executeCommand: fallback });
+          }
+        }
+      }
+
       // Update execute_command
       if (valueObj.execute_command !== undefined) {
         this.log("execute_command: " + valueObj.execute_command);
-        await this.app.sendDeviceCommand(deviceId, { executeCommand: valueObj.execute_command });
+        if (this.supportsCommandValue('executeCommand', valueObj.execute_command)) {
+          await this.app.sendDeviceCommand(deviceId, { executeCommand: valueObj.execute_command });
+        } else {
+          this.log(`execute_command '${valueObj.execute_command}' not supported by device capabilities`);
+        }
       }
 
       /*
@@ -65,6 +82,9 @@ class LaundryDevice extends SharedDevice {
 
     const props = state.properties.reported;
     try {
+      const normalizedState = String(props.applianceState || '').toUpperCase();
+      const isOn = normalizedState !== '' && !['IDLE', 'OFF', 'END_OF_CYCLE'].includes(normalizedState);
+      await this.safeUpdateCapabilityValue("onoff", isOn);
       await this.safeUpdateCapabilityValue("measure_doorState", this.translateUnderscore(props.doorState));
       await this.safeUpdateCapabilityValue("measure_connectionState", this.translateUnderscore(state.connectionState));          
       await this.safeUpdateCapabilityValue("measure_remoteControl", this.translateUnderscore(props.remoteControl)); 

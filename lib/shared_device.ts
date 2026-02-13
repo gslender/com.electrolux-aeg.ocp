@@ -31,6 +31,42 @@ export default class SharedDevice extends Homey.Device {
     return data.id;
   }
 
+  protected getApplianceCapabilitiesSetting(): any {
+    const raw = this.getSetting('applianceCapabilities');
+    if (!raw) return {};
+    if (typeof raw === 'object') return raw;
+    if (typeof raw !== 'string') return {};
+    try {
+      const parsed = JSON.parse(raw);
+      return parsed && typeof parsed === 'object' ? parsed : {};
+    } catch (_error) {
+      return {};
+    }
+  }
+
+  protected getApplianceCapability(capabilityName: string): any {
+    const capabilities = this.getApplianceCapabilitiesSetting();
+    const targetKey = capabilityName.toLowerCase();
+    for (const key of Object.keys(capabilities)) {
+      if (key.toLowerCase() === targetKey) {
+        return capabilities[key];
+      }
+    }
+    return undefined;
+  }
+
+  protected supportsCommandValue(capabilityName: string, value: any): boolean {
+    const capabilities = this.getApplianceCapabilitiesSetting();
+    if (Object.keys(capabilities).length === 0) return true;
+    const capability = this.getApplianceCapability(capabilityName);
+    if (!capability || typeof capability !== 'object') return false;
+    const values = capability.values;
+    if (!values || typeof values !== 'object') return true;
+    const keys = Object.keys(values);
+    if (keys.length === 0) return true;
+    return Object.prototype.hasOwnProperty.call(values, String(value));
+  }
+
   private _isMissingAnyCapabilities(caps: string[]): boolean {
     for (const cap of caps) {
       if (!this.hasCapability(cap)) {

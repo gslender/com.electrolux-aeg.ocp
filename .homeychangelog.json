@@ -190,5 +190,8 @@
   },
   "1.5.8": {
     "en": "Added/removed flows and commands that do/don't exist"
+  },
+  "1.5.9": {
+    "en": "Added onoff capability for certain devices that have this executeCommand"
   }
 }

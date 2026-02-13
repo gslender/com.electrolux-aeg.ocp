@@ -3,6 +3,7 @@ import SharedDriver from '../../lib/shared_driver'
 export default class OvenDriver extends SharedDriver {
 
   static DeviceCapabilities = [
+    "onoff",
     "LIGHT_onoff",
     "measure_doorState",
     "measure_connectionState",

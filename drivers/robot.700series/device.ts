@@ -11,7 +11,7 @@ class Robot700Device extends SharedDevice {
     // Listen to multiple capabilities simultaneously
     this.registerMultipleCapabilityListener(
       [
-        "cleaning_command", "vacuum_mode"
+        "onoff", "cleaning_command", "vacuum_mode"
       ],
       (valueObj, optsObj) => this.setDeviceOpts(valueObj),
       500
@@ -22,6 +22,14 @@ class Robot700Device extends SharedDevice {
     const deviceId = this.getData().id;
 
     try {
+      if (valueObj.onoff !== undefined) {
+        const isOn = valueObj.onoff === true || valueObj.onoff === 'true';
+        const command = isOn ? 'startGlobalClean' : 'stopClean';
+        if (this.supportsCommandValue('cleaningCommand', command)) {
+          await this.app.sendDeviceCommand(deviceId, { cleaningCommand: command });
+        }
+      }
+
       // Update execute_command (generic flow card)
       if (valueObj.execute_command !== undefined) {
         this.log("execute_command: " + valueObj.execute_command);
@@ -70,6 +78,8 @@ class Robot700Device extends SharedDevice {
       await this.safeUpdateCapabilityValue("measure_applianceState", this.homey.__(`robot_state.${props.state}`));
       await this.safeUpdateCapabilityValue("measure_applianceMode", this.translateCamelCase(props.cleaningMode));
       await this.safeUpdateCapabilityValue("vacuum_mode", `${props.vacuumMode}`);
+      const normalizedState = String(props.state || '').toLowerCase();
+      await this.safeUpdateCapabilityValue("onoff", normalizedState !== '' && normalizedState !== 'idle' && normalizedState !== 'sleeping');
     } catch (error) {
       this.log("Error updating device state: ", error);
     }

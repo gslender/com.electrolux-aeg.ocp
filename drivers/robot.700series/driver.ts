@@ -3,6 +3,7 @@ import SharedDriver from '../../lib/shared_driver'
 export default class Robot700Driver extends SharedDriver {
 
   static DeviceCapabilities = [
+    "onoff",
     "cleaning_command",
     "vacuum_mode",
     "measure_battery", 

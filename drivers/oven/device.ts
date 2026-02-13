@@ -11,6 +11,7 @@ class OvenDevice extends SharedDevice {
     // Listen to multiple capabilities simultaneously
     this.registerMultipleCapabilityListener(
       [
+        "onoff",
         "LIGHT_onoff",
       ],
       (valueObj, optsObj) => this.setDeviceOpts(valueObj),
@@ -22,11 +23,22 @@ class OvenDevice extends SharedDevice {
     const deviceId = this.getData().id;
 
     try {
+      if (valueObj.onoff !== undefined) {
+        const isOn = valueObj.onoff === true || valueObj.onoff === 'true';
+        const command = isOn ? 'START' : 'STOPRESET';
+        if (this.supportsCommandValue('executeCommand', command)) {
+          await this.app.sendDeviceCommand(deviceId, { executeCommand: command });
+        }
+      }
 
       // Update execute_command
       if (valueObj.execute_command !== undefined) {
         this.log("execute_command: " + valueObj.execute_command);
-        await this.app.sendDeviceCommand(deviceId, { executeCommand: valueObj.execute_command });
+        if (this.supportsCommandValue('executeCommand', valueObj.execute_command)) {
+          await this.app.sendDeviceCommand(deviceId, { executeCommand: valueObj.execute_command });
+        } else {
+          this.log(`execute_command '${valueObj.execute_command}' not supported by device capabilities`);
+        }
       }
 
       const commandMapping: { [x: string]: string } = {
@@ -63,6 +75,9 @@ class OvenDevice extends SharedDevice {
     const props = state.properties.reported;
 
     try {
+      const normalizedState = String(props.applianceState || '').toUpperCase();
+      const isOn = normalizedState !== '' && !['IDLE', 'OFF', 'END_OF_CYCLE'].includes(normalizedState);
+      await this.safeUpdateCapabilityValue("onoff", isOn);
       await this.safeUpdateCapabilityValue("LIGHT_onoff", props.cavityLight);
       await this.safeUpdateCapabilityValue("measure_doorState", this.translateUnderscore(props.doorState));
       await this.safeUpdateCapabilityValue("measure_connectionState", this.translateUnderscore(state.connectionState));     
