@@ -196,5 +196,8 @@
   },
   "1.6.0": {
     "en": "Re-write of the entire execCommand features for all devices"
+  },
+  "1.6.1": {
+    "en": "Removed old execute_command and added i18n to the new device specific <device>_execute_command"
   }
 }

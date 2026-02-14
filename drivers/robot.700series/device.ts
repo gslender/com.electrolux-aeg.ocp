@@ -30,23 +30,6 @@ class Robot700Device extends SharedDevice {
         }
       }
 
-      // Update execute_command (generic flow card)
-      if (valueObj.execute_command !== undefined) {
-        this.log("execute_command: " + valueObj.execute_command);
-        const commandMapping: { [key: string]: string } = {
-          START: 'startGlobalClean',
-          RESUME: 'resumeClean',
-          PAUSE: 'pauseClean',
-          STOPRESET: 'stopClean',
-        };
-        const mapped = commandMapping[valueObj.execute_command];
-        if (mapped) {
-          await this.app.sendDeviceCommand(deviceId, { cleaningCommand: mapped });
-        } else {
-          this.log(`Unsupported execute_command value: ${valueObj.execute_command}`);
-        }
-      }
-
       // Update cleaning_command
       if (valueObj.cleaning_command !== undefined) {
         this.log("cleaning_command: " + valueObj.cleaning_command);
@@ -83,11 +66,6 @@ class Robot700Device extends SharedDevice {
     } catch (error) {
       this.log("Error updating device state: ", error);
     }
-  }
-
-  flow_execute_command(args: { what: string }, state: {}) {
-    this.log(`flow_execute_command: args=${stringify(args.what)} state=${stringify(state)}`);
-    return this.setDeviceOpts({ execute_command: args.what });
   }
 
   flow_execute_robot700_cleaning_command(args: { what: string }, state: {}) {

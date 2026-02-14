@@ -2,11 +2,54 @@
   "type": "enum",
   "uiComponent": "picker",
   "title": {
-    "en": "Execute Command"
+    "en": "Execute Command",
+    "de": "Befehl Ausführen",
+    "nl": "Opdracht Uitvoeren",
+    "da": "Udfør Kommando",
+    "es": "Ejecutar Comando",
+    "fr": "Exécuter Commande",
+    "it": "Esegui Comando",
+    "no": "Utfør Kommando",
+    "sv": "Utför Kommando",
+    "pl": "Wykonaj Polecenie",
+    "ru": "Выполнить Команду",
+    "ko": "명령 실행"
   },
   "values": [
-    { "id": "ON", "title": { "en": "On" } },
-    { "id": "OFF", "title": { "en": "Off" } }
+    {
+      "id": "ON",
+      "title": {
+        "en": "On",
+        "de": "Ein",
+        "nl": "Aan",
+        "da": "Til",
+        "es": "Encendido",
+        "fr": "Marche",
+        "it": "Acceso",
+        "no": "På",
+        "sv": "På",
+        "pl": "Włącz",
+        "ru": "Вкл",
+        "ko": "켜기"
+      }
+    },
+    {
+      "id": "OFF",
+      "title": {
+        "en": "Off",
+        "de": "Aus",
+        "nl": "Uit",
+        "da": "Fra",
+        "es": "Apagado",
+        "fr": "Arrêt",
+        "it": "Spento",
+        "no": "Av",
+        "sv": "Av",
+        "pl": "Wyłącz",
+        "ru": "Выкл",
+        "ko": "끄기"
+      }
+    }
   ],
   "getable": false,
   "setable": true

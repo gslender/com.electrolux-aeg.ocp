@@ -22,25 +22,6 @@ class AirConditionerDevice extends SharedDevice {
     const deviceId = this.getData().id;
 
     try {
-      // Update execute_command
-      if (valueObj.execute_command !== undefined) {
-        this.log("execute_command: " + valueObj.execute_command);
-        const commandMapping: { [x: string]: string } = {
-          START: 'ON',
-          RESUME: 'ON',
-          PAUSE: 'OFF',
-          STOPRESET: 'OFF',
-          ON: 'ON',
-          OFF: 'OFF',
-        };
-        const cmd = commandMapping[valueObj.execute_command];
-        if (cmd) {
-          await this.app.sendDeviceCommand(deviceId, { executeCommand: cmd });
-        } else {
-          this.log(`Unsupported execute_command value: ${valueObj.execute_command}`);
-        }
-      }
-
       // Update aircon_execute_command
       if (valueObj.aircon_execute_command !== undefined) {
         this.log("aircon_execute_command: " + valueObj.aircon_execute_command);
@@ -106,11 +87,6 @@ class AirConditionerDevice extends SharedDevice {
     }
   }
 
-
-  flow_execute_command(args: { what: string }, state: {}) {
-    this.log(`flow_execute_command: args=${stringify(args.what)} state=${stringify(state)}`);
-    return this.setDeviceOpts({ execute_command: args.what });
-  }
 
   flow_execute_aircon_command(args: { what: string }, state: {}) {
     this.log(`flow_execute_aircon_command: args=${stringify(args.what)} state=${stringify(state)}`);

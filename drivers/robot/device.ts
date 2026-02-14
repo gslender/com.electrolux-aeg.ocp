@@ -11,7 +11,7 @@ class RobotDevice extends SharedDevice {
     // Listen to multiple capabilities simultaneously
     this.registerMultipleCapabilityListener(
       [
-        "onoff", "execute_command", "robot_execute_command", "power_mode"
+        "onoff", "robot_execute_command", "power_mode"
       ],
       (valueObj, optsObj) => this.setDeviceOpts(valueObj),
       500
@@ -25,16 +25,7 @@ class RobotDevice extends SharedDevice {
       if (valueObj.onoff !== undefined) {
         const isOn = valueObj.onoff === true || valueObj.onoff === 'true';
         const mapped = isOn ? 'START' : 'STOPRESET';
-        valueObj.execute_command = mapped;
-      }
-
-      // Update execute_command
-      if (valueObj.execute_command !== undefined) {
-        this.log("execute_command: " + valueObj.execute_command);
-        let cmd = 'stop';
-        if (valueObj.execute_command === 'START' || valueObj.execute_command === 'RESUME') cmd = 'play';
-        if (valueObj.execute_command === 'PAUSE') cmd = 'pause';
-        await this.app.sendDeviceCommand(deviceId, { CleaningCommand: cmd });
+        valueObj.robot_execute_command = mapped;
       }
 
       // Update robot_execute_command
@@ -77,11 +68,6 @@ class RobotDevice extends SharedDevice {
     }
   }
 
-
-  flow_execute_command(args: { what: string }, state: {}) {
-    this.log(`flow_execute_command: args=${stringify(args.what)} state=${stringify(state)}`);
-    return this.setDeviceOpts({ execute_command: args.what });
-  }
 
   flow_execute_robot_command(args: { what: string }, state: {}) {
     this.log(`flow_execute_robot_command: args=${stringify(args.what)} state=${stringify(state)}`);

@@ -32,16 +32,6 @@ class OvenDevice extends SharedDevice {
         }
       }
 
-      // Update execute_command
-      if (valueObj.execute_command !== undefined) {
-        this.log("execute_command: " + valueObj.execute_command);
-        if (this.supportsCommandValue('executeCommand', valueObj.execute_command)) {
-          await this.app.sendDeviceCommand(deviceId, { executeCommand: valueObj.execute_command });
-        } else {
-          this.log(`execute_command '${valueObj.execute_command}' not supported by device capabilities`);
-        }
-      }
-
       // Update oven_execute_command
       if (valueObj.oven_execute_command !== undefined) {
         this.log("oven_execute_command: " + valueObj.oven_execute_command);
@@ -116,10 +106,6 @@ class OvenDevice extends SharedDevice {
 
   flow_disable_cavity_light(args: {}, state: {}) {
     return this.setDeviceOpts({ LIGHT_onoff: false });
-  }
-
-  flow_execute_command(args: {what: string}, state: {}) {
-    return this.setDeviceOpts({ execute_command: args.what });
   }
 
   flow_execute_oven_command(args: { what: string }, state: {}) {

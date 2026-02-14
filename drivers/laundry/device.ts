@@ -37,16 +37,6 @@ class LaundryDevice extends SharedDevice {
         }
       }
 
-      // Update execute_command
-      if (valueObj.execute_command !== undefined) {
-        this.log("execute_command: " + valueObj.execute_command);
-        if (this.supportsCommandValue('executeCommand', valueObj.execute_command)) {
-          await this.app.sendDeviceCommand(deviceId, { executeCommand: valueObj.execute_command });
-        } else {
-          this.log(`execute_command '${valueObj.execute_command}' not supported by device capabilities`);
-        }
-      }
-
       // Update laundry_execute_command
       if (valueObj.laundry_execute_command !== undefined) {
         this.log("laundry_execute_command: " + valueObj.laundry_execute_command);
@@ -109,11 +99,6 @@ class LaundryDevice extends SharedDevice {
     } catch (error) {
       this.log("Error updating device state: ", error);
     }
-  }
-
-  flow_execute_command(args: { what: string }, state: {}) {
-    this.log(`flow_execute_command: args=${stringify(args.what)} state=${stringify(state)}`);
-    return this.setDeviceOpts({ execute_command: args.what });
   }
 
   flow_execute_laundry_command(args: { what: string }, state: {}) {
