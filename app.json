@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.electrolux-aeg.ocp",
-  "version": "1.5.9",
+  "version": "1.6.0",
   "compatibility": ">=12.0.0",
   "sdk": 3,
   "platforms": [
@@ -1508,6 +1508,43 @@
       },
       {
         "title": {
+          "en": "Execute Air Conditioning Command"
+        },
+        "titleFormatted": {
+          "en": "Execute air conditioning command [[what]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=air-conditioning"
+          },
+          {
+            "type": "dropdown",
+            "name": "what",
+            "title": {
+              "en": "What command will be executed"
+            },
+            "values": [
+              {
+                "id": "ON",
+                "title": {
+                  "en": "On"
+                }
+              },
+              {
+                "id": "OFF",
+                "title": {
+                  "en": "Off"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "execute_aircon_command"
+      },
+      {
+        "title": {
           "en": "Execute Command",
           "nl": "Voer opdracht uit",
           "da": "Udfør kommando",
@@ -1631,6 +1668,269 @@
           }
         ],
         "id": "execute_command"
+      },
+      {
+        "title": {
+          "en": "Execute Dishwasher Command"
+        },
+        "titleFormatted": {
+          "en": "Execute dishwasher command [[what]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=dishwasher"
+          },
+          {
+            "type": "dropdown",
+            "name": "what",
+            "title": {
+              "en": "What command will be executed"
+            },
+            "values": [
+              {
+                "id": "START",
+                "title": {
+                  "en": "Start"
+                }
+              },
+              {
+                "id": "PAUSE",
+                "title": {
+                  "en": "Pause"
+                }
+              },
+              {
+                "id": "RESUME",
+                "title": {
+                  "en": "Resume"
+                }
+              },
+              {
+                "id": "STOPRESET",
+                "title": {
+                  "en": "Stop / Reset"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "execute_dishwasher_command"
+      },
+      {
+        "title": {
+          "en": "Execute Laundry Command"
+        },
+        "titleFormatted": {
+          "en": "Execute laundry command [[what]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=laundry"
+          },
+          {
+            "type": "dropdown",
+            "name": "what",
+            "title": {
+              "en": "What command will be executed"
+            },
+            "values": [
+              {
+                "id": "ON",
+                "title": {
+                  "en": "On"
+                }
+              },
+              {
+                "id": "OFF",
+                "title": {
+                  "en": "Off"
+                }
+              },
+              {
+                "id": "START",
+                "title": {
+                  "en": "Start"
+                }
+              },
+              {
+                "id": "PAUSE",
+                "title": {
+                  "en": "Pause"
+                }
+              },
+              {
+                "id": "RESUME",
+                "title": {
+                  "en": "Resume"
+                }
+              },
+              {
+                "id": "STOPRESET",
+                "title": {
+                  "en": "Stop / Reset"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "execute_laundry_command"
+      },
+      {
+        "title": {
+          "en": "Execute Oven Command"
+        },
+        "titleFormatted": {
+          "en": "Execute oven command [[what]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=oven"
+          },
+          {
+            "type": "dropdown",
+            "name": "what",
+            "title": {
+              "en": "What command will be executed"
+            },
+            "values": [
+              {
+                "id": "START",
+                "title": {
+                  "en": "Start"
+                }
+              },
+              {
+                "id": "STOPRESET",
+                "title": {
+                  "en": "Stop / Reset"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "execute_oven_command"
+      },
+      {
+        "title": {
+          "en": "Execute Robot Command"
+        },
+        "titleFormatted": {
+          "en": "Execute robot command [[what]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=robot"
+          },
+          {
+            "type": "dropdown",
+            "name": "what",
+            "title": {
+              "en": "What command will be executed"
+            },
+            "values": [
+              {
+                "id": "START",
+                "title": {
+                  "en": "Start"
+                }
+              },
+              {
+                "id": "PAUSE",
+                "title": {
+                  "en": "Pause"
+                }
+              },
+              {
+                "id": "RESUME",
+                "title": {
+                  "en": "Resume"
+                }
+              },
+              {
+                "id": "STOPRESET",
+                "title": {
+                  "en": "Stop / Reset"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "execute_robot_command"
+      },
+      {
+        "title": {
+          "en": "Execute Robot Cleaning Command"
+        },
+        "titleFormatted": {
+          "en": "Execute robot cleaning command [[what]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=robot.700series"
+          },
+          {
+            "type": "dropdown",
+            "name": "what",
+            "title": {
+              "en": "What cleaning command will be executed"
+            },
+            "values": [
+              {
+                "id": "pauseClean",
+                "title": {
+                  "en": "Pause Clean"
+                }
+              },
+              {
+                "id": "resumeClean",
+                "title": {
+                  "en": "Resume Clean"
+                }
+              },
+              {
+                "id": "startEdgeClean",
+                "title": {
+                  "en": "Start Edge Clean"
+                }
+              },
+              {
+                "id": "startGlobalClean",
+                "title": {
+                  "en": "Start Global Clean"
+                }
+              },
+              {
+                "id": "startGoToCharger",
+                "title": {
+                  "en": "Start Go To Charger"
+                }
+              },
+              {
+                "id": "startPointClean",
+                "title": {
+                  "en": "Start Point Clean"
+                }
+              },
+              {
+                "id": "stopClean",
+                "title": {
+                  "en": "Stop Clean"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "execute_robot700_cleaning_command"
       },
       {
         "title": {
@@ -2813,6 +3113,29 @@
     }
   ],
   "capabilities": {
+    "aircon_execute_command": {
+      "type": "enum",
+      "uiComponent": "picker",
+      "title": {
+        "en": "Execute Command"
+      },
+      "values": [
+        {
+          "id": "ON",
+          "title": {
+            "en": "On"
+          }
+        },
+        {
+          "id": "OFF",
+          "title": {
+            "en": "Off"
+          }
+        }
+      ],
+      "getable": false,
+      "setable": true
+    },
     "cleaning_command": {
       "type": "enum",
       "uiComponent": "picker",
@@ -2948,6 +3271,41 @@
             "pl": "Zatrzymaj sprzątanie",
             "ru": "Остановить очистку",
             "ko": "청소 중지"
+          }
+        }
+      ],
+      "getable": false,
+      "setable": true
+    },
+    "dishwasher_execute_command": {
+      "type": "enum",
+      "uiComponent": "picker",
+      "title": {
+        "en": "Execute Command"
+      },
+      "values": [
+        {
+          "id": "START",
+          "title": {
+            "en": "Start"
+          }
+        },
+        {
+          "id": "PAUSE",
+          "title": {
+            "en": "Pause"
+          }
+        },
+        {
+          "id": "RESUME",
+          "title": {
+            "en": "Resume"
+          }
+        },
+        {
+          "id": "STOPRESET",
+          "title": {
+            "en": "Stop / Reset"
           }
         }
       ],
@@ -3323,6 +3681,53 @@
         "ko": "이온화기 활성화"
       },
       "getable": true,
+      "setable": true
+    },
+    "laundry_execute_command": {
+      "type": "enum",
+      "uiComponent": "picker",
+      "title": {
+        "en": "Execute Command"
+      },
+      "values": [
+        {
+          "id": "ON",
+          "title": {
+            "en": "On"
+          }
+        },
+        {
+          "id": "OFF",
+          "title": {
+            "en": "Off"
+          }
+        },
+        {
+          "id": "START",
+          "title": {
+            "en": "Start"
+          }
+        },
+        {
+          "id": "PAUSE",
+          "title": {
+            "en": "Pause"
+          }
+        },
+        {
+          "id": "RESUME",
+          "title": {
+            "en": "Resume"
+          }
+        },
+        {
+          "id": "STOPRESET",
+          "title": {
+            "en": "Stop / Reset"
+          }
+        }
+      ],
+      "getable": false,
       "setable": true
     },
     "LIGHT_onoff": {
@@ -3894,6 +4299,29 @@
       "uiComponent": "sensor",
       "icon": "/assets/icons/voc.svg"
     },
+    "oven_execute_command": {
+      "type": "enum",
+      "uiComponent": "picker",
+      "title": {
+        "en": "Execute Command"
+      },
+      "values": [
+        {
+          "id": "START",
+          "title": {
+            "en": "Start"
+          }
+        },
+        {
+          "id": "STOPRESET",
+          "title": {
+            "en": "Stop / Reset"
+          }
+        }
+      ],
+      "getable": false,
+      "setable": true
+    },
     "power_mode": {
       "type": "enum",
       "uiComponent": "picker",
@@ -3965,6 +4393,41 @@
         }
       ],
       "getable": true,
+      "setable": true
+    },
+    "robot_execute_command": {
+      "type": "enum",
+      "uiComponent": "picker",
+      "title": {
+        "en": "Execute Command"
+      },
+      "values": [
+        {
+          "id": "START",
+          "title": {
+            "en": "Start"
+          }
+        },
+        {
+          "id": "PAUSE",
+          "title": {
+            "en": "Pause"
+          }
+        },
+        {
+          "id": "RESUME",
+          "title": {
+            "en": "Resume"
+          }
+        },
+        {
+          "id": "STOPRESET",
+          "title": {
+            "en": "Stop / Reset"
+          }
+        }
+      ],
+      "getable": false,
       "setable": true
     },
     "SMART_mode": {

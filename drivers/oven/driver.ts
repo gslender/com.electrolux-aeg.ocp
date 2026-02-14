@@ -4,6 +4,7 @@ export default class OvenDriver extends SharedDriver {
 
   static DeviceCapabilities = [
     "onoff",
+    "oven_execute_command",
     "LIGHT_onoff",
     "measure_doorState",
     "measure_connectionState",

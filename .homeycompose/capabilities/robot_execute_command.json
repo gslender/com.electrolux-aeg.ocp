@@ -1,0 +1,15 @@
+{
+  "type": "enum",
+  "uiComponent": "picker",
+  "title": {
+    "en": "Execute Command"
+  },
+  "values": [
+    { "id": "START", "title": { "en": "Start" } },
+    { "id": "PAUSE", "title": { "en": "Pause" } },
+    { "id": "RESUME", "title": { "en": "Resume" } },
+    { "id": "STOPRESET", "title": { "en": "Stop / Reset" } }
+  ],
+  "getable": false,
+  "setable": true
+}

@@ -11,7 +11,7 @@ class AirConditionerDevice extends SharedDevice {
     // Listen to multiple capabilities simultaneously
     this.registerMultipleCapabilityListener(
       [
-        "onoff", "target_temperature"
+        "onoff", "target_temperature", "aircon_execute_command"
       ],
       (valueObj, optsObj) => this.setDeviceOpts(valueObj),
       500
@@ -25,10 +25,31 @@ class AirConditionerDevice extends SharedDevice {
       // Update execute_command
       if (valueObj.execute_command !== undefined) {
         this.log("execute_command: " + valueObj.execute_command);
-        const cmd = valueObj.execute_command === 'START' || valueObj.execute_command === 'RESUME'
-          ? 'ON'
-          : 'OFF';
-        await this.app.sendDeviceCommand(deviceId, { executeCommand: cmd });
+        const commandMapping: { [x: string]: string } = {
+          START: 'ON',
+          RESUME: 'ON',
+          PAUSE: 'OFF',
+          STOPRESET: 'OFF',
+          ON: 'ON',
+          OFF: 'OFF',
+        };
+        const cmd = commandMapping[valueObj.execute_command];
+        if (cmd) {
+          await this.app.sendDeviceCommand(deviceId, { executeCommand: cmd });
+        } else {
+          this.log(`Unsupported execute_command value: ${valueObj.execute_command}`);
+        }
+      }
+
+      // Update aircon_execute_command
+      if (valueObj.aircon_execute_command !== undefined) {
+        this.log("aircon_execute_command: " + valueObj.aircon_execute_command);
+        const cmd = valueObj.aircon_execute_command;
+        if (cmd === 'ON' || cmd === 'OFF') {
+          await this.app.sendDeviceCommand(deviceId, { executeCommand: cmd });
+        } else {
+          this.log(`Unsupported aircon_execute_command value: ${valueObj.aircon_execute_command}`);
+        }
       }
 
       // Update onoff
@@ -89,6 +110,11 @@ class AirConditionerDevice extends SharedDevice {
   flow_execute_command(args: { what: string }, state: {}) {
     this.log(`flow_execute_command: args=${stringify(args.what)} state=${stringify(state)}`);
     return this.setDeviceOpts({ execute_command: args.what });
+  }
+
+  flow_execute_aircon_command(args: { what: string }, state: {}) {
+    this.log(`flow_execute_aircon_command: args=${stringify(args.what)} state=${stringify(state)}`);
+    return this.setDeviceOpts({ aircon_execute_command: args.what });
   }
 
 

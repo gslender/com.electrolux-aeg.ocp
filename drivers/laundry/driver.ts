@@ -4,6 +4,7 @@ export default class LaundryDriver extends SharedDriver {
 
   static DeviceCapabilities = [
     "onoff",
+    "laundry_execute_command",
     "measure_doorState",
     "measure_connectionState",
     "measure_remoteControl",

@@ -1,0 +1,20 @@
+{
+  "title": { "en": "Execute Laundry Command" },
+  "titleFormatted": { "en": "Execute laundry command [[what]]" },
+  "args": [
+    { "type": "device", "name": "device", "filter": "driver_id=laundry" },
+    {
+      "type": "dropdown",
+      "name": "what",
+      "title": { "en": "What command will be executed" },
+      "values": [
+        { "id": "ON", "title": { "en": "On" } },
+        { "id": "OFF", "title": { "en": "Off" } },
+        { "id": "START", "title": { "en": "Start" } },
+        { "id": "PAUSE", "title": { "en": "Pause" } },
+        { "id": "RESUME", "title": { "en": "Resume" } },
+        { "id": "STOPRESET", "title": { "en": "Stop / Reset" } }
+      ]
+    }
+  ]
+}

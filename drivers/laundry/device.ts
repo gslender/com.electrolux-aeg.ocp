@@ -13,6 +13,7 @@ class LaundryDevice extends SharedDevice {
     this.registerMultipleCapabilityListener(
       [
         "onoff",
+        "laundry_execute_command",
       ],
       (valueObj, optsObj) => this.setDeviceOpts(valueObj),
       500
@@ -43,6 +44,16 @@ class LaundryDevice extends SharedDevice {
           await this.app.sendDeviceCommand(deviceId, { executeCommand: valueObj.execute_command });
         } else {
           this.log(`execute_command '${valueObj.execute_command}' not supported by device capabilities`);
+        }
+      }
+
+      // Update laundry_execute_command
+      if (valueObj.laundry_execute_command !== undefined) {
+        this.log("laundry_execute_command: " + valueObj.laundry_execute_command);
+        if (this.supportsCommandValue('executeCommand', valueObj.laundry_execute_command)) {
+          await this.app.sendDeviceCommand(deviceId, { executeCommand: valueObj.laundry_execute_command });
+        } else {
+          this.log(`laundry_execute_command '${valueObj.laundry_execute_command}' not supported by device capabilities`);
         }
       }
 
@@ -103,6 +114,11 @@ class LaundryDevice extends SharedDevice {
   flow_execute_command(args: { what: string }, state: {}) {
     this.log(`flow_execute_command: args=${stringify(args.what)} state=${stringify(state)}`);
     return this.setDeviceOpts({ execute_command: args.what });
+  }
+
+  flow_execute_laundry_command(args: { what: string }, state: {}) {
+    this.log(`flow_execute_laundry_command: args=${stringify(args.what)} state=${stringify(state)}`);
+    return this.setDeviceOpts({ laundry_execute_command: args.what });
   }
 
   flow_cyclePhase_is(args: { value: string }, state: {}) {

@@ -4,6 +4,7 @@ export default class RobotDriver extends SharedDriver {
 
   static DeviceCapabilities = [
     "onoff",
+    "robot_execute_command",
     "execute_command",
     "measure_battery", 
     "measure_applianceState", 

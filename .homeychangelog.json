@@ -193,5 +193,8 @@
   },
   "1.5.9": {
     "en": "Added onoff capability for certain devices that have this executeCommand"
+  },
+  "1.6.0": {
+    "en": "Re-write of the entire execCommand features for all devices"
   }
 }

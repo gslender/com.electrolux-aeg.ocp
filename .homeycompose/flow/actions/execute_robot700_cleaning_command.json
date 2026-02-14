@@ -1,0 +1,21 @@
+{
+  "title": { "en": "Execute Robot Cleaning Command" },
+  "titleFormatted": { "en": "Execute robot cleaning command [[what]]" },
+  "args": [
+    { "type": "device", "name": "device", "filter": "driver_id=robot.700series" },
+    {
+      "type": "dropdown",
+      "name": "what",
+      "title": { "en": "What cleaning command will be executed" },
+      "values": [
+        { "id": "pauseClean", "title": { "en": "Pause Clean" } },
+        { "id": "resumeClean", "title": { "en": "Resume Clean" } },
+        { "id": "startEdgeClean", "title": { "en": "Start Edge Clean" } },
+        { "id": "startGlobalClean", "title": { "en": "Start Global Clean" } },
+        { "id": "startGoToCharger", "title": { "en": "Start Go To Charger" } },
+        { "id": "startPointClean", "title": { "en": "Start Point Clean" } },
+        { "id": "stopClean", "title": { "en": "Stop Clean" } }
+      ]
+    }
+  ]
+}

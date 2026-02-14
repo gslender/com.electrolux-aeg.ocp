@@ -1,0 +1,13 @@
+{
+  "type": "enum",
+  "uiComponent": "picker",
+  "title": {
+    "en": "Execute Command"
+  },
+  "values": [
+    { "id": "ON", "title": { "en": "On" } },
+    { "id": "OFF", "title": { "en": "Off" } }
+  ],
+  "getable": false,
+  "setable": true
+}

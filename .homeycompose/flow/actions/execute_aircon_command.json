@@ -1,0 +1,16 @@
+{
+  "title": { "en": "Execute Air Conditioning Command" },
+  "titleFormatted": { "en": "Execute air conditioning command [[what]]" },
+  "args": [
+    { "type": "device", "name": "device", "filter": "driver_id=air-conditioning" },
+    {
+      "type": "dropdown",
+      "name": "what",
+      "title": { "en": "What command will be executed" },
+      "values": [
+        { "id": "ON", "title": { "en": "On" } },
+        { "id": "OFF", "title": { "en": "Off" } }
+      ]
+    }
+  ]
+}

@@ -12,6 +12,7 @@ class OvenDevice extends SharedDevice {
     this.registerMultipleCapabilityListener(
       [
         "onoff",
+        "oven_execute_command",
         "LIGHT_onoff",
       ],
       (valueObj, optsObj) => this.setDeviceOpts(valueObj),
@@ -38,6 +39,16 @@ class OvenDevice extends SharedDevice {
           await this.app.sendDeviceCommand(deviceId, { executeCommand: valueObj.execute_command });
         } else {
           this.log(`execute_command '${valueObj.execute_command}' not supported by device capabilities`);
+        }
+      }
+
+      // Update oven_execute_command
+      if (valueObj.oven_execute_command !== undefined) {
+        this.log("oven_execute_command: " + valueObj.oven_execute_command);
+        if (this.supportsCommandValue('executeCommand', valueObj.oven_execute_command)) {
+          await this.app.sendDeviceCommand(deviceId, { executeCommand: valueObj.oven_execute_command });
+        } else {
+          this.log(`oven_execute_command '${valueObj.oven_execute_command}' not supported by device capabilities`);
         }
       }
 
@@ -109,6 +120,10 @@ class OvenDevice extends SharedDevice {
 
   flow_execute_command(args: {what: string}, state: {}) {
     return this.setDeviceOpts({ execute_command: args.what });
+  }
+
+  flow_execute_oven_command(args: { what: string }, state: {}) {
+    return this.setDeviceOpts({ oven_execute_command: args.what });
   }
 
   flow_cyclePhase_is(args: { value: string }, state: {}) {

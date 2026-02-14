@@ -12,6 +12,7 @@ class DishwasherDevice extends SharedDevice {
     this.registerMultipleCapabilityListener(
       [
         "onoff",
+        "dishwasher_execute_command",
       ],
       (valueObj, optsObj) => this.setDeviceOpts(valueObj),
       500
@@ -27,6 +28,16 @@ class DishwasherDevice extends SharedDevice {
         const command = isOn ? 'START' : 'STOPRESET';
         if (this.supportsCommandValue('executeCommand', command)) {
           await this.app.sendDeviceCommand(deviceId, { executeCommand: command });
+        }
+      }
+
+      // Update dishwasher_execute_command
+      if (valueObj.dishwasher_execute_command !== undefined) {
+        this.log("dishwasher_execute_command: " + valueObj.dishwasher_execute_command);
+        if (this.supportsCommandValue('executeCommand', valueObj.dishwasher_execute_command)) {
+          await this.app.sendDeviceCommand(deviceId, { executeCommand: valueObj.dishwasher_execute_command });
+        } else {
+          this.log(`dishwasher_execute_command '${valueObj.dishwasher_execute_command}' not supported by device capabilities`);
         }
       }
 
@@ -103,6 +114,11 @@ class DishwasherDevice extends SharedDevice {
   flow_remoteControl_is(args: { value: string }, state: {}) {
     this.log(`flow_remoteControl_is: args=${stringify(args.value)} state=${stringify(state)}`);
     return this.compareCaseInsensitiveString(args.value,this.getCapabilityValue("measure_remoteControl"));
+  }
+
+  flow_execute_dishwasher_command(args: { what: string }, state: {}) {
+    this.log(`flow_execute_dishwasher_command: args=${stringify(args.what)} state=${stringify(state)}`);
+    return this.setDeviceOpts({ dishwasher_execute_command: args.what });
   }
 }
 

@@ -4,6 +4,7 @@ export default class AirConditionerDriver extends SharedDriver {
 
   static DeviceCapabilities = [
     "onoff",
+    "aircon_execute_command",
     "measure_connectionState",
     "measure_applianceState",
     "measure_applianceMode", 

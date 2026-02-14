@@ -20,6 +20,12 @@ export default class ElectroluxAEGApp extends Homey.App {
     // this.homey.settings.unset('ocp.password');
 
     this.registerFlowCardAction("execute_command");
+    this.registerFlowCardAction("execute_oven_command");
+    this.registerFlowCardAction("execute_dishwasher_command");
+    this.registerFlowCardAction("execute_laundry_command");
+    this.registerFlowCardAction("execute_aircon_command");
+    this.registerFlowCardAction("execute_robot_command");
+    this.registerFlowCardAction("execute_robot700_cleaning_command");
     this.registerFlowCardAction("enable_cavity_light");
     this.registerFlowCardAction("disable_cavity_light");
     this.registerFlowCardAction("set_fan_speed");

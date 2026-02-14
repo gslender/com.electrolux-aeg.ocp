@@ -4,6 +4,7 @@ export default class DishwasherDriver extends SharedDriver {
 
   static DeviceCapabilities = [
     "onoff",
+    "dishwasher_execute_command",
     "measure_doorState",
     "measure_connectionState",
     "measure_remoteControl",

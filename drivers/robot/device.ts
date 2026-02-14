@@ -11,7 +11,7 @@ class RobotDevice extends SharedDevice {
     // Listen to multiple capabilities simultaneously
     this.registerMultipleCapabilityListener(
       [
-        "onoff", "execute_command", "power_mode"
+        "onoff", "execute_command", "robot_execute_command", "power_mode"
       ],
       (valueObj, optsObj) => this.setDeviceOpts(valueObj),
       500
@@ -34,6 +34,15 @@ class RobotDevice extends SharedDevice {
         let cmd = 'stop';
         if (valueObj.execute_command === 'START' || valueObj.execute_command === 'RESUME') cmd = 'play';
         if (valueObj.execute_command === 'PAUSE') cmd = 'pause';
+        await this.app.sendDeviceCommand(deviceId, { CleaningCommand: cmd });
+      }
+
+      // Update robot_execute_command
+      if (valueObj.robot_execute_command !== undefined) {
+        this.log("robot_execute_command: " + valueObj.robot_execute_command);
+        let cmd = 'stop';
+        if (valueObj.robot_execute_command === 'START' || valueObj.robot_execute_command === 'RESUME') cmd = 'play';
+        if (valueObj.robot_execute_command === 'PAUSE') cmd = 'pause';
         await this.app.sendDeviceCommand(deviceId, { CleaningCommand: cmd });
       }
 
@@ -72,6 +81,11 @@ class RobotDevice extends SharedDevice {
   flow_execute_command(args: { what: string }, state: {}) {
     this.log(`flow_execute_command: args=${stringify(args.what)} state=${stringify(state)}`);
     return this.setDeviceOpts({ execute_command: args.what });
+  }
+
+  flow_execute_robot_command(args: { what: string }, state: {}) {
+    this.log(`flow_execute_robot_command: args=${stringify(args.what)} state=${stringify(state)}`);
+    return this.setDeviceOpts({ robot_execute_command: args.what });
   }
 
   flow_applianceState_is(args: { value: string }, state: {}) {
