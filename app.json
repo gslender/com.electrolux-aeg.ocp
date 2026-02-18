@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.electrolux-aeg.ocp",
-  "version": "1.6.1",
+  "version": "1.6.2",
   "compatibility": ">=12.0.0",
   "sdk": 3,
   "platforms": [
@@ -1508,10 +1508,32 @@
       },
       {
         "title": {
-          "en": "Execute Air Conditioning Command"
+          "en": "Execute Air Conditioning Command",
+          "de": "Klimaanlagenbefehl ausführen",
+          "nl": "Airconditioningopdracht uitvoeren",
+          "da": "Udfør klimaanlægskommando",
+          "es": "Ejecutar comando del aire acondicionado",
+          "fr": "Exécuter la commande de climatisation",
+          "it": "Esegui comando del condizionatore",
+          "no": "Utfør klimaanleggskommando",
+          "sv": "Utför luftkonditioneringskommando",
+          "pl": "Wykonaj polecenie klimatyzacji",
+          "ru": "Выполнить команду кондиционера",
+          "ko": "에어컨 명령 실행"
         },
         "titleFormatted": {
-          "en": "Execute air conditioning command [[what]]"
+          "en": "Execute air conditioning command [[what]]",
+          "de": "Klimaanlagenbefehl ausführen: [[what]]",
+          "nl": "Airconditioningopdracht uitvoeren: [[what]]",
+          "da": "Udfør klimaanlægskommando: [[what]]",
+          "es": "Ejecutar comando del aire acondicionado: [[what]]",
+          "fr": "Exécuter la commande de climatisation : [[what]]",
+          "it": "Esegui comando del condizionatore: [[what]]",
+          "no": "Utfør klimaanleggskommando: [[what]]",
+          "sv": "Utför luftkonditioneringskommando: [[what]]",
+          "pl": "Wykonaj polecenie klimatyzacji: [[what]]",
+          "ru": "Выполнить команду кондиционера: [[what]]",
+          "ko": "에어컨 명령 실행: [[what]]"
         },
         "args": [
           {
@@ -1523,19 +1545,52 @@
             "type": "dropdown",
             "name": "what",
             "title": {
-              "en": "What command will be executed"
+              "en": "What command will be executed",
+              "de": "Welcher Befehl wird ausgeführt",
+              "nl": "Welke opdracht wordt uitgevoerd",
+              "da": "Hvilken kommando skal udføres",
+              "es": "Qué comando se ejecutará",
+              "fr": "Quelle commande sera exécutée",
+              "it": "Quale comando verrà eseguito",
+              "no": "Hvilken kommando skal utføres",
+              "sv": "Vilket kommando ska utföras",
+              "pl": "Które polecenie zostanie wykonane",
+              "ru": "Какая команда будет выполнена",
+              "ko": "실행할 명령"
             },
             "values": [
               {
                 "id": "ON",
                 "title": {
-                  "en": "On"
+                  "en": "On",
+                  "de": "Ein",
+                  "nl": "Aan",
+                  "da": "Tænd",
+                  "es": "Encender",
+                  "fr": "Allumer",
+                  "it": "Accendi",
+                  "no": "På",
+                  "sv": "På",
+                  "pl": "Włącz",
+                  "ru": "Вкл.",
+                  "ko": "켜기"
                 }
               },
               {
                 "id": "OFF",
                 "title": {
-                  "en": "Off"
+                  "en": "Off",
+                  "de": "Aus",
+                  "nl": "Uit",
+                  "da": "Sluk",
+                  "es": "Apagar",
+                  "fr": "Éteindre",
+                  "it": "Spegni",
+                  "no": "Av",
+                  "sv": "Av",
+                  "pl": "Wyłącz",
+                  "ru": "Выкл.",
+                  "ko": "끄기"
                 }
               }
             ]
@@ -1545,10 +1600,32 @@
       },
       {
         "title": {
-          "en": "Execute Dishwasher Command"
+          "en": "Execute Dishwasher Command",
+          "de": "Geschirrspülerbefehl ausführen",
+          "nl": "Vaatwasseropdracht uitvoeren",
+          "da": "Udfør opvaskemaskinekommando",
+          "es": "Ejecutar comando del lavavajillas",
+          "fr": "Exécuter la commande du lave-vaisselle",
+          "it": "Esegui comando della lavastoviglie",
+          "no": "Utfør oppvaskmaskinkommando",
+          "sv": "Utför diskmaskinskommando",
+          "pl": "Wykonaj polecenie zmywarki",
+          "ru": "Выполнить команду посудомоечной машины",
+          "ko": "식기세척기 명령 실행"
         },
         "titleFormatted": {
-          "en": "Execute dishwasher command [[what]]"
+          "en": "Execute dishwasher command [[what]]",
+          "de": "Geschirrspülerbefehl ausführen: [[what]]",
+          "nl": "Vaatwasseropdracht uitvoeren: [[what]]",
+          "da": "Udfør opvaskemaskinekommando: [[what]]",
+          "es": "Ejecutar comando del lavavajillas: [[what]]",
+          "fr": "Exécuter la commande du lave-vaisselle : [[what]]",
+          "it": "Esegui comando della lavastoviglie: [[what]]",
+          "no": "Utfør oppvaskmaskinkommando: [[what]]",
+          "sv": "Utför diskmaskinskommando: [[what]]",
+          "pl": "Wykonaj polecenie zmywarki: [[what]]",
+          "ru": "Выполнить команду посудомоечной машины: [[what]]",
+          "ko": "식기세척기 명령 실행: [[what]]"
         },
         "args": [
           {
@@ -1560,31 +1637,86 @@
             "type": "dropdown",
             "name": "what",
             "title": {
-              "en": "What command will be executed"
+              "en": "What command will be executed",
+              "de": "Welcher Befehl wird ausgeführt",
+              "nl": "Welke opdracht wordt uitgevoerd",
+              "da": "Hvilken kommando skal udføres",
+              "es": "Qué comando se ejecutará",
+              "fr": "Quelle commande sera exécutée",
+              "it": "Quale comando verrà eseguito",
+              "no": "Hvilken kommando skal utføres",
+              "sv": "Vilket kommando ska utföras",
+              "pl": "Które polecenie zostanie wykonane",
+              "ru": "Какая команда будет выполнена",
+              "ko": "실행할 명령"
             },
             "values": [
               {
                 "id": "START",
                 "title": {
-                  "en": "Start"
+                  "en": "Start",
+                  "de": "Start",
+                  "nl": "Start",
+                  "da": "Start",
+                  "es": "Iniciar",
+                  "fr": "Démarrer",
+                  "it": "Avvia",
+                  "no": "Start",
+                  "sv": "Starta",
+                  "pl": "Start",
+                  "ru": "Запуск",
+                  "ko": "시작"
                 }
               },
               {
                 "id": "PAUSE",
                 "title": {
-                  "en": "Pause"
+                  "en": "Pause",
+                  "de": "Pause",
+                  "nl": "Pauze",
+                  "da": "Pause",
+                  "es": "Pausa",
+                  "fr": "Pause",
+                  "it": "Pausa",
+                  "no": "Pause",
+                  "sv": "Paus",
+                  "pl": "Pauza",
+                  "ru": "Пауза",
+                  "ko": "일시정지"
                 }
               },
               {
                 "id": "RESUME",
                 "title": {
-                  "en": "Resume"
+                  "en": "Resume",
+                  "de": "Fortsetzen",
+                  "nl": "Hervatten",
+                  "da": "Genoptag",
+                  "es": "Reanudar",
+                  "fr": "Reprendre",
+                  "it": "Riprendi",
+                  "no": "Gjenoppta",
+                  "sv": "Återuppta",
+                  "pl": "Wznów",
+                  "ru": "Возобновить",
+                  "ko": "재개"
                 }
               },
               {
                 "id": "STOPRESET",
                 "title": {
-                  "en": "Stop / Reset"
+                  "en": "Stop / Reset",
+                  "de": "Stopp / Zurücksetzen",
+                  "nl": "Stop / Reset",
+                  "da": "Stop / Nulstil",
+                  "es": "Detener / Restablecer",
+                  "fr": "Arrêter / Réinitialiser",
+                  "it": "Ferma / Reimposta",
+                  "no": "Stopp / Tilbakestill",
+                  "sv": "Stoppa / Återställ",
+                  "pl": "Zatrzymaj / Resetuj",
+                  "ru": "Остановить / Сброс",
+                  "ko": "중지 / 재설정"
                 }
               }
             ]
@@ -1594,10 +1726,32 @@
       },
       {
         "title": {
-          "en": "Execute Laundry Command"
+          "en": "Execute Laundry Command",
+          "de": "Waschbefehl ausführen",
+          "nl": "Wasopdracht uitvoeren",
+          "da": "Udfør vaskekommando",
+          "es": "Ejecutar comando de lavado",
+          "fr": "Exécuter la commande de lavage",
+          "it": "Esegui comando di lavaggio",
+          "no": "Utfør vaskekommando",
+          "sv": "Utför tvättkommando",
+          "pl": "Wykonaj polecenie prania",
+          "ru": "Выполнить команду стирки",
+          "ko": "세탁 명령 실행"
         },
         "titleFormatted": {
-          "en": "Execute laundry command [[what]]"
+          "en": "Execute laundry command [[what]]",
+          "de": "Waschbefehl ausführen: [[what]]",
+          "nl": "Wasopdracht uitvoeren: [[what]]",
+          "da": "Udfør vaskekommando: [[what]]",
+          "es": "Ejecutar comando de lavado: [[what]]",
+          "fr": "Exécuter la commande de lavage : [[what]]",
+          "it": "Esegui comando di lavaggio: [[what]]",
+          "no": "Utfør vaskekommando: [[what]]",
+          "sv": "Utför tvättkommando: [[what]]",
+          "pl": "Wykonaj polecenie prania: [[what]]",
+          "ru": "Выполнить команду стирки: [[what]]",
+          "ko": "세탁 명령 실행: [[what]]"
         },
         "args": [
           {
@@ -1609,43 +1763,120 @@
             "type": "dropdown",
             "name": "what",
             "title": {
-              "en": "What command will be executed"
+              "en": "What command will be executed",
+              "de": "Welcher Befehl wird ausgeführt",
+              "nl": "Welke opdracht wordt uitgevoerd",
+              "da": "Hvilken kommando skal udføres",
+              "es": "Qué comando se ejecutará",
+              "fr": "Quelle commande sera exécutée",
+              "it": "Quale comando verrà eseguito",
+              "no": "Hvilken kommando skal utføres",
+              "sv": "Vilket kommando ska utföras",
+              "pl": "Które polecenie zostanie wykonane",
+              "ru": "Какая команда будет выполнена",
+              "ko": "실행할 명령"
             },
             "values": [
               {
                 "id": "ON",
                 "title": {
-                  "en": "On"
+                  "en": "On",
+                  "de": "Ein",
+                  "nl": "Aan",
+                  "da": "Tænd",
+                  "es": "Encender",
+                  "fr": "Allumer",
+                  "it": "Accendi",
+                  "no": "På",
+                  "sv": "På",
+                  "pl": "Włącz",
+                  "ru": "Вкл.",
+                  "ko": "켜기"
                 }
               },
               {
                 "id": "OFF",
                 "title": {
-                  "en": "Off"
+                  "en": "Off",
+                  "de": "Aus",
+                  "nl": "Uit",
+                  "da": "Sluk",
+                  "es": "Apagar",
+                  "fr": "Éteindre",
+                  "it": "Spegni",
+                  "no": "Av",
+                  "sv": "Av",
+                  "pl": "Wyłącz",
+                  "ru": "Выкл.",
+                  "ko": "끄기"
                 }
               },
               {
                 "id": "START",
                 "title": {
-                  "en": "Start"
+                  "en": "Start",
+                  "de": "Start",
+                  "nl": "Start",
+                  "da": "Start",
+                  "es": "Iniciar",
+                  "fr": "Démarrer",
+                  "it": "Avvia",
+                  "no": "Start",
+                  "sv": "Starta",
+                  "pl": "Start",
+                  "ru": "Запуск",
+                  "ko": "시작"
                 }
               },
               {
                 "id": "PAUSE",
                 "title": {
-                  "en": "Pause"
+                  "en": "Pause",
+                  "de": "Pause",
+                  "nl": "Pauze",
+                  "da": "Pause",
+                  "es": "Pausa",
+                  "fr": "Pause",
+                  "it": "Pausa",
+                  "no": "Pause",
+                  "sv": "Paus",
+                  "pl": "Pauza",
+                  "ru": "Пауза",
+                  "ko": "일시정지"
                 }
               },
               {
                 "id": "RESUME",
                 "title": {
-                  "en": "Resume"
+                  "en": "Resume",
+                  "de": "Fortsetzen",
+                  "nl": "Hervatten",
+                  "da": "Genoptag",
+                  "es": "Reanudar",
+                  "fr": "Reprendre",
+                  "it": "Riprendi",
+                  "no": "Gjenoppta",
+                  "sv": "Återuppta",
+                  "pl": "Wznów",
+                  "ru": "Возобновить",
+                  "ko": "재개"
                 }
               },
               {
                 "id": "STOPRESET",
                 "title": {
-                  "en": "Stop / Reset"
+                  "en": "Stop / Reset",
+                  "de": "Stopp / Zurücksetzen",
+                  "nl": "Stop / Reset",
+                  "da": "Stop / Nulstil",
+                  "es": "Detener / Restablecer",
+                  "fr": "Arrêter / Réinitialiser",
+                  "it": "Ferma / Reimposta",
+                  "no": "Stopp / Tilbakestill",
+                  "sv": "Stoppa / Återställ",
+                  "pl": "Zatrzymaj / Resetuj",
+                  "ru": "Остановить / Сброс",
+                  "ko": "중지 / 재설정"
                 }
               }
             ]
@@ -1655,10 +1886,32 @@
       },
       {
         "title": {
-          "en": "Execute Oven Command"
+          "en": "Execute Oven Command",
+          "de": "Ofenbefehl ausführen",
+          "nl": "Ovenopdracht uitvoeren",
+          "da": "Udfør ovnkommando",
+          "es": "Ejecutar comando del horno",
+          "fr": "Exécuter la commande du four",
+          "it": "Esegui comando del forno",
+          "no": "Utfør ovnskommando",
+          "sv": "Utför ugnskommando",
+          "pl": "Wykonaj polecenie piekarnika",
+          "ru": "Выполнить команду духовки",
+          "ko": "오븐 명령 실행"
         },
         "titleFormatted": {
-          "en": "Execute oven command [[what]]"
+          "en": "Execute oven command [[what]]",
+          "de": "Ofenbefehl ausführen: [[what]]",
+          "nl": "Ovenopdracht uitvoeren: [[what]]",
+          "da": "Udfør ovnkommando: [[what]]",
+          "es": "Ejecutar comando del horno: [[what]]",
+          "fr": "Exécuter la commande du four : [[what]]",
+          "it": "Esegui comando del forno: [[what]]",
+          "no": "Utfør ovnskommando: [[what]]",
+          "sv": "Utför ugnskommando: [[what]]",
+          "pl": "Wykonaj polecenie piekarnika: [[what]]",
+          "ru": "Выполнить команду духовки: [[what]]",
+          "ko": "오븐 명령 실행: [[what]]"
         },
         "args": [
           {
@@ -1670,19 +1923,52 @@
             "type": "dropdown",
             "name": "what",
             "title": {
-              "en": "What command will be executed"
+              "en": "What command will be executed",
+              "de": "Welcher Befehl wird ausgeführt",
+              "nl": "Welke opdracht wordt uitgevoerd",
+              "da": "Hvilken kommando skal udføres",
+              "es": "Qué comando se ejecutará",
+              "fr": "Quelle commande sera exécutée",
+              "it": "Quale comando verrà eseguito",
+              "no": "Hvilken kommando skal utføres",
+              "sv": "Vilket kommando ska utföras",
+              "pl": "Które polecenie zostanie wykonane",
+              "ru": "Какая команда будет выполнена",
+              "ko": "실행할 명령"
             },
             "values": [
               {
                 "id": "START",
                 "title": {
-                  "en": "Start"
+                  "en": "Start",
+                  "de": "Start",
+                  "nl": "Start",
+                  "da": "Start",
+                  "es": "Iniciar",
+                  "fr": "Démarrer",
+                  "it": "Avvia",
+                  "no": "Start",
+                  "sv": "Starta",
+                  "pl": "Start",
+                  "ru": "Запуск",
+                  "ko": "시작"
                 }
               },
               {
                 "id": "STOPRESET",
                 "title": {
-                  "en": "Stop / Reset"
+                  "en": "Stop / Reset",
+                  "de": "Stopp / Zurücksetzen",
+                  "nl": "Stop / Reset",
+                  "da": "Stop / Nulstil",
+                  "es": "Detener / Restablecer",
+                  "fr": "Arrêter / Réinitialiser",
+                  "it": "Ferma / Reimposta",
+                  "no": "Stopp / Tilbakestill",
+                  "sv": "Stoppa / Återställ",
+                  "pl": "Zatrzymaj / Resetuj",
+                  "ru": "Остановить / Сброс",
+                  "ko": "중지 / 재설정"
                 }
               }
             ]
@@ -1692,10 +1978,32 @@
       },
       {
         "title": {
-          "en": "Execute Robot Command"
+          "en": "Execute Robot Command",
+          "de": "Roboterbefehl ausführen",
+          "nl": "Robotopdracht uitvoeren",
+          "da": "Udfør robotkommando",
+          "es": "Ejecutar comando del robot",
+          "fr": "Exécuter la commande du robot",
+          "it": "Esegui comando del robot",
+          "no": "Utfør robotkommando",
+          "sv": "Utför robotkommando",
+          "pl": "Wykonaj polecenie robota",
+          "ru": "Выполнить команду робота",
+          "ko": "로봇 명령 실행"
         },
         "titleFormatted": {
-          "en": "Execute robot command [[what]]"
+          "en": "Execute robot command [[what]]",
+          "de": "Roboterbefehl ausführen: [[what]]",
+          "nl": "Robotopdracht uitvoeren: [[what]]",
+          "da": "Udfør robotkommando: [[what]]",
+          "es": "Ejecutar comando del robot: [[what]]",
+          "fr": "Exécuter la commande du robot : [[what]]",
+          "it": "Esegui comando del robot: [[what]]",
+          "no": "Utfør robotkommando: [[what]]",
+          "sv": "Utför robotkommando: [[what]]",
+          "pl": "Wykonaj polecenie robota: [[what]]",
+          "ru": "Выполнить команду робота: [[what]]",
+          "ko": "로봇 명령 실행: [[what]]"
         },
         "args": [
           {
@@ -1707,31 +2015,86 @@
             "type": "dropdown",
             "name": "what",
             "title": {
-              "en": "What command will be executed"
+              "en": "What command will be executed",
+              "de": "Welcher Befehl wird ausgeführt",
+              "nl": "Welke opdracht wordt uitgevoerd",
+              "da": "Hvilken kommando skal udføres",
+              "es": "Qué comando se ejecutará",
+              "fr": "Quelle commande sera exécutée",
+              "it": "Quale comando verrà eseguito",
+              "no": "Hvilken kommando skal utføres",
+              "sv": "Vilket kommando ska utföras",
+              "pl": "Które polecenie zostanie wykonane",
+              "ru": "Какая команда будет выполнена",
+              "ko": "실행할 명령"
             },
             "values": [
               {
                 "id": "START",
                 "title": {
-                  "en": "Start"
+                  "en": "Start",
+                  "de": "Start",
+                  "nl": "Start",
+                  "da": "Start",
+                  "es": "Iniciar",
+                  "fr": "Démarrer",
+                  "it": "Avvia",
+                  "no": "Start",
+                  "sv": "Starta",
+                  "pl": "Start",
+                  "ru": "Запуск",
+                  "ko": "시작"
                 }
               },
               {
                 "id": "PAUSE",
                 "title": {
-                  "en": "Pause"
+                  "en": "Pause",
+                  "de": "Pause",
+                  "nl": "Pauze",
+                  "da": "Pause",
+                  "es": "Pausa",
+                  "fr": "Pause",
+                  "it": "Pausa",
+                  "no": "Pause",
+                  "sv": "Paus",
+                  "pl": "Pauza",
+                  "ru": "Пауза",
+                  "ko": "일시정지"
                 }
               },
               {
                 "id": "RESUME",
                 "title": {
-                  "en": "Resume"
+                  "en": "Resume",
+                  "de": "Fortsetzen",
+                  "nl": "Hervatten",
+                  "da": "Genoptag",
+                  "es": "Reanudar",
+                  "fr": "Reprendre",
+                  "it": "Riprendi",
+                  "no": "Gjenoppta",
+                  "sv": "Återuppta",
+                  "pl": "Wznów",
+                  "ru": "Возобновить",
+                  "ko": "재개"
                 }
               },
               {
                 "id": "STOPRESET",
                 "title": {
-                  "en": "Stop / Reset"
+                  "en": "Stop / Reset",
+                  "de": "Stopp / Zurücksetzen",
+                  "nl": "Stop / Reset",
+                  "da": "Stop / Nulstil",
+                  "es": "Detener / Restablecer",
+                  "fr": "Arrêter / Réinitialiser",
+                  "it": "Ferma / Reimposta",
+                  "no": "Stopp / Tilbakestill",
+                  "sv": "Stoppa / Återställ",
+                  "pl": "Zatrzymaj / Resetuj",
+                  "ru": "Остановить / Сброс",
+                  "ko": "중지 / 재설정"
                 }
               }
             ]
@@ -1741,10 +2104,32 @@
       },
       {
         "title": {
-          "en": "Execute Robot Cleaning Command"
+          "en": "Execute Robot Cleaning Command",
+          "de": "Roboter Reinigungsbefehl ausführen",
+          "nl": "Robotreinigingsopdracht uitvoeren",
+          "da": "Udfør robotrengøringskommando",
+          "es": "Ejecutar comando de limpieza del robot",
+          "fr": "Exécuter la commande de nettoyage du robot",
+          "it": "Esegui comando di pulizia del robot",
+          "no": "Utfør robotrengjøringskommando",
+          "sv": "Utför robotstädkommando",
+          "pl": "Wykonaj polecenie sprzątania robota",
+          "ru": "Выполнить команду уборки робота",
+          "ko": "로봇 청소 명령 실행"
         },
         "titleFormatted": {
-          "en": "Execute robot cleaning command [[what]]"
+          "en": "Execute robot cleaning command [[what]]",
+          "de": "Roboter Reinigungsbefehl ausführen: [[what]]",
+          "nl": "Robotreinigingsopdracht uitvoeren: [[what]]",
+          "da": "Udfør robotrengøringskommando: [[what]]",
+          "es": "Ejecutar comando de limpieza del robot: [[what]]",
+          "fr": "Exécuter la commande de nettoyage du robot : [[what]]",
+          "it": "Esegui comando di pulizia del robot: [[what]]",
+          "no": "Utfør robotrengjøringskommando: [[what]]",
+          "sv": "Utför robotstädkommando: [[what]]",
+          "pl": "Wykonaj polecenie sprzątania robota: [[what]]",
+          "ru": "Выполнить команду уборки робота: [[what]]",
+          "ko": "로봇 청소 명령 실행: [[what]]"
         },
         "args": [
           {
@@ -1756,49 +2141,137 @@
             "type": "dropdown",
             "name": "what",
             "title": {
-              "en": "What cleaning command will be executed"
+              "en": "What cleaning command will be executed",
+              "de": "Welcher Reinigungsbefehl wird ausgeführt",
+              "nl": "Welke reinigingsopdracht wordt uitgevoerd",
+              "da": "Hvilken rengøringskommando skal udføres",
+              "es": "Qué comando de limpieza se ejecutará",
+              "fr": "Quelle commande de nettoyage sera exécutée",
+              "it": "Quale comando di pulizia verrà eseguito",
+              "no": "Hvilken rengjøringskommando skal utføres",
+              "sv": "Vilket städkommando ska utföras",
+              "pl": "Które polecenie sprzątania zostanie wykonane",
+              "ru": "Какая команда уборки будет выполнена",
+              "ko": "실행할 청소 명령"
             },
             "values": [
               {
                 "id": "pauseClean",
                 "title": {
-                  "en": "Pause Clean"
+                  "en": "Pause Clean",
+                  "de": "Reinigung pausieren",
+                  "nl": "Reiniging pauzeren",
+                  "da": "Sæt rengøring på pause",
+                  "es": "Pausar limpieza",
+                  "fr": "Mettre le nettoyage en pause",
+                  "it": "Metti in pausa la pulizia",
+                  "no": "Sett rengjøring på pause",
+                  "sv": "Pausa städning",
+                  "pl": "Wstrzymaj sprzątanie",
+                  "ru": "Пауза уборки",
+                  "ko": "청소 일시정지"
                 }
               },
               {
                 "id": "resumeClean",
                 "title": {
-                  "en": "Resume Clean"
+                  "en": "Resume Clean",
+                  "de": "Reinigung fortsetzen",
+                  "nl": "Reiniging hervatten",
+                  "da": "Genoptag rengøring",
+                  "es": "Reanudar limpieza",
+                  "fr": "Reprendre le nettoyage",
+                  "it": "Riprendi la pulizia",
+                  "no": "Gjenoppta rengjøring",
+                  "sv": "Återuppta städning",
+                  "pl": "Wznów sprzątanie",
+                  "ru": "Возобновить уборку",
+                  "ko": "청소 재개"
                 }
               },
               {
                 "id": "startEdgeClean",
                 "title": {
-                  "en": "Start Edge Clean"
+                  "en": "Start Edge Clean",
+                  "de": "Kantenreinigung starten",
+                  "nl": "Randreiniging starten",
+                  "da": "Start kantrengøring",
+                  "es": "Iniciar limpieza de bordes",
+                  "fr": "Démarrer le nettoyage des bords",
+                  "it": "Avvia pulizia dei bordi",
+                  "no": "Start kantrengjøring",
+                  "sv": "Starta kantstädning",
+                  "pl": "Rozpocznij sprzątanie krawędzi",
+                  "ru": "Начать уборку вдоль края",
+                  "ko": "가장자리 청소 시작"
                 }
               },
               {
                 "id": "startGlobalClean",
                 "title": {
-                  "en": "Start Global Clean"
+                  "en": "Start Global Clean",
+                  "de": "Gesamtreinigung starten",
+                  "nl": "Volledige reiniging starten",
+                  "da": "Start fuld rengøring",
+                  "es": "Iniciar limpieza general",
+                  "fr": "Démarrer le nettoyage général",
+                  "it": "Avvia pulizia completa",
+                  "no": "Start full rengjøring",
+                  "sv": "Starta helrengöring",
+                  "pl": "Rozpocznij sprzątanie całościowe",
+                  "ru": "Начать общую уборку",
+                  "ko": "전체 청소 시작"
                 }
               },
               {
                 "id": "startGoToCharger",
                 "title": {
-                  "en": "Start Go To Charger"
+                  "en": "Start Go To Charger",
+                  "de": "Zur Ladestation fahren",
+                  "nl": "Naar oplader gaan",
+                  "da": "Kør til oplader",
+                  "es": "Ir a la base de carga",
+                  "fr": "Aller à la station de charge",
+                  "it": "Vai alla base di ricarica",
+                  "no": "Gå til ladestasjonen",
+                  "sv": "Gå till laddstation",
+                  "pl": "Jedź do stacji ładującej",
+                  "ru": "Ехать на зарядную станцию",
+                  "ko": "충전기로 이동"
                 }
               },
               {
                 "id": "startPointClean",
                 "title": {
-                  "en": "Start Point Clean"
+                  "en": "Start Point Clean",
+                  "de": "Punktreinigung starten",
+                  "nl": "Puntreiniging starten",
+                  "da": "Start plet-/punktrengøring",
+                  "es": "Iniciar limpieza puntual",
+                  "fr": "Démarrer le nettoyage localisé",
+                  "it": "Avvia pulizia puntuale",
+                  "no": "Start punkt-/flekk-rengjøring",
+                  "sv": "Starta punktstädning",
+                  "pl": "Rozpocznij sprzątanie punktowe",
+                  "ru": "Начать точечную уборку",
+                  "ko": "부분 청소 시작"
                 }
               },
               {
                 "id": "stopClean",
                 "title": {
-                  "en": "Stop Clean"
+                  "en": "Stop Clean",
+                  "de": "Reinigung stoppen",
+                  "nl": "Reiniging stoppen",
+                  "da": "Stop rengøring",
+                  "es": "Detener limpieza",
+                  "fr": "Arrêter le nettoyage",
+                  "it": "Ferma la pulizia",
+                  "no": "Stopp rengjøring",
+                  "sv": "Stoppa städning",
+                  "pl": "Zatrzymaj sprzątanie",
+                  "ru": "Остановить уборку",
+                  "ko": "청소 중지"
                 }
               }
             ]
@@ -2252,6 +2725,116 @@
         }
       ],
       "id": "fridgefreezer",
+      "settings": [
+        {
+          "id": "applianceState",
+          "type": "label",
+          "label": {
+            "en": "Appliance State",
+            "nl": "Toestelstatus",
+            "da": "Apparatstatus",
+            "de": "Gerätestatus",
+            "es": "Estado del dispositivo",
+            "fr": "État de l'appareil",
+            "it": "Stato dell'apparecchio",
+            "no": "Apparatstatus",
+            "sv": "Enhetsstatus",
+            "pl": "Stan urządzenia",
+            "ru": "Состояние устройства",
+            "ko": "기기 상태"
+          },
+          "hint": {
+            "en": "The Electrolux/AEG raw Appliance State JSON",
+            "de": "Die Electrolux/AEG Roh-Gerätezustand JSON",
+            "nl": "De Electrolux/AEG ruwe Apparaatstatus JSON",
+            "da": "Electrolux/AEG rå Apparattillstånd JSON",
+            "es": "El JSON de estado de dispositivo sin procesar de Electrolux/AEG",
+            "fr": "Le JSON brut de l'état de l'appareil Electrolux/AEG",
+            "it": "Il JSON grezzo dello stato dell'apparecchio Electrolux/AEG",
+            "no": "Electrolux/AEG rå Apparatstatus JSON",
+            "sv": "Electrolux/AEG rå Apparattillstånd JSON",
+            "pl": "Surowy JSON stanu urządzenia Electrolux/AEG",
+            "ru": "Сырые данные состояния устройства Electrolux/AEG в формате JSON",
+            "ko": "Electrolux/AEG 원시 기기 상태 JSON"
+          },
+          "value": ""
+        },
+        {
+          "id": "applianceCapabilities",
+          "type": "label",
+          "label": {
+            "en": "Appliance Capabilities",
+            "nl": "Apparaatmogelijkheden",
+            "da": "Apparatens kapabiliteter",
+            "de": "Gerätefunktionen",
+            "es": "Capacidades del dispositivo",
+            "fr": "Capacités de l'appareil",
+            "it": "Capacità dell'apparecchio",
+            "no": "Apparatens egenskaper",
+            "sv": "Enhetens kapabiliteter",
+            "pl": "Możliwości urządzenia",
+            "ru": "Возможности устройства",
+            "ko": "기기 기능"
+          },
+          "hint": {
+            "en": "The Electrolux/AEG raw Appliance Capabilities JSON",
+            "de": "Die Electrolux/AEG Roh-Gerätefunktionen JSON",
+            "nl": "De Electrolux/AEG ruwe Apparaatmogelijkheden JSON",
+            "da": "Electrolux/AEG rå Apparatevner JSON",
+            "es": "El JSON de capacidades de dispositivo sin procesar de Electrolux/AEG",
+            "fr": "Le JSON brut des capacités de l'appareil Electrolux/AEG",
+            "it": "Il JSON grezzo delle capacità dell'apparecchio Electrolux/AEG",
+            "no": "Electrolux/AEG rå Apparatkapasitet JSON",
+            "sv": "Electrolux/AEG rå Apparatevner JSON",
+            "pl": "Surowy JSON możliwości urządzenia Electrolux/AEG",
+            "ru": "Сырые данные возможностей устройства Electrolux/AEG в формате JSON",
+            "ko": "Electrolux/AEG 원시 기기 기능 JSON"
+          },
+          "value": ""
+        }
+      ]
+    },
+    {
+      "name": {
+        "en": "Hob",
+        "de": "Kochfeld",
+        "nl": "Kookplaat",
+        "da": "Kogeplade",
+        "es": "Placa de cocina",
+        "fr": "Plaque de cuisson",
+        "it": "Piano cottura",
+        "no": "Koketopp",
+        "sv": "Spishäll",
+        "pl": "Płyta grzewcza",
+        "ru": "Варочная панель",
+        "ko": "쿡탑"
+      },
+      "class": "other",
+      "capabilities": [],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "images": {
+        "small": "/drivers/hob/assets/images/small.png",
+        "large": "/drivers/hob/assets/images/large.png"
+      },
+      "pair": [
+        {
+          "id": "list_my_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_my_devices"
+          }
+        },
+        {
+          "id": "add_my_devices",
+          "template": "add_devices"
+        }
+      ],
+      "id": "hob",
       "settings": [
         {
           "id": "applianceState",

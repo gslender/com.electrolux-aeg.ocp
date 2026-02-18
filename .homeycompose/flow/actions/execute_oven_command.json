@@ -1,15 +1,86 @@
 {
-  "title": { "en": "Execute Oven Command" },
-  "titleFormatted": { "en": "Execute oven command [[what]]" },
+  "title": {
+    "en": "Execute Oven Command",
+    "de": "Ofenbefehl ausführen",
+    "nl": "Ovenopdracht uitvoeren",
+    "da": "Udfør ovnkommando",
+    "es": "Ejecutar comando del horno",
+    "fr": "Exécuter la commande du four",
+    "it": "Esegui comando del forno",
+    "no": "Utfør ovnskommando",
+    "sv": "Utför ugnskommando",
+    "pl": "Wykonaj polecenie piekarnika",
+    "ru": "Выполнить команду духовки",
+    "ko": "오븐 명령 실행"
+  },
+  "titleFormatted": {
+    "en": "Execute oven command [[what]]",
+    "de": "Ofenbefehl ausführen: [[what]]",
+    "nl": "Ovenopdracht uitvoeren: [[what]]",
+    "da": "Udfør ovnkommando: [[what]]",
+    "es": "Ejecutar comando del horno: [[what]]",
+    "fr": "Exécuter la commande du four : [[what]]",
+    "it": "Esegui comando del forno: [[what]]",
+    "no": "Utfør ovnskommando: [[what]]",
+    "sv": "Utför ugnskommando: [[what]]",
+    "pl": "Wykonaj polecenie piekarnika: [[what]]",
+    "ru": "Выполнить команду духовки: [[what]]",
+    "ko": "오븐 명령 실행: [[what]]"
+  },
   "args": [
     { "type": "device", "name": "device", "filter": "driver_id=oven" },
     {
       "type": "dropdown",
       "name": "what",
-      "title": { "en": "What command will be executed" },
+      "title": {
+        "en": "What command will be executed",
+        "de": "Welcher Befehl wird ausgeführt",
+        "nl": "Welke opdracht wordt uitgevoerd",
+        "da": "Hvilken kommando skal udføres",
+        "es": "Qué comando se ejecutará",
+        "fr": "Quelle commande sera exécutée",
+        "it": "Quale comando verrà eseguito",
+        "no": "Hvilken kommando skal utføres",
+        "sv": "Vilket kommando ska utföras",
+        "pl": "Które polecenie zostanie wykonane",
+        "ru": "Какая команда будет выполнена",
+        "ko": "실행할 명령"
+      },
       "values": [
-        { "id": "START", "title": { "en": "Start" } },
-        { "id": "STOPRESET", "title": { "en": "Stop / Reset" } }
+        {
+          "id": "START",
+          "title": {
+            "en": "Start",
+            "de": "Start",
+            "nl": "Start",
+            "da": "Start",
+            "es": "Iniciar",
+            "fr": "Démarrer",
+            "it": "Avvia",
+            "no": "Start",
+            "sv": "Starta",
+            "pl": "Start",
+            "ru": "Запуск",
+            "ko": "시작"
+          }
+        },
+        {
+          "id": "STOPRESET",
+          "title": {
+            "en": "Stop / Reset",
+            "de": "Stopp / Zurücksetzen",
+            "nl": "Stop / Reset",
+            "da": "Stop / Nulstil",
+            "es": "Detener / Restablecer",
+            "fr": "Arrêter / Réinitialiser",
+            "it": "Ferma / Reimposta",
+            "no": "Stopp / Tilbakestill",
+            "sv": "Stoppa / Återställ",
+            "pl": "Zatrzymaj / Resetuj",
+            "ru": "Остановить / Сброс",
+            "ko": "중지 / 재설정"
+          }
+        }
       ]
     }
   ]

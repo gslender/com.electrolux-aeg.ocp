@@ -1,20 +1,175 @@
 {
-  "title": { "en": "Execute Robot Cleaning Command" },
-  "titleFormatted": { "en": "Execute robot cleaning command [[what]]" },
+  "title": {
+    "en": "Execute Robot Cleaning Command",
+    "de": "Roboter Reinigungsbefehl ausführen",
+    "nl": "Robotreinigingsopdracht uitvoeren",
+    "da": "Udfør robotrengøringskommando",
+    "es": "Ejecutar comando de limpieza del robot",
+    "fr": "Exécuter la commande de nettoyage du robot",
+    "it": "Esegui comando di pulizia del robot",
+    "no": "Utfør robotrengjøringskommando",
+    "sv": "Utför robotstädkommando",
+    "pl": "Wykonaj polecenie sprzątania robota",
+    "ru": "Выполнить команду уборки робота",
+    "ko": "로봇 청소 명령 실행"
+  },
+  "titleFormatted": {
+    "en": "Execute robot cleaning command [[what]]",
+    "de": "Roboter Reinigungsbefehl ausführen: [[what]]",
+    "nl": "Robotreinigingsopdracht uitvoeren: [[what]]",
+    "da": "Udfør robotrengøringskommando: [[what]]",
+    "es": "Ejecutar comando de limpieza del robot: [[what]]",
+    "fr": "Exécuter la commande de nettoyage du robot : [[what]]",
+    "it": "Esegui comando di pulizia del robot: [[what]]",
+    "no": "Utfør robotrengjøringskommando: [[what]]",
+    "sv": "Utför robotstädkommando: [[what]]",
+    "pl": "Wykonaj polecenie sprzątania robota: [[what]]",
+    "ru": "Выполнить команду уборки робота: [[what]]",
+    "ko": "로봇 청소 명령 실행: [[what]]"
+  },
   "args": [
-    { "type": "device", "name": "device", "filter": "driver_id=robot.700series" },
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=robot.700series"
+    },
     {
       "type": "dropdown",
       "name": "what",
-      "title": { "en": "What cleaning command will be executed" },
+      "title": {
+        "en": "What cleaning command will be executed",
+        "de": "Welcher Reinigungsbefehl wird ausgeführt",
+        "nl": "Welke reinigingsopdracht wordt uitgevoerd",
+        "da": "Hvilken rengøringskommando skal udføres",
+        "es": "Qué comando de limpieza se ejecutará",
+        "fr": "Quelle commande de nettoyage sera exécutée",
+        "it": "Quale comando di pulizia verrà eseguito",
+        "no": "Hvilken rengjøringskommando skal utføres",
+        "sv": "Vilket städkommando ska utföras",
+        "pl": "Które polecenie sprzątania zostanie wykonane",
+        "ru": "Какая команда уборки будет выполнена",
+        "ko": "실행할 청소 명령"
+      },
       "values": [
-        { "id": "pauseClean", "title": { "en": "Pause Clean" } },
-        { "id": "resumeClean", "title": { "en": "Resume Clean" } },
-        { "id": "startEdgeClean", "title": { "en": "Start Edge Clean" } },
-        { "id": "startGlobalClean", "title": { "en": "Start Global Clean" } },
-        { "id": "startGoToCharger", "title": { "en": "Start Go To Charger" } },
-        { "id": "startPointClean", "title": { "en": "Start Point Clean" } },
-        { "id": "stopClean", "title": { "en": "Stop Clean" } }
+        {
+          "id": "pauseClean",
+          "title": {
+            "en": "Pause Clean",
+            "de": "Reinigung pausieren",
+            "nl": "Reiniging pauzeren",
+            "da": "Sæt rengøring på pause",
+            "es": "Pausar limpieza",
+            "fr": "Mettre le nettoyage en pause",
+            "it": "Metti in pausa la pulizia",
+            "no": "Sett rengjøring på pause",
+            "sv": "Pausa städning",
+            "pl": "Wstrzymaj sprzątanie",
+            "ru": "Пауза уборки",
+            "ko": "청소 일시정지"
+          }
+        },
+        {
+          "id": "resumeClean",
+          "title": {
+            "en": "Resume Clean",
+            "de": "Reinigung fortsetzen",
+            "nl": "Reiniging hervatten",
+            "da": "Genoptag rengøring",
+            "es": "Reanudar limpieza",
+            "fr": "Reprendre le nettoyage",
+            "it": "Riprendi la pulizia",
+            "no": "Gjenoppta rengjøring",
+            "sv": "Återuppta städning",
+            "pl": "Wznów sprzątanie",
+            "ru": "Возобновить уборку",
+            "ko": "청소 재개"
+          }
+        },
+        {
+          "id": "startEdgeClean",
+          "title": {
+            "en": "Start Edge Clean",
+            "de": "Kantenreinigung starten",
+            "nl": "Randreiniging starten",
+            "da": "Start kantrengøring",
+            "es": "Iniciar limpieza de bordes",
+            "fr": "Démarrer le nettoyage des bords",
+            "it": "Avvia pulizia dei bordi",
+            "no": "Start kantrengjøring",
+            "sv": "Starta kantstädning",
+            "pl": "Rozpocznij sprzątanie krawędzi",
+            "ru": "Начать уборку вдоль края",
+            "ko": "가장자리 청소 시작"
+          }
+        },
+        {
+          "id": "startGlobalClean",
+          "title": {
+            "en": "Start Global Clean",
+            "de": "Gesamtreinigung starten",
+            "nl": "Volledige reiniging starten",
+            "da": "Start fuld rengøring",
+            "es": "Iniciar limpieza general",
+            "fr": "Démarrer le nettoyage général",
+            "it": "Avvia pulizia completa",
+            "no": "Start full rengjøring",
+            "sv": "Starta helrengöring",
+            "pl": "Rozpocznij sprzątanie całościowe",
+            "ru": "Начать общую уборку",
+            "ko": "전체 청소 시작"
+          }
+        },
+        {
+          "id": "startGoToCharger",
+          "title": {
+            "en": "Start Go To Charger",
+            "de": "Zur Ladestation fahren",
+            "nl": "Naar oplader gaan",
+            "da": "Kør til oplader",
+            "es": "Ir a la base de carga",
+            "fr": "Aller à la station de charge",
+            "it": "Vai alla base di ricarica",
+            "no": "Gå til ladestasjonen",
+            "sv": "Gå till laddstation",
+            "pl": "Jedź do stacji ładującej",
+            "ru": "Ехать на зарядную станцию",
+            "ko": "충전기로 이동"
+          }
+        },
+        {
+          "id": "startPointClean",
+          "title": {
+            "en": "Start Point Clean",
+            "de": "Punktreinigung starten",
+            "nl": "Puntreiniging starten",
+            "da": "Start plet-/punktrengøring",
+            "es": "Iniciar limpieza puntual",
+            "fr": "Démarrer le nettoyage localisé",
+            "it": "Avvia pulizia puntuale",
+            "no": "Start punkt-/flekk-rengjøring",
+            "sv": "Starta punktstädning",
+            "pl": "Rozpocznij sprzątanie punktowe",
+            "ru": "Начать точечную уборку",
+            "ko": "부분 청소 시작"
+          }
+        },
+        {
+          "id": "stopClean",
+          "title": {
+            "en": "Stop Clean",
+            "de": "Reinigung stoppen",
+            "nl": "Reiniging stoppen",
+            "da": "Stop rengøring",
+            "es": "Detener limpieza",
+            "fr": "Arrêter le nettoyage",
+            "it": "Ferma la pulizia",
+            "no": "Stopp rengjøring",
+            "sv": "Stoppa städning",
+            "pl": "Zatrzymaj sprzątanie",
+            "ru": "Остановить уборку",
+            "ko": "청소 중지"
+          }
+        }
       ]
     }
   ]
