@@ -151,7 +151,12 @@ export default class ElectroluxAEGApp extends Homey.App {
               const applianceId = device.getData().id;
               const state = await this.getApplianceState(applianceId);
               const conn = state?.connectionState;
+              const bypassConnectionAvailabilityStatus = device.getSetting('bypassConnectionAvailabilityStatus') === true;
               if (conn === 'connected' || conn === 'Connected') {
+                device.setAvailable();
+                device.updateCapabilityValues(state);
+              } else if (bypassConnectionAvailabilityStatus) {
+                this.log(`Bypassing unavailable state for ${applianceId}: ${stringify(state)}`);
                 device.setAvailable();
                 device.updateCapabilityValues(state);
               } else {

@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.electrolux-aeg.ocp",
-  "version": "1.6.2",
+  "version": "1.6.3",
   "compatibility": ">=12.0.0",
   "sdk": 3,
   "platforms": [
@@ -2397,6 +2397,39 @@
       "id": "air-conditioning",
       "settings": [
         {
+          "id": "bypassConnectionAvailabilityStatus",
+          "type": "checkbox",
+          "label": {
+            "en": "Bypass Connection Availability Status",
+            "nl": "Status van beschikbaarheid van bypassverbinding",
+            "da": "Status for tilgængelighed af bypass-forbindelse",
+            "de": "Status der Verfügbarkeit der Umgehungsverbindung",
+            "es": "Estado de disponibilidad de la conexión de bypass",
+            "fr": "Statut de disponibilité de la connexion de contournement",
+            "it": "Stato di disponibilità della connessione di bypass",
+            "no": "Status for tilgjengelighet av bypass-tilkobling",
+            "sv": "Status för tillgänglighet för bypass-anslutning",
+            "pl": "Status dostępności połączenia obejściowego",
+            "ru": "Статус доступности обходного соединения",
+            "ko": "바이패스 연결 가용성 상태"
+          },
+          "hint": {
+            "en": "Keep the device available even when the appliance connection state is not connected.",
+            "nl": "Houd het apparaat beschikbaar, zelfs wanneer de verbindingsstatus van het apparaat niet verbonden is.",
+            "da": "Hold enheden tilgængelig, selv når apparatets forbindelsestilstand ikke er forbundet.",
+            "de": "Halten Sie das Gerät verfügbar, auch wenn der Verbindungsstatus des Geräts nicht verbunden ist.",
+            "es": "Mantenga el dispositivo disponible incluso cuando el estado de conexión del dispositivo no esté conectado.",
+            "fr": "Maintenez l'appareil disponible même lorsque l'état de connexion de l'appareil n'est pas connecté.",
+            "it": "Mantieni il dispositivo disponibile anche quando lo stato di connessione del dispositivo non è connesso.",
+            "no": "Hold enheten tilgjengelig selv når enhetens tilkoblingsstatus ikke er tilkoblet.",
+            "sv": "Håll enheten tillgänglig även när enhetens anslutningsstatus inte är ansluten.",
+            "pl": "Utrzymuj urządzenie dostępne, nawet gdy stan połączenia urządzenia nie jest połączony.",
+            "ru": "Сохранять доступность устройства, даже если состояние подключения устройства не подключено.",
+            "ko": "장치 연결 상태가 연결되지 않았더라도 장치를 사용 가능하게 유지합니다."
+          },
+          "value": false
+        },
+        {
           "id": "applianceState",
           "type": "label",
           "label": {
@@ -2506,6 +2539,39 @@
       ],
       "id": "air-purifier",
       "settings": [
+        {
+          "id": "bypassConnectionAvailabilityStatus",
+          "type": "checkbox",
+          "label": {
+            "en": "Bypass Connection Availability Status",
+            "nl": "Status van beschikbaarheid van bypassverbinding",
+            "da": "Status for tilgængelighed af bypass-forbindelse",
+            "de": "Status der Verfügbarkeit der Umgehungsverbindung",
+            "es": "Estado de disponibilidad de la conexión de bypass",
+            "fr": "Statut de disponibilité de la connexion de contournement",
+            "it": "Stato di disponibilità della connessione di bypass",
+            "no": "Status for tilgjengelighet av bypass-tilkobling",
+            "sv": "Status för tillgänglighet för bypass-anslutning",
+            "pl": "Status dostępności połączenia obejściowego",
+            "ru": "Статус доступности обходного соединения",
+            "ko": "바이패스 연결 가용성 상태"
+          },
+          "hint": {
+            "en": "Keep the device available even when the appliance connection state is not connected.",
+            "nl": "Houd het apparaat beschikbaar, zelfs wanneer de verbindingsstatus van het apparaat niet verbonden is.",
+            "da": "Hold enheden tilgængelig, selv når apparatets forbindelsestilstand ikke er forbundet.",
+            "de": "Halten Sie das Gerät verfügbar, auch wenn der Verbindungsstatus des Geräts nicht verbunden ist.",
+            "es": "Mantenga el dispositivo disponible incluso cuando el estado de conexión del dispositivo no esté conectado.",
+            "fr": "Maintenez l'appareil disponible même lorsque l'état de connexion de l'appareil n'est pas connecté.",
+            "it": "Mantieni il dispositivo disponibile anche quando lo stato di connessione del dispositivo non è connesso.",
+            "no": "Hold enheten tilgjengelig selv når enhetens tilkoblingsstatus ikke er tilkoblet.",
+            "sv": "Håll enheten tillgänglig även när enhetens anslutningsstatus inte är ansluten.",
+            "pl": "Utrzymuj urządzenie dostępne, nawet gdy stan połączenia urządzenia nie jest połączony.",
+            "ru": "Сохранять доступность устройства, даже если состояние подключения устройства не подключено.",
+            "ko": "장치 연결 상태가 연결되지 않았더라도 장치를 사용 가능하게 유지합니다."
+          },
+          "value": false
+        },
         {
           "id": "applianceState",
           "type": "label",
@@ -2617,6 +2683,39 @@
       "id": "dishwasher",
       "settings": [
         {
+          "id": "bypassConnectionAvailabilityStatus",
+          "type": "checkbox",
+          "label": {
+            "en": "Bypass Connection Availability Status",
+            "nl": "Status van beschikbaarheid van bypassverbinding",
+            "da": "Status for tilgængelighed af bypass-forbindelse",
+            "de": "Status der Verfügbarkeit der Umgehungsverbindung",
+            "es": "Estado de disponibilidad de la conexión de bypass",
+            "fr": "Statut de disponibilité de la connexion de contournement",
+            "it": "Stato di disponibilità della connessione di bypass",
+            "no": "Status for tilgjengelighet av bypass-tilkobling",
+            "sv": "Status för tillgänglighet för bypass-anslutning",
+            "pl": "Status dostępności połączenia obejściowego",
+            "ru": "Статус доступности обходного соединения",
+            "ko": "바이패스 연결 가용성 상태"
+          },
+          "hint": {
+            "en": "Keep the device available even when the appliance connection state is not connected.",
+            "nl": "Houd het apparaat beschikbaar, zelfs wanneer de verbindingsstatus van het apparaat niet verbonden is.",
+            "da": "Hold enheden tilgængelig, selv når apparatets forbindelsestilstand ikke er forbundet.",
+            "de": "Halten Sie das Gerät verfügbar, auch wenn der Verbindungsstatus des Geräts nicht verbunden ist.",
+            "es": "Mantenga el dispositivo disponible incluso cuando el estado de conexión del dispositivo no esté conectado.",
+            "fr": "Maintenez l'appareil disponible même lorsque l'état de connexion de l'appareil n'est pas connecté.",
+            "it": "Mantieni il dispositivo disponibile anche quando lo stato di connessione del dispositivo non è connesso.",
+            "no": "Hold enheten tilgjengelig selv når enhetens tilkoblingsstatus ikke er tilkoblet.",
+            "sv": "Håll enheten tillgänglig även när enhetens anslutningsstatus inte är ansluten.",
+            "pl": "Utrzymuj urządzenie dostępne, nawet gdy stan połączenia urządzenia nie jest połączony.",
+            "ru": "Сохранять доступность устройства, даже если состояние подключения устройства не подключено.",
+            "ko": "장치 연결 상태가 연결되지 않았더라도 장치를 사용 가능하게 유지합니다."
+          },
+          "value": false
+        },
+        {
           "id": "applianceState",
           "type": "label",
           "label": {
@@ -2726,6 +2825,39 @@
       ],
       "id": "fridgefreezer",
       "settings": [
+        {
+          "id": "bypassConnectionAvailabilityStatus",
+          "type": "checkbox",
+          "label": {
+            "en": "Bypass Connection Availability Status",
+            "nl": "Status van beschikbaarheid van bypassverbinding",
+            "da": "Status for tilgængelighed af bypass-forbindelse",
+            "de": "Status der Verfügbarkeit der Umgehungsverbindung",
+            "es": "Estado de disponibilidad de la conexión de bypass",
+            "fr": "Statut de disponibilité de la connexion de contournement",
+            "it": "Stato di disponibilità della connessione di bypass",
+            "no": "Status for tilgjengelighet av bypass-tilkobling",
+            "sv": "Status för tillgänglighet för bypass-anslutning",
+            "pl": "Status dostępności połączenia obejściowego",
+            "ru": "Статус доступности обходного соединения",
+            "ko": "바이패스 연결 가용성 상태"
+          },
+          "hint": {
+            "en": "Keep the device available even when the appliance connection state is not connected.",
+            "nl": "Houd het apparaat beschikbaar, zelfs wanneer de verbindingsstatus van het apparaat niet verbonden is.",
+            "da": "Hold enheden tilgængelig, selv når apparatets forbindelsestilstand ikke er forbundet.",
+            "de": "Halten Sie das Gerät verfügbar, auch wenn der Verbindungsstatus des Geräts nicht verbunden ist.",
+            "es": "Mantenga el dispositivo disponible incluso cuando el estado de conexión del dispositivo no esté conectado.",
+            "fr": "Maintenez l'appareil disponible même lorsque l'état de connexion de l'appareil n'est pas connecté.",
+            "it": "Mantieni il dispositivo disponibile anche quando lo stato di connessione del dispositivo non è connesso.",
+            "no": "Hold enheten tilgjengelig selv når enhetens tilkoblingsstatus ikke er tilkoblet.",
+            "sv": "Håll enheten tillgänglig även när enhetens anslutningsstatus inte är ansluten.",
+            "pl": "Utrzymuj urządzenie dostępne, nawet gdy stan połączenia urządzenia nie jest połączony.",
+            "ru": "Сохранять доступность устройства, даже если состояние подключения устройства не подключено.",
+            "ko": "장치 연결 상태가 연결되지 않았더라도 장치를 사용 가능하게 유지합니다."
+          },
+          "value": false
+        },
         {
           "id": "applianceState",
           "type": "label",
@@ -2837,6 +2969,39 @@
       "id": "hob",
       "settings": [
         {
+          "id": "bypassConnectionAvailabilityStatus",
+          "type": "checkbox",
+          "label": {
+            "en": "Bypass Connection Availability Status",
+            "nl": "Status van beschikbaarheid van bypassverbinding",
+            "da": "Status for tilgængelighed af bypass-forbindelse",
+            "de": "Status der Verfügbarkeit der Umgehungsverbindung",
+            "es": "Estado de disponibilidad de la conexión de bypass",
+            "fr": "Statut de disponibilité de la connexion de contournement",
+            "it": "Stato di disponibilità della connessione di bypass",
+            "no": "Status for tilgjengelighet av bypass-tilkobling",
+            "sv": "Status för tillgänglighet för bypass-anslutning",
+            "pl": "Status dostępności połączenia obejściowego",
+            "ru": "Статус доступности обходного соединения",
+            "ko": "바이패스 연결 가용성 상태"
+          },
+          "hint": {
+            "en": "Keep the device available even when the appliance connection state is not connected.",
+            "nl": "Houd het apparaat beschikbaar, zelfs wanneer de verbindingsstatus van het apparaat niet verbonden is.",
+            "da": "Hold enheden tilgængelig, selv når apparatets forbindelsestilstand ikke er forbundet.",
+            "de": "Halten Sie das Gerät verfügbar, auch wenn der Verbindungsstatus des Geräts nicht verbunden ist.",
+            "es": "Mantenga el dispositivo disponible incluso cuando el estado de conexión del dispositivo no esté conectado.",
+            "fr": "Maintenez l'appareil disponible même lorsque l'état de connexion de l'appareil n'est pas connecté.",
+            "it": "Mantieni il dispositivo disponibile anche quando lo stato di connessione del dispositivo non è connesso.",
+            "no": "Hold enheten tilgjengelig selv når enhetens tilkoblingsstatus ikke er tilkoblet.",
+            "sv": "Håll enheten tillgänglig även när enhetens anslutningsstatus inte är ansluten.",
+            "pl": "Utrzymuj urządzenie dostępne, nawet gdy stan połączenia urządzenia nie jest połączony.",
+            "ru": "Сохранять доступность устройства, даже если состояние подключения устройства не подключено.",
+            "ko": "장치 연결 상태가 연결되지 않았더라도 장치를 사용 가능하게 유지합니다."
+          },
+          "value": false
+        },
+        {
           "id": "applianceState",
           "type": "label",
           "label": {
@@ -2947,6 +3112,39 @@
       "id": "laundry",
       "settings": [
         {
+          "id": "bypassConnectionAvailabilityStatus",
+          "type": "checkbox",
+          "label": {
+            "en": "Bypass Connection Availability Status",
+            "nl": "Status van beschikbaarheid van bypassverbinding",
+            "da": "Status for tilgængelighed af bypass-forbindelse",
+            "de": "Status der Verfügbarkeit der Umgehungsverbindung",
+            "es": "Estado de disponibilidad de la conexión de bypass",
+            "fr": "Statut de disponibilité de la connexion de contournement",
+            "it": "Stato di disponibilità della connessione di bypass",
+            "no": "Status for tilgjengelighet av bypass-tilkobling",
+            "sv": "Status för tillgänglighet för bypass-anslutning",
+            "pl": "Status dostępności połączenia obejściowego",
+            "ru": "Статус доступности обходного соединения",
+            "ko": "바이패스 연결 가용성 상태"
+          },
+          "hint": {
+            "en": "Keep the device available even when the appliance connection state is not connected.",
+            "nl": "Houd het apparaat beschikbaar, zelfs wanneer de verbindingsstatus van het apparaat niet verbonden is.",
+            "da": "Hold enheden tilgængelig, selv når apparatets forbindelsestilstand ikke er forbundet.",
+            "de": "Halten Sie das Gerät verfügbar, auch wenn der Verbindungsstatus des Geräts nicht verbunden ist.",
+            "es": "Mantenga el dispositivo disponible incluso cuando el estado de conexión del dispositivo no esté conectado.",
+            "fr": "Maintenez l'appareil disponible même lorsque l'état de connexion de l'appareil n'est pas connecté.",
+            "it": "Mantieni il dispositivo disponibile anche quando lo stato di connessione del dispositivo non è connesso.",
+            "no": "Hold enheten tilgjengelig selv når enhetens tilkoblingsstatus ikke er tilkoblet.",
+            "sv": "Håll enheten tillgänglig även när enhetens anslutningsstatus inte är ansluten.",
+            "pl": "Utrzymuj urządzenie dostępne, nawet gdy stan połączenia urządzenia nie jest połączony.",
+            "ru": "Сохранять доступность устройства, даже если состояние подключения устройства не подключено.",
+            "ko": "장치 연결 상태가 연결되지 않았더라도 장치를 사용 가능하게 유지합니다."
+          },
+          "value": false
+        },
+        {
           "id": "applianceState",
           "type": "label",
           "label": {
@@ -3056,6 +3254,39 @@
       ],
       "id": "oven",
       "settings": [
+        {
+          "id": "bypassConnectionAvailabilityStatus",
+          "type": "checkbox",
+          "label": {
+            "en": "Bypass Connection Availability Status",
+            "nl": "Status van beschikbaarheid van bypassverbinding",
+            "da": "Status for tilgængelighed af bypass-forbindelse",
+            "de": "Status der Verfügbarkeit der Umgehungsverbindung",
+            "es": "Estado de disponibilidad de la conexión de bypass",
+            "fr": "Statut de disponibilité de la connexion de contournement",
+            "it": "Stato di disponibilità della connessione di bypass",
+            "no": "Status for tilgjengelighet av bypass-tilkobling",
+            "sv": "Status för tillgänglighet för bypass-anslutning",
+            "pl": "Status dostępności połączenia obejściowego",
+            "ru": "Статус доступности обходного соединения",
+            "ko": "바이패스 연결 가용성 상태"
+          },
+          "hint": {
+            "en": "Keep the device available even when the appliance connection state is not connected.",
+            "nl": "Houd het apparaat beschikbaar, zelfs wanneer de verbindingsstatus van het apparaat niet verbonden is.",
+            "da": "Hold enheden tilgængelig, selv når apparatets forbindelsestilstand ikke er forbundet.",
+            "de": "Halten Sie das Gerät verfügbar, auch wenn der Verbindungsstatus des Geräts nicht verbunden ist.",
+            "es": "Mantenga el dispositivo disponible incluso cuando el estado de conexión del dispositivo no esté conectado.",
+            "fr": "Maintenez l'appareil disponible même lorsque l'état de connexion de l'appareil n'est pas connecté.",
+            "it": "Mantieni il dispositivo disponibile anche quando lo stato di connessione del dispositivo non è connesso.",
+            "no": "Hold enheten tilgjengelig selv når enhetens tilkoblingsstatus ikke er tilkoblet.",
+            "sv": "Håll enheten tillgänglig även när enhetens anslutningsstatus inte är ansluten.",
+            "pl": "Utrzymuj urządzenie dostępne, nawet gdy stan połączenia urządzenia nie jest połączony.",
+            "ru": "Сохранять доступность устройства, даже если состояние подключения устройства не подключено.",
+            "ko": "장치 연결 상태가 연결되지 않았더라도 장치를 사용 가능하게 유지합니다."
+          },
+          "value": false
+        },
         {
           "id": "applianceState",
           "type": "label",
@@ -3171,6 +3402,39 @@
       "id": "rangehood",
       "settings": [
         {
+          "id": "bypassConnectionAvailabilityStatus",
+          "type": "checkbox",
+          "label": {
+            "en": "Bypass Connection Availability Status",
+            "nl": "Status van beschikbaarheid van bypassverbinding",
+            "da": "Status for tilgængelighed af bypass-forbindelse",
+            "de": "Status der Verfügbarkeit der Umgehungsverbindung",
+            "es": "Estado de disponibilidad de la conexión de bypass",
+            "fr": "Statut de disponibilité de la connexion de contournement",
+            "it": "Stato di disponibilità della connessione di bypass",
+            "no": "Status for tilgjengelighet av bypass-tilkobling",
+            "sv": "Status för tillgänglighet för bypass-anslutning",
+            "pl": "Status dostępności połączenia obejściowego",
+            "ru": "Статус доступности обходного соединения",
+            "ko": "바이패스 연결 가용성 상태"
+          },
+          "hint": {
+            "en": "Keep the device available even when the appliance connection state is not connected.",
+            "nl": "Houd het apparaat beschikbaar, zelfs wanneer de verbindingsstatus van het apparaat niet verbonden is.",
+            "da": "Hold enheden tilgængelig, selv når apparatets forbindelsestilstand ikke er forbundet.",
+            "de": "Halten Sie das Gerät verfügbar, auch wenn der Verbindungsstatus des Geräts nicht verbunden ist.",
+            "es": "Mantenga el dispositivo disponible incluso cuando el estado de conexión del dispositivo no esté conectado.",
+            "fr": "Maintenez l'appareil disponible même lorsque l'état de connexion de l'appareil n'est pas connecté.",
+            "it": "Mantieni il dispositivo disponibile anche quando lo stato di connessione del dispositivo non è connesso.",
+            "no": "Hold enheten tilgjengelig selv når enhetens tilkoblingsstatus ikke er tilkoblet.",
+            "sv": "Håll enheten tillgänglig även när enhetens anslutningsstatus inte är ansluten.",
+            "pl": "Utrzymuj urządzenie dostępne, nawet gdy stan połączenia urządzenia nie jest połączony.",
+            "ru": "Сохранять доступность устройства, даже если состояние подключения устройства не подключено.",
+            "ko": "장치 연결 상태가 연결되지 않았더라도 장치를 사용 가능하게 유지합니다."
+          },
+          "value": false
+        },
+        {
           "id": "applianceState",
           "type": "label",
           "label": {
@@ -3280,6 +3544,39 @@
       ],
       "id": "robot",
       "settings": [
+        {
+          "id": "bypassConnectionAvailabilityStatus",
+          "type": "checkbox",
+          "label": {
+            "en": "Bypass Connection Availability Status",
+            "nl": "Status van beschikbaarheid van bypassverbinding",
+            "da": "Status for tilgængelighed af bypass-forbindelse",
+            "de": "Status der Verfügbarkeit der Umgehungsverbindung",
+            "es": "Estado de disponibilidad de la conexión de bypass",
+            "fr": "Statut de disponibilité de la connexion de contournement",
+            "it": "Stato di disponibilità della connessione di bypass",
+            "no": "Status for tilgjengelighet av bypass-tilkobling",
+            "sv": "Status för tillgänglighet för bypass-anslutning",
+            "pl": "Status dostępności połączenia obejściowego",
+            "ru": "Статус доступности обходного соединения",
+            "ko": "바이패스 연결 가용성 상태"
+          },
+          "hint": {
+            "en": "Keep the device available even when the appliance connection state is not connected.",
+            "nl": "Houd het apparaat beschikbaar, zelfs wanneer de verbindingsstatus van het apparaat niet verbonden is.",
+            "da": "Hold enheden tilgængelig, selv når apparatets forbindelsestilstand ikke er forbundet.",
+            "de": "Halten Sie das Gerät verfügbar, auch wenn der Verbindungsstatus des Geräts nicht verbunden ist.",
+            "es": "Mantenga el dispositivo disponible incluso cuando el estado de conexión del dispositivo no esté conectado.",
+            "fr": "Maintenez l'appareil disponible même lorsque l'état de connexion de l'appareil n'est pas connecté.",
+            "it": "Mantieni il dispositivo disponibile anche quando lo stato di connessione del dispositivo non è connesso.",
+            "no": "Hold enheten tilgjengelig selv når enhetens tilkoblingsstatus ikke er tilkoblet.",
+            "sv": "Håll enheten tillgänglig även när enhetens anslutningsstatus inte är ansluten.",
+            "pl": "Utrzymuj urządzenie dostępne, nawet gdy stan połączenia urządzenia nie jest połączony.",
+            "ru": "Сохранять доступность устройства, даже если состояние подключения устройства не подключено.",
+            "ko": "장치 연결 상태가 연결되지 않았더라도 장치를 사용 가능하게 유지합니다."
+          },
+          "value": false
+        },
         {
           "id": "applianceState",
           "type": "label",
@@ -3391,6 +3688,39 @@
       "id": "robot.700series",
       "settings": [
         {
+          "id": "bypassConnectionAvailabilityStatus",
+          "type": "checkbox",
+          "label": {
+            "en": "Bypass Connection Availability Status",
+            "nl": "Status van beschikbaarheid van bypassverbinding",
+            "da": "Status for tilgængelighed af bypass-forbindelse",
+            "de": "Status der Verfügbarkeit der Umgehungsverbindung",
+            "es": "Estado de disponibilidad de la conexión de bypass",
+            "fr": "Statut de disponibilité de la connexion de contournement",
+            "it": "Stato di disponibilità della connessione di bypass",
+            "no": "Status for tilgjengelighet av bypass-tilkobling",
+            "sv": "Status för tillgänglighet för bypass-anslutning",
+            "pl": "Status dostępności połączenia obejściowego",
+            "ru": "Статус доступности обходного соединения",
+            "ko": "바이패스 연결 가용성 상태"
+          },
+          "hint": {
+            "en": "Keep the device available even when the appliance connection state is not connected.",
+            "nl": "Houd het apparaat beschikbaar, zelfs wanneer de verbindingsstatus van het apparaat niet verbonden is.",
+            "da": "Hold enheden tilgængelig, selv når apparatets forbindelsestilstand ikke er forbundet.",
+            "de": "Halten Sie das Gerät verfügbar, auch wenn der Verbindungsstatus des Geräts nicht verbunden ist.",
+            "es": "Mantenga el dispositivo disponible incluso cuando el estado de conexión del dispositivo no esté conectado.",
+            "fr": "Maintenez l'appareil disponible même lorsque l'état de connexion de l'appareil n'est pas connecté.",
+            "it": "Mantieni il dispositivo disponibile anche quando lo stato di connessione del dispositivo non è connesso.",
+            "no": "Hold enheten tilgjengelig selv når enhetens tilkoblingsstatus ikke er tilkoblet.",
+            "sv": "Håll enheten tillgänglig även när enhetens anslutningsstatus inte är ansluten.",
+            "pl": "Utrzymuj urządzenie dostępne, nawet gdy stan połączenia urządzenia nie jest połączony.",
+            "ru": "Сохранять доступность устройства, даже если состояние подключения устройства не подключено.",
+            "ko": "장치 연결 상태가 연결되지 않았더라도 장치를 사용 가능하게 유지합니다."
+          },
+          "value": false
+        },
+        {
           "id": "applianceState",
           "type": "label",
           "label": {
@@ -3500,6 +3830,39 @@
       ],
       "id": "unknown",
       "settings": [
+        {
+          "id": "bypassConnectionAvailabilityStatus",
+          "type": "checkbox",
+          "label": {
+            "en": "Bypass Connection Availability Status",
+            "nl": "Status van beschikbaarheid van bypassverbinding",
+            "da": "Status for tilgængelighed af bypass-forbindelse",
+            "de": "Status der Verfügbarkeit der Umgehungsverbindung",
+            "es": "Estado de disponibilidad de la conexión de bypass",
+            "fr": "Statut de disponibilité de la connexion de contournement",
+            "it": "Stato di disponibilità della connessione di bypass",
+            "no": "Status for tilgjengelighet av bypass-tilkobling",
+            "sv": "Status för tillgänglighet för bypass-anslutning",
+            "pl": "Status dostępności połączenia obejściowego",
+            "ru": "Статус доступности обходного соединения",
+            "ko": "바이패스 연결 가용성 상태"
+          },
+          "hint": {
+            "en": "Keep the device available even when the appliance connection state is not connected.",
+            "nl": "Houd het apparaat beschikbaar, zelfs wanneer de verbindingsstatus van het apparaat niet verbonden is.",
+            "da": "Hold enheden tilgængelig, selv når apparatets forbindelsestilstand ikke er forbundet.",
+            "de": "Halten Sie das Gerät verfügbar, auch wenn der Verbindungsstatus des Geräts nicht verbunden ist.",
+            "es": "Mantenga el dispositivo disponible incluso cuando el estado de conexión del dispositivo no esté conectado.",
+            "fr": "Maintenez l'appareil disponible même lorsque l'état de connexion de l'appareil n'est pas connecté.",
+            "it": "Mantieni il dispositivo disponibile anche quando lo stato di connessione del dispositivo non è connesso.",
+            "no": "Hold enheten tilgjengelig selv når enhetens tilkoblingsstatus ikke er tilkoblet.",
+            "sv": "Håll enheten tillgänglig även när enhetens anslutningsstatus inte är ansluten.",
+            "pl": "Utrzymuj urządzenie dostępne, nawet gdy stan połączenia urządzenia nie jest połączony.",
+            "ru": "Сохранять доступность устройства, даже если состояние подключения устройства не подключено.",
+            "ko": "장치 연결 상태가 연결되지 않았더라도 장치를 사용 가능하게 유지합니다."
+          },
+          "value": false
+        },
         {
           "id": "applianceState",
           "type": "label",

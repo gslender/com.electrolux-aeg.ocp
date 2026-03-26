@@ -1,5 +1,38 @@
 [
   {
+    "id": "bypassConnectionAvailabilityStatus",
+    "type": "checkbox",
+    "label": {
+      "en": "Bypass Connection Availability Status",
+      "nl": "Status van beschikbaarheid van bypassverbinding",
+      "da": "Status for tilgængelighed af bypass-forbindelse",
+      "de": "Status der Verfügbarkeit der Umgehungsverbindung",
+      "es": "Estado de disponibilidad de la conexión de bypass",
+      "fr": "Statut de disponibilité de la connexion de contournement",
+      "it": "Stato di disponibilità della connessione di bypass",
+      "no": "Status for tilgjengelighet av bypass-tilkobling",
+      "sv": "Status för tillgänglighet för bypass-anslutning",
+      "pl": "Status dostępności połączenia obejściowego",
+      "ru": "Статус доступности обходного соединения",
+      "ko": "바이패스 연결 가용성 상태"
+    },
+    "hint": {
+      "en": "Keep the device available even when the appliance connection state is not connected.",
+      "nl": "Houd het apparaat beschikbaar, zelfs wanneer de verbindingsstatus van het apparaat niet verbonden is.",
+      "da": "Hold enheden tilgængelig, selv når apparatets forbindelsestilstand ikke er forbundet.",
+      "de": "Halten Sie das Gerät verfügbar, auch wenn der Verbindungsstatus des Geräts nicht verbunden ist.",
+      "es": "Mantenga el dispositivo disponible incluso cuando el estado de conexión del dispositivo no esté conectado.",
+      "fr": "Maintenez l'appareil disponible même lorsque l'état de connexion de l'appareil n'est pas connecté.",
+      "it": "Mantieni il dispositivo disponibile anche quando lo stato di connessione del dispositivo non è connesso.",
+      "no": "Hold enheten tilgjengelig selv når enhetens tilkoblingsstatus ikke er tilkoblet.",
+      "sv": "Håll enheten tillgänglig även när enhetens anslutningsstatus inte är ansluten.",
+      "pl": "Utrzymuj urządzenie dostępne, nawet gdy stan połączenia urządzenia nie jest połączony.",
+      "ru": "Сохранять доступность устройства, даже если состояние подключения устройства не подключено.",
+      "ko": "장치 연결 상태가 연결되지 않았더라도 장치를 사용 가능하게 유지합니다."
+    },
+    "value": false
+  },
+  {
     "id": "applianceState",
     "type": "label",
     "label": {

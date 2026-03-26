@@ -202,5 +202,8 @@
   },
   "1.6.2": {
     "en": "Added hob device and fixed missing i18n lang text"
+  },
+  "1.6.3": {
+    "en": "Added Bypass Connection Availability Status"
   }
 }
