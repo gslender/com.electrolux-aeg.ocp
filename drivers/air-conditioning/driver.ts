@@ -12,7 +12,8 @@ export default class AirConditionerDriver extends SharedDriver {
     "measure_stopTime",
     "target_temperature",
     "fan_mode",
-    "thermostat_mode",
+    "measure_fanSpeedState",
+    "aircon_mode",
     "measure_temperature",
     "measure_alerts",
   ];

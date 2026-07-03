@@ -205,5 +205,8 @@
   },
   "1.6.3": {
     "en": "Added Bypass Connection Availability Status"
+  },
+  "1.6.4": {
+    "en": "Added fixes to air conditioning for on/off and fanspeed/fanmode"
   }
 }

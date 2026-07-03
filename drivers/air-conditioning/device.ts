@@ -11,7 +11,7 @@ class AirConditionerDevice extends SharedDevice {
     // Listen to multiple capabilities simultaneously
     this.registerMultipleCapabilityListener(
       [
-        "onoff", "target_temperature", "aircon_execute_command"
+        "onoff", "target_temperature", "aircon_execute_command", "fan_mode", "aircon_mode"
       ],
       (valueObj, optsObj) => this.setDeviceOpts(valueObj),
       500
@@ -50,10 +50,16 @@ class AirConditionerDevice extends SharedDevice {
         await this.app.sendDeviceCommand(deviceId, { targetTemperatureC: valueObj.target_temperature });
       }
 
-      // Update thermostat_mode
-      if (valueObj.thermostat_mode !== undefined) {
-        this.log("thermostat_mode: " + valueObj.thermostat_mode);
-        await this.app.sendDeviceCommand(deviceId, { mode: this.safeUppercase(valueObj.thermostat_mode) });
+      // Update aircon_mode
+      if (valueObj.aircon_mode !== undefined) {
+        this.log("aircon_mode: " + valueObj.aircon_mode);
+        await this.app.sendDeviceCommand(deviceId, { mode: this.safeUppercase(valueObj.aircon_mode) });
+      }
+
+      // Update fan_mode
+      if (valueObj.fan_mode !== undefined) {
+        this.log("fan_mode: " + valueObj.fan_mode);
+        await this.app.sendDeviceCommand(deviceId, { fanSpeedSetting: this.safeUppercase(valueObj.fan_mode) });
       }
 
     } catch (error) {
@@ -78,8 +84,9 @@ class AirConditionerDevice extends SharedDevice {
       await this.safeUpdateCapabilityValue("measure_startTime", this.convertSecondsToHrMinString(props.startTime));
       await this.safeUpdateCapabilityValue("measure_stopTime", this.convertSecondsToHrMinString(props.stopTime));
       await this.safeUpdateCapabilityValue("measure_temperature", props.ambientTemperatureC);
-      await this.safeUpdateCapabilityValue("thermostat_mode", props.mode);
-      await this.safeUpdateCapabilityValue("fan_mode", props.fanSpeedSetting);
+      await this.safeUpdateCapabilityValue("aircon_mode", props.mode?.toLowerCase());
+      await this.safeUpdateCapabilityValue("fan_mode", props.fanSpeedSetting?.toLowerCase());
+      await this.safeUpdateCapabilityValue("measure_fanSpeedState", this.translateUnderscore(props.fanSpeedState));
 
       await this.updateMeasureAlerts(props);
     } catch (error) {
@@ -91,6 +98,11 @@ class AirConditionerDevice extends SharedDevice {
   flow_execute_aircon_command(args: { what: string }, state: {}) {
     this.log(`flow_execute_aircon_command: args=${stringify(args.what)} state=${stringify(state)}`);
     return this.setDeviceOpts({ aircon_execute_command: args.what });
+  }
+
+  flow_set_aircon_mode(args: { mode: string }, state: {}) {
+    this.log(`flow_set_aircon_mode: args=${stringify(args.mode)} state=${stringify(state)}`);
+    return this.setDeviceOpts({ aircon_mode: args.mode });
   }
 
 

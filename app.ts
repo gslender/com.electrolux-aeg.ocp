@@ -23,6 +23,7 @@ export default class ElectroluxAEGApp extends Homey.App {
     this.registerFlowCardAction("execute_dishwasher_command");
     this.registerFlowCardAction("execute_laundry_command");
     this.registerFlowCardAction("execute_aircon_command");
+    this.registerFlowCardAction("set_aircon_mode");
     this.registerFlowCardAction("execute_robot_command");
     this.registerFlowCardAction("execute_robot700_cleaning_command");
     this.registerFlowCardAction("enable_cavity_light");

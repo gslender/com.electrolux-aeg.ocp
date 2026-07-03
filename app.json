@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.electrolux-aeg.ocp",
-  "version": "1.6.3",
+  "version": "1.6.4",
   "compatibility": ">=12.0.0",
   "sdk": 3,
   "platforms": [
@@ -2281,6 +2281,132 @@
       },
       {
         "title": {
+          "en": "Set Air Conditioning Mode",
+          "de": "Klimaanlagenmodus einstellen",
+          "nl": "Airconditioningmodus instellen",
+          "da": "Indstil klimaanlægstilstand",
+          "es": "Ajustar el modo del aire acondicionado",
+          "fr": "Régler le mode de climatisation",
+          "it": "Imposta la modalità del condizionatore",
+          "no": "Sett klimaanleggsmodus",
+          "sv": "Ställ in luftkonditioneringsläge",
+          "pl": "Ustaw tryb klimatyzacji",
+          "ru": "Установить режим кондиционера",
+          "ko": "에어컨 모드 설정"
+        },
+        "titleFormatted": {
+          "en": "Set air conditioning mode to [[mode]]",
+          "de": "Klimaanlagenmodus auf [[mode]] einstellen",
+          "nl": "Airconditioningmodus instellen op [[mode]]",
+          "da": "Indstil klimaanlægstilstand til [[mode]]",
+          "es": "Ajustar el modo del aire acondicionado a [[mode]]",
+          "fr": "Régler le mode de climatisation sur [[mode]]",
+          "it": "Imposta la modalità del condizionatore su [[mode]]",
+          "no": "Sett klimaanleggsmodus til [[mode]]",
+          "sv": "Ställ in luftkonditioneringsläge till [[mode]]",
+          "pl": "Ustaw tryb klimatyzacji na [[mode]]",
+          "ru": "Установить режим кондиционера на [[mode]]",
+          "ko": "에어컨 모드를 [[mode]](으)로 설정"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=air-conditioning"
+          },
+          {
+            "type": "dropdown",
+            "name": "mode",
+            "title": {
+              "en": "Mode",
+              "de": "Modus",
+              "nl": "Modus",
+              "da": "Tilstand",
+              "es": "Modo",
+              "fr": "Mode",
+              "it": "Modalità",
+              "no": "Modus",
+              "sv": "Läge",
+              "pl": "Tryb",
+              "ru": "Режим",
+              "ko": "모드"
+            },
+            "values": [
+              {
+                "id": "auto",
+                "title": {
+                  "en": "Auto",
+                  "de": "Auto",
+                  "nl": "Auto",
+                  "da": "Auto",
+                  "es": "Auto",
+                  "fr": "Auto",
+                  "it": "Auto",
+                  "no": "Auto",
+                  "sv": "Auto",
+                  "pl": "Auto",
+                  "ru": "Авто",
+                  "ko": "자동"
+                }
+              },
+              {
+                "id": "cool",
+                "title": {
+                  "en": "Cool",
+                  "de": "Kühlen",
+                  "nl": "Koelen",
+                  "da": "Køl ned",
+                  "es": "Enfriar",
+                  "fr": "Refroidir",
+                  "it": "Raffreddamento",
+                  "no": "Avkjøle",
+                  "sv": "Kyla",
+                  "pl": "Chłodzenie",
+                  "ru": "Охлаждение",
+                  "ko": "냉방"
+                }
+              },
+              {
+                "id": "dry",
+                "title": {
+                  "en": "Dry",
+                  "de": "Entfeuchten",
+                  "nl": "Ontvochtigen",
+                  "da": "Affugtning",
+                  "es": "Deshumidificar",
+                  "fr": "Déshumidifier",
+                  "it": "Deumidificazione",
+                  "no": "Avfukting",
+                  "sv": "Avfuktning",
+                  "pl": "Osuszanie",
+                  "ru": "Осушение",
+                  "ko": "제습"
+                }
+              },
+              {
+                "id": "fanonly",
+                "title": {
+                  "en": "Fan Only",
+                  "de": "Nur Lüfter",
+                  "nl": "Alleen ventilator",
+                  "da": "Kun ventilator",
+                  "es": "Solo ventilador",
+                  "fr": "Ventilateur seul",
+                  "it": "Solo ventola",
+                  "no": "Kun vifte",
+                  "sv": "Endast fläkt",
+                  "pl": "Tylko wentylator",
+                  "ru": "Только вентилятор",
+                  "ko": "송풍 전용"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "set_aircon_mode"
+      },
+      {
+        "title": {
           "en": "Set fan speed",
           "nl": "Stel ventilatorsnelheid in",
           "da": "Indstil blæserhastighed",
@@ -3989,6 +4115,96 @@
       "getable": false,
       "setable": true
     },
+    "aircon_mode": {
+      "type": "enum",
+      "uiComponent": "picker",
+      "title": {
+        "en": "Mode",
+        "nl": "Modus",
+        "da": "Tilstand",
+        "de": "Modus",
+        "es": "Modo",
+        "fr": "Mode",
+        "it": "Modalità",
+        "no": "Modus",
+        "sv": "Läge",
+        "pl": "Tryb",
+        "ru": "Режим",
+        "ko": "모드"
+      },
+      "values": [
+        {
+          "id": "auto",
+          "title": {
+            "en": "Auto",
+            "nl": "Auto",
+            "da": "Auto",
+            "de": "Auto",
+            "es": "Auto",
+            "fr": "Auto",
+            "it": "Auto",
+            "no": "Auto",
+            "sv": "Auto",
+            "pl": "Auto",
+            "ru": "Авто",
+            "ko": "자동"
+          }
+        },
+        {
+          "id": "cool",
+          "title": {
+            "en": "Cool",
+            "nl": "Koelen",
+            "da": "Køl ned",
+            "de": "Kühlen",
+            "es": "Enfriar",
+            "fr": "Refroidir",
+            "it": "Raffreddamento",
+            "no": "Avkjøle",
+            "sv": "Kyla",
+            "pl": "Chłodzenie",
+            "ru": "Охлаждение",
+            "ko": "냉방"
+          }
+        },
+        {
+          "id": "dry",
+          "title": {
+            "en": "Dry",
+            "nl": "Ontvochtigen",
+            "da": "Affugtning",
+            "de": "Entfeuchten",
+            "es": "Deshumidificar",
+            "fr": "Déshumidifier",
+            "it": "Deumidificazione",
+            "no": "Avfukting",
+            "sv": "Avfuktning",
+            "pl": "Osuszanie",
+            "ru": "Осушение",
+            "ko": "제습"
+          }
+        },
+        {
+          "id": "fanonly",
+          "title": {
+            "en": "Fan Only",
+            "nl": "Alleen ventilator",
+            "da": "Kun ventilator",
+            "de": "Nur Lüfter",
+            "es": "Solo ventilador",
+            "fr": "Ventilateur seul",
+            "it": "Solo ventola",
+            "no": "Kun vifte",
+            "sv": "Endast fläkt",
+            "pl": "Tylko wentylator",
+            "ru": "Только вентилятор",
+            "ko": "송풍 전용"
+          }
+        }
+      ],
+      "getable": true,
+      "setable": true
+    },
     "cleaning_command": {
       "type": "enum",
       "uiComponent": "picker",
@@ -4791,6 +5007,26 @@
       "getable": true,
       "setable": false,
       "icon": "/assets/icons/bolt.svg"
+    },
+    "measure_fanSpeedState": {
+      "type": "string",
+      "title": {
+        "en": "Fan Speed State",
+        "de": "Lüftergeschwindigkeitsstatus",
+        "nl": "Ventilatorsnelheidsstatus",
+        "da": "Ventilatorhastighedsstatus",
+        "es": "Estado de la velocidad del ventilador",
+        "fr": "État de la vitesse du ventilateur",
+        "it": "Stato della velocità della ventola",
+        "no": "Viftehastighetsstatus",
+        "sv": "Fläkthastighetsstatus",
+        "pl": "Stan prędkości wentylatora",
+        "ru": "Состояние скорости вентилятора",
+        "ko": "팬 속도 상태"
+      },
+      "getable": true,
+      "setable": false,
+      "icon": "/assets/icons/rotate.svg"
     },
     "measure_fanState": {
       "type": "string",

@@ -1,0 +1,20 @@
+{
+  "type": "string",
+  "title": {
+    "en": "Fan Speed State",
+    "de": "Lüftergeschwindigkeitsstatus",
+    "nl": "Ventilatorsnelheidsstatus",
+    "da": "Ventilatorhastighedsstatus",
+    "es": "Estado de la velocidad del ventilador",
+    "fr": "État de la vitesse du ventilateur",
+    "it": "Stato della velocità della ventola",
+    "no": "Viftehastighetsstatus",
+    "sv": "Fläkthastighetsstatus",
+    "pl": "Stan prędkości wentylatora",
+    "ru": "Состояние скорости вентилятора",
+    "ko": "팬 속도 상태"
+  },
+  "getable": true,
+  "setable": false,
+  "icon": "/assets/icons/rotate.svg"
+}
