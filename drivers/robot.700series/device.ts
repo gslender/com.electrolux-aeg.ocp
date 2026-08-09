@@ -73,10 +73,6 @@ class Robot700Device extends SharedDevice {
     return this.setDeviceOpts({ cleaning_command: args.what });
   }
 
-  flow_applianceState_is(args: { value: string }, state: {}) {
-    this.log(`flow_applianceState_is: args=${stringify(args.value)} state=${stringify(state)}`);
-    return this.compareCaseInsensitiveString(args.value, this.getCapabilityValue("measure_applianceState"));
-  }
 }
 
 module.exports = Robot700Device;

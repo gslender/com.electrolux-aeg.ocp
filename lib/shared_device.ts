@@ -134,6 +134,11 @@ export default class SharedDevice extends Homey.Device {
     return str1.toLowerCase() === str2.toLowerCase();
   }
 
+  flow_applianceState_is(args: { value: string }, state: {}) {
+    this.log(`flow_applianceState_is: args=${stringify(args.value)} state=${stringify(state)}`);
+    return this.compareCaseInsensitiveString(this.translateUnderscore(args.value), this.getCapabilityValue("measure_applianceState"));
+  }
+
   async updateCapabilities() {
   }
 

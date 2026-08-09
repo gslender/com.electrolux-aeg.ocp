@@ -208,5 +208,8 @@
   },
   "1.6.4": {
     "en": "Added fixes to air conditioning for on/off and fanspeed/fanmode"
+  },
+  "1.6.5": {
+    "en": "Fixed appliance state flow check"
   }
 }

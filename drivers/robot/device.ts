@@ -74,11 +74,6 @@ class RobotDevice extends SharedDevice {
     return this.setDeviceOpts({ robot_execute_command: args.what });
   }
 
-  flow_applianceState_is(args: { value: string }, state: {}) {
-    this.log(`flow_applianceState_is: args=${stringify(args.value)} state=${stringify(state)}`);
-    return this.compareCaseInsensitiveString(args.value, this.getCapabilityValue("measure_applianceState"));
-  }
-
   async flow_connectionState_is(args: { value: string }, state: {}) {
     this.log(`flow_connectionState_is: args=${stringify(args.value)} state=${stringify(state)}`);
     const latestState = await this.app.getApplianceState(this.getData().id);

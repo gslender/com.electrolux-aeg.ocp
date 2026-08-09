@@ -152,11 +152,6 @@ class RangeHoodDevice extends SharedDevice {
 
   }
 
-  flow_applianceState_is(args: { value: string }, state: {}) {
-    this.log(`flow_applianceState_is: args=${stringify(args.value)} state=${stringify(state)}`);
-    return this.compareCaseInsensitiveString(args.value, this.getCapabilityValue("measure_applianceState"));
-  }
-
   flow_connectionState_is(args: { value: string }, state: {}) {
     this.log(`flow_connectionState_is: args=${stringify(args.value)} state=${stringify(state)}`);
     return this.compareCaseInsensitiveString(args.value, this.getCapabilityValue("measure_connectionState"));
