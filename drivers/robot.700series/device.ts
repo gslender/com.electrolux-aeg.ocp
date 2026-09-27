@@ -54,7 +54,6 @@ class Robot700Device extends SharedDevice {
     }
 
     const props = state.properties.reported;
-    const model = state.applianceData.modelName;
 
     try {
       await this.safeUpdateCapabilityValue("measure_battery", props.batteryStatus);

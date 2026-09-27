@@ -1,6 +1,6 @@
 {
     "measure_alerts_none": "Нет",
-    "robot_status": {        
+    "robot_status": {
         "1": "Уборка",
         "2": "Уборка приостановлена",
         "3": "Точечная уборка",
@@ -21,11 +21,50 @@
         "2": "Средний",
         "3": "Высокий"
     },
-    "robot_state": {    
+    "robot_state": {
         "goingHome": "Идет домой",
         "idle": "Бездействует",
         "inProgress": "В процессе",
         "paused": "Приостановлено",
         "sleeping": "Спящий"
+    },
+    "settings": {
+        "title": "Electrolux AEG",
+        "subtitle": "Подключите Homey к вашим устройствам через официальный API для разработчиков Electrolux Group",
+        "status_label": "Статус",
+        "credentials_legend": "Данные разработчика",
+        "step_1": "Войдите на developer.electrolux.one с той же учётной записью, что и в приложении Electrolux или AEG.",
+        "step_2": "На странице Dashboard создайте API-ключ.",
+        "step_3": "Нажмите GET ACCESS TOKEN, чтобы получить access token и refresh token.",
+        "step_4": "Вставьте все три значения ниже и сохраните. Используйте пару токенов только для Homey - не передавайте её другим приложениям, так как Homey обновляет токены автоматически.",
+        "api_key": "API-ключ",
+        "access_token": "Access token",
+        "refresh_token": "Refresh token",
+        "token_placeholder_keep": "Оставьте пустым, чтобы сохранить текущий токен",
+        "polling": "Интервал опроса",
+        "minute_1": "1 минута",
+        "minutes_2": "2 минуты",
+        "minutes_5": "5 минут",
+        "minutes_10": "10 минут",
+        "minutes_15": "15 минут",
+        "polling_note": "Бесплатный план разработчика Electrolux допускает 5000 вызовов API в день. При большом количестве устройств интервал автоматически увеличивается, чтобы не превысить этот лимит.",
+        "polling_effective": "Фактический интервал опроса (минуты)",
+        "save": "Сохранить изменения",
+        "status_ok": "Подключено",
+        "status_not_configured": "Не настроено - введите API-ключ, access token и refresh token",
+        "status_auth_failed": "Данные отклонены - получите новые access token и refresh token и введите их снова",
+        "status_rate_limited": "Достигнут лимит API Electrolux - обновления возобновятся автоматически",
+        "status_error": "Проблема с подключением - повтор при следующем опросе",
+        "status_unknown": "Ожидание первого подключения",
+        "saved": "Данные действительны и сохранены!",
+        "error_prefix": "Ошибка: ",
+        "error_missing_fields": "Введите API-ключ, access token и refresh token.",
+        "error_invalid_credentials": "Electrolux отклонил API-ключ, access token или refresh token.",
+        "error_connect": "Не удалось подключиться к API Electrolux"
+    },
+    "auth": {
+        "unavailable": "Данные Electrolux отклонены. Введите новые access token и refresh token в настройках приложения.",
+        "notification": "Electrolux AEG: ваши данные разработчика отклонены или устарели. Откройте настройки приложения и введите новые access token и refresh token с developer.electrolux.one.",
+        "migration": "Electrolux AEG 2.0 использует официальный API для разработчиков Electrolux Group. Вход по e-mail и паролю больше не поддерживается - откройте настройки приложения и введите API-ключ, access token и refresh token с developer.electrolux.one."
     }
 }

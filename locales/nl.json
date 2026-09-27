@@ -1,6 +1,6 @@
 {
     "measure_alerts_none": "Geen",
-    "robot_status": {        
+    "robot_status": {
         "1": "Schoonmaken",
         "2": "Schoonmaak gepauzeerd",
         "3": "Vlekreiniging",
@@ -21,11 +21,50 @@
         "2": "Medium",
         "3": "Hoog"
     },
-    "robot_state": {    
+    "robot_state": {
         "goingHome": "Gaat naar huis",
         "idle": "Inactief",
         "inProgress": "Bezig",
         "paused": "Gepauzeerd",
         "sleeping": "Slapend"
+    },
+    "settings": {
+        "title": "Electrolux AEG",
+        "subtitle": "Verbind Homey met je apparaten via de officiële Electrolux Group developer API",
+        "status_label": "Status",
+        "credentials_legend": "Developer-gegevens",
+        "step_1": "Log in op developer.electrolux.one met hetzelfde account dat je in de Electrolux- of AEG-app gebruikt.",
+        "step_2": "Maak op het Dashboard een API-sleutel aan.",
+        "step_3": "Klik op GET ACCESS TOKEN om een access token en refresh token te genereren.",
+        "step_4": "Plak alle drie de waarden hieronder en sla op. Gebruik een tokenpaar alleen voor Homey - deel het niet met andere apps, want Homey vernieuwt de tokens automatisch.",
+        "api_key": "API-sleutel",
+        "access_token": "Access token",
+        "refresh_token": "Refresh token",
+        "token_placeholder_keep": "Laat leeg om het huidige token te behouden",
+        "polling": "Polling-interval",
+        "minute_1": "1 minuut",
+        "minutes_2": "2 minuten",
+        "minutes_5": "5 minuten",
+        "minutes_10": "10 minuten",
+        "minutes_15": "15 minuten",
+        "polling_note": "Het gratis Electrolux developer-abonnement staat 5000 API-aanroepen per dag toe. Bij veel apparaten wordt het interval automatisch verhoogd om binnen deze limiet te blijven.",
+        "polling_effective": "Effectief polling-interval (minuten)",
+        "save": "Wijzigingen opslaan",
+        "status_ok": "Verbonden",
+        "status_not_configured": "Niet geconfigureerd - voer je API-sleutel, access token en refresh token in",
+        "status_auth_failed": "Gegevens geweigerd - genereer een nieuw access token en refresh token en voer ze opnieuw in",
+        "status_rate_limited": "Electrolux API-limiet bereikt - updates worden automatisch hervat",
+        "status_error": "Verbindingsprobleem - nieuwe poging bij volgende poll",
+        "status_unknown": "Wachten op eerste verbinding",
+        "saved": "Gegevens geldig en opgeslagen!",
+        "error_prefix": "Fout: ",
+        "error_missing_fields": "Voer de API-sleutel, access token en refresh token in.",
+        "error_invalid_credentials": "De API-sleutel, access token of refresh token is door Electrolux geweigerd.",
+        "error_connect": "Kan geen verbinding maken met de Electrolux API"
+    },
+    "auth": {
+        "unavailable": "Electrolux-gegevens geweigerd. Voer een nieuw access token en refresh token in bij de app-instellingen.",
+        "notification": "Electrolux AEG: je developer-gegevens zijn geweigerd of verlopen. Open de app-instellingen en voer een nieuw access token en refresh token van developer.electrolux.one in.",
+        "migration": "Electrolux AEG 2.0 gebruikt de officiële Electrolux Group developer API. Inloggen met e-mail en wachtwoord wordt niet meer ondersteund - open de app-instellingen en voer een API-sleutel, access token en refresh token van developer.electrolux.one in."
     }
 }

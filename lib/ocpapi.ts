@@ -1,153 +1,275 @@
-
 /**
- * OCPAPI 
- * 
- * This module provides an interface to interact with ocp.electrolux.one via 
- * their public API. Requires a specialised version of Gigya to function.
- * 
+ * OCPAPI
+ *
+ * This module provides an interface to interact with Electrolux Group appliances via
+ * the official Electrolux Group Developer API (https://developer.electrolux.one).
+ *
  * Author: Grant Slender (gslender@gmail.com)
- * 
- * 
+ *
+ *
  * License: GNU General Public License v3.0
- * 
+ *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
-import { Gigya, DataCenter } from '@gslender/gigya';
-import axios, { AxiosInstance } from 'axios';
+import axios, { AxiosError, AxiosInstance, AxiosRequestConfig } from 'axios';
 
-const EU1_ACCOUNTS_API_KEY = '4_JZvZObbVWc1YROHF9e6y8A';
-const API_KEY = '2AMqwEV5MqVhTKrRCyYfVF8gmKrd2rAmp7cUsfky';
-const AUTH_API_URL = 'https://api.eu.ocp.electrolux.one/one-account-authorization/api/v1';
-const APPLIANCE_API_URL = 'https://api.eu.ocp.electrolux.one/appliance/api/v2';
+const API_BASE_URL = 'https://api.developer.electrolux.one/api/v1';
+const USER_AGENT = 'HomeyElectroluxAEG';
+
+// Refresh the access token this long before it actually expires
+const REFRESH_MARGIN_MS = 5 * 60 * 1000;
+// Free plan allows 10 calls/sec and 5 concurrent calls - requests are serialised and spaced out
+const MIN_REQUEST_GAP_MS = 150;
+// Used when a 429 response carries no Retry-After header
+const DEFAULT_RATE_LIMIT_BACKOFF_MS = 15 * 60 * 1000;
+
+export interface OcpAuth {
+  apiKey: string;
+  accessToken: string;
+  refreshToken: string;
+  expiresAt: number;
+}
 
 interface TokenResponse {
   accessToken: string;
   refreshToken: string;
   expiresIn: number;
+  tokenType: string;
+  scope: string;
+}
+
+/** The stored credentials were rejected and the user has to enter new ones. */
+export class OcpAuthError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = 'OcpAuthError';
+  }
+}
+
+/** The API key has exceeded its rate limit or daily quota. */
+export class OcpRateLimitError extends Error {
+  constructor(message: string, public readonly retryAt: number) {
+    super(message);
+    this.name = 'OcpRateLimitError';
+  }
+}
+
+export function describeError(error: unknown): string {
+  if (axios.isAxiosError(error)) {
+    const data: any = error.response?.data;
+    const detail = data?.message ?? data?.error ?? '';
+    return `${error.response?.status ?? error.code ?? 'network error'} ${detail}`.trim();
+  }
+  return `${error}`;
+}
+
+function jwtExpiry(token: string): number {
+  try {
+    const payload = JSON.parse(Buffer.from(token.split('.')[1], 'base64url').toString('utf8'));
+    return typeof payload.exp === 'number' ? payload.exp * 1000 : 0;
+  } catch (_error) {
+    return 0;
+  }
+}
+
+function statusOf(error: unknown): number | undefined {
+  return axios.isAxiosError(error) ? error.response?.status : undefined;
 }
 
 export class OcpApi {
-  static giga_accounts_api_key = EU1_ACCOUNTS_API_KEY;
-  static giga_dc_region: DataCenter = "eu1";
-  private ocpAccountAuth: AxiosInstance = axios.create({
-    baseURL: AUTH_API_URL,
+  private http: AxiosInstance = axios.create({
+    baseURL: API_BASE_URL,
+    timeout: 30000,
     headers: {
       Accept: 'application/json',
-      'Accept-Charset': 'utf-8',
-      'x-api-key': API_KEY,
       'Content-Type': 'application/json',
-      'User-Agent': 'Ktor client',
-      'Origin-Country-Code': 'PL'
+      'User-Agent': USER_AGENT
     }
   });
-  private gigya: Gigya = new Gigya(OcpApi.giga_accounts_api_key, OcpApi.giga_dc_region);
-  private jwtResponse: any;
+  private auth?: OcpAuth;
+  private onAuthChanged: (auth: OcpAuth) => void = () => { };
+  private refreshInFlight?: Promise<void>;
+  private queue: Promise<unknown> = Promise.resolve();
+  private lastRequestAt = 0;
+  private rateLimitedUntil = 0;
 
-  private getUsername: () => string;
-  private getPassword: () => string;
-  private getAccessToken: () => string;
-  private setAccessToken: (token: string) => void;
-  private getTokenExpirationDate: () => number;
-  private setTokenExpirationDate: (date: number) => void;
-
-  constructor() {
-    this.getUsername = () => '';
-    this.getPassword = () => '';
-    this.getAccessToken = () => '';
-    this.setAccessToken = () => { };
-    this.getTokenExpirationDate = () => 0;
-    this.setTokenExpirationDate = () => { };
+  public init(auth: OcpAuth | undefined, onAuthChanged: (auth: OcpAuth) => void): void {
+    this.auth = auth && auth.apiKey && auth.accessToken && auth.refreshToken ? auth : undefined;
+    this.onAuthChanged = onAuthChanged;
   }
 
-  public init(
-    getUsername: () => string,
-    getPassword: () => string,
-    getAccessToken: () => string,
-    setAccessToken: (token: string) => void,
-    getTokenExpirationDate: () => number,
-    setTokenExpirationDate: (date: number) => void
-  ): void {
-    this.getUsername = getUsername;
-    this.getPassword = getPassword;
-    this.getAccessToken = getAccessToken;
-    this.setAccessToken = setAccessToken;
-    this.getTokenExpirationDate = getTokenExpirationDate;
-    this.setTokenExpirationDate = setTokenExpirationDate;
+  public hasCredentials(): boolean {
+    return this.auth !== undefined;
   }
 
-  private isExpired(): boolean {
-    return this.getTokenExpirationDate() <= Date.now();
+  public getAuth(): OcpAuth | undefined {
+    return this.auth;
   }
 
-  public async login(): Promise<void> {
+  public async getAppliances(): Promise<any[]> {
+    const data = await this.request<any>({ method: 'GET', url: '/appliances' });
+    return Array.isArray(data) ? data : [];
+  }
+
+  public async getApplianceState(applianceId: string): Promise<any> {
+    return await this.request({ method: 'GET', url: `/appliances/${applianceId}/state` }) ?? {};
+  }
+
+  public async getApplianceInfo(applianceId: string): Promise<any> {
+    return await this.request({ method: 'GET', url: `/appliances/${applianceId}/info` }) ?? {};
+  }
+
+  public async sendCommand(applianceId: string, command: any): Promise<void> {
+    // DAM appliances (ids starting with "1:") expect commands wrapped in a list
+    const body = applianceId.startsWith('1:') ? { commands: [command] } : command;
+    await this.request({ method: 'PUT', url: `/appliances/${applianceId}/command`, data: body });
+  }
+
+  /**
+   * Validates a freshly entered API key / token pair and, if it works, adopts it.
+   * The previously used refresh token (if any) is revoked afterwards.
+   */
+  public async useCredentials(apiKey: string, accessToken: string, refreshToken: string): Promise<void> {
+    let candidate: OcpAuth = { apiKey, accessToken, refreshToken, expiresAt: jwtExpiry(accessToken) };
+    if (this.needsRefresh(candidate)) {
+      candidate = await this.refreshTokens(candidate);
+    }
     try {
-      const loginResponse = await this.gigya.accounts.login({
-        loginID: this.getUsername(),
-        password: this.getPassword(),
-        targetEnv: 'mobile',
-        sessionExpiration: -2
-      });
-
-      this.jwtResponse = await this.gigya.accounts.getJWT({
-        targetUID: loginResponse.UID,
-        apiKey: API_KEY,
-        fields: 'country',
-        oauth_token: loginResponse.sessionInfo?.sessionToken,
-        secret: loginResponse.sessionInfo?.sessionSecret
-      });
-
-      const response = await this.ocpAccountAuth.post<TokenResponse>(
-        '/token',
-        {
-          grantType: 'urn:ietf:params:oauth:grant-type:token-exchange',
-          clientId: 'ElxOneApp',
-          idToken: this.jwtResponse.id_token,
-          scope: ''
-        },
-        {
-          headers: {
-            Authorization: 'Bearer'
-          }
-        }
-      );
-
-      this.setAccessToken(response.data.accessToken);
-      this.setTokenExpirationDate(Date.now() + response.data.expiresIn * 1000);
+      await this.send(candidate, { method: 'GET', url: '/appliances' });
     } catch (error) {
-      throw new Error(`${error}`);
+      const status = statusOf(error);
+      if (status === 401 || status === 403) {
+        throw new OcpAuthError(`credentials rejected (${describeError(error)})`);
+      }
+      throw error;
+    }
+
+    const previous = this.auth;
+    this.setAuth(candidate);
+    if (previous && previous.refreshToken !== candidate.refreshToken) {
+      await this.revoke(previous.refreshToken).catch(() => { });
     }
   }
 
-  public async createHttp(): Promise<AxiosInstance> {
-    if (this.isExpired()) {
-      await this.login();
-    }
+  public async revoke(refreshToken: string): Promise<void> {
+    await this.throttled(() => this.http.post('/token/revoke', { refreshToken }));
+  }
+
+  private setAuth(auth: OcpAuth) {
+    this.auth = auth;
+    this.onAuthChanged(auth);
+  }
+
+  private needsRefresh(auth: OcpAuth): boolean {
+    return auth.expiresAt - REFRESH_MARGIN_MS <= Date.now();
+  }
+
+  private async request<T = any>(config: AxiosRequestConfig): Promise<T> {
+    if (!this.auth) throw new OcpAuthError('no credentials configured');
+    if (this.needsRefresh(this.auth)) await this.refreshAuth();
     try {
-      return axios.create({
-        baseURL: APPLIANCE_API_URL,
+      return await this.send<T>(this.auth, config);
+    } catch (error) {
+      if (statusOf(error) !== 401) throw error;
+      // Token may have been invalidated early - refresh once and retry
+      await this.refreshAuth();
+      try {
+        return await this.send<T>(this.auth, config);
+      } catch (retryError) {
+        if (statusOf(retryError) === 401) throw new OcpAuthError(`access token rejected (${describeError(retryError)})`);
+        throw retryError;
+      }
+    }
+  }
+
+  /**
+   * Refresh tokens are single use - every refresh returns a new pair - so concurrent callers
+   * must share one refresh, otherwise the second caller would present an already used token.
+   */
+  private refreshAuth(): Promise<void> {
+    if (!this.refreshInFlight) {
+      const current = this.auth!;
+      this.refreshInFlight = this.refreshTokens(current)
+        .then(next => {
+          // Don't clobber credentials the user entered while this refresh was running
+          if (this.auth === current) this.setAuth(next);
+        })
+        .finally(() => { this.refreshInFlight = undefined; });
+    }
+    return this.refreshInFlight;
+  }
+
+  private async refreshTokens(auth: OcpAuth): Promise<OcpAuth> {
+    this.checkRateLimit();
+    try {
+      const response = await this.throttled(() =>
+        this.http.post<TokenResponse>('/token/refresh', { refreshToken: auth.refreshToken }));
+      const { accessToken, refreshToken, expiresIn } = response.data;
+      const expiresAt = expiresIn ? Date.now() + expiresIn * 1000 : jwtExpiry(accessToken);
+      return { apiKey: auth.apiKey, accessToken, refreshToken, expiresAt };
+    } catch (error) {
+      this.noteRateLimit(error);
+      const status = statusOf(error);
+      if (status !== undefined && status >= 400 && status < 500) {
+        throw new OcpAuthError(`refresh token rejected (${describeError(error)})`);
+      }
+      throw error;
+    }
+  }
+
+  private async send<T = any>(auth: OcpAuth, config: AxiosRequestConfig): Promise<T> {
+    this.checkRateLimit();
+    try {
+      const response = await this.throttled(() => this.http.request<T>({
+        ...config,
         headers: {
-          'Accept-Encoding': 'gzip, deflate, br',
-          'Accept-Charset': 'utf-8',
-          'x-api-key': API_KEY,
-          Accept: 'application/json',
-          'User-Agent': 'Ktor client',
-          Authorization: `Bearer ${this.getAccessToken()}`
+          ...config.headers,
+          'x-api-key': auth.apiKey,
+          Authorization: `Bearer ${auth.accessToken}`
         }
-      });
+      }));
+      return response.data;
     } catch (error) {
-      console.log(JSON.stringify(error));
-      throw new Error(`${error}`);
+      this.noteRateLimit(error);
+      throw error;
     }
+  }
+
+  private checkRateLimit() {
+    if (Date.now() < this.rateLimitedUntil) {
+      throw new OcpRateLimitError('rate limit reached', this.rateLimitedUntil);
+    }
+  }
+
+  private noteRateLimit(error: unknown) {
+    if (statusOf(error) !== 429) return;
+    const retryAfter = Number((error as AxiosError).response?.headers?.['retry-after']);
+    const backoff = Number.isFinite(retryAfter) && retryAfter > 0 ? retryAfter * 1000 : DEFAULT_RATE_LIMIT_BACKOFF_MS;
+    this.rateLimitedUntil = Date.now() + backoff;
+    throw new OcpRateLimitError(`rate limit reached (${describeError(error)})`, this.rateLimitedUntil);
+  }
+
+  /** Runs requests one at a time with a minimum gap, keeping within the API's rate and burst limits. */
+  private throttled<T>(fn: () => Promise<T>): Promise<T> {
+    const run = async () => {
+      const wait = this.lastRequestAt + MIN_REQUEST_GAP_MS - Date.now();
+      if (wait > 0) await new Promise(resolve => setTimeout(resolve, wait));
+      this.lastRequestAt = Date.now();
+      return fn();
+    };
+    const result = this.queue.then(run, run);
+    this.queue = result.catch(() => undefined);
+    return result;
   }
 }

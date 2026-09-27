@@ -1,6 +1,6 @@
 {
     "measure_alerts_none": "Nessuno",
-    "robot_status": {        
+    "robot_status": {
         "1": "Pulizia",
         "2": "Pulizia in pausa",
         "3": "Pulizia delle macchie",
@@ -21,11 +21,50 @@
         "2": "Medio",
         "3": "Alto"
     },
-    "robot_state": {    
+    "robot_state": {
         "goingHome": "Torna a casa",
         "idle": "Inattivo",
         "inProgress": "In corso",
         "paused": "In pausa",
         "sleeping": "Dormendo"
+    },
+    "settings": {
+        "title": "Electrolux AEG",
+        "subtitle": "Collega Homey ai tuoi elettrodomestici tramite l'API ufficiale per sviluppatori di Electrolux Group",
+        "status_label": "Stato",
+        "credentials_legend": "Credenziali sviluppatore",
+        "step_1": "Accedi a developer.electrolux.one con lo stesso account che usi nell'app Electrolux o AEG.",
+        "step_2": "Nella Dashboard, crea una chiave API.",
+        "step_3": "Fai clic su GET ACCESS TOKEN per generare un access token e un refresh token.",
+        "step_4": "Incolla i tre valori qui sotto e salva. Usa una coppia di token solo per Homey - non condividerla con altre app, perché Homey rinnova i token automaticamente.",
+        "api_key": "Chiave API",
+        "access_token": "Access token",
+        "refresh_token": "Refresh token",
+        "token_placeholder_keep": "Lascia vuoto per mantenere il token attuale",
+        "polling": "Intervallo di aggiornamento",
+        "minute_1": "1 minuto",
+        "minutes_2": "2 minuti",
+        "minutes_5": "5 minuti",
+        "minutes_10": "10 minuti",
+        "minutes_15": "15 minuti",
+        "polling_note": "Il piano sviluppatori gratuito di Electrolux consente 5000 chiamate API al giorno. Con molti elettrodomestici l'intervallo viene aumentato automaticamente per rispettare questo limite.",
+        "polling_effective": "Intervallo di aggiornamento effettivo (minuti)",
+        "save": "Salva modifiche",
+        "status_ok": "Connesso",
+        "status_not_configured": "Non configurato - inserisci chiave API, access token e refresh token",
+        "status_auth_failed": "Credenziali rifiutate - genera un nuovo access token e refresh token e inseriscili di nuovo",
+        "status_rate_limited": "Limite API Electrolux raggiunto - gli aggiornamenti riprenderanno automaticamente",
+        "status_error": "Problema di connessione - nuovo tentativo al prossimo aggiornamento",
+        "status_unknown": "In attesa della prima connessione",
+        "saved": "Credenziali valide e salvate!",
+        "error_prefix": "Errore: ",
+        "error_missing_fields": "Inserisci chiave API, access token e refresh token.",
+        "error_invalid_credentials": "La chiave API, l'access token o il refresh token è stato rifiutato da Electrolux.",
+        "error_connect": "Impossibile connettersi all'API Electrolux"
+    },
+    "auth": {
+        "unavailable": "Credenziali Electrolux rifiutate. Inserisci un nuovo access token e refresh token nelle impostazioni dell'app.",
+        "notification": "Electrolux AEG: le tue credenziali sviluppatore sono state rifiutate o sono scadute. Apri le impostazioni dell'app e inserisci un nuovo access token e refresh token da developer.electrolux.one.",
+        "migration": "Electrolux AEG 2.0 usa l'API ufficiale per sviluppatori di Electrolux Group. L'accesso con e-mail e password non è più supportato - apri le impostazioni dell'app e inserisci chiave API, access token e refresh token da developer.electrolux.one."
     }
 }

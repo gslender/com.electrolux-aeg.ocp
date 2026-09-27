@@ -1,19 +1,19 @@
-Denna Homey App kommer att ansluta till
-• Gigya Identity Platform (ägd av SAP) via NPM @gslender/gigya API
-• Electrolux OCP (OneConnectedPlatform) API på https://api.ocp.electrolux.one/appliance/api/v2
-• och stödjer både Electrolux och AEG
-
-Efter en lyckad inloggning, kommer Homey App att fråga OCP API och fastställa vilka enheter du har konfigurerat.
+Denna Homey-app ansluter till
+• Electrolux Groups officiella Developer API på https://api.developer.electrolux.one
+• och stöder både Electrolux- och AEG-apparater
 
 Installationsguide
 
-Denna Homey App kräver att du har dina Electrolux eller AEG apparater konfigurerade med EU datacenter, eftersom API-tjänsterna / utbudet av produkter inte fungerar utanför denna region. Denna app har testats med Storbritannien inställt som plats i iOS Mobile AEG App, men bör fungera bra i hela EU.
+1. Logga in på https://developer.electrolux.one med samma konto (e-post och lösenord) som i Electrolux- eller AEG-appen.
+2. Skapa en API-nyckel på Dashboard och klicka sedan på GET ACCESS TOKEN för att generera en access token och refresh token.
+3. Öppna inställningarna för Homey-appen och klistra in API-nyckeln, access token och refresh token. Tokens förnyas automatiskt av appen, så använd ett tokenpar enbart för Homey och dela det inte med andra appar.
+4. Lägg till en enhet med appen och välj rätt typ, Tvätt / Luftrenare osv.
+5. Om din apparat inte är tillgänglig, besök https://github.com/gslender/com.electrolux-aeg.ocp/issues/new/choose för att begära stöd för din enhet.
 
-1. Du måste ha ett lösenord och en email konfigurerad i din Electrolux eller AEG mobilapp (se till att du loggar ut och loggar in med e-post och lösenord, och inte använder OTP).
-2. Installera Homey App och konfigurera inställningarna med din e-post och lösenord. Dessa uppgifter sparas, men används bara för att generera en JWT Claim som återanvänds och uppdateras vid behov av appen.
-3. Lägg till en enhet med appen och välj relevant typ tvätt / luftrenare etc.
-4. Om din apparat / enhet inte är tillgänglig, vänligen besök https://github.com/gslender/com.gslender.electrolux-aeg.ocp/issues/new/choose för att begära stöd för din enhet.
+Electrolux kostnadsfria developer-plan tillåter 5000 API-anrop per dag. Med många apparater ökas uppdateringsintervallet automatiskt för att hålla sig inom gränsen.
+
+Uppgradering från version 1.x: inloggning med e-post och lösenord stöds inte längre. Öppna appinställningarna efter uppdateringen och ange dina utvecklaruppgifter - dina befintliga enheter behålls.
 
 Tack!
 
-Jag vill tacka https://github.com/rickardp för den ursprungliga koden varav element användes för att bygga ut stöd för luftrenare.
+Jag vill uppmärksamma den ursprungliga koden av https://github.com/rickardp, vars delar användes för att bygga stödet för luftrenare.

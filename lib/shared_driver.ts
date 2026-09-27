@@ -22,9 +22,8 @@ export default class SharedDriver extends Homey.Driver {
     for (let i = 0; i < appliances.length; i++) {
       const appliance = appliances[i];
       for (let queryType of queryTypes) {
-        const applianceType = appliance.applianceData?.modelName;
+        const applianceType = appliance.applianceType;
         if (applianceType === undefined || applianceType === null) continue;
-        // const applianceType = appliance.properties?.reported?.applianceInfo?.applianceType;
         this.log(`applianceType=${applianceType} queryType=${queryType} applianceType.includes(queryType)=${applianceType.includes(queryType)}`);
         if (typeof applianceType === 'string' && applianceType.includes(queryType)) {
           let deviceCapabilities = [];
@@ -44,7 +43,7 @@ export default class SharedDriver extends Homey.Driver {
             }
           } else {
             const device = {
-              name: appliance.applianceData.applianceName,
+              name: appliance.applianceName,
               data: { id: appliance.applianceId },
               capabilities: deviceCapabilities,
             };

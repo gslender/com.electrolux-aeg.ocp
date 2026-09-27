@@ -14,7 +14,7 @@ class UnknownDriver extends SharedDriver {
     for (let i = 0; i < appliances.length; i++) {
       const appliance = appliances[i];
       const device = { 
-        name: appliance.applianceData.applianceName,
+        name: appliance.applianceName,
         data: { id: appliance.applianceId } 
       };
       devices.push(device);

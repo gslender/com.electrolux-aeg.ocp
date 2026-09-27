@@ -211,5 +211,8 @@
   },
   "1.6.5": {
     "en": "Fixed appliance state flow check"
+  },
+  "2.0.0": {
+    "en": "Switched to the official Electrolux Group Developer API. Email/password login is no longer supported - open the app settings and enter an API key, access token and refresh token from developer.electrolux.one."
   }
 }

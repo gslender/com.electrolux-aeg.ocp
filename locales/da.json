@@ -1,6 +1,6 @@
 {
     "measure_alerts_none": "Ingen",
-    "robot_status": {        
+    "robot_status": {
         "1": "Rengøring",
         "2": "Rengøring pauset",
         "3": "Plet Rengøring",
@@ -21,11 +21,50 @@
         "2": "Mellem",
         "3": "Høj"
     },
-    "robot_state": {    
+    "robot_state": {
         "goingHome": "Går hjem",
         "idle": "Inaktiv",
         "inProgress": "I gang",
         "paused": "Sat på pause",
         "sleeping": "Sover"
+    },
+    "settings": {
+        "title": "Electrolux AEG",
+        "subtitle": "Forbind Homey med dine apparater via den officielle Electrolux Group developer API",
+        "status_label": "Status",
+        "credentials_legend": "Udvikleroplysninger",
+        "step_1": "Log ind på developer.electrolux.one med den samme konto, som du bruger i Electrolux- eller AEG-appen.",
+        "step_2": "Opret en API-nøgle på Dashboard.",
+        "step_3": "Klik på GET ACCESS TOKEN for at generere et access token og refresh token.",
+        "step_4": "Indsæt alle tre værdier nedenfor og gem. Brug kun et tokenpar til Homey - del det ikke med andre apps, da Homey fornyer tokens automatisk.",
+        "api_key": "API-nøgle",
+        "access_token": "Access token",
+        "refresh_token": "Refresh token",
+        "token_placeholder_keep": "Lad feltet stå tomt for at beholde det nuværende token",
+        "polling": "Opdateringsinterval",
+        "minute_1": "1 minut",
+        "minutes_2": "2 minutter",
+        "minutes_5": "5 minutter",
+        "minutes_10": "10 minutter",
+        "minutes_15": "15 minutter",
+        "polling_note": "Den gratis Electrolux developer-plan tillader 5000 API-kald om dagen. Med mange apparater øges intervallet automatisk for at holde sig inden for grænsen.",
+        "polling_effective": "Faktisk opdateringsinterval (minutter)",
+        "save": "Gem ændringer",
+        "status_ok": "Forbundet",
+        "status_not_configured": "Ikke konfigureret - indtast din API-nøgle, access token og refresh token",
+        "status_auth_failed": "Oplysninger afvist - generer et nyt access token og refresh token og indtast dem igen",
+        "status_rate_limited": "Electrolux API-grænse nået - opdateringer genoptages automatisk",
+        "status_error": "Forbindelsesproblem - prøver igen ved næste opdatering",
+        "status_unknown": "Venter på første forbindelse",
+        "saved": "Oplysninger gyldige og gemt!",
+        "error_prefix": "Fejl: ",
+        "error_missing_fields": "Indtast API-nøgle, access token og refresh token.",
+        "error_invalid_credentials": "API-nøglen, access token eller refresh token blev afvist af Electrolux.",
+        "error_connect": "Kunne ikke oprette forbindelse til Electrolux API"
+    },
+    "auth": {
+        "unavailable": "Electrolux-oplysninger afvist. Indtast et nyt access token og refresh token i app-indstillingerne.",
+        "notification": "Electrolux AEG: dine udvikleroplysninger blev afvist eller er udløbet. Åbn app-indstillingerne og indtast et nyt access token og refresh token fra developer.electrolux.one.",
+        "migration": "Electrolux AEG 2.0 bruger den officielle Electrolux Group developer API. Login med e-mail og adgangskode understøttes ikke længere - åbn app-indstillingerne og indtast en API-nøgle, access token og refresh token fra developer.electrolux.one."
     }
 }

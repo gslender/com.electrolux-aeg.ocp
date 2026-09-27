@@ -1,18 +1,18 @@
 Esta App de Homey se conectará a
-• la Plataforma de Identidad Gigya (propiedad de SAP) a través de la API @gslender/gigya de NPM
-• la API de Electrolux OCP (OneConnectedPlatform) en https://api.ocp.electrolux.one/appliance/api/v2
-• y soportará tanto Electrolux como AEG
-
-Después de un inicio de sesión exitoso, la App de Homey interrogará la API de OCP y determinará qué dispositivos has configurado.
+• la API oficial para desarrolladores de Electrolux Group en https://api.developer.electrolux.one
+• y es compatible con electrodomésticos Electrolux y AEG
 
 Guía de Configuración
 
-Esta App de Homey requerirá que tus electrodomésticos Electrolux o AEG estén configurados con el centro de datos de la UE, ya que los servicios de la API y la gama de productos no funcionan fuera de esa región. Esta app ha sido probada con el Reino Unido como ubicación en la App para iOS de AEG, pero debería funcionar bien en todas partes de la UE.
+1. Inicia sesión en https://developer.electrolux.one con la misma cuenta (correo y contraseña) que usas en la app de Electrolux o AEG.
+2. En el Dashboard, crea una clave API y luego pulsa GET ACCESS TOKEN para generar un access token y un refresh token.
+3. Abre los ajustes de la App de Homey y pega la clave API, el access token y el refresh token. La app renueva los tokens automáticamente, así que usa un par de tokens exclusivo para Homey y no lo compartas con otras apps.
+4. Añade un Dispositivo usando la App y elige el tipo relevante, Lavandería / Purificador de Aire, etc.
+5. Si tu electrodoméstico / dispositivo no está disponible, por favor visita https://github.com/gslender/com.electrolux-aeg.ocp/issues/new/choose para solicitar soporte para tu dispositivo.
 
-1. Debes tener una contraseña y un correo electrónico configurados en tu app móvil de Electrolux o AEG (asegúrate de cerrar sesión e iniciar sesión usando un correo electrónico y una contraseña, y no usando OTP).
-2. Instala la App de Homey y Configura los Ajustes usando tu correo electrónico y contraseña. Estas credenciales se mantienen, pero solo se usan para generar un JWT Claim que se reutiliza y se actualiza según sea necesario.
-3. Añade un Dispositivo usando la App y elige el tipo relevante, Lavandería / Purificador de Aire, etc.
-4. Si tu electrodoméstico / dispositivo no está disponible, por favor visita https://github.com/gslender/com.gslender.electrolux-aeg.ocp/issues/new/choose para solicitar soporte para tu dispositivo.
+El plan gratuito para desarrolladores de Electrolux permite 5000 llamadas API al día. Con muchos electrodomésticos, el intervalo de consulta se aumenta automáticamente para no superar este límite.
+
+Actualización desde la versión 1.x: el inicio de sesión con correo y contraseña ya no es compatible. Tras actualizar, abre los ajustes de la app e introduce tus credenciales de desarrollador - tus dispositivos existentes se conservan.
 
 ¡Gracias!
 

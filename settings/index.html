@@ -3,7 +3,30 @@
 
 <head>
     <script type="text/javascript" src="/homey.js" data-origin="settings"></script>
+    <style>
+        .status {
+            padding: 8px 12px;
+            border-radius: 6px;
+            background: #f2f2f2;
+        }
 
+        .status.ok {
+            background: #e3f4e5;
+        }
+
+        .status.bad {
+            background: #fbe4e4;
+        }
+
+        .status small {
+            display: block;
+            opacity: 0.7;
+        }
+
+        ol.steps {
+            padding-left: 20px;
+        }
+    </style>
 </head>
 
 <body>
@@ -14,57 +37,98 @@
         <p class="homey-subtitle" data-i18n="settings.subtitle">
         </p>
     </header>
-    <!-- <form class="homey-form"> -->
-    <fieldset class="homey-form-fieldset">
-        <legend class="homey-form-legend">Settings</legend>
-        <div class="homey-form-group">
-            <label class="homey-form-label" for="username">Username</label>
-            <input class="homey-form-input" id="username" type="text" value="" />
-        </div>
-        <div class="homey-form-group">
-            <label class="homey-form-label" for="password">Password</label>
-            <input class="homey-form-input" id="password" type="password" value="" />
-        </div>
-        <label class="homey-form-label" for="select-polling">Polling Interval</label>
-        <select class="homey-form-select" name="select-polling" id="select-polling">
-            <option value="60000">1 Minute</option>
-            <option value="120000">2 Minutes</option>
-            <option value="300000">5 Minutes</option>
-            <option value="600000">10 Minutes</option>
-            <option value="900000">15 Minutes</option>
-        </select>
 
+    <fieldset class="homey-form-fieldset">
+        <legend class="homey-form-legend" data-i18n="settings.status_label"></legend>
+        <div id="status" class="status"></div>
     </fieldset>
 
-    <p><button id="save" class="right homey-button-primary-full">Save Changes</button></p>
-    <!-- </form> -->
+    <fieldset class="homey-form-fieldset">
+        <legend class="homey-form-legend" data-i18n="settings.credentials_legend"></legend>
+        <ol class="steps">
+            <li data-i18n="settings.step_1"></li>
+            <li data-i18n="settings.step_2"></li>
+            <li data-i18n="settings.step_3"></li>
+            <li data-i18n="settings.step_4"></li>
+        </ol>
+        <div class="homey-form-group">
+            <label class="homey-form-label" for="apikey" data-i18n="settings.api_key"></label>
+            <input class="homey-form-input" id="apikey" type="text" value="" autocomplete="off" />
+        </div>
+        <div class="homey-form-group">
+            <label class="homey-form-label" for="accesstoken" data-i18n="settings.access_token"></label>
+            <input class="homey-form-input" id="accesstoken" type="password" value="" autocomplete="off" />
+        </div>
+        <div class="homey-form-group">
+            <label class="homey-form-label" for="refreshtoken" data-i18n="settings.refresh_token"></label>
+            <input class="homey-form-input" id="refreshtoken" type="password" value="" autocomplete="off" />
+        </div>
+    </fieldset>
+
+    <fieldset class="homey-form-fieldset">
+        <legend class="homey-form-legend" data-i18n="settings.polling"></legend>
+        <select class="homey-form-select" name="select-polling" id="select-polling">
+            <option value="60000" data-i18n="settings.minute_1"></option>
+            <option value="120000" data-i18n="settings.minutes_2"></option>
+            <option value="300000" data-i18n="settings.minutes_5"></option>
+            <option value="600000" data-i18n="settings.minutes_10"></option>
+            <option value="900000" data-i18n="settings.minutes_15"></option>
+        </select>
+        <p><small data-i18n="settings.polling_note"></small></p>
+    </fieldset>
+
+    <p><button id="save" class="right homey-button-primary-full" data-i18n="settings.save"></button></p>
+
     <script type="text/javascript">
 
-        var usernameElement = document.getElementById('username');
-        var passwordElement = document.getElementById('password');
+        var apiKeyElement = document.getElementById('apikey');
+        var accessTokenElement = document.getElementById('accesstoken');
+        var refreshTokenElement = document.getElementById('refreshtoken');
         var pollingElement = document.getElementById('select-polling');
+        var statusElement = document.getElementById('status');
         var saveElement = document.getElementById('save');
-        var oldusername = '';
-        var oldpassword = '';
+        var oldApiKey = '';
         var oldpolling = '';
+        var hasCredentials = false;
 
         // a method named 'onHomeyReady' must be present in your code
         function onHomeyReady(Homey) {
 
-            // Tell Homey we're ready to be displayed
-            Homey.ready();
+            function renderStatus() {
+                Homey.get('ocp.status', function (err, status) {
+                    if (err) return Homey.alert(err);
+                    var state = (status && status.state) || (hasCredentials ? 'unknown' : 'not_configured');
+                    var text = Homey.__('settings.status_' + state) || state;
+                    var cls = state === 'ok' ? 'ok' : (state === 'auth_failed' || state === 'not_configured' || state === 'error') ? 'bad' : '';
+                    statusElement.className = 'status ' + cls;
+                    statusElement.textContent = text;
+                    if (status && status.detail && state !== 'ok') {
+                        var detail = document.createElement('small');
+                        detail.textContent = status.detail;
+                        statusElement.appendChild(detail);
+                    }
+                    if (hasCredentials && status && status.pollingInterval) {
+                        var polling = document.createElement('small');
+                        polling.textContent = Homey.__('settings.polling_effective') + ': ' + Math.round(status.pollingInterval / 60000);
+                        statusElement.appendChild(polling);
+                    }
+                });
+            }
 
-            Homey.get('ocp.username', function (err, username) {
-                if (err) return Homey.alert(err);
-                usernameElement.value = username;
-                oldusername = username;
-            });
+            function loadAuth() {
+                Homey.get('ocp.auth', function (err, auth) {
+                    if (err) return Homey.alert(err);
+                    hasCredentials = !!(auth && auth.apiKey);
+                    apiKeyElement.value = hasCredentials ? auth.apiKey : '';
+                    oldApiKey = apiKeyElement.value;
+                    var placeholder = hasCredentials ? Homey.__('settings.token_placeholder_keep') : '';
+                    accessTokenElement.placeholder = placeholder;
+                    refreshTokenElement.placeholder = placeholder;
+                    renderStatus();
+                });
+            }
 
-            Homey.get('ocp.password', function (err, password) {
-                if (err) return Homey.alert(err);
-                passwordElement.value = password;
-                oldpassword = password;
-            });
+            loadAuth();
 
             Homey.get('ocp.polling', function (err, polling) {
                 if (err) return Homey.alert(err);
@@ -75,37 +139,58 @@
                 oldpolling = polling;
             });
 
+            Homey.on('settings.set', function (key) {
+                if (key === 'ocp.status') renderStatus();
+            });
+
             Homey.on("settingsChanged", function (state) {
-                document.getElementById('save').classList.remove("is-loading");
-                oldpassword = passwordElement.value;
-                oldusername = usernameElement.value;
+                saveElement.classList.remove("is-loading");
                 oldpolling = pollingElement.value;
                 if (state === 'loginSuccess') {
-                    return Homey.alert("Credentials Valid and Saved!!");
+                    accessTokenElement.value = '';
+                    refreshTokenElement.value = '';
+                    loadAuth();
+                    return Homey.alert(Homey.__('settings.saved'));
                 } else if (state === 'otherSuccess') {
                     return;
                 } else {
-                    return Homey.alert("Error: " + state);
+                    return Homey.alert(Homey.__('settings.error_prefix') + state);
                 }
             });
 
-            saveElement.addEventListener('click', async function (e) {
+            saveElement.addEventListener('click', function (e) {
+                var apiKey = apiKeyElement.value.trim();
+                var accessToken = accessTokenElement.value.trim();
+                var refreshToken = refreshTokenElement.value.trim();
+                var credentialsChanged = accessToken !== '' || refreshToken !== '' || apiKey !== oldApiKey;
 
-                if (oldusername != usernameElement.value 
-                || oldpassword != passwordElement.value
-                || oldpolling != pollingElement.value) {
-                    document.getElementById('save').classList.add("is-loading");
-                    await Homey.set('ocp.username', usernameElement.value, function (err) {
-                        if (err) return Homey.alert(err);
+                if (credentialsChanged && (apiKey === '' || accessToken === '' || refreshToken === '')) {
+                    return Homey.alert(Homey.__('settings.error_missing_fields'));
+                }
+
+                if (credentialsChanged) {
+                    saveElement.classList.add("is-loading");
+                    Homey.set('ocp.credentials', { apiKey: apiKey, accessToken: accessToken, refreshToken: refreshToken }, function (err) {
+                        if (err) {
+                            saveElement.classList.remove("is-loading");
+                            return Homey.alert(err);
+                        }
                     });
-                    await Homey.set('ocp.password', passwordElement.value, function (err) {
-                        if (err) return Homey.alert(err);
-                    });
-                    await Homey.set('ocp.polling', pollingElement.value, function (err) {
-                        if (err) return Homey.alert(err);
+                }
+
+                if (oldpolling != pollingElement.value) {
+                    saveElement.classList.add("is-loading");
+                    Homey.set('ocp.polling', pollingElement.value, function (err) {
+                        if (err) {
+                            saveElement.classList.remove("is-loading");
+                            return Homey.alert(err);
+                        }
                     });
                 }
             });
+
+            // Tell Homey we're ready to be displayed
+            Homey.ready();
         }
     </script>
 

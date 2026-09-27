@@ -1,19 +1,19 @@
-Questa app Homey si collegherà a
-• la Piattaforma di Identità Gigya (di proprietà di SAP) tramite l'API NPM @gslender/gigya
-• l'API di Electrolux OCP (OneConnectedPlatform) su https://api.ocp.electrolux.one/appliance/api/v2
-• e supporterà sia Electrolux che AEG
+Questa App Homey si collega a
+• l'API ufficiale per sviluppatori di Electrolux Group su https://api.developer.electrolux.one
+• e supporta elettrodomestici Electrolux e AEG
 
-Dopo un accesso riuscito, l'app Homey interrogherà l'API OCP e determinerà quali dispositivi hai configurato.
+Guida alla configurazione
 
-Guida alla Configurazione
+1. Accedi a https://developer.electrolux.one con lo stesso account (e-mail e password) che usi nell'app Electrolux o AEG.
+2. Nella Dashboard, crea una chiave API, quindi fai clic su GET ACCESS TOKEN per generare un access token e un refresh token.
+3. Apri le impostazioni dell'App Homey e incolla chiave API, access token e refresh token. I token vengono rinnovati automaticamente dall'app, quindi usa una coppia di token dedicata a Homey e non condividerla con altre app.
+4. Aggiungi un dispositivo tramite l'app e scegli il tipo corrispondente, Lavatrice / Purificatore d'aria ecc.
+5. Se il tuo elettrodomestico non è disponibile, visita https://github.com/gslender/com.electrolux-aeg.ocp/issues/new/choose per richiederne il supporto.
 
-Questa app Homey richiede che tu abbia i tuoi elettrodomestici Electrolux o AEG configurati con il centro dati EU, poiché i servizi API / la gamma di prodotti non funzionano al di fuori di quella regione. Questa app è stata testata con il Regno Unito impostato come posizione nell'app mobile AEG per iOS, ma dovrebbe funzionare bene in tutte le parti dell'UE.
+Il piano sviluppatori gratuito di Electrolux consente 5000 chiamate API al giorno. Con molti elettrodomestici, l'intervallo di aggiornamento viene aumentato automaticamente per rispettare questo limite.
 
-1. Devi avere una password e un'email configurate nella tua app mobile Electrolux o AEG (assicurati di logout e login utilizzando un'email e una password, e non un OTP).
-2. Installa l'app Homey e configura le Impostazioni utilizzando la tua email e password. Queste credenziali sono conservate, ma sono usate solo per generare un JWT Claim che viene riutilizzato e aggiornato quando necessario dall'app.
-3. Aggiungi un dispositivo utilizzando l'app e scegli il tipo rilevante Lavanderia / Purificatore d'Aria ecc.
-4. Se il tuo elettrodomestico / dispositivo non è disponibile, visita https://github.com/gslender/com.gslender.electrolux-aeg.ocp/issues/new/choose per richiedere supporto per il tuo dispositivo.
+Aggiornamento dalla versione 1.x: l'accesso con e-mail e password non è più supportato. Dopo l'aggiornamento, apri le impostazioni dell'app e inserisci le tue credenziali sviluppatore - i dispositivi esistenti vengono mantenuti.
 
 Grazie!
 
-Vorrei riconoscere il codice originale di https://github.com/rickardp di cui sono stati utilizzati elementi per sviluppare il supporto per il Purificatore d'Aria.
+Desidero ringraziare https://github.com/rickardp per il codice originale, i cui elementi sono stati utilizzati per sviluppare il supporto ai purificatori d'aria.
