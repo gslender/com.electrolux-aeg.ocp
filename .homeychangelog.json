@@ -214,5 +214,8 @@
   },
   "2.0.0": {
     "en": "Switched to the official Electrolux Group Developer API. Email/password login is no longer supported - open the app settings and enter an API key, access token and refresh token from developer.electrolux.one."
+  },
+  "2.0.1": {
+    "en": "Minor updates following 2.0 upgrade."
   }
 }

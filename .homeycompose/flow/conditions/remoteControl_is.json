@@ -74,18 +74,18 @@
         {
           "id": "NOT_SAFETY_RELEVANT_ENABLED",
           "label": {
-            "en": "Enabled",
-            "de": "Aktiviert",
-            "nl": "Ingeschakeld",
-            "da": "Aktiveret",
-            "es": "Activado",
-            "fr": "Activé",
-            "it": "Abilitato",
-            "no": "Aktivert",
-            "sv": "Aktiverad",
-            "pl": "Włączony",
-            "ru": "Включено",
-            "ko": "활성화됨"
+            "en": "Safety Enabled",
+            "de": "Sicherheit aktiviert",
+            "nl": "Veiligheid ingeschakeld",
+            "da": "Sikkerhed aktiveret",
+            "es": "Seguridad activada",
+            "fr": "Sécurité activée",
+            "it": "Sicurezza abilitata",
+            "no": "Sikkerhet aktivert",
+            "sv": "Säkerhet aktiverad",
+            "pl": "Bezpieczeństwo włączone",
+            "ru": "Безопасность включена",
+            "ko": "안전 활성화됨"
           }
         },
         {
