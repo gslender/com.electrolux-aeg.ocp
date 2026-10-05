@@ -66,5 +66,9 @@
         "unavailable": "Electrolux 자격 증명이 거부되었습니다. 앱 설정에서 새 access token과 refresh token을 입력하세요.",
         "notification": "Electrolux AEG: 개발자 자격 증명이 거부되었거나 만료되었습니다. 앱 설정을 열고 developer.electrolux.one에서 받은 새 access token과 refresh token을 입력하세요.",
         "migration": "Electrolux AEG 2.0은 공식 Electrolux Group 개발자 API를 사용합니다. 이메일과 비밀번호 로그인은 더 이상 지원되지 않습니다 - 앱 설정을 열고 developer.electrolux.one에서 받은 API 키, access token, refresh token을 입력하세요."
+    },
+    "errors": {
+        "command_not_supported": "기기가 __value__을(를) 지원하지 않습니다",
+        "fan_speed_smart_mode": "공기청정기가 스마트 모드일 때는 팬 속도를 변경할 수 없습니다"
     }
 }

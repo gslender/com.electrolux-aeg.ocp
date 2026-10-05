@@ -63,10 +63,10 @@ class RangeHoodDevice extends SharedDevice {
     return RangeHoodDevice.DefaultLightIntensity;
   }
 
-  private async sendOnOffMacro(deviceId: string, requestedOnOff: any): Promise<void> {
+  private async sendOnOffMacro(requestedOnOff: any): Promise<void> {
     const shouldTurnOn = requestedOnOff === true || requestedOnOff === 'true';
     if (!shouldTurnOn) {
-      await this.app.sendDeviceCommand(deviceId, { hoodFanLevel: 'OFF', lightIntensity: 0 });
+      await this.sendCommand({ hoodFanLevel: 'OFF', lightIntensity: 0 });
       this.log('onoff macro: OFF -> hoodFanLevel=OFF, lightIntensity=0');
       return;
     }
@@ -75,7 +75,7 @@ class RangeHoodDevice extends SharedDevice {
     const currentLight = this.getCapabilityValue('hoodLightIntensity');
     const restoreFan = await this.getRestoreFanLevel(currentFan);
     const restoreLight = await this.getRestoreLightIntensity(currentLight);
-    await this.app.sendDeviceCommand(deviceId, {
+    await this.sendCommand({
       hoodFanLevel: restoreFan,
       lightIntensity: restoreLight,
     });
@@ -83,11 +83,9 @@ class RangeHoodDevice extends SharedDevice {
   }
 
   async setDeviceOpts(valueObj: { [x: string]: any }) {
-    const deviceId = this.getData().id;
-
     try {
       if (valueObj.onoff !== undefined) {
-        await this.sendOnOffMacro(deviceId, valueObj.onoff);
+        await this.sendOnOffMacro(valueObj.onoff);
       }
 
       const commandMapping: { [x: string]: string } = {
@@ -108,7 +106,7 @@ class RangeHoodDevice extends SharedDevice {
             ? this.normalizeLightIntensity(valueObj[cap])
             : valueObj[cap];
 
-          await this.app.sendDeviceCommand(deviceId, {
+          await this.sendCommand({
             [apiCommandName]: commandValue,
           });
           this.log(`${cap}: ${commandValue}`);
@@ -124,6 +122,7 @@ class RangeHoodDevice extends SharedDevice {
       }
     } catch (error) {
       this.log(`Error in setDeviceOpts: ${error}`);
+      throw error;
     }
   }
 
@@ -133,7 +132,7 @@ class RangeHoodDevice extends SharedDevice {
       return;
     }
 
-    const props = state.properties.reported;
+    const props = this.getReportedProps(state);
 
     try {
       await this.safeUpdateCapabilityValue("onoff", props.hoodFanLevel !== "OFF" || props.lightIntensity > 0);

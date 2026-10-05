@@ -23,7 +23,7 @@ export default class AirConditionerDriver extends SharedDriver {
   }
 
   async onPairListDevices() {
-    return super.getDevicesByType(['Azul','Telica'],AirConditionerDriver.DeviceCapabilities);
+    return super.getDevicesByType(['AC','Azul','Telica'],AirConditionerDriver.DeviceCapabilities);
   }
 
 }

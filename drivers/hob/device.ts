@@ -26,7 +26,7 @@ class HobDevice extends SharedDevice {
   //       const isOn = valueObj.onoff === true || valueObj.onoff === 'true';
   //       const command = isOn ? 'START' : 'STOPRESET';
   //       if (this.supportsCommandValue('executeCommand', command)) {
-  //         await this.app.sendDeviceCommand(deviceId, { executeCommand: command });
+  //         await this.sendCommand({ executeCommand: command });
   //       }
   //     }
 
@@ -41,7 +41,7 @@ class HobDevice extends SharedDevice {
       return;
     }
 
-    const props = state.properties.reported;
+    const props = this.getReportedProps(state);
 
     try {
       const normalizedState = String(props.applianceState || '').toUpperCase();

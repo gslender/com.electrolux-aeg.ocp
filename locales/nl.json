@@ -66,5 +66,9 @@
         "unavailable": "Electrolux-gegevens geweigerd. Voer een nieuw access token en refresh token in bij de app-instellingen.",
         "notification": "Electrolux AEG: je developer-gegevens zijn geweigerd of verlopen. Open de app-instellingen en voer een nieuw access token en refresh token van developer.electrolux.one in.",
         "migration": "Electrolux AEG 2.0 gebruikt de officiële Electrolux Group developer API. Inloggen met e-mail en wachtwoord wordt niet meer ondersteund - open de app-instellingen en voer een API-sleutel, access token en refresh token van developer.electrolux.one in."
+    },
+    "errors": {
+        "command_not_supported": "Het apparaat ondersteunt __value__ niet",
+        "fan_speed_smart_mode": "De ventilatorsnelheid kan niet worden gewijzigd terwijl de luchtreiniger in de Smart-modus staat"
     }
 }

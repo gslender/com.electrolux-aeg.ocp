@@ -19,31 +19,29 @@ class Robot700Device extends SharedDevice {
   }
 
   async setDeviceOpts(valueObj: { [x: string]: any }) {
-    const deviceId = this.getData().id;
-
     try {
       if (valueObj.onoff !== undefined) {
         const isOn = valueObj.onoff === true || valueObj.onoff === 'true';
         const command = isOn ? 'startGlobalClean' : 'stopClean';
-        if (this.supportsCommandValue('cleaningCommand', command)) {
-          await this.app.sendDeviceCommand(deviceId, { cleaningCommand: command });
-        }
+        this.assertCommandSupported('cleaningCommand', command);
+        await this.sendCommand({ cleaningCommand: command });
       }
 
       // Update cleaning_command
       if (valueObj.cleaning_command !== undefined) {
         this.log("cleaning_command: " + valueObj.cleaning_command);
-        await this.app.sendDeviceCommand(deviceId, { cleaningCommand: valueObj.cleaning_command });
+        await this.sendCommand({ cleaningCommand: valueObj.cleaning_command });
       }
 
       // Update vacuum_mode
       if (valueObj.vacuum_mode !== undefined) {
         this.log("vacuum_mode: " + valueObj.vacuum_mode);
-        await this.app.sendDeviceCommand(deviceId, { vacuumMode: Number(valueObj.vacuum_mode) });
+        await this.sendCommand({ vacuumMode: valueObj.vacuum_mode });
       }
 
     } catch (error) {
       this.log(`Error in setDeviceOpts: ${error}`);
+      throw error;
     }
   }
 
@@ -53,7 +51,7 @@ class Robot700Device extends SharedDevice {
       return;
     }
 
-    const props = state.properties.reported;
+    const props = this.getReportedProps(state);
 
     try {
       await this.safeUpdateCapabilityValue("measure_battery", props.batteryStatus);

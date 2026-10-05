@@ -66,5 +66,9 @@
         "unavailable": "Electrolux-Zugangsdaten abgelehnt. Gib in den App-Einstellungen ein neues Access Token und Refresh Token ein.",
         "notification": "Electrolux AEG: deine Entwickler-Zugangsdaten wurden abgelehnt oder sind abgelaufen. Öffne die App-Einstellungen und gib ein neues Access Token und Refresh Token von developer.electrolux.one ein.",
         "migration": "Electrolux AEG 2.0 verwendet die offizielle Electrolux Group Developer API. Die Anmeldung mit E-Mail und Passwort wird nicht mehr unterstützt - öffne die App-Einstellungen und gib API-Schlüssel, Access Token und Refresh Token von developer.electrolux.one ein."
+    },
+    "errors": {
+        "command_not_supported": "Das Gerät unterstützt __value__ nicht",
+        "fan_speed_smart_mode": "Die Lüftergeschwindigkeit kann im Smart-Modus des Luftreinigers nicht geändert werden"
     }
 }

@@ -65,12 +65,26 @@ export class OcpRateLimitError extends Error {
   }
 }
 
+/** The appliance refused a command, e.g. because it is disconnected or remote control is disabled. */
+export class OcpCommandRejectedError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = 'OcpCommandRejectedError';
+  }
+}
+
+function errorDetail(data: any): string {
+  const message = data?.message ?? data?.error ?? '';
+  const detail = data?.detail ?? '';
+  // The API's "detail" carries the useful part, e.g. "Command validation failed: Remote control disabled"
+  return detail && detail !== message ? `${message}: ${detail}` : message;
+}
+
 export function describeError(error: unknown): string {
   if (axios.isAxiosError(error)) {
-    const data: any = error.response?.data;
-    const detail = data?.message ?? data?.error ?? '';
-    return `${error.response?.status ?? error.code ?? 'network error'} ${detail}`.trim();
+    return `${error.response?.status ?? error.code ?? 'network error'} ${errorDetail(error.response?.data)}`.trim();
   }
+  if (error instanceof Error) return error.message;
   return `${error}`;
 }
 
@@ -81,6 +95,11 @@ function jwtExpiry(token: string): number {
   } catch (_error) {
     return 0;
   }
+}
+
+/** DAM (Digital Appliance Model) appliances have ids prefixed with "1:". */
+export function isDamAppliance(applianceId: string): boolean {
+  return typeof applianceId === 'string' && applianceId.startsWith('1:');
 }
 
 function statusOf(error: unknown): number | undefined {
@@ -130,10 +149,23 @@ export class OcpApi {
     return await this.request({ method: 'GET', url: `/appliances/${applianceId}/info` }) ?? {};
   }
 
+  /**
+   * Sends a command. For DAM appliances the command must already be nested under its appliance
+   * type (e.g. { airConditioner: { mode: 'cool' } }); pass an array to have the commands applied in order.
+   */
   public async sendCommand(applianceId: string, command: any): Promise<void> {
-    // DAM appliances (ids starting with "1:") expect commands wrapped in a list
-    const body = applianceId.startsWith('1:') ? { commands: [command] } : command;
-    await this.request({ method: 'PUT', url: `/appliances/${applianceId}/command`, data: body });
+    const body = isDamAppliance(applianceId)
+      ? { commands: Array.isArray(command) ? command : [command] }
+      : command;
+    try {
+      // 202 "Appliance already in desired state" is a success too
+      await this.request({ method: 'PUT', url: `/appliances/${applianceId}/command`, data: body });
+    } catch (error) {
+      if (statusOf(error) === 406) {
+        throw new OcpCommandRejectedError(errorDetail((error as AxiosError).response?.data) || 'Command validation failed');
+      }
+      throw error;
+    }
   }
 
   /**

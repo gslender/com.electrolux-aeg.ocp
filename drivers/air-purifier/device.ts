@@ -26,70 +26,68 @@ class AirPurifierDevice extends SharedDevice {
     this.Workmode = '';
   }
 
+  // FAN_speed shows Fanspeed as 10 * (Fanspeed + 1), so the reverse is FAN_speed / 10 - 1
+  private toApiFanSpeed(fanSpeed: number): number {
+    const capability = this.findApplianceCapability('Fanspeed')?.capability;
+    const min = Number.isFinite(capability?.min) ? capability.min : 1;
+    const max = Number.isFinite(capability?.max) ? capability.max : 9;
+    return Math.min(max, Math.max(min, Math.round(fanSpeed / 10) - 1));
+  }
+
   async setDeviceOpts(valueObj: { [x: string]: any }) {
-    const deviceId = this.getData().id;
+    // Update Workmode based on onoff and SMART_mode
+    if (valueObj.onoff !== undefined) {
+      this.log("onoff: " + valueObj.onoff);
+      // Turning on restores the current mode rather than always switching to Auto
+      const smartMode = valueObj.SMART_mode ?? this.getCapabilityValue("SMART_mode");
+      const workMode = valueObj.onoff
+        ? smartMode === "manual"
+          ? "Manual"
+          : "Auto"
+        : "PowerOff";
+      await this.sendCommand({ Workmode: workMode });
+      this.log(`Workmode command sent: ${workMode}`);
+    }
 
-    try {
-      // Update WorkMode based on onoff and SMART_mode
-      if (valueObj.onoff !== undefined) {
-        this.log("onoff: " + valueObj.onoff);
-        const workMode = valueObj.onoff
-          ? valueObj.SMART_mode === "manual"
-            ? "Manual"
-            : "Auto"
-          : "PowerOff";
-        await this.app.sendDeviceCommand(deviceId, { WorkMode: workMode });
-        this.log(`WorkMode command sent: ${workMode}`);
-      }
+    // Update SMART_mode
+    if (valueObj.SMART_mode !== undefined && valueObj.onoff === undefined) {
+      this.log("SMART_mode: " + valueObj.SMART_mode);
+      const workMode = valueObj.SMART_mode === "manual" ? "Manual" : "Auto";
+      await this.sendCommand({ Workmode: workMode });
+      this.log(`SMART_mode command sent: ${workMode}`);
+    }
 
-      // Update SMART_mode
-      if (valueObj.SMART_mode !== undefined && valueObj.onoff === undefined) {
-        this.log("SMART_mode: " + valueObj.SMART_mode);
-        const workMode = valueObj.SMART_mode === "manual" ? "Manual" : "Auto";
-        await this.app.sendDeviceCommand(deviceId, { WorkMode: workMode });
-        this.log(`SMART_mode command sent: ${workMode}`);
-      }
+    const commandMapping: { [x: string]: string } = {
+      LIGHT_onoff: "UILight",
+      LOCK_onoff: "SafetyLock",
+      IONIZER_onoff: "Ionizer",
+      FAN_speed: "Fanspeed",
+    };
 
-      const commandMapping: { [x: string]: string } = {
-        LIGHT_onoff: "UILight",
-        LOCK_onoff: "SafetyLock",
-        IONIZER_onoff: "Ionizer",
-        FAN_speed: "Fanspeed",
-      };
+    // Update other capabilities
+    const capabilitiesToUpdate = [
+      "LIGHT_onoff",
+      "LOCK_onoff",
+      "IONIZER_onoff",
+      "FAN_speed",
+    ];
+    for (const cap of capabilitiesToUpdate) {
+      if (valueObj[cap] !== undefined) {
+        const apiCommandName = commandMapping[cap] || cap; // Translates to API command names from homey to electrolux
 
-      // Update other capabilities
-      const capabilitiesToUpdate = [
-        "LIGHT_onoff",
-        "LOCK_onoff",
-        "IONIZER_onoff",
-        "FAN_speed",
-      ];
-      for (const cap of capabilitiesToUpdate) {
-        if (valueObj[cap] !== undefined) {
-          const apiCommandName = commandMapping[cap] || cap; // Translates to API command names from homey to electrolux
-
-          if (cap === "FAN_speed") {
-            // Check if the device is in 'Smart' mode
-            if (this.Workmode === "Smart" && valueObj.FAN_speed) {
-              // Send error to user
-              // Code unknown
-              return;
-            } else {
-              await this.app.sendDeviceCommand(deviceId, {
-                [apiCommandName]: valueObj[cap] / 10,
-              });
-              this.log(`${cap}: ${valueObj[cap] / 10}`);
-            }
-          } else {
-            await this.app.sendDeviceCommand(deviceId, {
-              [apiCommandName]: valueObj[cap],
-            });
-            this.log(`${cap}: ${valueObj[cap]}`);
+        if (cap === "FAN_speed") {
+          // The fan speed is controlled by the purifier itself in Smart mode
+          if (this.Workmode === "Smart" && valueObj.FAN_speed) {
+            throw new Error(this.homey.__('errors.fan_speed_smart_mode'));
           }
+          const fanSpeed = this.toApiFanSpeed(valueObj[cap]);
+          await this.sendCommand({ [apiCommandName]: fanSpeed });
+          this.log(`${cap}: ${fanSpeed}`);
+        } else {
+          await this.sendCommand({ [apiCommandName]: valueObj[cap] });
+          this.log(`${cap}: ${valueObj[cap]}`);
         }
       }
-    } catch (error) {
-      this.log(`Error in setDeviceOpts: ${error}`);
     }
   }
 
@@ -99,7 +97,7 @@ class AirPurifierDevice extends SharedDevice {
       return;
     }
 
-    const props = state.properties.reported;
+    const props = this.getReportedProps(state);
     this.log("Updating appliance: " + state.applianceId);
     this.Workmode = props.Workmode;
 

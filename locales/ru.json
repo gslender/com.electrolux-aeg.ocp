@@ -66,5 +66,9 @@
         "unavailable": "Данные Electrolux отклонены. Введите новые access token и refresh token в настройках приложения.",
         "notification": "Electrolux AEG: ваши данные разработчика отклонены или устарели. Откройте настройки приложения и введите новые access token и refresh token с developer.electrolux.one.",
         "migration": "Electrolux AEG 2.0 использует официальный API для разработчиков Electrolux Group. Вход по e-mail и паролю больше не поддерживается - откройте настройки приложения и введите API-ключ, access token и refresh token с developer.electrolux.one."
+    },
+    "errors": {
+        "command_not_supported": "Прибор не поддерживает __value__",
+        "fan_speed_smart_mode": "Скорость вентилятора нельзя изменить, пока очиститель находится в режиме Smart"
     }
 }

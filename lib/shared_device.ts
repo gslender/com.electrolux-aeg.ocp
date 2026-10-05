@@ -1,12 +1,15 @@
 import Homey from 'homey';
 import stringify from 'json-stringify-safe';
 import ElectroluxAEGApp from '../app'
+import { isDamAppliance } from './ocpapi';
 
 export default class SharedDevice extends Homey.Device {
 
   app!: ElectroluxAEGApp
   static enableDebug = true;
   deviceCapabilities!: string[]
+  // Appliance type DAM properties are nested under, for when the capabilities couldn't be fetched
+  damNamespace?: string;
   stringsIdx: number = 0;
 
   async onInit() {
@@ -44,27 +47,89 @@ export default class SharedDevice extends Homey.Device {
     }
   }
 
-  protected getApplianceCapability(capabilityName: string): any {
+  /** DAM appliances nest their capabilities, state and commands under the appliance type (e.g. airConditioner). */
+  protected isDam(): boolean {
+    return isDamAppliance(this.getApplianceId());
+  }
+
+  private findKey(obj: any, name: string): string | undefined {
+    if (!obj || typeof obj !== 'object') return undefined;
+    const target = name.toLowerCase();
+    return Object.keys(obj).find(key => key.toLowerCase() === target);
+  }
+
+  /** Looks up a capability by name (case insensitive), including those nested under a DAM appliance type. */
+  protected findApplianceCapability(capabilityName: string): { namespace?: string, name: string, capability: any } | undefined {
     const capabilities = this.getApplianceCapabilitiesSetting();
-    const targetKey = capabilityName.toLowerCase();
-    for (const key of Object.keys(capabilities)) {
-      if (key.toLowerCase() === targetKey) {
-        return capabilities[key];
-      }
+    const rootKey = this.findKey(capabilities, capabilityName);
+    if (rootKey) return { name: rootKey, capability: capabilities[rootKey] };
+    if (!this.isDam()) return undefined;
+    for (const [namespace, group] of Object.entries<any>(capabilities)) {
+      const key = this.findKey(group?.properties, capabilityName);
+      if (key) return { namespace, name: key, capability: group.properties[key] };
     }
     return undefined;
+  }
+
+  /** The appliance type DAM properties are nested under, used when the capabilities don't tell. */
+  protected getDamNamespace(): string | undefined {
+    const capabilities = this.getApplianceCapabilitiesSetting();
+    for (const [namespace, group] of Object.entries<any>(capabilities)) {
+      if (this.findKey(group?.properties, 'executeCommand') || this.findKey(group?.properties, 'applianceState')) return namespace;
+    }
+    return this.damNamespace;
   }
 
   protected supportsCommandValue(capabilityName: string, value: any): boolean {
     const capabilities = this.getApplianceCapabilitiesSetting();
     if (Object.keys(capabilities).length === 0) return true;
-    const capability = this.getApplianceCapability(capabilityName);
+    const capability = this.findApplianceCapability(capabilityName)?.capability;
     if (!capability || typeof capability !== 'object') return false;
     const values = capability.values;
     if (!values || typeof values !== 'object') return true;
-    const keys = Object.keys(values);
-    if (keys.length === 0) return true;
-    return Object.prototype.hasOwnProperty.call(values, String(value));
+    if (Object.keys(values).length === 0) return true;
+    const key = this.findKey(values, String(value));
+    return key !== undefined && values[key]?.disabled !== true;
+  }
+
+  protected assertCommandSupported(capabilityName: string, value: any) {
+    if (!this.supportsCommandValue(capabilityName, value)) {
+      throw new Error(this.homey.__('errors.command_not_supported', { value: `${value}` }));
+    }
+  }
+
+  /**
+   * Maps a command onto the appliance's capabilities, using their exact name and value casing. For DAM
+   * appliances each property is nested under its appliance type, e.g. { airConditioner: { mode: 'cool' } }.
+   */
+  protected toApiCommand(command: { [property: string]: any }): any {
+    const apiCommand: any = {};
+    for (const [property, value] of Object.entries(command)) {
+      const found = this.findApplianceCapability(property);
+      const name = found?.name ?? property;
+      const apiValue = typeof value === 'string' ? this.findKey(found?.capability?.values, value) ?? value : value;
+      const namespace = found ? found.namespace : (this.isDam() ? this.getDamNamespace() : undefined);
+      if (namespace) {
+        apiCommand[namespace] = { ...apiCommand[namespace], [name]: apiValue };
+      } else {
+        apiCommand[name] = apiValue;
+      }
+    }
+    return apiCommand;
+  }
+
+  /** Sends a command, throwing if the appliance rejects it. Properties in one command are applied in any order. */
+  protected async sendCommand(command: { [property: string]: any }) {
+    await this.app.sendDeviceCommand(this.getApplianceId(), this.toApiCommand(command));
+  }
+
+  /** The reported state, with a DAM appliance's nested properties lifted to the root to match the classic layout. */
+  protected getReportedProps(state: any): any {
+    const reported = state?.properties?.reported;
+    if (!reported || !this.isDam()) return reported;
+    const namespace = this.getDamNamespace();
+    const nested = namespace ? reported[namespace] : undefined;
+    return nested && typeof nested === 'object' ? { ...reported, ...nested } : reported;
   }
 
   private _isMissingAnyCapabilities(caps: string[]): boolean {

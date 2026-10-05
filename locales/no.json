@@ -66,5 +66,9 @@
         "unavailable": "Electrolux-påloggingsinformasjon avvist. Skriv inn et nytt access token og refresh token i appinnstillingene.",
         "notification": "Electrolux AEG: utviklerinformasjonen din ble avvist eller har utløpt. Åpne appinnstillingene og skriv inn et nytt access token og refresh token fra developer.electrolux.one.",
         "migration": "Electrolux AEG 2.0 bruker den offisielle Electrolux Group developer API. Innlogging med e-post og passord støttes ikke lenger - åpne appinnstillingene og skriv inn en API-nøkkel, access token og refresh token fra developer.electrolux.one."
+    },
+    "errors": {
+        "command_not_supported": "Apparatet støtter ikke __value__",
+        "fan_speed_smart_mode": "Viftehastigheten kan ikke endres mens luftrenseren er i Smart-modus"
     }
 }

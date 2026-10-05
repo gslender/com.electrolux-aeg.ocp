@@ -2,7 +2,7 @@
 
 import Homey from 'homey';
 import { UpdatableDevice, isUpdatableDevice } from './types'
-import { OcpApi, OcpAuth, OcpAuthError, OcpRateLimitError, describeError } from './lib/ocpapi';
+import { OcpApi, OcpAuth, OcpAuthError, OcpCommandRejectedError, OcpRateLimitError, describeError } from './lib/ocpapi';
 import stringify from 'json-stringify-safe';
 let isAppShuttingDown: boolean = false;
 
@@ -13,6 +13,10 @@ const DAILY_POLLING_CALL_BUDGET = 4000;
 const DAY_MS = 24 * 60 * 60 * 1000;
 // Responses younger than this are reused, e.g. for fridge + freezer devices sharing one appliance
 const CACHE_MAX_AGE_MS = 30000;
+// Appliances take a few seconds to report the state a command put them in
+const POST_COMMAND_POLL_DELAY_MS = 4000;
+// Retries when a regular poll is still running at that point
+const POST_COMMAND_POLL_RETRIES = 2;
 
 const LEGACY_SETTINGS = ['ocp.username', 'ocp.password', 'aToken', 'tokenexp'];
 
@@ -351,16 +355,33 @@ export default class ElectroluxAEGApp extends Homey.App {
     }
   }
 
+  /** Sends a command and rethrows on failure, so Homey reports it on the device tile or Flow card. */
   async sendDeviceCommand(deviceId: string, command: any) {
+    this.log(`Send Command ${deviceId}: ${stringify(command)}`);
     try {
       await this.ocpApi.sendCommand(deviceId, command);
-      this.homey.setTimeout(async () => {
-        this.pollApplianceState(deviceId);
-      }, 1000);
-
     } catch (e) {
-      this.handleApiError(`Send Command Error!? ${deviceId}`, e);
+      if (e instanceof OcpCommandRejectedError) {
+        // Specific to this command (e.g. remote control disabled) - not an app wide problem
+        this.log(`Send Command Rejected ${deviceId}: ${e.message}`);
+      } else {
+        this.handleApiError(`Send Command Error!? ${deviceId}`, e);
+      }
+      throw new Error(describeError(e));
     }
+    this.schedulePostCommandPoll(deviceId, POST_COMMAND_POLL_RETRIES);
+  }
+
+  /** Refreshes an appliance shortly after a command, giving it time to report its new state. */
+  schedulePostCommandPoll(deviceId: string, retries: number) {
+    this.homey.setTimeout(async () => {
+      if (isAppShuttingDown) return;
+      if (this.pollingInProgress) {
+        if (retries > 0) this.schedulePostCommandPoll(deviceId, retries - 1);
+        return;
+      }
+      await this.pollApplianceState(deviceId);
+    }, POST_COMMAND_POLL_DELAY_MS);
   }
 }
 

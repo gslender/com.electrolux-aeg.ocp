@@ -66,5 +66,9 @@
         "unavailable": "Dane Electrolux odrzucone. Wprowadź nowy access token i refresh token w ustawieniach aplikacji.",
         "notification": "Electrolux AEG: Twoje dane deweloperskie zostały odrzucone lub wygasły. Otwórz ustawienia aplikacji i wprowadź nowy access token i refresh token z developer.electrolux.one.",
         "migration": "Electrolux AEG 2.0 korzysta z oficjalnego API dla deweloperów Electrolux Group. Logowanie e-mailem i hasłem nie jest już obsługiwane - otwórz ustawienia aplikacji i wprowadź klucz API, access token i refresh token z developer.electrolux.one."
+    },
+    "errors": {
+        "command_not_supported": "Urządzenie nie obsługuje __value__",
+        "fan_speed_smart_mode": "Nie można zmienić prędkości wentylatora, gdy oczyszczacz jest w trybie Smart"
     }
 }

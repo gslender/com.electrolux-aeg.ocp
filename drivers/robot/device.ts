@@ -19,8 +19,6 @@ class RobotDevice extends SharedDevice {
   }
 
   async setDeviceOpts(valueObj: { [x: string]: any }) {
-    const deviceId = this.getData().id;
-
     try {
       if (valueObj.onoff !== undefined) {
         const isOn = valueObj.onoff === true || valueObj.onoff === 'true';
@@ -34,17 +32,18 @@ class RobotDevice extends SharedDevice {
         let cmd = 'stop';
         if (valueObj.robot_execute_command === 'START' || valueObj.robot_execute_command === 'RESUME') cmd = 'play';
         if (valueObj.robot_execute_command === 'PAUSE') cmd = 'pause';
-        await this.app.sendDeviceCommand(deviceId, { CleaningCommand: cmd });
+        await this.sendCommand({ CleaningCommand: cmd });
       }
 
       // Update power_mode
       if (valueObj.power_mode !== undefined) {
         this.log("power_mode: " + valueObj.power_mode);
-        await this.app.sendDeviceCommand(deviceId, { PowerMode: Number(valueObj.power_mode) });
+        await this.sendCommand({ PowerMode: Number(valueObj.power_mode) });
       }
 
     } catch (error) {
       this.log(`Error in setDeviceOpts: ${error}`);
+      throw error;
     }
   }
 
@@ -54,7 +53,7 @@ class RobotDevice extends SharedDevice {
       return;
     }
 
-    const props = state.properties.reported;
+    const props = this.getReportedProps(state);
 
     try {
       await this.safeUpdateCapabilityValue("measure_battery", (props.batteryStatus - 1) * 20);

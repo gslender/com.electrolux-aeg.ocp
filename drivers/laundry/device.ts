@@ -21,30 +21,24 @@ class LaundryDevice extends SharedDevice {
   }
 
   async setDeviceOpts(valueObj: { [x: string]: any }) {
-    const deviceId = this.getData().id;
-
     try {
       if (valueObj.onoff !== undefined) {
         const isOn = valueObj.onoff === true || valueObj.onoff === 'true';
         const command = isOn ? 'ON' : 'OFF';
         if (this.supportsCommandValue('executeCommand', command)) {
-          await this.app.sendDeviceCommand(deviceId, { executeCommand: command });
+          await this.sendCommand({ executeCommand: command });
         } else {
           const fallback = isOn ? 'START' : 'STOPRESET';
-          if (this.supportsCommandValue('executeCommand', fallback)) {
-            await this.app.sendDeviceCommand(deviceId, { executeCommand: fallback });
-          }
+          this.assertCommandSupported('executeCommand', fallback);
+          await this.sendCommand({ executeCommand: fallback });
         }
       }
 
       // Update laundry_execute_command
       if (valueObj.laundry_execute_command !== undefined) {
         this.log("laundry_execute_command: " + valueObj.laundry_execute_command);
-        if (this.supportsCommandValue('executeCommand', valueObj.laundry_execute_command)) {
-          await this.app.sendDeviceCommand(deviceId, { executeCommand: valueObj.laundry_execute_command });
-        } else {
-          this.log(`laundry_execute_command '${valueObj.laundry_execute_command}' not supported by device capabilities`);
-        }
+        this.assertCommandSupported('executeCommand', valueObj.laundry_execute_command);
+        await this.sendCommand({ executeCommand: valueObj.laundry_execute_command });
       }
 
       /*
@@ -61,7 +55,7 @@ class LaundryDevice extends SharedDevice {
         if (valueObj[cap] !== undefined) {
           const apiCommandName = commandMapping[cap] || cap;
 
-          await this.app.sendDeviceCommand(deviceId, {
+          await this.sendCommand({
             [apiCommandName]: valueObj[cap],
           });
           this.log(`${cap}: ${valueObj[cap]}`);
@@ -72,6 +66,7 @@ class LaundryDevice extends SharedDevice {
 
     } catch (error) {
       this.log(`Error in setDeviceOpts: ${error}`);
+      throw error;
     }
   }
 
@@ -81,7 +76,7 @@ class LaundryDevice extends SharedDevice {
       return;
     }
 
-    const props = state.properties.reported;
+    const props = this.getReportedProps(state);
     try {
       const normalizedState = String(props.applianceState || '').toUpperCase();
       const isOn = normalizedState !== '' && !['IDLE', 'OFF', 'END_OF_CYCLE'].includes(normalizedState);

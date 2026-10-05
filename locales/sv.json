@@ -66,5 +66,9 @@
         "unavailable": "Electrolux-uppgifterna avvisades. Ange en ny access token och refresh token i appinställningarna.",
         "notification": "Electrolux AEG: dina utvecklaruppgifter avvisades eller har gått ut. Öppna appinställningarna och ange en ny access token och refresh token från developer.electrolux.one.",
         "migration": "Electrolux AEG 2.0 använder Electrolux Groups officiella developer API. Inloggning med e-post och lösenord stöds inte längre - öppna appinställningarna och ange en API-nyckel, access token och refresh token från developer.electrolux.one."
+    },
+    "errors": {
+        "command_not_supported": "Apparaten stöder inte __value__",
+        "fan_speed_smart_mode": "Fläkthastigheten kan inte ändras medan luftrenaren är i Smart-läge"
     }
 }

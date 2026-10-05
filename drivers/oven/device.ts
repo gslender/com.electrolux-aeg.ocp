@@ -21,25 +21,19 @@ class OvenDevice extends SharedDevice {
   }
 
   async setDeviceOpts(valueObj: { [x: string]: any }) {
-    const deviceId = this.getData().id;
-
     try {
       if (valueObj.onoff !== undefined) {
         const isOn = valueObj.onoff === true || valueObj.onoff === 'true';
         const command = isOn ? 'START' : 'STOPRESET';
-        if (this.supportsCommandValue('executeCommand', command)) {
-          await this.app.sendDeviceCommand(deviceId, { executeCommand: command });
-        }
+        this.assertCommandSupported('executeCommand', command);
+        await this.sendCommand({ executeCommand: command });
       }
 
       // Update oven_execute_command
       if (valueObj.oven_execute_command !== undefined) {
         this.log("oven_execute_command: " + valueObj.oven_execute_command);
-        if (this.supportsCommandValue('executeCommand', valueObj.oven_execute_command)) {
-          await this.app.sendDeviceCommand(deviceId, { executeCommand: valueObj.oven_execute_command });
-        } else {
-          this.log(`oven_execute_command '${valueObj.oven_execute_command}' not supported by device capabilities`);
-        }
+        this.assertCommandSupported('executeCommand', valueObj.oven_execute_command);
+        await this.sendCommand({ executeCommand: valueObj.oven_execute_command });
       }
 
       const commandMapping: { [x: string]: string } = {
@@ -55,7 +49,7 @@ class OvenDevice extends SharedDevice {
         if (valueObj[cap] !== undefined) {
           const apiCommandName = commandMapping[cap] || cap;
 
-          await this.app.sendDeviceCommand(deviceId, {
+          await this.sendCommand({
             [apiCommandName]: valueObj[cap],
           });
           this.log(`${cap}: ${valueObj[cap]}`);
@@ -64,6 +58,7 @@ class OvenDevice extends SharedDevice {
       }
     } catch (error) {
       this.log(`Error in setDeviceOpts: ${error}`);
+      throw error;
     }
   }
 
@@ -73,7 +68,7 @@ class OvenDevice extends SharedDevice {
       return;
     }
 
-    const props = state.properties.reported;
+    const props = this.getReportedProps(state);
 
     try {
       const normalizedState = String(props.applianceState || '').toUpperCase();

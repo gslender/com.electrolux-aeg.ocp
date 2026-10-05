@@ -217,5 +217,8 @@
   },
   "2.0.1": {
     "en": "Minor updates following 2.0 upgrade."
+  },
+  "2.0.2": {
+    "en": "Fixed commands bugs for DAM appliances following 2.0 upgrade. Errors now reach Homey"
   }
 }

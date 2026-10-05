@@ -66,5 +66,9 @@
         "unavailable": "Identifiants Electrolux refusés. Saisissez un nouvel access token et refresh token dans les paramètres de l'application.",
         "notification": "Electrolux AEG : vos identifiants développeur ont été refusés ou ont expiré. Ouvrez les paramètres de l'application et saisissez un nouvel access token et refresh token depuis developer.electrolux.one.",
         "migration": "Electrolux AEG 2.0 utilise l'API développeur officielle d'Electrolux Group. La connexion par e-mail et mot de passe n'est plus prise en charge - ouvrez les paramètres de l'application et saisissez une clé API, un access token et un refresh token depuis developer.electrolux.one."
+    },
+    "errors": {
+        "command_not_supported": "L'appareil ne prend pas en charge __value__",
+        "fan_speed_smart_mode": "La vitesse du ventilateur ne peut pas être modifiée lorsque le purificateur est en mode Smart"
     }
 }

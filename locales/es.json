@@ -66,5 +66,9 @@
         "unavailable": "Credenciales de Electrolux rechazadas. Introduce un nuevo access token y refresh token en los ajustes de la app.",
         "notification": "Electrolux AEG: tus credenciales de desarrollador han sido rechazadas o han caducado. Abre los ajustes de la app e introduce un nuevo access token y refresh token de developer.electrolux.one.",
         "migration": "Electrolux AEG 2.0 usa la API oficial para desarrolladores de Electrolux Group. El inicio de sesión con correo y contraseña ya no es compatible - abre los ajustes de la app e introduce una clave API, access token y refresh token de developer.electrolux.one."
+    },
+    "errors": {
+        "command_not_supported": "El electrodoméstico no admite __value__",
+        "fan_speed_smart_mode": "No se puede cambiar la velocidad del ventilador mientras el purificador está en modo Smart"
     }
 }

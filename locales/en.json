@@ -66,5 +66,9 @@
         "unavailable": "Electrolux credentials rejected. Enter a new access token and refresh token in the app settings.",
         "notification": "Electrolux AEG: your developer credentials were rejected or have expired. Open the app settings and enter a new access token and refresh token from developer.electrolux.one.",
         "migration": "Electrolux AEG 2.0 uses the official Electrolux Group developer API. Email and password login is no longer supported - open the app settings and enter an API key, access token and refresh token from developer.electrolux.one."
+    },
+    "errors": {
+        "command_not_supported": "The appliance does not support __value__",
+        "fan_speed_smart_mode": "Fan speed cannot be changed while the purifier is in Smart mode"
     }
 }
