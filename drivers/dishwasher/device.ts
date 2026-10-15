@@ -22,17 +22,13 @@ class DishwasherDevice extends SharedDevice {
   async setDeviceOpts(valueObj: { [x: string]: any }) {
     try {
       if (valueObj.onoff !== undefined) {
-        const isOn = valueObj.onoff === true || valueObj.onoff === 'true';
-        const command = isOn ? 'START' : 'STOPRESET';
-        this.assertCommandSupported('executeCommand', command);
-        await this.sendCommand({ executeCommand: command });
+        await this.setApplianceOnOff(valueObj.onoff === true || valueObj.onoff === 'true');
       }
 
       // Update dishwasher_execute_command
       if (valueObj.dishwasher_execute_command !== undefined) {
         this.log("dishwasher_execute_command: " + valueObj.dishwasher_execute_command);
-        this.assertCommandSupported('executeCommand', valueObj.dishwasher_execute_command);
-        await this.sendCommand({ executeCommand: valueObj.dishwasher_execute_command });
+        await this.executeApplianceCommand(valueObj.dishwasher_execute_command);
       }
 
       /*

@@ -345,6 +345,11 @@ export default class ElectroluxAEGApp extends Homey.App {
     }
   }
 
+  /** The latest state, for checking a command against - throws on failure. */
+  async getCurrentApplianceState(deviceId: string): Promise<any> {
+    return await this.fetchCached(this.stateCache, deviceId, 0, id => this.ocpApi.getApplianceState(id));
+  }
+
   async getApplianceCapabilities(deviceId: string): Promise<any> {
     try {
       const info = await this.fetchCached(this.infoCache, deviceId, CACHE_MAX_AGE_MS, id => this.ocpApi.getApplianceInfo(id));
@@ -367,7 +372,8 @@ export default class ElectroluxAEGApp extends Homey.App {
       } else {
         this.handleApiError(`Send Command Error!? ${deviceId}`, e);
       }
-      throw new Error(describeError(e));
+      // Rejections keep their type, so devices can explain them
+      throw e instanceof OcpCommandRejectedError ? e : new Error(describeError(e));
     }
     this.schedulePostCommandPoll(deviceId, POST_COMMAND_POLL_RETRIES);
   }

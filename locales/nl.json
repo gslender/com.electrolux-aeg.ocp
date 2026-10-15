@@ -69,6 +69,9 @@
     },
     "errors": {
         "command_not_supported": "Het apparaat ondersteunt __value__ niet",
-        "fan_speed_smart_mode": "De ventilatorsnelheid kan niet worden gewijzigd terwijl de luchtreiniger in de Smart-modus staat"
+        "fan_speed_smart_mode": "De ventilatorsnelheid kan niet worden gewijzigd terwijl de luchtreiniger in de Smart-modus staat",
+        "remote_start_disabled": "Remote Start is niet ingeschakeld op het apparaat. Schakel dit eerst in op het apparaat.",
+        "command_not_allowed": "__command__ is niet mogelijk terwijl het apparaat de status __state__ heeft",
+        "cannot_turn_off": "Het apparaat kan niet op afstand worden uitgeschakeld met de status __state__"
     }
 }

@@ -69,6 +69,9 @@
     },
     "errors": {
         "command_not_supported": "Urządzenie nie obsługuje __value__",
-        "fan_speed_smart_mode": "Nie można zmienić prędkości wentylatora, gdy oczyszczacz jest w trybie Smart"
+        "fan_speed_smart_mode": "Nie można zmienić prędkości wentylatora, gdy oczyszczacz jest w trybie Smart",
+        "remote_start_disabled": "Zdalny start nie jest włączony w urządzeniu. Najpierw włącz go w urządzeniu.",
+        "command_not_allowed": "__command__ nie jest możliwe, gdy urządzenie jest w stanie __state__",
+        "cannot_turn_off": "Urządzenia nie można wyłączyć zdalnie, gdy jest w stanie __state__"
     }
 }

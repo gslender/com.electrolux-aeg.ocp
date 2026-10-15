@@ -69,6 +69,9 @@
     },
     "errors": {
         "command_not_supported": "Apparaten stöder inte __value__",
-        "fan_speed_smart_mode": "Fläkthastigheten kan inte ändras medan luftrenaren är i Smart-läge"
+        "fan_speed_smart_mode": "Fläkthastigheten kan inte ändras medan luftrenaren är i Smart-läge",
+        "remote_start_disabled": "Fjärrstart är inte aktiverad på apparaten. Aktivera den först på apparaten.",
+        "command_not_allowed": "__command__ är inte möjligt medan apparaten är __state__",
+        "cannot_turn_off": "Apparaten kan inte stängas av på distans medan den är __state__"
     }
 }
