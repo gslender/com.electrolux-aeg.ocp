@@ -72,6 +72,7 @@
         "fan_speed_smart_mode": "Fläkthastigheten kan inte ändras medan luftrenaren är i Smart-läge",
         "remote_start_disabled": "Fjärrstart är inte aktiverad på apparaten. Aktivera den först på apparaten.",
         "command_not_allowed": "__command__ är inte möjligt medan apparaten är __state__",
-        "cannot_turn_off": "Apparaten kan inte stängas av på distans medan den är __state__"
+        "cannot_turn_off": "Apparaten kan inte stängas av på distans medan den är __state__",
+        "not_ready_to_start": "Apparaten blev inte redo att starta, den är __state__. Är luckan stängd?"
     }
 }

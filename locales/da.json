@@ -72,6 +72,7 @@
         "fan_speed_smart_mode": "Blæserhastigheden kan ikke ændres, mens luftrenseren er i Smart-tilstand",
         "remote_start_disabled": "Remote Start er ikke aktiveret på apparatet. Aktivér det først på apparatet.",
         "command_not_allowed": "__command__ er ikke muligt, mens apparatet er __state__",
-        "cannot_turn_off": "Apparatet kan ikke slukkes eksternt, mens det er __state__"
+        "cannot_turn_off": "Apparatet kan ikke slukkes eksternt, mens det er __state__",
+        "not_ready_to_start": "Apparatet blev ikke klar til start, det er __state__. Er døren lukket?"
     }
 }

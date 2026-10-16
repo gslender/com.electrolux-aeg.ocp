@@ -28,7 +28,11 @@ class DishwasherDevice extends SharedDevice {
       // Update dishwasher_execute_command
       if (valueObj.dishwasher_execute_command !== undefined) {
         this.log("dishwasher_execute_command: " + valueObj.dishwasher_execute_command);
-        await this.executeApplianceCommand(valueObj.dishwasher_execute_command);
+        if (valueObj.dishwasher_execute_command === 'START') {
+          await this.startAppliance();
+        } else {
+          await this.executeApplianceCommand(valueObj.dishwasher_execute_command);
+        }
       }
 
       /*

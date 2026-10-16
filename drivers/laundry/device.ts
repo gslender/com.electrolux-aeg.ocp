@@ -29,7 +29,11 @@ class LaundryDevice extends SharedDevice {
       // Update laundry_execute_command
       if (valueObj.laundry_execute_command !== undefined) {
         this.log("laundry_execute_command: " + valueObj.laundry_execute_command);
-        await this.executeApplianceCommand(valueObj.laundry_execute_command);
+        if (valueObj.laundry_execute_command === 'START') {
+          await this.startAppliance();
+        } else {
+          await this.executeApplianceCommand(valueObj.laundry_execute_command);
+        }
       }
 
       /*

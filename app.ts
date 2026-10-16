@@ -59,6 +59,9 @@ export default class ElectroluxAEGApp extends Homey.App {
     this.registerFlowCardAction("disable_lock");
     this.registerFlowCardAction("enable_indicator_light");
     this.registerFlowCardAction("disable_indicator_light");
+    this.registerFlowCardAction("start_program");
+    this.homey.flow.getActionCard("start_program")
+      .registerArgumentAutocompleteListener("program", async (query, args) => args.device.onProgramAutocomplete(query));
 
     this.registerFlowCardCondition("applianceState_is");
     this.registerFlowCardCondition("connectionState_is");
@@ -295,6 +298,9 @@ export default class ElectroluxAEGApp extends Homey.App {
     try {
       const conn = state?.connectionState;
       const bypassConnectionAvailabilityStatus = device.getSetting('bypassConnectionAvailabilityStatus') === true;
+      // DEBUG-TMP
+      const r = state?.properties?.reported ?? {};
+      this.log(`DEBUG-TMP poll ${applianceId} applianceState=${r.applianceState} remoteControl=${r.remoteControl} doorState=${r.doorState} program=${r.userSelections?.programUID}`);
       if (conn === 'connected' || conn === 'Connected') {
         device.setAvailable();
         device.updateCapabilityValues(state);
