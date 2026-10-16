@@ -1,7 +1,11 @@
 import Homey from 'homey';
 import stringify from 'json-stringify-safe';
 import ElectroluxAEGApp from '../app'
-import { isDamAppliance } from './ocpapi';
+import { isDamAppliance, OcpCommandRejectedError } from './ocpapi';
+
+// How long and how often to check whether an appliance that was switched on is ready to start
+const START_TIMEOUT_MS = 30000;
+const START_POLL_INTERVAL_MS = 3000;
 
 export default class SharedDevice extends Homey.Device {
 
@@ -121,6 +125,190 @@ export default class SharedDevice extends Homey.Device {
   /** Sends a command, throwing if the appliance rejects it. Properties in one command are applied in any order. */
   protected async sendCommand(command: { [property: string]: any }) {
     await this.app.sendDeviceCommand(this.getApplianceId(), this.toApiCommand(command));
+  }
+
+  /** The appliance's current reported properties, or undefined if they couldn't be fetched. */
+  protected async getCurrentReportedProps(): Promise<any> {
+    try {
+      return this.getReportedProps(await this.app.getCurrentApplianceState(this.getApplianceId()));
+    } catch (_error) {
+      return undefined;
+    }
+  }
+
+  private getReportedValue(reported: any, path: string): any {
+    return path.split('/').reduce((obj, key) => obj?.[key], reported);
+  }
+
+  private evaluateOperand(operand: any, value: any): any {
+    if (operand === 'value') return value;
+    if (operand && typeof operand === 'object' && 'operator' in operand) return this.evaluateCondition(operand, value);
+    return operand;
+  }
+
+  private evaluateCondition(condition: any, value: any): boolean {
+    const left = this.evaluateOperand(condition?.operand_1, value);
+    const right = this.evaluateOperand(condition?.operand_2, value);
+    switch (`${condition?.operator}`.toLowerCase()) {
+      case 'eq': return left === right;
+      case 'ne': return left !== right;
+      case 'and': return left === true && right === true;
+      case 'or': return left === true || right === true;
+      // Unknown operators never match, leaving the capability as it is
+      default: return false;
+    }
+  }
+
+  /**
+   * The values a capability accepts in the appliance's current state, or undefined if any value goes.
+   * Classic appliances describe this with capability "triggers", e.g. while applianceState is
+   * READY_TO_START executeCommand only allows START.
+   *
+   * Triggers that disable the capability outright are ignored: a washing machine disables executeCommand
+   * while remoteControl isn't ENABLED, yet still accepts ON, so only the appliance can tell what remote
+   * control blocks.
+   */
+  protected getAllowedValues(capabilityName: string, reported: any): string[] | undefined {
+    if (!reported) return undefined;
+    const capabilities = this.getApplianceCapabilitiesSetting();
+    const name = this.findKey(capabilities, capabilityName);
+    if (!name) return undefined;
+
+    let values = capabilities[name]?.values;
+    for (const [key, capability] of Object.entries<any>(capabilities)) {
+      if (!Array.isArray(capability?.triggers)) continue;
+      const value = this.getReportedValue(reported, key);
+      for (const trigger of capability.triggers) {
+        const action = trigger?.action?.[name];
+        if (!action?.values || typeof action.values !== 'object') continue;
+        if (this.evaluateCondition(trigger.condition, value)) values = action.values;
+      }
+    }
+
+    if (!values || typeof values !== 'object') return undefined;
+    return Object.keys(values).filter(key => values[key]?.disabled !== true);
+  }
+
+  private isRemoteControlBlocked(reported: any): boolean {
+    return typeof reported?.remoteControl === 'string' && reported.remoteControl.toUpperCase() !== 'ENABLED';
+  }
+
+  private isCommandAllowed(command: string, reported: any): boolean {
+    const allowed = this.getAllowedValues('executeCommand', reported);
+    return !allowed || allowed.some(value => this.compareCaseInsensitiveString(value, command));
+  }
+
+  private assertCommandAllowed(command: string, reported: any) {
+    if (!this.isCommandAllowed(command, reported)) {
+      throw new Error(this.homey.__('errors.command_not_allowed', {
+        command: this.translateUnderscore(command),
+        state: this.translateUnderscore(reported?.applianceState),
+      }));
+    }
+  }
+
+  /** Sends an executeCommand (START, PAUSE, ...), checking first that the appliance's current state allows it. */
+  protected async executeApplianceCommand(command: string, reported?: any) {
+    this.assertCommandSupported('executeCommand', command);
+    reported = reported ?? await this.getCurrentReportedProps();
+    this.assertCommandAllowed(command, reported);
+    try {
+      await this.sendCommand({ executeCommand: command });
+    } catch (error) {
+      // Not every appliance describes when remote control blocks commands, so the API's error is all there is
+      if (error instanceof OcpCommandRejectedError && this.isRemoteControlBlocked(reported)) {
+        throw new Error(this.homey.__('errors.remote_start_disabled'));
+      }
+      throw error;
+    }
+  }
+
+  protected isApplianceOn(applianceState: any): boolean {
+    const state = `${applianceState ?? ''}`.toUpperCase();
+    return state !== '' && !['IDLE', 'OFF', 'END_OF_CYCLE'].includes(state);
+  }
+
+  /**
+   * Switches an appliance on or off using whichever command its current state allows. Does nothing when it
+   * already is. Many appliances only accept ON while IDLE and have no OFF, so a cycle is stopped with STOPRESET.
+   */
+  protected async setApplianceOnOff(on: boolean) {
+    const reported = await this.getCurrentReportedProps();
+    if (!reported) {
+      await this.executeApplianceCommand(on ? 'ON' : 'STOPRESET', reported);
+      return;
+    }
+    if (this.isApplianceOn(reported.applianceState) === on) {
+      this.log(`already ${on ? 'on' : 'off'} (${reported.applianceState})`);
+      return;
+    }
+    if (on) {
+      await this.executeApplianceCommand('ON', reported);
+      return;
+    }
+    const allowed = this.getAllowedValues('executeCommand', reported);
+    const command = ['OFF', 'STOPRESET'].find(value => !allowed || allowed.includes(value));
+    if (!command) {
+      throw new Error(this.homey.__('errors.cannot_turn_off', { state: this.translateUnderscore(reported.applianceState) }));
+    }
+    await this.executeApplianceCommand(command, reported);
+  }
+
+  /** Polls until the appliance reports the given state, returning its reported properties. */
+  private async waitForApplianceState(applianceState: string, timeoutMs = START_TIMEOUT_MS): Promise<any> {
+    const deadline = Date.now() + timeoutMs;
+    let reported: any;
+    do {
+      await new Promise(resolve => this.homey.setTimeout(resolve, START_POLL_INTERVAL_MS));
+      reported = await this.getCurrentReportedProps();
+      if (this.compareCaseInsensitiveString(reported?.applianceState, applianceState)) return reported;
+    } while (Date.now() < deadline);
+    throw new Error(this.homey.__('errors.not_ready_to_start', { state: this.translateUnderscore(reported?.applianceState) }));
+  }
+
+  /** The programs an appliance offers, by programUID. Hidden service programs are left out. */
+  getPrograms(): string[] {
+    const values = this.findApplianceCapability('userSelections/programUID')?.capability?.values;
+    if (!values || typeof values !== 'object') return [];
+    return Object.keys(values).filter(program => values[program]?.disabled !== true && !program.includes('HIDDEN'));
+  }
+
+  /** A readable program name, e.g. COTTON_PR_ECO40-60 becomes "Eco40-60". */
+  getProgramName(program: string): string {
+    const name = program.includes('_PR_') ? program.split('_PR_').pop()! : program;
+    return this.translateUnderscore(name);
+  }
+
+  /**
+   * Starts the appliance, optionally with a program. An appliance that is off is switched on first, as
+   * it only accepts START once it reports READY_TO_START.
+   */
+  protected async startAppliance(program?: string) {
+    if (program && !this.getPrograms().includes(program)) {
+      throw new Error(this.homey.__('errors.command_not_supported', { value: program }));
+    }
+    let reported = await this.getCurrentReportedProps();
+    if (reported && !this.isCommandAllowed('START', reported) && this.isCommandAllowed('ON', reported)) {
+      await this.executeApplianceCommand('ON', reported);
+      reported = await this.waitForApplianceState('READY_TO_START');
+    }
+    if (program) {
+      this.assertCommandAllowed('START', reported);
+      await this.sendCommand({ userSelections: { programUID: program } });
+    }
+    await this.executeApplianceCommand('START', reported);
+  }
+
+  async flow_start_program(args: { program: { id: string } }, state: {}) {
+    this.log(`flow_start_program: args=${stringify(args.program)} state=${stringify(state)}`);
+    await this.startAppliance(args.program.id);
+  }
+
+  onProgramAutocomplete(query: string) {
+    const search = query.toLowerCase();
+    return this.getPrograms()
+      .map(program => ({ id: program, name: this.getProgramName(program), description: program }))
+      .filter(item => item.name.toLowerCase().includes(search) || item.id.toLowerCase().includes(search));
   }
 
   /** The reported state, with a DAM appliance's nested properties lifted to the root to match the classic layout. */

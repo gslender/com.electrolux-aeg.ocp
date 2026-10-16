@@ -69,6 +69,10 @@
     },
     "errors": {
         "command_not_supported": "L'appareil ne prend pas en charge __value__",
-        "fan_speed_smart_mode": "La vitesse du ventilateur ne peut pas être modifiée lorsque le purificateur est en mode Smart"
+        "fan_speed_smart_mode": "La vitesse du ventilateur ne peut pas être modifiée lorsque le purificateur est en mode Smart",
+        "remote_start_disabled": "Le démarrage à distance n'est pas activé sur l'appareil. Activez-le d'abord sur l'appareil.",
+        "command_not_allowed": "__command__ n'est pas possible lorsque l'appareil est __state__",
+        "cannot_turn_off": "L'appareil ne peut pas être éteint à distance lorsqu'il est __state__",
+        "not_ready_to_start": "L'appareil n'est pas devenu prêt à démarrer, il est __state__. La porte est-elle fermée ?"
     }
 }

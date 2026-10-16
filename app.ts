@@ -59,6 +59,9 @@ export default class ElectroluxAEGApp extends Homey.App {
     this.registerFlowCardAction("disable_lock");
     this.registerFlowCardAction("enable_indicator_light");
     this.registerFlowCardAction("disable_indicator_light");
+    this.registerFlowCardAction("start_program");
+    this.homey.flow.getActionCard("start_program")
+      .registerArgumentAutocompleteListener("program", async (query, args) => args.device.onProgramAutocomplete(query));
 
     this.registerFlowCardCondition("applianceState_is");
     this.registerFlowCardCondition("connectionState_is");
@@ -295,6 +298,9 @@ export default class ElectroluxAEGApp extends Homey.App {
     try {
       const conn = state?.connectionState;
       const bypassConnectionAvailabilityStatus = device.getSetting('bypassConnectionAvailabilityStatus') === true;
+      // DEBUG-TMP
+      const r = state?.properties?.reported ?? {};
+      this.log(`DEBUG-TMP poll ${applianceId} applianceState=${r.applianceState} remoteControl=${r.remoteControl} doorState=${r.doorState} program=${r.userSelections?.programUID}`);
       if (conn === 'connected' || conn === 'Connected') {
         device.setAvailable();
         device.updateCapabilityValues(state);
@@ -345,6 +351,11 @@ export default class ElectroluxAEGApp extends Homey.App {
     }
   }
 
+  /** The latest state, for checking a command against - throws on failure. */
+  async getCurrentApplianceState(deviceId: string): Promise<any> {
+    return await this.fetchCached(this.stateCache, deviceId, 0, id => this.ocpApi.getApplianceState(id));
+  }
+
   async getApplianceCapabilities(deviceId: string): Promise<any> {
     try {
       const info = await this.fetchCached(this.infoCache, deviceId, CACHE_MAX_AGE_MS, id => this.ocpApi.getApplianceInfo(id));
@@ -367,7 +378,8 @@ export default class ElectroluxAEGApp extends Homey.App {
       } else {
         this.handleApiError(`Send Command Error!? ${deviceId}`, e);
       }
-      throw new Error(describeError(e));
+      // Rejections keep their type, so devices can explain them
+      throw e instanceof OcpCommandRejectedError ? e : new Error(describeError(e));
     }
     this.schedulePostCommandPoll(deviceId, POST_COMMAND_POLL_RETRIES);
   }

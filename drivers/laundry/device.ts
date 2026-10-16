@@ -23,22 +23,17 @@ class LaundryDevice extends SharedDevice {
   async setDeviceOpts(valueObj: { [x: string]: any }) {
     try {
       if (valueObj.onoff !== undefined) {
-        const isOn = valueObj.onoff === true || valueObj.onoff === 'true';
-        const command = isOn ? 'ON' : 'OFF';
-        if (this.supportsCommandValue('executeCommand', command)) {
-          await this.sendCommand({ executeCommand: command });
-        } else {
-          const fallback = isOn ? 'START' : 'STOPRESET';
-          this.assertCommandSupported('executeCommand', fallback);
-          await this.sendCommand({ executeCommand: fallback });
-        }
+        await this.setApplianceOnOff(valueObj.onoff === true || valueObj.onoff === 'true');
       }
 
       // Update laundry_execute_command
       if (valueObj.laundry_execute_command !== undefined) {
         this.log("laundry_execute_command: " + valueObj.laundry_execute_command);
-        this.assertCommandSupported('executeCommand', valueObj.laundry_execute_command);
-        await this.sendCommand({ executeCommand: valueObj.laundry_execute_command });
+        if (valueObj.laundry_execute_command === 'START') {
+          await this.startAppliance();
+        } else {
+          await this.executeApplianceCommand(valueObj.laundry_execute_command);
+        }
       }
 
       /*

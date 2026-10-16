@@ -69,6 +69,10 @@
     },
     "errors": {
         "command_not_supported": "Apparatet støtter ikke __value__",
-        "fan_speed_smart_mode": "Viftehastigheten kan ikke endres mens luftrenseren er i Smart-modus"
+        "fan_speed_smart_mode": "Viftehastigheten kan ikke endres mens luftrenseren er i Smart-modus",
+        "remote_start_disabled": "Remote Start er ikke aktivert på apparatet. Aktiver det først på apparatet.",
+        "command_not_allowed": "__command__ er ikke mulig mens apparatet er __state__",
+        "cannot_turn_off": "Apparatet kan ikke slås av eksternt mens det er __state__",
+        "not_ready_to_start": "Apparatet ble ikke klart til start, det er __state__. Er døren lukket?"
     }
 }

@@ -69,6 +69,10 @@
     },
     "errors": {
         "command_not_supported": "The appliance does not support __value__",
-        "fan_speed_smart_mode": "Fan speed cannot be changed while the purifier is in Smart mode"
+        "fan_speed_smart_mode": "Fan speed cannot be changed while the purifier is in Smart mode",
+        "remote_start_disabled": "Remote Start is not enabled on the appliance. Enable it on the appliance first.",
+        "command_not_allowed": "__command__ is not possible while the appliance is __state__",
+        "cannot_turn_off": "The appliance can't be turned off remotely while it is __state__",
+        "not_ready_to_start": "The appliance did not become ready to start, it is __state__. Is the door closed?"
     }
 }

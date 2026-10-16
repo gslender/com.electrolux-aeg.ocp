@@ -1,0 +1,83 @@
+{
+  "title": {
+    "en": "Start program",
+    "nl": "Programma starten",
+    "de": "Programm starten",
+    "da": "Start program",
+    "es": "Iniciar programa",
+    "fr": "Démarrer le programme",
+    "it": "Avvia programma",
+    "no": "Start program",
+    "sv": "Starta program",
+    "pl": "Uruchom program",
+    "ru": "Запустить программу",
+    "ko": "프로그램 시작"
+  },
+  "titleFormatted": {
+    "en": "Start program [[program]]",
+    "nl": "Programma [[program]] starten",
+    "de": "Programm [[program]] starten",
+    "da": "Start program [[program]]",
+    "es": "Iniciar programa [[program]]",
+    "fr": "Démarrer le programme [[program]]",
+    "it": "Avvia programma [[program]]",
+    "no": "Start program [[program]]",
+    "sv": "Starta program [[program]]",
+    "pl": "Uruchom program [[program]]",
+    "ru": "Запустить программу [[program]]",
+    "ko": "[[program]] 프로그램 시작"
+  },
+  "hint": {
+    "en": "Switches the appliance on if needed. Remote Start must be enabled on the appliance.",
+    "nl": "Zet het apparaat zo nodig aan. Remote Start moet op het apparaat zijn ingeschakeld.",
+    "de": "Schaltet das Gerät bei Bedarf ein. Remote Start muss am Gerät aktiviert sein.",
+    "da": "Tænder apparatet om nødvendigt. Remote Start skal være aktiveret på apparatet.",
+    "es": "Enciende el electrodoméstico si es necesario. El inicio remoto debe estar activado en el electrodoméstico.",
+    "fr": "Allume l'appareil si nécessaire. Le démarrage à distance doit être activé sur l'appareil.",
+    "it": "Accende l'apparecchio se necessario. L'avvio remoto deve essere attivato sull'apparecchio.",
+    "no": "Slår på apparatet ved behov. Remote Start må være aktivert på apparatet.",
+    "sv": "Slår på apparaten vid behov. Fjärrstart måste vara aktiverad på apparaten.",
+    "pl": "W razie potrzeby włącza urządzenie. Zdalny start musi być włączony w urządzeniu.",
+    "ru": "При необходимости включает устройство. Удалённый запуск должен быть включён на устройстве.",
+    "ko": "필요하면 기기를 켭니다. 기기에서 원격 시작이 활성화되어 있어야 합니다."
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=dishwasher|laundry"
+    },
+    {
+      "type": "autocomplete",
+      "name": "program",
+      "title": {
+        "en": "Program",
+        "nl": "Programma",
+        "de": "Programm",
+        "da": "Program",
+        "es": "Programa",
+        "fr": "Programme",
+        "it": "Programma",
+        "no": "Program",
+        "sv": "Program",
+        "pl": "Program",
+        "ru": "Программа",
+        "ko": "프로그램"
+      },
+      "placeholder": {
+        "en": "Program",
+        "nl": "Programma",
+        "de": "Programm",
+        "da": "Program",
+        "es": "Programa",
+        "fr": "Programme",
+        "it": "Programma",
+        "no": "Program",
+        "sv": "Program",
+        "pl": "Program",
+        "ru": "Программа",
+        "ko": "프로그램"
+      }
+    }
+  ]
+}
