@@ -220,5 +220,8 @@
   },
   "2.0.2": {
     "en": "Fixed commands bugs for DAM appliances following 2.0 upgrade. Errors now reach Homey"
+  },
+  "2.0.3": {
+    "en": "Merge pull request #52 from Charlie-Root: Fix appliance command state"
   }
 }
