@@ -1,0 +1,45 @@
+{
+  "id": "measure_preheatComplete_changed",
+  "title": {
+    "en": "The Preheat Complete status has changed",
+    "nl": "De status Voorverwarmen voltooid is gewijzigd",
+    "da": "Status for fuldført forvarmning er ændret",
+    "de": "Der Status „Vorheizen abgeschlossen“ hat sich geändert",
+    "es": "El estado de precalentamiento completado ha cambiado",
+    "fr": "L'état du préchauffage terminé a changé",
+    "it": "Lo stato di preriscaldamento completato è cambiato",
+    "no": "Statusen for fullført forvarming har endret seg",
+    "sv": "Statusen för klar förvärmning har ändrats",
+    "pl": "Status zakończenia nagrzewania został zmieniony",
+    "ru": "Статус завершения предварительного нагрева изменился",
+    "ko": "예열 완료 상태가 변경되었습니다"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=oven"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "measure_preheatComplete",
+      "title": {
+        "en": "Preheat Complete",
+        "de": "Vorheizen abgeschlossen",
+        "nl": "Voorverwarmen voltooid",
+        "da": "Forvarmning fuldført",
+        "es": "Precalentamiento completado",
+        "fr": "Préchauffage terminé",
+        "it": "Preriscaldamento completato",
+        "no": "Forvarming fullført",
+        "sv": "Förvärmning klar",
+        "pl": "Nagrzewanie zakończone",
+        "ru": "Предварительный нагрев завершён",
+        "ko": "예열 완료"
+      },
+      "type": "string",
+      "example": "ON"
+    }
+  ]
+}

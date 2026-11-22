@@ -1,0 +1,20 @@
+{
+  "type": "string",
+  "title": {
+    "en": "Water Tank Level",
+    "de": "Wassertankfüllstand",
+    "nl": "Waterniveau tank",
+    "da": "Vandtankniveau",
+    "es": "Nivel del depósito de agua",
+    "fr": "Niveau du réservoir d'eau",
+    "it": "Livello del serbatoio dell'acqua",
+    "no": "Vanntanknivå",
+    "sv": "Vattentanksnivå",
+    "pl": "Poziom wody w zbiorniku",
+    "ru": "Уровень воды в баке",
+    "ko": "물탱크 수위"
+  },
+  "getable": true,
+  "setable": false,
+  "icon": "/assets/icons/drop.svg"
+}

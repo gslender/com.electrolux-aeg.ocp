@@ -1,0 +1,20 @@
+{
+  "type": "string",
+  "title": {
+    "en": "Food Probe",
+    "de": "Kerntemperaturfühler",
+    "nl": "Kerntemperatuurmeter",
+    "da": "Stegetermometer",
+    "es": "Sonda de temperatura",
+    "fr": "Sonde de cuisson",
+    "it": "Sonda termica",
+    "no": "Steketermometer",
+    "sv": "Stektermometer",
+    "pl": "Sonda temperatury",
+    "ru": "Термощуп",
+    "ko": "음식 온도 프로브"
+  },
+  "getable": true,
+  "setable": false,
+  "icon": "/assets/icons/temp-up.svg"
+}

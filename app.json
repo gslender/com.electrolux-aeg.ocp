@@ -322,6 +322,51 @@
         ]
       },
       {
+        "id": "measure_foodProbeState_changed",
+        "title": {
+          "en": "The Food Probe state has changed",
+          "nl": "De status van de kerntemperatuurmeter is gewijzigd",
+          "da": "Stegetermometerets status er ændret",
+          "de": "Der Status des Kerntemperaturfühlers hat sich geändert",
+          "es": "El estado de la sonda de temperatura ha cambiado",
+          "fr": "L'état de la sonde de cuisson a changé",
+          "it": "Lo stato della sonda termica è cambiato",
+          "no": "Statusen for steketermometeret har endret seg",
+          "sv": "Stektermometerns status har ändrats",
+          "pl": "Stan sondy temperatury został zmieniony",
+          "ru": "Состояние термощупа изменилось",
+          "ko": "음식 온도 프로브 상태가 변경되었습니다"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=oven"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "measure_foodProbeState",
+            "title": {
+              "en": "Food Probe",
+              "de": "Kerntemperaturfühler",
+              "nl": "Kerntemperatuurmeter",
+              "da": "Stegetermometer",
+              "es": "Sonda de temperatura",
+              "fr": "Sonde de cuisson",
+              "it": "Sonda termica",
+              "no": "Steketermometer",
+              "sv": "Stektermometer",
+              "pl": "Sonda temperatury",
+              "ru": "Термощуп",
+              "ko": "음식 온도 프로브"
+            },
+            "type": "string",
+            "example": "NOT_INSERTED"
+          }
+        ]
+      },
+      {
         "id": "measure_pm1_changed",
         "title": {
           "en": "The PM1 value has changed",
@@ -393,6 +438,51 @@
             "title": "PM10",
             "type": "number",
             "example": 2
+          }
+        ]
+      },
+      {
+        "id": "measure_preheatComplete_changed",
+        "title": {
+          "en": "The Preheat Complete status has changed",
+          "nl": "De status Voorverwarmen voltooid is gewijzigd",
+          "da": "Status for fuldført forvarmning er ændret",
+          "de": "Der Status „Vorheizen abgeschlossen“ hat sich geändert",
+          "es": "El estado de precalentamiento completado ha cambiado",
+          "fr": "L'état du préchauffage terminé a changé",
+          "it": "Lo stato di preriscaldamento completato è cambiato",
+          "no": "Statusen for fullført forvarming har endret seg",
+          "sv": "Statusen för klar förvärmning har ändrats",
+          "pl": "Status zakończenia nagrzewania został zmieniony",
+          "ru": "Статус завершения предварительного нагрева изменился",
+          "ko": "예열 완료 상태가 변경되었습니다"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=oven"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "measure_preheatComplete",
+            "title": {
+              "en": "Preheat Complete",
+              "de": "Vorheizen abgeschlossen",
+              "nl": "Voorverwarmen voltooid",
+              "da": "Forvarmning fuldført",
+              "es": "Precalentamiento completado",
+              "fr": "Préchauffage terminé",
+              "it": "Preriscaldamento completato",
+              "no": "Forvarming fullført",
+              "sv": "Förvärmning klar",
+              "pl": "Nagrzewanie zakończone",
+              "ru": "Предварительный нагрев завершён",
+              "ko": "예열 완료"
+            },
+            "type": "string",
+            "example": "ON"
           }
         ]
       },
@@ -660,6 +750,51 @@
             "title": "VOC",
             "type": "number",
             "example": 2
+          }
+        ]
+      },
+      {
+        "id": "measure_waterTankLevel_changed",
+        "title": {
+          "en": "The Water Tank Level has changed",
+          "nl": "Het waterniveau van de tank is gewijzigd",
+          "da": "Vandtankniveauet er ændret",
+          "de": "Der Wassertankfüllstand hat sich geändert",
+          "es": "El nivel del depósito de agua ha cambiado",
+          "fr": "Le niveau du réservoir d'eau a changé",
+          "it": "Il livello del serbatoio dell'acqua è cambiato",
+          "no": "Vanntanknivået har endret seg",
+          "sv": "Vattentanksnivån har ändrats",
+          "pl": "Poziom wody w zbiorniku został zmieniony",
+          "ru": "Уровень воды в баке изменился",
+          "ko": "물탱크 수위가 변경되었습니다"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=oven"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "measure_waterTankLevel",
+            "title": {
+              "en": "Water Tank Level",
+              "de": "Wassertankfüllstand",
+              "nl": "Waterniveau tank",
+              "da": "Vandtankniveau",
+              "es": "Nivel del depósito de agua",
+              "fr": "Niveau du réservoir d'eau",
+              "it": "Livello del serbatoio dell'acqua",
+              "no": "Vanntanknivå",
+              "sv": "Vattentanksnivå",
+              "pl": "Poziom wody w zbiorniku",
+              "ru": "Уровень воды в баке",
+              "ko": "물탱크 수위"
+            },
+            "type": "string",
+            "example": "OK"
           }
         ]
       }
@@ -5186,6 +5321,26 @@
       "uiComponent": "sensor",
       "icon": "/assets/icons/filter.svg"
     },
+    "measure_foodProbeState": {
+      "type": "string",
+      "title": {
+        "en": "Food Probe",
+        "de": "Kerntemperaturfühler",
+        "nl": "Kerntemperatuurmeter",
+        "da": "Stegetermometer",
+        "es": "Sonda de temperatura",
+        "fr": "Sonde de cuisson",
+        "it": "Sonda termica",
+        "no": "Steketermometer",
+        "sv": "Stektermometer",
+        "pl": "Sonda temperatury",
+        "ru": "Термощуп",
+        "ko": "음식 온도 프로브"
+      },
+      "getable": true,
+      "setable": false,
+      "icon": "/assets/icons/temp-up.svg"
+    },
     "measure_pm1": {
       "type": "number",
       "title": {
@@ -5279,6 +5434,26 @@
       "setable": false,
       "uiComponent": "sensor",
       "icon": "/assets/icons/pm10.svg"
+    },
+    "measure_preheatComplete": {
+      "type": "string",
+      "title": {
+        "en": "Preheat Complete",
+        "de": "Vorheizen abgeschlossen",
+        "nl": "Voorverwarmen voltooid",
+        "da": "Forvarmning fuldført",
+        "es": "Precalentamiento completado",
+        "fr": "Préchauffage terminé",
+        "it": "Preriscaldamento completato",
+        "no": "Forvarming fullført",
+        "sv": "Förvärmning klar",
+        "pl": "Nagrzewanie zakończone",
+        "ru": "Предварительный нагрев завершён",
+        "ko": "예열 완료"
+      },
+      "getable": true,
+      "setable": false,
+      "icon": "/assets/icons/temp-up.svg"
     },
     "measure_remoteControl": {
       "type": "string",
@@ -5513,6 +5688,26 @@
       "setable": false,
       "uiComponent": "sensor",
       "icon": "/assets/icons/voc.svg"
+    },
+    "measure_waterTankLevel": {
+      "type": "string",
+      "title": {
+        "en": "Water Tank Level",
+        "de": "Wassertankfüllstand",
+        "nl": "Waterniveau tank",
+        "da": "Vandtankniveau",
+        "es": "Nivel del depósito de agua",
+        "fr": "Niveau du réservoir d'eau",
+        "it": "Livello del serbatoio dell'acqua",
+        "no": "Vanntanknivå",
+        "sv": "Vattentanksnivå",
+        "pl": "Poziom wody w zbiorniku",
+        "ru": "Уровень воды в баке",
+        "ko": "물탱크 수위"
+      },
+      "getable": true,
+      "setable": false,
+      "icon": "/assets/icons/drop.svg"
     },
     "oven_execute_command": {
       "type": "enum",

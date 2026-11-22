@@ -1,0 +1,45 @@
+{
+  "id": "measure_waterTankLevel_changed",
+  "title": {
+    "en": "The Water Tank Level has changed",
+    "nl": "Het waterniveau van de tank is gewijzigd",
+    "da": "Vandtankniveauet er ændret",
+    "de": "Der Wassertankfüllstand hat sich geändert",
+    "es": "El nivel del depósito de agua ha cambiado",
+    "fr": "Le niveau du réservoir d'eau a changé",
+    "it": "Il livello del serbatoio dell'acqua è cambiato",
+    "no": "Vanntanknivået har endret seg",
+    "sv": "Vattentanksnivån har ändrats",
+    "pl": "Poziom wody w zbiorniku został zmieniony",
+    "ru": "Уровень воды в баке изменился",
+    "ko": "물탱크 수위가 변경되었습니다"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=oven"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "measure_waterTankLevel",
+      "title": {
+        "en": "Water Tank Level",
+        "de": "Wassertankfüllstand",
+        "nl": "Waterniveau tank",
+        "da": "Vandtankniveau",
+        "es": "Nivel del depósito de agua",
+        "fr": "Niveau du réservoir d'eau",
+        "it": "Livello del serbatoio dell'acqua",
+        "no": "Vanntanknivå",
+        "sv": "Vattentanksnivå",
+        "pl": "Poziom wody w zbiorniku",
+        "ru": "Уровень воды в баке",
+        "ko": "물탱크 수위"
+      },
+      "type": "string",
+      "example": "OK"
+    }
+  ]
+}
