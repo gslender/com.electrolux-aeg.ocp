@@ -1,0 +1,20 @@
+{
+  "type": "string",
+  "title": {
+    "en": "Preheat Complete",
+    "de": "Vorheizen abgeschlossen",
+    "nl": "Voorverwarmen voltooid",
+    "da": "Forvarmning fuldført",
+    "es": "Precalentamiento completado",
+    "fr": "Préchauffage terminé",
+    "it": "Preriscaldamento completato",
+    "no": "Forvarming fullført",
+    "sv": "Förvärmning klar",
+    "pl": "Nagrzewanie zakończone",
+    "ru": "Предварительный нагрев завершён",
+    "ko": "예열 완료"
+  },
+  "getable": true,
+  "setable": false,
+  "icon": "/assets/icons/temp-up.svg"
+}

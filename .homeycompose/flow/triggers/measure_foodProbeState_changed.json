@@ -1,0 +1,45 @@
+{
+  "id": "measure_foodProbeState_changed",
+  "title": {
+    "en": "The Food Probe state has changed",
+    "nl": "De status van de kerntemperatuurmeter is gewijzigd",
+    "da": "Stegetermometerets status er ændret",
+    "de": "Der Status des Kerntemperaturfühlers hat sich geändert",
+    "es": "El estado de la sonda de temperatura ha cambiado",
+    "fr": "L'état de la sonde de cuisson a changé",
+    "it": "Lo stato della sonda termica è cambiato",
+    "no": "Statusen for steketermometeret har endret seg",
+    "sv": "Stektermometerns status har ändrats",
+    "pl": "Stan sondy temperatury został zmieniony",
+    "ru": "Состояние термощупа изменилось",
+    "ko": "음식 온도 프로브 상태가 변경되었습니다"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=oven"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "measure_foodProbeState",
+      "title": {
+        "en": "Food Probe",
+        "de": "Kerntemperaturfühler",
+        "nl": "Kerntemperatuurmeter",
+        "da": "Stegetermometer",
+        "es": "Sonda de temperatura",
+        "fr": "Sonde de cuisson",
+        "it": "Sonda termica",
+        "no": "Steketermometer",
+        "sv": "Stektermometer",
+        "pl": "Sonda temperatury",
+        "ru": "Термощуп",
+        "ko": "음식 온도 프로브"
+      },
+      "type": "string",
+      "example": "NOT_INSERTED"
+    }
+  ]
+}

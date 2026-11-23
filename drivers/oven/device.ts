@@ -85,7 +85,11 @@ class OvenDevice extends SharedDevice {
       await this.safeUpdateCapabilityValue("measure_temperature", props.displayTemperatureC);
       await this.safeUpdateCapabilityValue("measure_applianceState", this.translateUnderscore(props.applianceState));
       await this.safeUpdateCapabilityValue("measure_applianceMode", this.translateUnderscore(props.program));
-      await this.safeUpdateCapabilityValue("measure_cyclePhase", this.translateUnderscore(props.processPhase));      
+      await this.safeUpdateCapabilityValue("measure_cyclePhase", this.translateUnderscore(props.processPhase));
+      // Not every oven reports these (e.g. no steam or food probe), leave them empty then
+      await this.safeUpdateCapabilityValue("measure_preheatComplete", this.translateOptional(props.preheatComplete));
+      await this.safeUpdateCapabilityValue("measure_waterTankLevel", this.translateOptional(props.waterTankLevel));
+      await this.safeUpdateCapabilityValue("measure_foodProbeState", this.translateOptional(props.foodProbeInsertionState));
       await this.updateMeasureAlerts(props);
 
       this.log("Device data updated");
@@ -105,6 +109,11 @@ class OvenDevice extends SharedDevice {
     const cavity = props?.upperOven;
     if (!cavity || typeof cavity !== 'object') return props;
     return { ...cavity, ...props };
+  }
+
+  /** Like translateUnderscore, but keeps a property the oven doesn't report undefined, so its capability isn't set. */
+  private translateOptional(input: any): string | undefined {
+    return typeof input === 'string' ? this.translateUnderscore(input) : undefined;
   }
 
   flow_enable_cavity_light(args: {}, state: {}) {
