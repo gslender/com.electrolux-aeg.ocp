@@ -68,7 +68,7 @@ class OvenDevice extends SharedDevice {
       return;
     }
 
-    const props = this.getReportedProps(state);
+    const props = this.getOvenProps(this.getReportedProps(state));
 
     try {
       const normalizedState = String(props.applianceState || '').toUpperCase();
@@ -93,6 +93,18 @@ class OvenDevice extends SharedDevice {
       this.log("Error updating device state: ", error);
     }
 
+  }
+
+  /**
+   * Many ovens report their cavity properties (temperatures, door, timers, program, light) nested under
+   * the cavity, e.g. { applianceState, remoteControl, upperOven: { displayTemperatureC, doorState, ... } }.
+   * Lift those to the root so they are read like on ovens that report them flat. Properties already at the
+   * root win, so ovens with a flat layout behave exactly as before.
+   */
+  protected getOvenProps(props: any): any {
+    const cavity = props?.upperOven;
+    if (!cavity || typeof cavity !== 'object') return props;
+    return { ...cavity, ...props };
   }
 
   flow_enable_cavity_light(args: {}, state: {}) {
