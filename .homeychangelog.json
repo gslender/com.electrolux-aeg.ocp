@@ -223,5 +223,8 @@
   },
   "2.0.3": {
     "en": "Merge pull request #52 from Charlie-Root: Fix appliance command state"
+  },
+  "2.0.4": {
+    "en": "Merge PR from NielsMerx nested-oven/oven-preheat-water-probe"
   }
 }

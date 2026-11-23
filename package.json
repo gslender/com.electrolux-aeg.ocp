@@ -7,17 +7,17 @@
     "lint": "eslint --ext .js,.ts --ignore-path .gitignore ."
   },
   "devDependencies": {
-    "@tsconfig/node22": "^22.0.6",
-    "@types/node": "^26.6.4",
+    "@tsconfig/node22": "^22.0.7",
+    "@types/node": "^26.6.6",
     "typescript": "^7.0.2",
-    "@types/homey": "npm:homey-apps-sdk-v3-types@^0.3.12",
+    "@types/homey": "npm:homey-apps-sdk-v3-types@^1.8.4",
     "@types/json-stringify-safe": "^5.0.3",
-    "eslint": "10.11.0"
+    "eslint": "10.15.0"
   },
   "dependencies": {
-    "axios": "^1.20.0",
+    "axios": "^1.21.1",
     "json-stringify-safe": "^5.0.1",
-    "ws": "^8.22.0"
+    "ws": "^8.23.0"
   },
   "ncu": {
   "reject": [
