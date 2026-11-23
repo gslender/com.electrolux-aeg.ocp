@@ -15,6 +15,7 @@ export default class SharedDevice extends Homey.Device {
   // Appliance type DAM properties are nested under, for when the capabilities couldn't be fetched
   damNamespace?: string;
   stringsIdx: number = 0;
+  private undefinedCapabilities = new Set<string>();
 
   async onInit() {
     this.log("Device Init: " + this.getName());
@@ -56,21 +57,37 @@ export default class SharedDevice extends Homey.Device {
     return isDamAppliance(this.getApplianceId());
   }
 
-  private findKey(obj: any, name: string): string | undefined {
+  protected findKey(obj: any, name: string): string | undefined {
     if (!obj || typeof obj !== 'object') return undefined;
     const target = name.toLowerCase();
     return Object.keys(obj).find(key => key.toLowerCase() === target);
   }
 
-  /** Looks up a capability by name (case insensitive), including those nested under a DAM appliance type. */
+  /** A capability definition (has access/type), as opposed to a group of capabilities. */
+  private isCapabilityDefinition(obj: any): boolean {
+    return !!obj && typeof obj === 'object' && (typeof obj.access === 'string' || typeof obj.type === 'string');
+  }
+
+  /**
+   * Looks up a capability by name (case insensitive). Capabilities at the root win, then those nested
+   * under a DAM appliance type (e.g. airConditioner.properties.mode), then those nested under a classic
+   * appliance's group (e.g. an oven's upperOven.cavityLight), which commands must be nested under too.
+   */
   protected findApplianceCapability(capabilityName: string): { namespace?: string, name: string, capability: any } | undefined {
     const capabilities = this.getApplianceCapabilitiesSetting();
     const rootKey = this.findKey(capabilities, capabilityName);
     if (rootKey) return { name: rootKey, capability: capabilities[rootKey] };
-    if (!this.isDam()) return undefined;
+    if (this.isDam()) {
+      for (const [namespace, group] of Object.entries<any>(capabilities)) {
+        const key = this.findKey(group?.properties, capabilityName);
+        if (key) return { namespace, name: key, capability: group.properties[key] };
+      }
+      return undefined;
+    }
     for (const [namespace, group] of Object.entries<any>(capabilities)) {
-      const key = this.findKey(group?.properties, capabilityName);
-      if (key) return { namespace, name: key, capability: group.properties[key] };
+      if (!group || typeof group !== 'object' || this.isCapabilityDefinition(group)) continue;
+      const key = this.findKey(group, capabilityName);
+      if (key && this.isCapabilityDefinition(group[key])) return { namespace, name: key, capability: group[key] };
     }
     return undefined;
   }
@@ -124,7 +141,15 @@ export default class SharedDevice extends Homey.Device {
 
   /** Sends a command, throwing if the appliance rejects it. Properties in one command are applied in any order. */
   protected async sendCommand(command: { [property: string]: any }) {
-    await this.app.sendDeviceCommand(this.getApplianceId(), this.toApiCommand(command));
+    try {
+      await this.app.sendDeviceCommand(this.getApplianceId(), this.toApiCommand(command));
+    } catch (error) {
+      // Appliances drop remote control temporarily, e.g. while the door is open or the panel is in use
+      if (error instanceof OcpCommandRejectedError && /remote control disabled/i.test(error.message)) {
+        throw new Error(this.homey.__('errors.remote_control_disabled'));
+      }
+      throw error;
+    }
   }
 
   /** The appliance's current reported properties, or undefined if they couldn't be fetched. */
@@ -171,10 +196,11 @@ export default class SharedDevice extends Homey.Device {
   protected getAllowedValues(capabilityName: string, reported: any): string[] | undefined {
     if (!reported) return undefined;
     const capabilities = this.getApplianceCapabilitiesSetting();
-    const name = this.findKey(capabilities, capabilityName);
-    if (!name) return undefined;
+    const found = this.findApplianceCapability(capabilityName);
+    if (!found) return undefined;
+    const name = found.name;
 
-    let values = capabilities[name]?.values;
+    let values = found.capability?.values;
     for (const [key, capability] of Object.entries<any>(capabilities)) {
       if (!Array.isArray(capability?.triggers)) continue;
       const value = this.getReportedValue(reported, key);
@@ -399,8 +425,11 @@ export default class SharedDevice extends Homey.Device {
     // this.log(`capability '${key}' is ${value}}`);
     if (this.hasCapability(key)) {
       if (typeof value !== 'undefined' && value !== null) {
+        this.undefinedCapabilities.delete(key);
         await this.setCapabilityValue(key, value);
-      } else {
+      } else if (!this.undefinedCapabilities.has(key)) {
+        // Logged once until a value arrives, not on every poll
+        this.undefinedCapabilities.add(key);
         this.log(`'value' for capability '${key}' is undefined`);
       }
     } else {

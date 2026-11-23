@@ -73,6 +73,7 @@
         "remote_start_disabled": "Remote Start ist am Gerät nicht aktiviert. Aktivieren Sie es zuerst am Gerät.",
         "command_not_allowed": "__command__ ist nicht möglich, während das Gerät im Zustand __state__ ist",
         "cannot_turn_off": "Das Gerät kann im Zustand __state__ nicht aus der Ferne ausgeschaltet werden",
-        "not_ready_to_start": "Das Gerät wurde nicht startbereit, der Zustand ist __state__. Ist die Tür geschlossen?"
+        "not_ready_to_start": "Das Gerät wurde nicht startbereit, der Zustand ist __state__. Ist die Tür geschlossen?",
+        "remote_control_disabled": "Die Fernsteuerung ist am Gerät derzeit deaktiviert. Prüfen Sie das Gerät (z. B. Tür schließen) und versuchen Sie es erneut."
     }
 }

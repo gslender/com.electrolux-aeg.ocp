@@ -73,6 +73,7 @@
         "remote_start_disabled": "Remote Start er ikke aktivert på apparatet. Aktiver det først på apparatet.",
         "command_not_allowed": "__command__ er ikke mulig mens apparatet er __state__",
         "cannot_turn_off": "Apparatet kan ikke slås av eksternt mens det er __state__",
-        "not_ready_to_start": "Apparatet ble ikke klart til start, det er __state__. Er døren lukket?"
+        "not_ready_to_start": "Apparatet ble ikke klart til start, det er __state__. Er døren lukket?",
+        "remote_control_disabled": "Fjernkontroll er for øyeblikket deaktivert på apparatet. Sjekk apparatet (f.eks. lukk døren) og prøv igjen."
     }
 }

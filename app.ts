@@ -298,9 +298,6 @@ export default class ElectroluxAEGApp extends Homey.App {
     try {
       const conn = state?.connectionState;
       const bypassConnectionAvailabilityStatus = device.getSetting('bypassConnectionAvailabilityStatus') === true;
-      // DEBUG-TMP
-      const r = state?.properties?.reported ?? {};
-      this.log(`DEBUG-TMP poll ${applianceId} applianceState=${r.applianceState} remoteControl=${r.remoteControl} doorState=${r.doorState} program=${r.userSelections?.programUID}`);
       if (conn === 'connected' || conn === 'Connected') {
         device.setAvailable();
         device.updateCapabilityValues(state);

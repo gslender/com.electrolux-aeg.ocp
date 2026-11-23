@@ -226,5 +226,8 @@
   },
   "2.0.4": {
     "en": "Merge PR from NielsMerx nested-oven/oven-preheat-water-probe"
+  },
+  "2.0.5": {
+    "en": "Added nested oven and remote control not enabled reporting"
   }
 }

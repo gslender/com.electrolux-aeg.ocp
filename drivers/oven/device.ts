@@ -106,9 +106,30 @@ class OvenDevice extends SharedDevice {
    * root win, so ovens with a flat layout behave exactly as before.
    */
   protected getOvenProps(props: any): any {
-    const cavity = props?.upperOven;
-    if (!cavity || typeof cavity !== 'object') return props;
+    const cavity = this.findCavity(props);
+    if (!cavity) return props;
     return { ...cavity, ...props };
+  }
+
+  /**
+   * The object an oven nests its cavity properties under: upperOven on most, else the group its capabilities
+   * put cavityLight/temperatures under, else any reported object holding typical cavity properties.
+   */
+  private findCavity(props: any): any {
+    if (!props || typeof props !== 'object') return undefined;
+    const isObject = (value: any) => !!value && typeof value === 'object' && !Array.isArray(value);
+    const candidates = [
+      'upperOven',
+      this.findApplianceCapability('cavityLight')?.namespace,
+      this.findApplianceCapability('targetTemperatureC')?.namespace,
+      this.findApplianceCapability('displayTemperatureC')?.namespace,
+    ];
+    for (const name of candidates) {
+      const key = name ? this.findKey(props, name) : undefined;
+      if (key && isObject(props[key])) return props[key];
+    }
+    const cavityKeys = ['cavityLight', 'displayTemperatureC', 'targetTemperatureC', 'doorState'];
+    return Object.values(props).find(value => isObject(value) && cavityKeys.some(key => key in (value as any)));
   }
 
   /** Like translateUnderscore, but keeps a property the oven doesn't report undefined, so its capability isn't set. */

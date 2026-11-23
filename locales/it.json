@@ -73,6 +73,7 @@
         "remote_start_disabled": "L'avvio remoto non è attivato sull'apparecchio. Attivalo prima sull'apparecchio.",
         "command_not_allowed": "__command__ non è possibile mentre l'apparecchio è __state__",
         "cannot_turn_off": "L'apparecchio non può essere spento a distanza mentre è __state__",
-        "not_ready_to_start": "L'apparecchio non è diventato pronto all'avvio, è __state__. La porta è chiusa?"
+        "not_ready_to_start": "L'apparecchio non è diventato pronto all'avvio, è __state__. La porta è chiusa?",
+        "remote_control_disabled": "Il controllo remoto è attualmente disattivato sull'apparecchio. Controlla l'apparecchio (ad es. chiudi la porta) e riprova."
     }
 }

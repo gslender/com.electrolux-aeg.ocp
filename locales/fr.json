@@ -73,6 +73,7 @@
         "remote_start_disabled": "Le démarrage à distance n'est pas activé sur l'appareil. Activez-le d'abord sur l'appareil.",
         "command_not_allowed": "__command__ n'est pas possible lorsque l'appareil est __state__",
         "cannot_turn_off": "L'appareil ne peut pas être éteint à distance lorsqu'il est __state__",
-        "not_ready_to_start": "L'appareil n'est pas devenu prêt à démarrer, il est __state__. La porte est-elle fermée ?"
+        "not_ready_to_start": "L'appareil n'est pas devenu prêt à démarrer, il est __state__. La porte est-elle fermée ?",
+        "remote_control_disabled": "La commande à distance est actuellement désactivée sur l'appareil. Vérifiez l'appareil (par ex. fermez la porte) et réessayez."
     }
 }
